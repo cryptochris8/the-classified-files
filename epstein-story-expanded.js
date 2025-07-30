@@ -47,6 +47,12 @@ The line goes dead.`,
                     nextScene: "knowledge_assessment",
                     progressIncrease: 5,
                     quizMode: true
+                },
+                {
+                    text: "Examine the mysterious documents for authenticity first",
+                    nextScene: "document_authentication",
+                    progressIncrease: 8,
+                    evidence: true
                 }
             ],
             educationalNote: "This fictional 72-hour deadline creates dramatic tension while you explore real facts about the case."
@@ -1978,7 +1984,223 @@ Your investigation continues to uncover evidence of systematic failure and insti
                 }
             ],
             educationalNote: "Persistent investigation reveals truth."
-        }
+        },
+
+        // MISSING SCENES - ADDED TO FIX NAVIGATION ISSUES
+        emergency_publication: {
+            text: `EMERGENCY PUBLICATION
+            
+            You decide to publish immediately to prevent the story from being suppressed. Your investigation reveals systematic institutional failures that enabled continued crimes.
+            
+            The story has massive impact, leading to congressional hearings and policy changes.`,
+            image: "educational_conclusion",
+            imagePrompt: "Newspaper headlines about emergency publication and institutional accountability",
+            sources: ["Emergency Publication Decision"],
+            choices: [
+                {
+                    text: "See the final impact of your investigation",
+                    nextScene: "emergency_publication_final",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Emergency publication can be necessary when institutional forces try to suppress important stories."
+        },
+
+        legal_protection_sought: {
+            text: `SEEKING LEGAL PROTECTION
+            
+            You work with media lawyers to protect your story from legal challenges. The combination of verified facts and proper journalistic practices creates a strong defense.
+            
+            Legal protection secured, you can now publish with confidence.`,
+            image: "federal_courthouse_2019",
+            imagePrompt: "Legal team preparing media defense strategy",
+            sources: ["Media Law Protection"],
+            choices: [
+                {
+                    text: "Proceed with protected publication",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 25,
+                    factual: true
+                }
+            ],
+            educationalNote: "Legal protection is crucial for investigative journalism dealing with sensitive topics."
+        },
+
+        detective_meeting_fictional: {
+            text: `MEETING THE DETECTIVE - FICTIONAL SCENARIO
+            
+            In this fictional scenario, you meet with a detective who worked the original case. This dramatic scene helps illustrate how real investigations develop sources and verify information.
+            
+            "I've been waiting 18 years to tell someone what really happened," he says. "The evidence was there in 2005, but powerful people wanted it buried."
+            
+            Remember: This is fictional, but based on real investigative techniques.`,
+            image: "palm_beach_police_station",
+            imagePrompt: "Detective meeting scene showing investigative journalism source development",
+            sources: ["Fictional Detective Scenario", "Real Investigation Techniques"],
+            choices: [
+                {
+                    text: "Continue with evidence analysis",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Focus on factual investigation instead",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15,
+                    factual: true
+                }
+            ],
+            educationalNote: "This fictional scenario demonstrates real investigative journalism techniques."
+        },
+
+        timeline_gap_investigation: {
+            text: `INVESTIGATING THE TIMELINE GAP
+            
+            You focus on the crucial 14-year gap between the 2005 Palm Beach investigation and the 2019 federal prosecution. This gap represents a systematic failure that allowed continued crimes.
+            
+            Your analysis reveals how institutional delays enabled ongoing victimization.`,
+            image: "federal_courthouse_2019",
+            imagePrompt: "Timeline visualization showing the 14-year prosecution gap",
+            sources: ["Timeline Analysis", "Prosecution Delay Investigation"],
+            choices: [
+                {
+                    text: "Expose the institutional failures",
+                    nextScene: "institutional_failure_expose",
+                    progressIncrease: 30,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Complete investigation summary",
+                    nextScene: "emergency_publication_final",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Timeline analysis is a powerful tool for revealing institutional failures."
+        },
+
+        institutional_failure_expose: {
+            text: `EXPOSING INSTITUTIONAL FAILURES
+            
+            Your investigation conclusively demonstrates how institutional failures enabled Epstein's crimes to continue for 14 years after sufficient evidence existed for prosecution.
+            
+            Key findings:
+            - 2005: Evidence of systematic operation
+            - 2008: Lenient plea deal despite evidence  
+            - 2019: Finally proper federal prosecution
+            
+            The story becomes a landmark exposé of justice system failures.`,
+            image: "educational_conclusion",
+            imagePrompt: "Investigation conclusion showing institutional accountability and reform",
+            sources: ["Institutional Failure Analysis", "Justice System Reform"],
+            choices: [
+                {
+                    text: "Publish the complete exposé",
+                    nextScene: "emergency_publication_final",
+                    progressIncrease: 40,
+                    evidence: true,
+                    factual: true
+                }
+            ],
+            educationalNote: "Institutional failure analysis helps prevent future systemic problems."
+        },
+
+        evidence_comparison_scene: {
+            text: `EVIDENCE COMPARISON ANALYSIS
+            
+            You systematically compare the evidence available in 2005 versus what was used in 2019, revealing that sufficient evidence existed for federal prosecution much earlier.
+            
+            This comparison becomes central to your story about institutional delays.`,
+            image: "digital_forensics_lab",
+            imagePrompt: "Side-by-side evidence comparison showing 2005 vs 2019 investigations",
+            sources: ["Evidence Timeline Comparison"],
+            choices: [
+                {
+                    text: "Use this as your main story angle",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 30,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Evidence comparison reveals how prosecutorial decisions affect justice."
+        },
+
+        rejected_reports_analysis: {
+            text: `ANALYZING THE REJECTED REPORTS
+            
+            You examine the 37 FBI reports that were filed but rejected or ignored. Each report contained evidence that could have led to earlier prosecution.
+            
+            This pattern of rejection reveals systematic institutional problems.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Focus on the institutional failure angle",
+                    nextScene: "institutional_failure_expose",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Analyzing rejected evidence reveals institutional decision-making patterns."
+        },
+
+        journalism_alliance: {
+            text: `FORMING A JOURNALISM ALLIANCE
+            
+            You rally other journalists to prevent the story from being killed. The combined pressure from multiple news organizations protects your investigation.
+            
+            United, the press stands stronger against institutional pressure.`,
+            image: "newsroom_investigation",
+            choices: [
+                {
+                    text: "Proceed with the protected investigation",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Journalist alliances protect important stories from suppression."
+        },
+
+        source_protection_protocol: {
+            text: `IMPLEMENTING SOURCE PROTECTION
+            
+            You establish protocols to protect your sources while maintaining the story's integrity. This includes encrypted communications and legal shields.
+            
+            Source protection secured, you can proceed safely.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Continue with protected sources",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 20,
+                    factual: true
+                }
+            ],
+            educationalNote: "Source protection is fundamental to investigative journalism."
+        },
+
+        unified_testimony_preparation: {
+            text: `PREPARING UNIFIED TESTIMONY
+            
+            You coordinate all witness testimonies to create a comprehensive, unified account of the institutional failures and timeline gaps.
+            
+            The unified testimony becomes the backbone of your investigation.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Use unified testimony as story centerpiece",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Coordinated testimony strengthens investigative reporting."
+        },
+
+        // ADDITIONAL MISSING SCENES - SECOND ROUND FIX
+        // (document_authentication already exists above, removed duplicate)
     }
 };
 
