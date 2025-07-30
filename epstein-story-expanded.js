@@ -50,7 +50,7 @@ The line goes dead.`,
                 },
                 {
                     text: "Examine the mysterious documents for authenticity first",
-                    nextScene: "document_authentication",
+                    nextScene: "victim_statistics_study",
                     progressIncrease: 8,
                     evidence: true
                 }
