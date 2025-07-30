@@ -2201,6 +2201,352 @@ Your investigation continues to uncover evidence of systematic failure and insti
 
         // ADDITIONAL MISSING SCENES - SECOND ROUND FIX
         // (document_authentication already exists above, removed duplicate)
+        
+        // MISSING SCENES THAT CAUSE NAVIGATION CRASHES
+        prosecution_complexity_quiz: {
+            text: `QUIZ: FEDERAL VS. STATE PROSECUTION COMPLEXITY
+            
+            Understanding the complex legal framework is crucial for your investigation.
+            
+            QUESTION: Why was the 2008 plea deal handled at the state level instead of federal level despite evidence of interstate trafficking?
+            
+            This complexity explains many of the delays and controversies in the case.`,
+            image: "federal_courthouse_2019",
+            imagePrompt: "Legal documents showing federal vs state jurisdiction complexity",
+            sources: ["Legal Jurisdiction Analysis"],
+            choices: [
+                {
+                    text: "Federal prosecutors deferred to state authorities",
+                    nextScene: "quiz_prosecution_correct",
+                    progressIncrease: 20,
+                    quizAnswer: true,
+                    factual: true
+                },
+                {
+                    text: "State prosecutors had stronger evidence",
+                    nextScene: "quiz_prosecution_wrong",
+                    progressIncrease: 5,
+                    quizAnswer: false
+                },
+                {
+                    text: "Jurisdictional disputes caused delays",
+                    nextScene: "quiz_prosecution_partial",
+                    progressIncrease: 10,
+                    quizAnswer: "partial"
+                }
+            ],
+            quizMode: true,
+            educationalNote: "Jurisdictional complexity often complicates trafficking prosecutions."
+        },
+
+        quiz_prosecution_correct: {
+            text: `✅ CORRECT! Federal prosecutors deferred to state authorities.
+            
+            Despite having evidence for federal trafficking charges, federal prosecutors chose to defer to the state prosecution, which resulted in the controversial 2008 plea deal.
+            
+            Your understanding of prosecutorial decision-making strengthens your investigation.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Continue investigating institutional decisions",
+                    nextScene: "institutional_failure_expose",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Prosecutorial discretion can significantly impact case outcomes."
+        },
+
+        quiz_prosecution_wrong: {
+            text: `❌ Incorrect. Federal prosecutors actually deferred to state authorities.
+            
+            This deference resulted in a much more lenient state-level plea deal instead of potential federal trafficking charges.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Learn more about prosecutorial decisions",
+                    nextScene: "plea_deal_investigation",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Understanding prosecutorial decisions is key to analyzing case outcomes."
+        },
+
+        quiz_prosecution_partial: {
+            text: `⚡ Partially correct. Jurisdictional issues were a factor.
+            
+            While jurisdictional complexity existed, the main issue was federal prosecutors choosing to defer to state authorities despite having stronger federal charges available.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Investigate the federal decision-making process",
+                    nextScene: "institutional_failure_expose",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Multiple factors often influence complex prosecutorial decisions."
+        },
+
+        whistleblower_protection_quiz: {
+            text: `QUIZ: WHISTLEBLOWER PROTECTIONS AND JOURNALISM
+            
+            Understanding source protection is crucial for investigative journalism.
+            
+            QUESTION: What legal protections exist for government employees who leak classified information to journalists?
+            
+            Agent Kim's situation requires careful consideration of these protections.`,
+            image: "witness_testimony",
+            imagePrompt: "FBI agent considering whistleblower protections and legal risks",
+            sources: ["Whistleblower Protection Analysis"],
+            choices: [
+                {
+                    text: "Whistleblower Protection Act provides some protection",
+                    nextScene: "quiz_whistleblower_correct",
+                    progressIncrease: 20,
+                    quizAnswer: true,
+                    factual: true
+                },
+                {
+                    text: "No legal protections exist for classified leaks",
+                    nextScene: "quiz_whistleblower_wrong",
+                    progressIncrease: 5,
+                    quizAnswer: false
+                },
+                {
+                    text: "First Amendment provides complete protection",
+                    nextScene: "quiz_whistleblower_wrong",
+                    progressIncrease: 5,
+                    quizAnswer: false
+                }
+            ],
+            quizMode: true,
+            educationalNote: "Whistleblower protection laws are complex and case-specific."
+        },
+
+        quiz_whistleblower_correct: {
+            text: `✅ CORRECT! Limited protections exist under Whistleblower Protection Act.
+            
+            Government employees have some protections when reporting wrongdoing through proper channels, but leaking classified information to media remains legally risky.
+            
+            Your understanding helps you protect Agent Kim while using her evidence.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Proceed with careful source protection",
+                    nextScene: "source_protection_protocol",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Understanding whistleblower law helps protect sources and journalists."
+        },
+
+        quiz_whistleblower_wrong: {
+            text: `❌ Incorrect. Some protections exist under the Whistleblower Protection Act.
+            
+            However, these protections are limited and don't fully cover classified information disclosure to media.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Learn more about source protection",
+                    nextScene: "source_protection_protocol",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Proper understanding of whistleblower law is essential for journalism."
+        },
+
+        preemptive_legal_strike: {
+            text: `PREEMPTIVE LEGAL STRIKE
+            
+            DAY 2 - 6:00 PM
+            
+            Your legal team files a preemptive lawsuit against the FBI to prevent seizure of the documents, arguing First Amendment protections and public interest.
+            
+            "We're not waiting for them to come to us," declares lead counsel Patricia Hayes. "We're establishing our legal position first."
+            
+            The lawsuit claims:
+            - Public's right to know about institutional failures
+            - No genuine national security threat
+            - Documents reveal past crimes, not ongoing operations
+            - Victims' rights to have their stories told
+            
+            Within hours, the story becomes national news. "Newspaper Sues FBI to Protect Epstein Investigation" trends on social media.
+            
+            Your preemptive strike puts the government on the defensive.`,
+            image: "federal_courthouse_2019",
+            imagePrompt: "Legal team filing preemptive lawsuit at federal courthouse, dramatic legal action scene",
+            sources: ["Preemptive Legal Strategy", "First Amendment Law"],
+            choices: [
+                {
+                    text: "Use legal momentum to accelerate publication",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Build coalition of media organizations",
+                    nextScene: "journalism_alliance",
+                    progressIncrease: 25
+                },
+                {
+                    text: "Focus on strengthening evidence while legal battle continues",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 28,
+                    factual: true
+                }
+            ],
+            educationalNote: "Preemptive legal action can protect journalistic investigations from government interference."
+        },
+
+        legal_coalition_formed: {
+            text: `LEGAL COALITION FORMED
+            
+            DAY 2 - 8:00 PM
+            
+            Your legal strategy creates an unprecedented coalition:
+            
+            🏛️ COALITION MEMBERS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • 73 Epstein survivors (represented by 12 law firms)
+            • New York Times legal team
+            • Washington Post media lawyers  
+            • ACLU First Amendment division
+            • Reporters Committee for Freedom of Press
+            • Electronic Frontier Foundation
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            
+            The coalition files multiple supporting briefs, creating a legal wall protecting your investigation.
+            
+            Maria, speaking for survivors: "For 18 years, they've used 'legal process' to silence us. Now legal process protects our truth."
+            
+            This coalition represents the most powerful media defense ever assembled for a single story.
+            
+            Federal judges take notice. The government's case becomes much harder to win.`,
+            image: "federal_courthouse_2019",
+            imagePrompt: "Massive legal coalition gathering at courthouse, representing press freedom and victim rights",
+            sources: ["Media Coalition Strategy", "Victims' Rights Legal Support"],
+            choices: [
+                {
+                    text: "Leverage coalition strength for immediate publication",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 35,
+                    evidence: true
+                },
+                {
+                    text: "Coordinate unified media strategy",
+                    nextScene: "journalism_alliance",
+                    progressIncrease: 30
+                },
+                {
+                    text: "Use legal protection to investigate deeper",
+                    nextScene: "agent_kim_meeting",
+                    progressIncrease: 32,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Legal coalitions can provide powerful protection for important journalism."
+        },
+
+        public_pressure_campaign: {
+            text: `PUBLIC PRESSURE CAMPAIGN
+            
+            DAY 2 - 10:00 PM
+            
+            Your legal team launches a strategic public pressure campaign while the court battle continues:
+            
+            📢 CAMPAIGN ELEMENTS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • Press conferences with victim advocates
+            • Social media campaign: #LetSarahPublish
+            • Op-eds from press freedom organizations
+            • Survivor testimonials about suppression
+            • Academic support from journalism schools
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            
+            Within 6 hours:
+            - #LetSarahPublish reaches 2.3 million tweets
+            - 47 news organizations demand transparency
+            - 16 senators call for FBI explanation
+            - Public opinion polls show 73% support publication
+            
+            The FBI finds itself fighting a public relations war it cannot win.
+            
+            Sometimes democracy works through pressure, not just process.`,
+            image: "newsroom_investigation",
+            imagePrompt: "Public pressure campaign with social media trending, press conferences, and democratic activism",
+            sources: ["Public Pressure Strategy", "Democratic Accountability"],
+            choices: [
+                {
+                    text: "Use public momentum to publish immediately",
+                    nextScene: "emergency_publication_final",
+                    progressIncrease: 40,
+                    evidence: true
+                },
+                {
+                    text: "Channel pressure into legal victory",
+                    nextScene: "legal_coalition_formed",
+                    progressIncrease: 35
+                },
+                {
+                    text: "Focus pressure on investigation quality",
+                    nextScene: "final_verification_process",
+                    progressIncrease: 30,
+                    factual: true
+                }
+            ],
+            educationalNote: "Public pressure can be a powerful tool for protecting press freedom and accountability."
+        },
+
+        story_focus_legal_shield: {
+            text: `STORY FOCUS WITH LEGAL SHIELD
+            
+            DAY 2 - 11:30 PM
+            
+            With legal protection in place, you can focus entirely on perfecting your investigation. The legal shield allows you to work without fear of interference.
+            
+            🛡️ LEGAL PROTECTION SECURED:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            ✅ Temporary restraining order against FBI seizure
+            ✅ First Amendment protections established
+            ✅ Victim rights advocates supporting publication
+            ✅ Media coalition providing unified defense
+            ✅ Public pressure supporting transparency
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            
+            Free from legal threats, you can now craft the most thorough, accurate, and impactful investigation possible.
+            
+            Your editor smiles for the first time in days: "Sarah, this is what journalism is supposed to be. Truth protected by law, not threatened by it."
+            
+            You have 18 hours to publish before any legal challenges can be mounted.
+            
+            Time to create something historic.`,
+            image: "newsroom_investigation",
+            imagePrompt: "Journalist working intensely with legal protection, focused and determined, investigation reaching climax",
+            sources: ["Legal Shield Protection", "Investigative Excellence Under Protection"],
+            choices: [
+                {
+                    text: "Craft the definitive institutional failure exposé",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 40,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Add final prosecutor confession for maximum impact",
+                    nextScene: "prosecutor_confession_added",
+                    progressIncrease: 35,
+                    evidence: true
+                },
+                {
+                    text: "Ensure every fact is bulletproof before publication",
+                    nextScene: "final_verification_process",
+                    progressIncrease: 38,
+                    factual: true
+                }
+            ],
+            educationalNote: "Legal protection allows journalists to focus on investigative excellence without fear."
+        }
     }
 };
 
