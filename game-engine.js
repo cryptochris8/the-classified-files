@@ -45,26 +45,41 @@ class GameEngine {
     }
     
     playBackgroundMusic() {
-        this.elements.backgroundMusic.volume = 0.3;
-        this.elements.backgroundMusic.play().catch(e => {
-            console.log('Auto-play prevented. User interaction required for audio.');
-        });
+        // Disabled background music to test if it's causing issues
+        // this.elements.backgroundMusic.volume = 0.3;
+        // this.elements.backgroundMusic.play().catch(e => {
+        //     console.log('Auto-play prevented. User interaction required for audio.');
+        // });
+        console.log('Background music disabled for testing');
     }
     
     startGame() {
+        // Debug: Check which stories are available
+        console.log('=== STORY LOADING DEBUG ===');
+        console.log('EpsteinStoryExpanded available:', typeof EpsteinStoryExpanded !== 'undefined');
+        console.log('EpsteinStoryHybrid available:', typeof EpsteinStoryHybrid !== 'undefined');
+        console.log('EpsteinStoryFactual available:', typeof EpsteinStoryFactual !== 'undefined');
+        console.log('EpsteinStory available:', typeof EpsteinStory !== 'undefined');
+        
         // Prioritize expanded story for best experience
         if (typeof EpsteinStoryExpanded !== 'undefined' && EpsteinStoryExpanded.scenes) {
             this.currentStory = EpsteinStoryExpanded;
+            console.log('✅ LOADED: EpsteinStoryExpanded with', Object.keys(EpsteinStoryExpanded.scenes).length, 'scenes');
         } else if (typeof EpsteinStoryHybrid !== 'undefined' && EpsteinStoryHybrid.scenes) {
             this.currentStory = EpsteinStoryHybrid;
+            console.log('⚠️ FALLBACK: EpsteinStoryHybrid with', Object.keys(EpsteinStoryHybrid.scenes).length, 'scenes');
         } else if (typeof EpsteinStoryFactual !== 'undefined' && EpsteinStoryFactual.scenes) {
             this.currentStory = EpsteinStoryFactual;
+            console.log('⚠️ FALLBACK: EpsteinStoryFactual with', Object.keys(EpsteinStoryFactual.scenes).length, 'scenes');
         } else if (typeof EpsteinStory !== 'undefined' && EpsteinStory.scenes) {
             this.currentStory = EpsteinStory;
+            console.log('⚠️ FALLBACK: EpsteinStory with', Object.keys(EpsteinStory.scenes).length, 'scenes');
         } else {
-            console.error('Story data not loaded');
+            console.error('❌ ERROR: No story data loaded');
             return;
         }
+        
+        console.log('=== STARTING GAME WITH STORY:', this.currentStory === EpsteinStoryExpanded ? 'EXPANDED' : 'OTHER');
         this.loadScene('intro');
     }
     
@@ -354,9 +369,11 @@ Your choices throughout this investigation have shaped the narrative and uncover
     }
     
     playChoiceSound() {
-        const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoG');
-        audio.volume = 0.1;
-        audio.play().catch(e => console.log('Sound play failed'));
+        // Disabled sound to test if it's causing button issues
+        // const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoG');
+        // audio.volume = 0.1;
+        // audio.play().catch(e => console.log('Sound play failed'));
+        console.log('Choice sound disabled for testing');
     }
     
     handleQuizAnswer(choice) {
