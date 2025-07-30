@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Classified Files - NAVIGATION FIXED</title>
+    
+    <!-- NUCLEAR CACHE BUSTING - FORCES FRESH LOAD -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta name="cache-killer" content="202507301207-NAVIGATION-FIX">
+    
+    <link rel="stylesheet" href="styles.css?v=202507301207&force=fresh&fix=navigation">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-header">
+            <h1 id="game-title">THE CLASSIFIED FILES</h1>
+            <div id="case-title">Case File: EPSTEIN</div>
+        </header>
+        
+        <main id="game-main">
+            <div id="document-viewer">
+                <div id="document-image"></div>
+            </div>
+            
+            <div id="narrative-section">
+                <div id="story-text"></div>
+                <div id="choices-container"></div>
+            </div>
+        </main>
+        
+        <div id="status-bar">
+            <div id="investigation-progress">
+                <span>Investigation Progress: </span>
+                <div class="progress-bar">
+                    <div id="progress-fill"></div>
+                </div>
+            </div>
+            <div id="evidence-count">Evidence: <span id="evidence-number">0</span></div>
+        </div>
+        
+        <div id="loading-screen" class="hidden">
+            <div class="loading-content">
+                <div class="classified-stamp">CLASSIFIED</div>
+                <div class="loading-text">Accessing Files...</div>
+                <div class="loading-dots">
+                    <span>.</span><span>.</span><span>.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="background-music" loop>
+        <source src="audio/suspense.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- NUCLEAR CACHE BUSTING - FRESH JAVASCRIPT FILES -->
+    <script>console.log('🚨 LOADING FRESH FILES - NAVIGATION FIX VERSION 202507301207');</script>
+    <script src="game-engine.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script src="epstein-story.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script src="epstein-story-factual.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script src="epstein-story-hybrid.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script src="epstein-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script src="main.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script>console.log('🎉 ALL FRESH FILES LOADED - Navigation should work now!');</script>
+</body>
+</html>
