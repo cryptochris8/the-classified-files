@@ -60,29 +60,18 @@ class GameEngine {
         // Debug: Check which stories are available
         console.log('=== STORY LOADING DEBUG ===');
         console.log('EpsteinStoryExpanded available:', typeof EpsteinStoryExpanded !== 'undefined');
-        console.log('EpsteinStoryHybrid available:', typeof EpsteinStoryHybrid !== 'undefined');
-        console.log('EpsteinStoryFactual available:', typeof EpsteinStoryFactual !== 'undefined');
-        console.log('EpsteinStory available:', typeof EpsteinStory !== 'undefined');
         
-        // Prioritize expanded story for best experience
+        // FORCE ONLY EXPANDED STORY - No fallbacks to prevent caching issues
         if (typeof EpsteinStoryExpanded !== 'undefined' && EpsteinStoryExpanded.scenes) {
             this.currentStory = EpsteinStoryExpanded;
             console.log('✅ LOADED: EpsteinStoryExpanded with', Object.keys(EpsteinStoryExpanded.scenes).length, 'scenes');
-        } else if (typeof EpsteinStoryHybrid !== 'undefined' && EpsteinStoryHybrid.scenes) {
-            this.currentStory = EpsteinStoryHybrid;
-            console.log('⚠️ FALLBACK: EpsteinStoryHybrid with', Object.keys(EpsteinStoryHybrid.scenes).length, 'scenes');
-        } else if (typeof EpsteinStoryFactual !== 'undefined' && EpsteinStoryFactual.scenes) {
-            this.currentStory = EpsteinStoryFactual;
-            console.log('⚠️ FALLBACK: EpsteinStoryFactual with', Object.keys(EpsteinStoryFactual.scenes).length, 'scenes');
-        } else if (typeof EpsteinStory !== 'undefined' && EpsteinStory.scenes) {
-            this.currentStory = EpsteinStory;
-            console.log('⚠️ FALLBACK: EpsteinStory with', Object.keys(EpsteinStory.scenes).length, 'scenes');
+            console.log('✅ AVAILABLE SCENES:', Object.keys(EpsteinStoryExpanded.scenes));
         } else {
-            console.error('❌ ERROR: No story data loaded');
+            console.error('❌ ERROR: EpsteinStoryExpanded not loaded - check file loading');
             return;
         }
         
-        console.log('=== STARTING GAME WITH STORY:', this.currentStory === EpsteinStoryExpanded ? 'EXPANDED' : 'OTHER');
+        console.log('=== STARTING GAME WITH EXPANDED STORY ONLY ===');
         this.loadScene('intro');
     }
     
@@ -97,17 +86,27 @@ class GameEngine {
     }
     
     loadScene(sceneId) {
+        console.log('🔍 ATTEMPTING TO LOAD SCENE:', sceneId);
+        console.log('🔍 CURRENT STORY:', this.currentStory ? 'LOADED' : 'NOT LOADED');
+        
         if (!this.currentStory || !this.currentStory.scenes[sceneId]) {
-            console.error('Scene not found:', sceneId);
+            console.error('❌ Scene not found:', sceneId);
+            console.error('❌ Available scenes:', this.currentStory ? Object.keys(this.currentStory.scenes) : 'NO STORY LOADED');
+            
             // Fallback to a safe scene if available
             if (this.currentStory && this.currentStory.scenes['victim_statistics_study']) {
+                console.log('⚡ FALLBACK: Using victim_statistics_study');
                 sceneId = 'victim_statistics_study';
             } else if (this.currentStory && this.currentStory.scenes['intro']) {
+                console.log('⚡ FALLBACK: Using intro scene');
                 sceneId = 'intro';
             } else {
-                console.error('No fallback scenes available');
+                console.error('❌ No fallback scenes available');
+                alert('Critical Error: Scene not found and no fallbacks available. Please refresh the page.');
                 return;
             }
+        } else {
+            console.log('✅ Scene found successfully:', sceneId);
         }
         
         this.currentScene = this.currentStory.scenes[sceneId];
