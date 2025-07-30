@@ -5,7 +5,11 @@ class GameEngine {
             evidenceCount: 0,
             investigationProgress: 0,
             choices: [],
-            visitedScenes: new Set()
+            visitedScenes: new Set(),
+            knowledgeScore: 0,
+            correctAnswers: 0,
+            totalQuestions: 0,
+            badges: []
         };
         this.isTyping = false;
         this.typewriterSpeed = 50;
@@ -48,8 +52,10 @@ class GameEngine {
     }
     
     startGame() {
-        // Prioritize factual story if available
-        if (typeof EpsteinStoryFactual !== 'undefined' && EpsteinStoryFactual.scenes) {
+        // Prioritize hybrid story for best experience
+        if (typeof EpsteinStoryHybrid !== 'undefined' && EpsteinStoryHybrid.scenes) {
+            this.currentStory = EpsteinStoryHybrid;
+        } else if (typeof EpsteinStoryFactual !== 'undefined' && EpsteinStoryFactual.scenes) {
             this.currentStory = EpsteinStoryFactual;
         } else if (typeof EpsteinStory !== 'undefined' && EpsteinStory.scenes) {
             this.currentStory = EpsteinStory;
@@ -130,6 +136,9 @@ class GameEngine {
                 if (choice.factual) {
                     button.classList.add('factual');
                 }
+                if (this.currentScene.quizMode || choice.quizAnswer !== undefined) {
+                    button.setAttribute('data-quiz', 'true');
+                }
                 button.textContent = choice.text;
                 button.onclick = () => this.makeChoice(choice);
                 
@@ -149,6 +158,11 @@ class GameEngine {
     makeChoice(choice) {
         this.gameState.choices.push(choice.text);
         
+        // Handle quiz mechanics
+        if (choice.quizAnswer !== undefined) {
+            this.handleQuizAnswer(choice);
+        }
+        
         if (choice.evidence) {
             this.addEvidence();
         }
@@ -156,6 +170,9 @@ class GameEngine {
         if (choice.progressIncrease) {
             this.increaseProgress(choice.progressIncrease);
         }
+        
+        // Award badges for special achievements
+        this.checkForBadges(choice);
         
         this.playChoiceSound();
         this.loadScene(choice.nextScene);
@@ -330,6 +347,122 @@ Your choices throughout this investigation have shaped the narrative and uncover
         const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoG');
         audio.volume = 0.1;
         audio.play().catch(e => console.log('Sound play failed'));
+    }
+    
+    handleQuizAnswer(choice) {
+        this.gameState.totalQuestions++;
+        
+        if (choice.quizAnswer === true) {
+            this.gameState.correctAnswers++;
+            this.gameState.knowledgeScore++;
+            this.showQuizFeedback(true, "Correct! Excellent knowledge of the facts.");
+        } else if (choice.quizAnswer === "partial") {
+            this.gameState.knowledgeScore += 0.5;
+            this.showQuizFeedback("partial", "Partially correct - this shows good understanding.");
+        } else {
+            this.showQuizFeedback(false, "Incorrect. Learning the facts will help your investigation.");
+        }
+        
+        this.updateKnowledgeDisplay();
+    }
+    
+    showQuizFeedback(correct, message) {
+        const feedbackDiv = document.createElement('div');
+        feedbackDiv.className = `quiz-feedback ${correct === true ? 'correct' : correct === 'partial' ? 'partial' : 'incorrect'}`;
+        feedbackDiv.innerHTML = `
+            <div class="feedback-icon">${correct === true ? '✅' : correct === 'partial' ? '⚡' : '❌'}</div>
+            <div class="feedback-message">${message}</div>
+        `;
+        
+        this.elements.storyText.appendChild(feedbackDiv);
+        
+        setTimeout(() => {
+            feedbackDiv.style.opacity = '0.7';
+        }, 3000);
+    }
+    
+    updateKnowledgeDisplay() {
+        const knowledgeDisplay = document.getElementById('knowledge-score') || this.createKnowledgeDisplay();
+        knowledgeDisplay.textContent = `Knowledge: ${this.gameState.knowledgeScore}/${this.gameState.totalQuestions}`;
+    }
+    
+    createKnowledgeDisplay() {
+        const statusBar = document.getElementById('status-bar');
+        const knowledgeDiv = document.createElement('div');
+        knowledgeDiv.id = 'knowledge-score';
+        knowledgeDiv.className = 'knowledge-display';
+        knowledgeDiv.textContent = `Knowledge: ${this.gameState.knowledgeScore}/${this.gameState.totalQuestions}`;
+        statusBar.appendChild(knowledgeDiv);
+        return knowledgeDiv;
+    }
+    
+    checkForBadges(choice) {
+        // Perfect Quiz Badge
+        if (this.gameState.knowledgeScore >= 3 && this.gameState.correctAnswers === this.gameState.totalQuestions) {
+            this.awardBadge("Perfect Knowledge", "🏆", "Answered all quiz questions correctly");
+        }
+        
+        // Fact Finder Badge
+        if (choice.factual && this.gameState.evidenceCount >= 3) {
+            this.awardBadge("Fact Finder", "🔍", "Consistently chose fact-based investigation paths");
+        }
+        
+        // Evidence Collector Badge
+        if (this.gameState.evidenceCount >= 5) {
+            this.awardBadge("Evidence Master", "📋", "Collected significant evidence");
+        }
+    }
+    
+    awardBadge(name, icon, description) {
+        if (this.gameState.badges.find(b => b.name === name)) return; // Already awarded
+        
+        const badge = { name, icon, description };
+        this.gameState.badges.push(badge);
+        
+        this.showBadgeNotification(badge);
+        this.updateBadgeDisplay();
+    }
+    
+    showBadgeNotification(badge) {
+        const notification = document.createElement('div');
+        notification.className = 'badge-notification';
+        notification.innerHTML = `
+            <div class="badge-earned">
+                <div class="badge-icon">${badge.icon}</div>
+                <div class="badge-info">
+                    <div class="badge-name">Badge Earned: ${badge.name}</div>
+                    <div class="badge-desc">${badge.description}</div>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.opacity = '1';
+            notification.style.transform = 'translateY(0)';
+        }, 100);
+        
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => notification.remove(), 500);
+        }, 4000);
+    }
+    
+    updateBadgeDisplay() {
+        const badgeContainer = document.getElementById('badge-container') || this.createBadgeContainer();
+        badgeContainer.innerHTML = this.gameState.badges.map(badge => 
+            `<span class="badge" title="${badge.description}">${badge.icon}</span>`
+        ).join('');
+    }
+    
+    createBadgeContainer() {
+        const statusBar = document.getElementById('status-bar');
+        const badgeDiv = document.createElement('div');
+        badgeDiv.id = 'badge-container';
+        badgeDiv.className = 'badge-display';
+        statusBar.appendChild(badgeDiv);
+        return badgeDiv;
     }
 }
 
