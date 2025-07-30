@@ -52,8 +52,10 @@ class GameEngine {
     }
     
     startGame() {
-        // Prioritize hybrid story for best experience
-        if (typeof EpsteinStoryHybrid !== 'undefined' && EpsteinStoryHybrid.scenes) {
+        // Prioritize expanded story for best experience
+        if (typeof EpsteinStoryExpanded !== 'undefined' && EpsteinStoryExpanded.scenes) {
+            this.currentStory = EpsteinStoryExpanded;
+        } else if (typeof EpsteinStoryHybrid !== 'undefined' && EpsteinStoryHybrid.scenes) {
             this.currentStory = EpsteinStoryHybrid;
         } else if (typeof EpsteinStoryFactual !== 'undefined' && EpsteinStoryFactual.scenes) {
             this.currentStory = EpsteinStoryFactual;
