@@ -998,6 +998,393 @@ FINAL COUNTDOWN: 12 hours to publication or seizure.`,
                 }
             ],
             educationalNote: "Your investigation combined verified facts with engaging narrative to educate about systemic failures."
+        },
+
+        // Missing scenes referenced from intro
+        fbi_contact_call: {
+            text: `CALLING YOUR FBI CONTACT
+            
+            DAY 1 - 11:15 PM
+
+You dial Special Agent Jennifer Walsh, your contact at the FBI who's helped you on previous stories. The phone rings several times before she answers, sounding tired.
+
+"Sarah? Do you know what time it is? This better be important."
+
+"Jen, I just got a call warning me about classified Epstein documents. Someone said I have 72 hours before a court order. Is this real?"
+
+Long pause. "Sarah, I can't talk on this line. Meet me at the 24-hour diner on Fifth Street. Twenty minutes. Come alone."
+
+The urgency in her voice tells you everything you need to know - this is bigger than you thought.
+
+When you arrive at the diner, Agent Walsh is already there, looking nervous. "Sarah, whatever you have, it's real. And it's dangerous. There are people who don't want this information public."
+
+She slides a business card across the table. "If things go bad, call this number. It's the Inspector General's office. They're... sympathetic to transparency."`,
+            image: "newsroom_investigation",
+            imagePrompt: "Secret meeting at late-night diner between journalist and FBI agent, tense atmosphere",
+            sources: ["FBI Contact Verification", "Source Protection"],
+            choices: [
+                {
+                    text: "Ask about the 72-hour timeline",
+                    nextScene: "timeline_verification",
+                    progressIncrease: 15,
+                    factual: true
+                },
+                {
+                    text: "Show her some document samples for authentication",
+                    nextScene: "document_authentication",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Focus on studying the documents first",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 12,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Verifying information with official sources is crucial for investigative journalism."
+        },
+
+        document_scanning_night: {
+            text: `SCANNING FOR EXPLOSIVE REVELATIONS
+            
+            DAY 1 - 11:30 PM
+
+You spread the documents across your desk and start scanning for the most shocking information. Your eyes widen as you discover:
+
+🔥 EXPLOSIVE REVELATIONS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Financial records showing $15M+ in payments to minors
+• Photos of high-profile individuals at properties (redacted names)
+• Flight logs with hundreds of entries to private island
+• Bank transfers to shell companies in offshore accounts
+• Communication records with coded language about "massages"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Marcus looks over your shoulder. "Jesus, Sarah. These aren't just allegations. These are receipts."
+
+One document catches your attention - a handwritten note: "If anything happens to me, the insurance files are in the safe. Password: 1000victims."
+
+Your phone buzzes with another anonymous text: "The insurance files were never found. Ask yourself why."
+
+This is getting deeper and more dangerous by the minute.`,
+            image: "conspiracy_uncovered",
+            imagePrompt: "Documents spread across desk showing financial records and evidence, investigative journalism scene",
+            sources: ["Document Analysis", "Financial Evidence"],
+            choices: [
+                {
+                    text: "Investigate the missing insurance files angle",
+                    nextScene: "insurance_files_investigation",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Focus on the financial evidence first",
+                    nextScene: "financial_records_analysis",
+                    progressIncrease: 18,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Study the victim statistics for scale understanding",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15,
+                    factual: true
+                }
+            ],
+            educationalNote: "Financial records often provide the strongest evidence in criminal investigations."
+        },
+
+        knowledge_assessment: {
+            text: `KNOWLEDGE ASSESSMENT - BASELINE TEST
+            
+            Before diving into classified documents, test your existing knowledge of the Epstein case.
+
+            QUESTION 1: According to official DOJ releases, approximately how many victims were identified in the Epstein investigation?
+
+            Your answer will determine which investigation path opens up to you.`,
+            image: "newsroom_investigation",
+            imagePrompt: "Journalist taking notes and preparing for investigation, quiz preparation scene",
+            sources: ["DOJ Statistics", "Knowledge Assessment"],
+            choices: [
+                {
+                    text: "Over 1,000 victims identified",
+                    nextScene: "knowledge_correct_baseline",
+                    progressIncrease: 20,
+                    quizAnswer: true,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Around 250 victims",
+                    nextScene: "knowledge_partial_baseline",
+                    progressIncrease: 10,
+                    quizAnswer: "partial"
+                },
+                {
+                    text: "Approximately 50 victims",
+                    nextScene: "knowledge_incorrect_baseline",
+                    progressIncrease: 5,
+                    quizAnswer: false
+                }
+            ],
+            quizMode: true,
+            educationalNote: "Understanding the scale of victimization is crucial for comprehending the case."
+        },
+
+        knowledge_correct_baseline: {
+            text: `✅ EXCELLENT! Perfect baseline knowledge.
+
+You correctly identified that over 1,000 victims have been identified in the Epstein investigation, with more than 250 being confirmed underage victims.
+
+This strong factual foundation makes you well-prepared to analyze the classified documents. Your editor nods approvingly.
+
+"Good, Sarah. With that level of knowledge, you won't be misled by conspiracy theories. You can focus on the real evidence."
+
+NEXT QUESTION: True or False - The FBI found evidence of blackmail operations and client lists?
+
+This is a crucial misconception test.`,
+            image: "newsroom_investigation",
+            imagePrompt: "Confident journalist with correct knowledge preparing for deep investigation",
+            sources: ["DOJ Victim Count Verification"],
+            choices: [
+                {
+                    text: "FALSE - No evidence of blackmail found",
+                    nextScene: "knowledge_perfect_baseline",
+                    progressIncrease: 25,
+                    quizAnswer: true,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "TRUE - Blackmail evidence exists",
+                    nextScene: "misconception_correction",
+                    progressIncrease: 10,
+                    quizAnswer: false
+                }
+            ],
+            quizMode: true,
+            educationalNote: "Correct! This knowledge will protect you from conspiracy theories."
+        },
+
+        knowledge_perfect_baseline: {
+            text: `🏆 PERFECT BASELINE KNOWLEDGE!
+
+Outstanding! You have excellent understanding of the verified facts:
+✅ Over 1,000 victims identified
+✅ No evidence of blackmail operations
+✅ Focus on systematic exploitation, not conspiracy theories
+
+Your perfect baseline knowledge unlocks a special investigation path. Your anonymous source sends another message:
+
+"Impressive. You know the real facts. That makes you dangerous to those who profit from misinformation. Here's a bonus tip: Look for Detective Rodriguez in the Palm Beach files. He's been waiting 18 years to tell his story."
+
+With this knowledge foundation, you're ready for the most thorough investigation possible.`,
+            image: "newsroom_investigation",
+            imagePrompt: "Master investigator with perfect knowledge ready for advanced investigation",
+            sources: ["Perfect Knowledge Assessment", "Special Investigation Unlocked"],
+            choices: [
+                {
+                    text: "Begin the advanced investigation path",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 30,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Search for Detective Rodriguez immediately",
+                    nextScene: "detective_search_early",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Perfect factual knowledge unlocks advanced investigation opportunities."
+        },
+
+        timeline_verification: {
+            text: `VERIFYING THE 72-HOUR TIMELINE
+            
+            Agent Walsh explains the legal situation: "Sarah, there's a sealed federal court order being prepared. National security implications. You have maybe 72 hours before they can legally seize everything."
+
+"But why the rush?" you ask.
+
+"Because some of those documents were never supposed to exist. If they prove institutional failures... heads will roll. Big heads."
+
+She looks around nervously. "Just remember - the truth about the victims matters more than protecting institutional reputation."`,
+            image: "federal_courthouse_2019",
+            imagePrompt: "FBI agent explaining legal timeline and urgency",
+            sources: ["Legal Timeline", "National Security Issues"],
+            choices: [
+                {
+                    text: "Focus on victim evidence first",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 20,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the institutional failures angle",
+                    nextScene: "document_scanning_night",
+                    progressIncrease: 18,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Understanding legal constraints helps journalists plan their investigation strategy."
+        },
+
+        detective_search_early: {
+            text: `SEARCHING FOR DETECTIVE RODRIGUEZ
+            
+            Using your perfect knowledge, you search through the documents for any mention of Detective Rodriguez. You find a 2005 Palm Beach Police report with his signature.
+
+The report is explosive: "Subject operates systematic recruitment network targeting minors. Recommend immediate federal investigation for trafficking violations."
+
+But there's a handwritten note in the margin: "Federal referral made 6/15/2006. No response received as of 12/31/2006."
+
+Your anonymous source texts: "Rodriguez lives in West Palm Beach. Still angry about what happened. Still has his original files."
+
+This could be your smoking gun source.`,
+            image: "palm_beach_police_station",
+            imagePrompt: "Detective's original case files being discovered",
+            sources: ["Palm Beach Police Records", "Detective Rodriguez Files"],
+            choices: [
+                {
+                    text: "Contact Detective Rodriguez immediately",
+                    nextScene: "detective_meeting_fictional",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Verify his credentials first",
+                    nextScene: "source_verification",
+                    progressIncrease: 25,
+                    factual: true
+                },
+                {
+                    text: "Study more evidence before contacting sources",
+                    nextScene: "recruitment_pattern_analysis",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Perfect baseline knowledge helps identify key sources and evidence."
+        },
+
+        // Additional missing scenes that may be referenced
+        document_authentication: {
+            text: `DOCUMENT AUTHENTICATION PROCESS
+            
+            DAY 1 - 12:00 AM
+
+You carefully examine the documents for signs of authenticity. The papers have the right watermarks, correct formatting, and official letterheads that would be nearly impossible to forge.
+
+Agent Walsh studies the samples you show her. "These are legitimate. The classification stamps, the format, even the paper stock - this is the real deal."
+
+"How can you be sure?" you ask.
+
+"I've seen these exact document types in other cases. Whoever gave these to you had high-level access."
+
+She points to a specific marking: "See this code? That's from the DOJ Evidence Management System. These were scanned from physical evidence."
+
+Now you know for certain - these documents are authentic, which means the story is real.`,
+            image: "digital_forensics_lab",
+            imagePrompt: "Document authentication process with official stamps and verification",
+            sources: ["Document Verification", "Authentication Process"],
+            choices: [
+                {
+                    text: "Proceed with victim statistics analysis",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 20,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Focus on recruitment patterns",
+                    nextScene: "recruitment_pattern_analysis",
+                    progressIncrease: 18,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Authenticating documents is crucial before relying on them for investigative reporting."
+        },
+
+        // Placeholder scenes to prevent crashes
+        insurance_files_investigation: {
+            text: `The insurance files investigation leads you deeper into the mystery. This path continues in future updates.`,
+            image: "conspiracy_uncovered",
+            choices: [
+                {
+                    text: "Return to main investigation",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Investigation continues..."
+        },
+
+        financial_records_analysis: {
+            text: `The financial records reveal systematic payments to minors. This path continues in future updates.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Continue with victim analysis",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Financial analysis continues..."
+        },
+
+        knowledge_partial_baseline: {
+            text: `Partially correct - you're thinking of the confirmed underage victims, but the total victim count is much higher.`,
+            image: "newsroom_investigation",
+            choices: [
+                {
+                    text: "Learn more about victim statistics",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Understanding the full scope helps with proper investigation."
+        },
+
+        knowledge_incorrect_baseline: {
+            text: `Incorrect - the actual victim count is much higher than early reports suggested.`,
+            image: "newsroom_investigation",
+            choices: [
+                {
+                    text: "Study the correct statistics",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Accurate facts are essential for credible reporting."
+        },
+
+        misconception_correction: {
+            text: `This is a common misconception. The FBI found no evidence of blackmail operations.`,
+            image: "newsroom_investigation",
+            choices: [
+                {
+                    text: "Continue with fact-based investigation",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Correcting misconceptions is important for accurate reporting."
+        },
+
+        source_verification: {
+            text: `You decide to verify Detective Rodriguez's credentials through official channels before meeting him.`,
+            image: "palm_beach_police_station",
+            choices: [
+                {
+                    text: "Meet the detective after verification",
+                    nextScene: "detective_meeting_fictional",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Source verification is a fundamental journalism practice."
         }
     }
 };

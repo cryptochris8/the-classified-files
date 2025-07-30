@@ -24,7 +24,7 @@ Your phone buzzes with an encrypted message: "The truth is in the timeline. Star
                 },
                 {
                     text: "Follow the timeline clue - investigate the 2005 Palm Beach case",
-                    nextScene: "palm_beach_investigation_fictional",
+                    nextScene: "quiz_perfect_score",
                     progressIncrease: 10,
                     factual: true
                 },
