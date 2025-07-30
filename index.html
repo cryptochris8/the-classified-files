@@ -57,14 +57,15 @@
         <source src="audio/suspense.mp3" type="audio/mpeg">
     </audio>
     
-    <!-- NUCLEAR CACHE BUSTING - FRESH JAVASCRIPT FILES -->
-    <script>console.log('🚨 LOADING FRESH FILES - NAVIGATION FIX VERSION 202507301207');</script>
+    <!-- OPTION B: LOAD ONLY EXPANDED STORY TO ELIMINATE CONFLICTS -->
+    <script>console.log('🚨 OPTION B: Loading ONLY expanded story - no conflicts!');</script>
     <script src="game-engine.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <script src="epstein-story.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <script src="epstein-story-factual.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <script src="epstein-story-hybrid.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <!-- REMOVED: other story files that could cause conflicts -->
+    <!-- <script src="epstein-story.js"></script> -->
+    <!-- <script src="epstein-story-factual.js"></script> -->  
+    <!-- <script src="epstein-story-hybrid.js"></script> -->
     <script src="epstein-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="main.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <script>console.log('🎉 ALL FRESH FILES LOADED - Navigation should work now!');</script>
+    <script>console.log('🎉 ONLY expanded story loaded - conflicts eliminated!');</script>
 </body>
 </html>
