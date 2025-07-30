@@ -13,6 +13,8 @@ class GameEngine {
         };
         this.isTyping = false;
         this.typewriterSpeed = 50;
+        this.skipTyping = false;
+        this.currentTypingCallback = null;
         
         this.elements = {
             storyText: document.getElementById('story-text'),
@@ -25,6 +27,7 @@ class GameEngine {
         };
         
         this.initializeGame();
+        this.setupClickToSkip();
     }
     
     initializeGame() {
@@ -83,6 +86,16 @@ class GameEngine {
         this.loadScene('intro');
     }
     
+    setupClickToSkip() {
+        // Add click listener to story text area to skip typing
+        this.elements.storyText.addEventListener('click', () => {
+            if (this.isTyping) {
+                this.skipTyping = true;
+                console.log('User clicked to skip typing animation');
+            }
+        });
+    }
+    
     loadScene(sceneId) {
         if (!this.currentStory || !this.currentStory.scenes[sceneId]) {
             console.error('Scene not found:', sceneId);
@@ -115,14 +128,28 @@ class GameEngine {
         if (this.isTyping) return;
         
         this.isTyping = true;
+        this.skipTyping = false;
+        this.currentTypingCallback = callback;
         this.elements.storyText.innerHTML = '';
+        
+        // Add visual indicator that user can click to skip
+        this.elements.storyText.classList.add('typing');
         
         const paragraphs = text.split('\n\n');
         let currentParagraph = 0;
         
         const typeParagraph = () => {
+            // Check if user wants to skip
+            if (this.skipTyping) {
+                this.completeTypingInstantly(text, callback);
+                return;
+            }
+            
             if (currentParagraph >= paragraphs.length) {
                 this.isTyping = false;
+                this.skipTyping = false;
+                // Remove visual indicator when typing is complete
+                this.elements.storyText.classList.remove('typing');
                 if (callback) callback();
                 return;
             }
@@ -135,6 +162,12 @@ class GameEngine {
             let charIndex = 0;
             
             const typeChar = () => {
+                // Check if user wants to skip during character typing
+                if (this.skipTyping) {
+                    this.completeTypingInstantly(text, callback);
+                    return;
+                }
+                
                 if (charIndex < paragraphText.length) {
                     paragraph.textContent += paragraphText[charIndex];
                     charIndex++;
@@ -149,6 +182,29 @@ class GameEngine {
         };
         
         typeParagraph();
+    }
+    
+    completeTypingInstantly(text, callback) {
+        // Instantly display all text when user clicks to skip
+        this.isTyping = false;
+        this.skipTyping = false;
+        this.elements.storyText.innerHTML = '';
+        
+        // Remove visual indicator
+        this.elements.storyText.classList.remove('typing');
+        
+        const paragraphs = text.split('\n\n');
+        paragraphs.forEach(paragraphText => {
+            const paragraph = document.createElement('div');
+            paragraph.className = 'story-paragraph';
+            paragraph.textContent = paragraphText;
+            this.elements.storyText.appendChild(paragraph);
+        });
+        
+        // Add a brief delay to show the complete text before showing choices
+        setTimeout(() => {
+            if (callback) callback();
+        }, 100);
     }
     
     displayChoices() {

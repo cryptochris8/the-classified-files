@@ -119,6 +119,33 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
+/* Click to skip typing indicator */
+#story-text.typing {
+    cursor: pointer;
+    position: relative;
+}
+
+#story-text.typing::after {
+    content: "💭 Click to skip typing...";
+    position: absolute;
+    top: -25px;
+    right: 0;
+    font-size: 12px;
+    color: #64b5f6;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: fadeInOut 2s ease-in-out infinite;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 4px 8px;
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+}
+
 #choices-container {
     display: flex;
     flex-direction: column;
