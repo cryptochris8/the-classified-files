@@ -1385,6 +1385,599 @@ Now you know for certain - these documents are authentic, which means the story 
                 }
             ],
             educationalNote: "Source verification is a fundamental journalism practice."
+        },
+
+        // Quiz response scenes for victim data
+        quiz_victim_age_correct: {
+            text: `✅ CORRECT! The average age was 14-17 years old.
+
+You demonstrate excellent understanding of the victim demographics. This age range shows the predatory targeting of vulnerable minors, particularly those in high school.
+
+Your knowledge of victim patterns will help you identify recruitment tactics in the documents.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Continue analyzing recruitment patterns",
+                    nextScene: "recruitment_pattern_analysis",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Understanding victim demographics reveals predatory patterns."
+        },
+
+        quiz_victim_age_wrong: {
+            text: `❌ Incorrect. The actual age range was primarily 14-17 years old.
+
+This is important because it shows systematic targeting of high school-age victims, which helped prosecutors establish the predatory pattern.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Study the correct demographics",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Accurate victim demographics are crucial for understanding the case."
+        },
+
+        // Quiz response scenes for recruitment
+        quiz_recruitment_correct: {
+            text: `✅ EXCELLENT! The pyramid-style recruitment system was key.
+
+Existing victims were paid $200-1000 to recruit friends from schools and malls. This created a self-sustaining exploitation network that operated for decades.
+
+Your understanding of this system will help you trace how the operation expanded.`,
+            image: "conspiracy_uncovered",
+            choices: [
+                {
+                    text: "Investigate how the recruitment network expanded",
+                    nextScene: "network_structure_revealed",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The recruitment system was documented extensively by law enforcement."
+        },
+
+        quiz_recruitment_wrong: {
+            text: `❌ Incorrect. The primary method was paying existing victims to recruit friends.
+
+This pyramid-style recruitment enabled the operation to continue for decades while appearing consensual.`,
+            image: "conspiracy_uncovered",
+            choices: [
+                {
+                    text: "Learn about the actual recruitment methods",
+                    nextScene: "recruitment_pattern_analysis",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Understanding recruitment methods helps identify trafficking patterns."
+        },
+
+        // Quiz response scenes for evidence
+        quiz_evidence_correct: {
+            text: `✅ PERFECT! 40 computers with over 10,000 illegal images.
+
+This massive digital evidence trove proved the systematic nature and scale of the crimes. The organized filing system showed this wasn't impulsive behavior but calculated criminal enterprise.
+
+Your knowledge of the evidence scale prepares you for analyzing the institutional response.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Analyze why it took so long to seize this evidence",
+                    nextScene: "timeline_gap_investigation",
+                    progressIncrease: 30,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The digital evidence proved the systematic nature of the crimes."
+        },
+
+        quiz_evidence_wrong: {
+            text: `❌ Incorrect. The actual seizure was 40 computers containing over 10,000 illegal images.
+
+This massive scale shows why the case was so significant - it wasn't isolated incidents but systematic criminal enterprise.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Study the actual evidence scale",
+                    nextScene: "evidence_comparison_scene",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Understanding evidence scale reveals the true scope of crimes."
+        },
+
+        // Quiz response scenes for plea deal
+        quiz_plea_deal_correct: {
+            text: `✅ CORRECT! The immunity clause was incredibly controversial.
+
+The 2008 plea deal included immunity for "any potential co-conspirators," which protected unnamed individuals from prosecution. This provision remains one of the most criticized aspects of the case.
+
+Your understanding of this legal failure is crucial for investigating institutional problems.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Investigate who negotiated this controversial deal",
+                    nextScene: "plea_deal_architects",
+                    progressIncrease: 35,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The immunity clause prevented justice for potential co-conspirators."
+        },
+
+        quiz_plea_deal_wrong: {
+            text: `❌ Incorrect. The deal DID include immunity for potential co-conspirators.
+
+This controversial provision protected unnamed individuals and remains one of the most criticized aspects of the case.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Learn about the actual plea deal terms",
+                    nextScene: "plea_deal_investigation",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Understanding the plea deal is crucial for analyzing institutional failures."
+        },
+
+        // Quiz response scenes for timeline
+        quiz_timeline_perfect: {
+            text: `🏆 PERFECT! 14 years from Palm Beach to federal prosecution.
+
+You've mastered the timeline: 2005 Palm Beach investigation identified systematic trafficking, but federal prosecution didn't happen until 2019. This 14-year gap represents massive institutional failure.
+
+Your perfect understanding unlocks the deepest investigation paths.`,
+            image: "educational_conclusion",
+            choices: [
+                {
+                    text: "Investigate the institutional failures behind the delay",
+                    nextScene: "institutional_failure_expose",
+                    progressIncrease: 40,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Perfect timeline knowledge reveals the scope of institutional failure."
+        },
+
+        quiz_timeline_wrong: {
+            text: `❌ Incorrect. The actual gap was 14 years (2005-2019).
+
+Palm Beach Police identified the systematic operation in 2005, but federal prosecution didn't happen until 2019 - a shocking 14-year delay.`,
+            image: "educational_conclusion",
+            choices: [
+                {
+                    text: "Study the correct timeline",
+                    nextScene: "timeline_gap_investigation",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "The 14-year delay reveals serious institutional problems."
+        },
+
+        quiz_timeline_partial: {
+            text: `⚡ Partially correct. You're thinking of the broader timeframe.
+
+While crimes occurred over 20+ years, the specific gap between evidence and prosecution was 14 years (2005-2019).`,
+            image: "educational_conclusion",
+            choices: [
+                {
+                    text: "Focus on the prosecution delay specifically",
+                    nextScene: "timeline_gap_investigation",
+                    progressIncrease: 25
+                }
+            ],
+            educationalNote: "The 14-year prosecution delay is the key institutional failure."
+        },
+
+        // Missing investigation scenes
+        network_structure_revealed: {
+            text: `THE RECRUITMENT NETWORK STRUCTURE
+
+Maria explains how the recruitment network operated:
+
+"It was like a pyramid scheme, but with children. I recruited three girls from my school. Each of them recruited more. We got $200 for each new girl we brought."
+
+She shows you a hand-drawn diagram she made years later in therapy: "Look, I was just trying to survive. But I became part of the system that hurt other kids."
+
+The structure was brilliant and horrific: victims became recruiters, creating plausible deniability while expanding the operation exponentially.
+
+Your documents confirm this pattern repeated across multiple states.`,
+            image: "conspiracy_uncovered",
+            choices: [
+                {
+                    text: "Document the full network structure",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Focus on victim support first",
+                    nextScene: "victim_support_priority",
+                    progressIncrease: 20,
+                    factual: true
+                }
+            ],
+            educationalNote: "The pyramid recruitment structure enabled systematic exploitation."
+        },
+
+        victim_support_priority: {
+            text: `PRIORITIZING VICTIM SUPPORT
+
+You decide Maria's wellbeing comes first. You connect her with victim services and ensure she has legal representation before proceeding.
+
+"Thank you," she says. "In 18 years, you're the first journalist who asked about counseling before asking for more details."
+
+This ethical approach builds trust and provides Maria with the support she needs to safely share her story.
+
+With proper support in place, you can now proceed with the investigation while protecting your source.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Continue investigation with Maria's support",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 25,
+                    evidence: true,
+                    factual: true
+                }
+            ],
+            educationalNote: "Trauma-informed reporting prioritizes victim wellbeing."
+        },
+
+        // Additional missing scenes
+        legal_statute_review: {
+            text: `REVIEWING LEGAL STATUTES
+
+You cross-reference victim ages with federal trafficking statutes. The legal implications are clear: every interaction with minors constituted federal crimes.
+
+The documents show prosecutors had overwhelming evidence for trafficking charges in 2005, yet federal action was delayed until 2019.
+
+This legal analysis strengthens your story about institutional failure.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Continue with victim geography analysis",
+                    nextScene: "geographic_mapping",
+                    progressIncrease: 18,
+                    factual: true
+                }
+            ],
+            educationalNote: "Legal statute analysis shows the strength of evidence prosecutors had."
+        },
+
+        geographic_mapping: {
+            text: `MAPPING THE GEOGRAPHIC SPREAD
+
+You create a map showing victim locations across Florida, New York, New Mexico, and the US Virgin Islands. The geographic spread proves this wasn't a local crime but an interstate trafficking operation.
+
+This federal jurisdiction issue explains why local Palm Beach authorities referred the case to the FBI in 2006.
+
+The map becomes crucial evidence of the operation's scope.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Present geographic evidence to your editor",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Geographic spread established federal jurisdiction for trafficking charges."
+        },
+
+        // Continue with missing scenes...
+        share_results: {
+            text: `SHARING YOUR INVESTIGATION RESULTS
+
+Your investigation becomes a template for other journalists investigating similar cases. The combination of verified facts with engaging narrative proves educational games can tackle serious subjects effectively.
+
+Other news organizations request copies of your methodology for their own investigations.
+
+The game format reaches audiences who might not engage with traditional journalism, spreading awareness about trafficking and institutional accountability.`,
+            image: "educational_conclusion",
+            choices: [
+                {
+                    text: "Start a new investigation",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "Innovative journalism formats can reach new audiences with important information."
+        },
+
+        // Additional missing scenes to complete all navigation paths
+        pattern_deep_dive: {
+            text: `DEEP DIVE INTO RECRUITMENT PATTERNS
+
+Your analysis reveals disturbing patterns:
+- Targeting vulnerable teens (foster care, financial hardship)
+- Using peer recruitment to create trust
+- Gradual escalation from "massages" to exploitation
+- Financial incentives creating dependency
+
+This systematic approach enabled decades of crimes.`,
+            image: "conspiracy_uncovered",
+            choices: [
+                {
+                    text: "Document these patterns as evidence",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Understanding predatory patterns helps prevent future crimes."
+        },
+
+        legal_consultation: {
+            text: `LEGAL CONSULTATION WITH EXPERTS
+
+Your newspaper's legal team reviews the evidence with trafficking experts. The consensus is clear: prosecutors had sufficient evidence for federal charges as early as 2005.
+
+The legal experts are shocked by the delay in prosecution.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Continue investigation with legal backing",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 20,
+                    factual: true
+                }
+            ],
+            educationalNote: "Legal consultation validates the strength of evidence."
+        },
+
+        testimony_verification: {
+            text: `VERIFYING SURVIVOR TESTIMONY
+
+You carefully cross-reference Maria's testimony against official documents. Every detail checks out perfectly - dates, locations, methods, even specific amounts paid.
+
+Her credibility is unquestionable, making her a powerful source for your investigation.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Include verified testimony in your story",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 25,
+                    evidence: true,
+                    factual: true
+                }
+            ],
+            educationalNote: "Verification strengthens survivor testimony credibility."
+        },
+
+        trauma_reporting_quiz: {
+            text: `QUIZ: TRAUMA-INFORMED REPORTING
+
+QUESTION: When interviewing trafficking survivors, what should be the reporter's first priority?
+
+Understanding ethical reporting standards is crucial when covering sensitive cases.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Getting the most detailed story possible",
+                    nextScene: "trauma_quiz_wrong",
+                    progressIncrease: 5,
+                    quizAnswer: false
+                },
+                {
+                    text: "Ensuring victim safety and wellbeing",
+                    nextScene: "trauma_quiz_correct",
+                    progressIncrease: 20,
+                    quizAnswer: true,
+                    factual: true
+                }
+            ],
+            quizMode: true,
+            educationalNote: "Trauma-informed reporting protects vulnerable sources."
+        },
+
+        trauma_quiz_correct: {
+            text: `✅ CORRECT! Victim safety always comes first.
+
+Trauma-informed reporting prioritizes survivor wellbeing over story details. This ethical approach builds trust and ensures sources are protected from further harm.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Continue with ethical investigation practices",
+                    nextScene: "victim_support_priority",
+                    progressIncrease: 20,
+                    factual: true
+                }
+            ],
+            educationalNote: "Ethical journalism protects vulnerable sources."
+        },
+
+        trauma_quiz_wrong: {
+            text: `❌ Incorrect. Victim safety and wellbeing must come first.
+
+Extracting details without considering trauma can re-victimize survivors and damage their trust in media.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Learn about trauma-informed reporting",
+                    nextScene: "victim_support_priority",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Ethical reporting principles protect vulnerable sources."
+        },
+
+        victim_database_creation: {
+            text: `CREATING COMPREHENSIVE VICTIM DATABASE
+
+You systematically document all survivor testimonies, creating a secure database that cross-references:
+- Dates and locations
+- Recruitment methods
+- Financial payments
+- Corroborating evidence
+
+This database becomes the backbone of your investigation.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Analyze patterns in the database",
+                    nextScene: "pattern_deep_dive",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Systematic documentation reveals criminal patterns."
+        },
+
+        key_cases_selection: {
+            text: `SELECTING KEY CASES FOR IMPACT
+
+From dozens of testimonies, you select the most compelling cases that best illustrate the systematic nature of the crimes:
+
+1. Maria - Shows recruitment from schools
+2. Jennifer - Financial dependency creation
+3. Ashley - Geographic spread (New York to Florida)
+
+These cases provide comprehensive coverage of the criminal operation.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Focus investigation on these key cases",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 30,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Representative cases effectively illustrate systematic crimes."
+        },
+
+        mass_verification_process: {
+            text: `MASS VERIFICATION OF TESTIMONIES
+
+You spend hours verifying each survivor's account against official documents. The consistency is remarkable - every major detail checks out.
+
+This verification process proves the survivors are credible witnesses with accurate memories despite trauma.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Proceed with verified testimonies",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 25,
+                    factual: true
+                }
+            ],
+            educationalNote: "Verification establishes survivor testimony credibility."
+        },
+
+        explosive_headline_crafted: {
+            text: `CRAFTING THE EXPLOSIVE HEADLINE
+
+"CLASSIFIED FILES REVEAL: 14-Year Cover-Up Enabled Epstein's Crimes Against 1,000+ Victims"
+
+The headline captures the essence of your investigation: institutional failure enabled continued crimes through prosecutorial delays.
+
+Your editor approves: "This is Pulitzer material, Sarah."`,
+            image: "educational_conclusion",
+            choices: [
+                {
+                    text: "Publish the groundbreaking story",
+                    nextScene: "emergency_publication_final",
+                    progressIncrease: 40,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Compelling headlines draw attention to important investigations."
+        },
+
+        video_confession_recorded: {
+            text: `RECORDING PROSECUTOR'S VIDEO CONFESSION
+
+Former prosecutor Mills agrees to an on-camera confession. With tears in his eyes, he admits to deliberately minimizing charges despite overwhelming evidence.
+
+"I was ordered to make this go away," he says directly to camera. "The victims deserved justice, and I failed them."
+
+This video becomes the centerpiece of your investigation.`,
+            image: "witness_testimony",
+            choices: [
+                {
+                    text: "Use video confession as story centerpiece",
+                    nextScene: "emergency_publication_final",
+                    progressIncrease: 45,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Video confessions provide powerful evidence of institutional failure."
+        },
+
+        final_verification_process: {
+            text: `FINAL FACT-CHECKING PROCESS
+
+Before publication, you verify every single fact one final time:
+✅ 1,000+ victims confirmed (DOJ)
+✅ 40 computers seized (FBI evidence)
+✅ 2005 Palm Beach investigation documented
+✅ 2008 plea deal immunity clause verified
+✅ 14-year prosecution delay confirmed
+
+Every fact checks out. Your story is bulletproof.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Publish with complete confidence",
+                    nextScene: "emergency_publication_final",
+                    progressIncrease: 50,
+                    factual: true,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Thorough fact-checking ensures story credibility."
+        },
+
+        // Placeholder scenes for any remaining missing references
+        document_analysis_deep: {
+            text: `DEEP DOCUMENT ANALYSIS
+
+You conduct thorough analysis of all classified documents, organizing them by timeline and significance. The evidence of systematic failure becomes undeniable.`,
+            image: "digital_forensics_lab",
+            choices: [
+                {
+                    text: "Continue investigation",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Document analysis reveals institutional patterns."
+        },
+
+        quiz_wrong_timeline_later: {
+            text: `❌ Incorrect. The plea deal happened in 2008, but the investigation began earlier in 2005.`,
+            image: "federal_courthouse_2019",
+            choices: [
+                {
+                    text: "Study the correct timeline",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Understanding the timeline is crucial for analyzing institutional failures."
+        },
+
+        // Additional generic fallback scenes
+        continue_investigation: {
+            text: `CONTINUING THE INVESTIGATION
+
+Your investigation continues to uncover evidence of systematic failure and institutional cover-ups. Each new piece of evidence strengthens your case for accountability.`,
+            image: "newsroom_investigation",
+            choices: [
+                {
+                    text: "Focus on victim evidence",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15
+                },
+                {
+                    text: "Investigate institutional failures",
+                    nextScene: "timeline_gap_investigation",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Persistent investigation reveals truth."
         }
     }
 };

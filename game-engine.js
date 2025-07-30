@@ -71,7 +71,15 @@ class GameEngine {
     loadScene(sceneId) {
         if (!this.currentStory || !this.currentStory.scenes[sceneId]) {
             console.error('Scene not found:', sceneId);
-            return;
+            // Fallback to a safe scene if available
+            if (this.currentStory && this.currentStory.scenes['victim_statistics_study']) {
+                sceneId = 'victim_statistics_study';
+            } else if (this.currentStory && this.currentStory.scenes['intro']) {
+                sceneId = 'intro';
+            } else {
+                console.error('No fallback scenes available');
+                return;
+            }
         }
         
         this.currentScene = this.currentStory.scenes[sceneId];
