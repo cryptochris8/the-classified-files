@@ -62,6 +62,7 @@ class GameEngine {
         console.log('EpsteinStoryExpanded available:', typeof EpsteinStoryExpanded !== 'undefined');
         console.log('JFKStoryExpanded available:', typeof JFKStoryExpanded !== 'undefined');
         console.log('UAPStoryExpanded available:', typeof UAPStoryExpanded !== 'undefined');
+        console.log('September11CommissionExpanded available:', typeof September11CommissionExpanded !== 'undefined');
         
         // Show case selection for all available stories (including sealed ones)
         const availableStories = [];
@@ -90,6 +91,15 @@ class GameEngine {
                 key: 'uap',
                 sealed: UAPStoryExpanded.sealed || false,
                 releaseDate: UAPStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof September11CommissionExpanded !== 'undefined' && September11CommissionExpanded.scenes) {
+            availableStories.push({ 
+                name: '9/11 Commission Investigation', 
+                story: September11CommissionExpanded, 
+                key: 'september11',
+                sealed: September11CommissionExpanded.sealed || false,
+                releaseDate: September11CommissionExpanded.releaseDate || null
             });
         }
         
