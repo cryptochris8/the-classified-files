@@ -61,6 +61,7 @@ class GameEngine {
         console.log('=== STORY LOADING DEBUG ===');
         console.log('EpsteinStoryExpanded available:', typeof EpsteinStoryExpanded !== 'undefined');
         console.log('JFKStoryExpanded available:', typeof JFKStoryExpanded !== 'undefined');
+        console.log('UAPStoryExpanded available:', typeof UAPStoryExpanded !== 'undefined');
         
         // Show case selection for all available stories (including sealed ones)
         const availableStories = [];
@@ -80,6 +81,15 @@ class GameEngine {
                 key: 'jfk',
                 sealed: JFKStoryExpanded.sealed || false,
                 releaseDate: JFKStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof UAPStoryExpanded !== 'undefined' && UAPStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'UAP Investigation', 
+                story: UAPStoryExpanded, 
+                key: 'uap',
+                sealed: UAPStoryExpanded.sealed || false,
+                releaseDate: UAPStoryExpanded.releaseDate || null
             });
         }
         
