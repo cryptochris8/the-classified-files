@@ -1318,6 +1318,7 @@ Now you know for certain - these documents are authentic, which means the story 
         insurance_files_investigation: {
             text: `The insurance files investigation leads you deeper into the mystery. This path continues in future updates.`,
             image: "conspiracy_uncovered",
+            imagePrompt: "Secret insurance files spread on desk, investigative journalist examining documents in dramatic lighting, conspiracy thriller atmosphere",
             choices: [
                 {
                     text: "Return to main investigation",
@@ -1331,6 +1332,7 @@ Now you know for certain - these documents are authentic, which means the story 
         financial_records_analysis: {
             text: `The financial records reveal systematic payments to minors. This path continues in future updates.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Digital financial records on multiple monitors, data analysis visualization, forensic accounting workspace, cybercrime investigation mood",
             choices: [
                 {
                     text: "Continue with victim analysis",
@@ -1344,6 +1346,7 @@ Now you know for certain - these documents are authentic, which means the story 
         knowledge_partial_baseline: {
             text: `Partially correct - you're thinking of the confirmed underage victims, but the total victim count is much higher.`,
             image: "newsroom_investigation",
+            imagePrompt: "Journalist at desk reviewing case files, partially completed puzzle pieces, investigative workspace with coffee and notes",
             choices: [
                 {
                     text: "Learn more about victim statistics",
@@ -1357,6 +1360,7 @@ Now you know for certain - these documents are authentic, which means the story 
         knowledge_incorrect_baseline: {
             text: `Incorrect - the actual victim count is much higher than early reports suggested.`,
             image: "newsroom_investigation",
+            imagePrompt: "Confused journalist surrounded by contradictory documents, red string connecting evidence on wall, investigation in progress",
             choices: [
                 {
                     text: "Study the correct statistics",
@@ -1370,6 +1374,7 @@ Now you know for certain - these documents are authentic, which means the story 
         misconception_correction: {
             text: `This is a common misconception. The FBI found no evidence of blackmail operations.`,
             image: "newsroom_investigation",
+            imagePrompt: "Journalist realizing mistake, crumpled papers, fresh notebook page, moment of clarity in investigation",
             choices: [
                 {
                     text: "Continue with fact-based investigation",
@@ -1383,6 +1388,7 @@ Now you know for certain - these documents are authentic, which means the story 
         source_verification: {
             text: `You decide to verify Detective Rodriguez's credentials through official channels before meeting him.`,
             image: "palm_beach_police_station",
+            imagePrompt: "Journalist on phone verifying sources, multiple news sources on screens, professional newsroom verification process",
             choices: [
                 {
                     text: "Meet the detective after verification",
@@ -1401,6 +1407,7 @@ You demonstrate excellent understanding of the victim demographics. This age ran
 
 Your knowledge of victim patterns will help you identify recruitment tactics in the documents.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Checkmark over victim statistics document, successful fact verification, professional journalism accuracy",
             choices: [
                 {
                     text: "Continue analyzing recruitment patterns",
@@ -1417,6 +1424,7 @@ Your knowledge of victim patterns will help you identify recruitment tactics in 
 
 This is important because it shows systematic targeting of high school-age victims, which helped prosecutors establish the predatory pattern.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Red X over incorrect statistics, fact-checking in progress, journalism correction moment",
             choices: [
                 {
                     text: "Study the correct demographics",
@@ -1435,6 +1443,7 @@ Existing victims were paid $200-1000 to recruit friends from schools and malls. 
 
 Your understanding of this system will help you trace how the operation expanded.`,
             image: "conspiracy_uncovered",
+            imagePrompt: "Accurate recruitment pattern diagram, checkmark validation, investigative success visualization",
             choices: [
                 {
                     text: "Investigate how the recruitment network expanded",
@@ -1451,6 +1460,7 @@ Your understanding of this system will help you trace how the operation expanded
 
 This pyramid-style recruitment enabled the operation to continue for decades while appearing consensual.`,
             image: "conspiracy_uncovered",
+            imagePrompt: "Incorrect pattern analysis crossed out, learning from mistakes, investigative process",
             choices: [
                 {
                     text: "Learn about the actual recruitment methods",
@@ -1469,6 +1479,8 @@ This massive digital evidence trove proved the systematic nature and scale of th
 
 Your knowledge of the evidence scale prepares you for analyzing the institutional response.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Verified evidence files with green checkmarks, successful investigation milestone, professional documentation",
+            image: "digital_forensics_lab",
             choices: [
                 {
                     text: "Analyze why it took so long to seize this evidence",
@@ -1485,6 +1497,7 @@ Your knowledge of the evidence scale prepares you for analyzing the institutiona
 
 This massive scale shows why the case was so significant - it wasn't isolated incidents but systematic criminal enterprise.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Evidence review with corrections needed, red marks on documents, learning process in investigation",
             choices: [
                 {
                     text: "Study the actual evidence scale",
@@ -1503,6 +1516,8 @@ The 2008 plea deal included immunity for "any potential co-conspirators," which 
 
 Your understanding of this legal failure is crucial for investigating institutional problems.`,
             image: "federal_courthouse_2019",
+            imagePrompt: "Legal documents with correct understanding highlighted, courthouse backdrop, justice system comprehension",
+            image: "federal_courthouse_2019",
             choices: [
                 {
                     text: "Investigate who negotiated this controversial deal",
@@ -1519,6 +1534,7 @@ Your understanding of this legal failure is crucial for investigating institutio
 
 This controversial provision protected unnamed individuals and remains one of the most criticized aspects of the case.`,
             image: "federal_courthouse_2019",
+            imagePrompt: "Misunderstood legal documents, confusion in legal terminology, need for further research",
             choices: [
                 {
                     text: "Learn about the actual plea deal terms",
@@ -1537,6 +1553,8 @@ You've mastered the timeline: 2005 Palm Beach investigation identified systemati
 
 Your perfect understanding unlocks the deepest investigation paths.`,
             image: "educational_conclusion",
+            imagePrompt: "Perfect timeline visualization with all dates correct, complete investigation board, mastery achievement",
+            image: "educational_conclusion",
             choices: [
                 {
                     text: "Investigate the institutional failures behind the delay",
@@ -1553,6 +1571,7 @@ Your perfect understanding unlocks the deepest investigation paths.`,
 
 Palm Beach Police identified the systematic operation in 2005, but federal prosecution didn't happen until 2019 - a shocking 14-year delay.`,
             image: "educational_conclusion",
+            imagePrompt: "Timeline with errors marked in red, chronological confusion, investigation corrections needed",
             choices: [
                 {
                     text: "Study the correct timeline",
@@ -1568,6 +1587,7 @@ Palm Beach Police identified the systematic operation in 2005, but federal prose
 
 While crimes occurred over 20+ years, the specific gap between evidence and prosecution was 14 years (2005-2019).`,
             image: "educational_conclusion",
+            imagePrompt: "Partially complete timeline, some gaps remaining, investigation in progress",
             choices: [
                 {
                     text: "Focus on the prosecution delay specifically",
@@ -1592,6 +1612,7 @@ The structure was brilliant and horrific: victims became recruiters, creating pl
 
 Your documents confirm this pattern repeated across multiple states.`,
             image: "conspiracy_uncovered",
+            imagePrompt: "Complex network diagram revealed, connections between powerful figures exposed, shocking revelation moment",
             choices: [
                 {
                     text: "Document the full network structure",
@@ -1620,6 +1641,7 @@ This ethical approach builds trust and provides Maria with the support she needs
 
 With proper support in place, you can now proceed with the investigation while protecting your source.`,
             image: "witness_testimony",
+            imagePrompt: "Journalist prioritizing victim testimonies, supportive interview environment, ethical journalism approach",
             choices: [
                 {
                     text: "Continue investigation with Maria's support",
@@ -1640,6 +1662,9 @@ You cross-reference victim ages with federal trafficking statutes. The legal imp
 
 The documents show prosecutors had overwhelming evidence for trafficking charges in 2005, yet federal action was delayed until 2019.
 
+            image: "federal_courthouse_2019",
+            imagePrompt: "Law books and legal statutes spread out, intensive legal research, determination to find justice",
+
 This legal analysis strengthens your story about institutional failure.`,
             image: "federal_courthouse_2019",
             choices: [
@@ -1659,6 +1684,9 @@ This legal analysis strengthens your story about institutional failure.`,
 You create a map showing victim locations across Florida, New York, New Mexico, and the US Virgin Islands. The geographic spread proves this wasn't a local crime but an interstate trafficking operation.
 
 This federal jurisdiction issue explains why local Palm Beach authorities referred the case to the FBI in 2006.
+
+            image: "digital_forensics_lab",
+            imagePrompt: "World map with location pins, geographic pattern analysis, global investigation scope",
 
 The map becomes crucial evidence of the operation's scope.`,
             image: "digital_forensics_lab",
@@ -1681,6 +1709,9 @@ Your investigation becomes a template for other journalists investigating simila
 
 Other news organizations request copies of your methodology for their own investigations.
 
+            image: "educational_conclusion",
+            imagePrompt: "Journalist sharing findings with team, collaborative investigation meeting, strategic planning session",
+
 The game format reaches audiences who might not engage with traditional journalism, spreading awareness about trafficking and institutional accountability.`,
             image: "educational_conclusion",
             choices: [
@@ -1700,6 +1731,9 @@ The game format reaches audiences who might not engage with traditional journali
 Your analysis reveals disturbing patterns:
 - Targeting vulnerable teens (foster care, financial hardship)
 - Using peer recruitment to create trust
+
+            image: "conspiracy_uncovered",
+            imagePrompt: "Deep analysis of recruitment patterns, detailed charts and graphs, investigative breakthrough moment",
 - Gradual escalation from "massages" to exploitation
 - Financial incentives creating dependency
 
@@ -1723,6 +1757,8 @@ Your newspaper's legal team reviews the evidence with trafficking experts. The c
 
 The legal experts are shocked by the delay in prosecution.`,
             image: "federal_courthouse_2019",
+            imagePrompt: "Meeting with legal experts, law office setting, serious consultation about case implications",
+            image: "federal_courthouse_2019",
             choices: [
                 {
                     text: "Continue investigation with legal backing",
@@ -1740,6 +1776,8 @@ The legal experts are shocked by the delay in prosecution.`,
 You carefully cross-reference Maria's testimony against official documents. Every detail checks out perfectly - dates, locations, methods, even specific amounts paid.
 
 Her credibility is unquestionable, making her a powerful source for your investigation.`,
+            image: "witness_testimony",
+            imagePrompt: "Verifying victim testimonies, careful documentation process, ethical journalism practices",
             image: "witness_testimony",
             choices: [
                 {
@@ -1759,6 +1797,8 @@ Her credibility is unquestionable, making her a powerful source for your investi
 QUESTION: When interviewing trafficking survivors, what should be the reporter's first priority?
 
 Understanding ethical reporting standards is crucial when covering sensitive cases.`,
+            image: "witness_testimony",
+            imagePrompt: "Sensitive interview setup, ethical journalism guidelines visible, respectful reporting environment",
             image: "witness_testimony",
             choices: [
                 {
@@ -1784,6 +1824,7 @@ Understanding ethical reporting standards is crucial when covering sensitive cas
 
 Trauma-informed reporting prioritizes survivor wellbeing over story details. This ethical approach builds trust and ensures sources are protected from further harm.`,
             image: "witness_testimony",
+            imagePrompt: "Compassionate journalism approach validated, ethical reporting success, victim-centered investigation",
             choices: [
                 {
                     text: "Continue with ethical investigation practices",
@@ -1800,6 +1841,7 @@ Trauma-informed reporting prioritizes survivor wellbeing over story details. Thi
 
 Extracting details without considering trauma can re-victimize survivors and damage their trust in media.`,
             image: "witness_testimony",
+            imagePrompt: "Learning moment about trauma reporting, ethics guidelines highlighted, journalism improvement",
             choices: [
                 {
                     text: "Learn about trauma-informed reporting",
@@ -1821,6 +1863,7 @@ You systematically document all survivor testimonies, creating a secure database
 
 This database becomes the backbone of your investigation.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Creating comprehensive victim database, organized documentation system, meticulous investigation work",
             choices: [
                 {
                     text: "Analyze patterns in the database",
@@ -1843,6 +1886,7 @@ From dozens of testimonies, you select the most compelling cases that best illus
 
 These cases provide comprehensive coverage of the criminal operation.`,
             image: "witness_testimony",
+            imagePrompt: "Selecting most impactful cases, strategic editorial decisions, newsroom planning session",
             choices: [
                 {
                     text: "Focus investigation on these key cases",
@@ -1881,6 +1925,7 @@ The headline captures the essence of your investigation: institutional failure e
 
 Your editor approves: "This is Pulitzer material, Sarah."`,
             image: "educational_conclusion",
+            imagePrompt: "Crafting powerful headline, newsroom excitement, story about to break, journalism at its finest",
             choices: [
                 {
                     text: "Publish the groundbreaking story",
@@ -1901,6 +1946,7 @@ Former prosecutor Mills agrees to an on-camera confession. With tears in his eye
 
 This video becomes the centerpiece of your investigation.`,
             image: "witness_testimony",
+            imagePrompt: "Recording crucial video testimony, professional interview setup, historic journalism moment",
             choices: [
                 {
                     text: "Use video confession as story centerpiece",
@@ -1924,6 +1970,7 @@ Before publication, you verify every single fact one final time:
 
 Every fact checks out. Your story is bulletproof.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Final fact-checking before publication, intense newsroom atmosphere, journalism excellence",
             choices: [
                 {
                     text: "Publish with complete confidence",
@@ -1942,6 +1989,7 @@ Every fact checks out. Your story is bulletproof.`,
 
 You conduct thorough analysis of all classified documents, organizing them by timeline and significance. The evidence of systematic failure becomes undeniable.`,
             image: "digital_forensics_lab",
+            imagePrompt: "Deep dive into classified documents, investigative journalist at work, discovering hidden truths",
             choices: [
                 {
                     text: "Continue investigation",
@@ -1955,6 +2003,7 @@ You conduct thorough analysis of all classified documents, organizing them by ti
         quiz_wrong_timeline_later: {
             text: `❌ Incorrect. The plea deal happened in 2008, but the investigation began earlier in 2005.`,
             image: "federal_courthouse_2019",
+            imagePrompt: "Timeline error identified, learning from mistakes, investigative correction process",
             choices: [
                 {
                     text: "Study the correct timeline",
@@ -1971,6 +2020,7 @@ You conduct thorough analysis of all classified documents, organizing them by ti
 
 Your investigation continues to uncover evidence of systematic failure and institutional cover-ups. Each new piece of evidence strengthens your case for accountability.`,
             image: "newsroom_investigation",
+            imagePrompt: "Journalist continuing investigation, determination visible, ongoing pursuit of truth",
             choices: [
                 {
                     text: "Focus on victim evidence",
@@ -2134,6 +2184,8 @@ Your investigation continues to uncover evidence of systematic failure and insti
             You examine the 37 FBI reports that were filed but rejected or ignored. Each report contained evidence that could have led to earlier prosecution.
             
             This pattern of rejection reveals systematic institutional problems.`,
+            image: "federal_courthouse_2019",
+            imagePrompt: "Analyzing previously rejected reports, discovering suppressed evidence, investigative breakthrough",
             image: "digital_forensics_lab",
             choices: [
                 {
@@ -2153,6 +2205,8 @@ Your investigation continues to uncover evidence of systematic failure and insti
             
             United, the press stands stronger against institutional pressure.`,
             image: "newsroom_investigation",
+            imagePrompt: "Journalists from multiple outlets collaborating, united investigation effort, media alliance forming",
+            image: "newsroom_investigation",
             choices: [
                 {
                     text: "Proceed with the protected investigation",
@@ -2169,6 +2223,8 @@ Your investigation continues to uncover evidence of systematic failure and insti
             You establish protocols to protect your sources while maintaining the story's integrity. This includes encrypted communications and legal shields.
             
             Source protection secured, you can proceed safely.`,
+            image: "digital_forensics_lab",
+            imagePrompt: "Implementing source protection measures, secure communication setup, journalism safety protocols",
             image: "witness_testimony",
             choices: [
                 {
@@ -2187,6 +2243,8 @@ Your investigation continues to uncover evidence of systematic failure and insti
             You coordinate all witness testimonies to create a comprehensive, unified account of the institutional failures and timeline gaps.
             
             The unified testimony becomes the backbone of your investigation.`,
+            image: "witness_testimony",
+            imagePrompt: "Preparing unified testimony presentation, organized evidence display, pre-publication preparation",
             image: "witness_testimony",
             choices: [
                 {
@@ -2246,6 +2304,8 @@ Your investigation continues to uncover evidence of systematic failure and insti
             
             Your understanding of prosecutorial decision-making strengthens your investigation.`,
             image: "federal_courthouse_2019",
+            imagePrompt: "Correct understanding of prosecution failures, legal documents verified, investigation success",
+            image: "federal_courthouse_2019",
             choices: [
                 {
                     text: "Continue investigating institutional decisions",
@@ -2262,6 +2322,7 @@ Your investigation continues to uncover evidence of systematic failure and insti
             
             This deference resulted in a much more lenient state-level plea deal instead of potential federal trafficking charges.`,
             image: "federal_courthouse_2019",
+            imagePrompt: "Misunderstanding of prosecution issues, need for legal clarification, learning opportunity",
             choices: [
                 {
                     text: "Learn more about prosecutorial decisions",
@@ -2277,6 +2338,7 @@ Your investigation continues to uncover evidence of systematic failure and insti
             
             While jurisdictional complexity existed, the main issue was federal prosecutors choosing to defer to state authorities despite having stronger federal charges available.`,
             image: "federal_courthouse_2019",
+            imagePrompt: "Partial understanding of prosecution problems, some gaps in knowledge, continued learning",
             choices: [
                 {
                     text: "Investigate the federal decision-making process",
@@ -2330,6 +2392,8 @@ Your investigation continues to uncover evidence of systematic failure and insti
             
             Your understanding helps you protect Agent Kim while using her evidence.`,
             image: "witness_testimony",
+            imagePrompt: "Correct identification of whistleblower importance, protection protocols understood, journalism ethics",
+            image: "witness_testimony",
             choices: [
                 {
                     text: "Proceed with careful source protection",
@@ -2346,6 +2410,7 @@ Your investigation continues to uncover evidence of systematic failure and insti
             
             However, these protections are limited and don't fully cover classified information disclosure to media.`,
             image: "witness_testimony",
+            imagePrompt: "Misunderstanding whistleblower role, need for clarification, journalism education moment",
             choices: [
                 {
                     text: "Learn more about source protection",
