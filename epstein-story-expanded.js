@@ -969,11 +969,11 @@ FINAL COUNTDOWN: 12 hours to publication or seizure.`,
 
             📊 YOUR INVESTIGATION METRICS:
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-            Evidence Collected: ${this.gameState.evidenceCount}
-            Knowledge Score: ${this.gameState.knowledgeScore}/${this.gameState.totalQuestions}
-            Correct Answers: ${this.gameState.correctAnswers}
-            Scenes Explored: ${this.gameState.visitedScenes.size}
-            Badges Earned: ${this.gameState.badges.length}
+            Evidence Collected: [EVIDENCE_COUNT]
+            Knowledge Score: [KNOWLEDGE_SCORE]/[TOTAL_QUESTIONS]
+            Correct Answers: [CORRECT_ANSWERS]
+            Scenes Explored: [VISITED_SCENES]
+            Badges Earned: [BADGES_COUNT]
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
             KEY FACTS YOU UNCOVERED:
