@@ -57,30 +57,184 @@ class GameEngine {
     }
     
     startGame() {
-        // Debug: Check which stories are available
+        // Check which stories are available
         console.log('=== STORY LOADING DEBUG ===');
         console.log('EpsteinStoryExpanded available:', typeof EpsteinStoryExpanded !== 'undefined');
+        console.log('JFKStoryExpanded available:', typeof JFKStoryExpanded !== 'undefined');
         
-        // FORCE ONLY EXPANDED STORY - No fallbacks to prevent caching issues
+        // Show case selection for all available stories (including sealed ones)
+        const availableStories = [];
         if (typeof EpsteinStoryExpanded !== 'undefined' && EpsteinStoryExpanded.scenes) {
-            this.currentStory = EpsteinStoryExpanded;
-            console.log('✅ LOADED: EpsteinStoryExpanded with', Object.keys(EpsteinStoryExpanded.scenes).length, 'scenes');
-            console.log('✅ AVAILABLE SCENES:', Object.keys(EpsteinStoryExpanded.scenes));
-        } else {
-            console.error('❌ ERROR: EpsteinStoryExpanded not loaded - check file loading');
-            return;
+            availableStories.push({ 
+                name: 'Epstein Investigation', 
+                story: EpsteinStoryExpanded, 
+                key: 'epstein',
+                sealed: EpsteinStoryExpanded.sealed || false,
+                releaseDate: EpsteinStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof JFKStoryExpanded !== 'undefined' && JFKStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'JFK Assassination', 
+                story: JFKStoryExpanded, 
+                key: 'jfk',
+                sealed: JFKStoryExpanded.sealed || false,
+                releaseDate: JFKStoryExpanded.releaseDate || null
+            });
         }
         
-        console.log('=== STARTING GAME WITH EXPANDED STORY ONLY ===');
+        if (availableStories.length > 1) {
+            this.showCaseSelection(availableStories);
+        } else if (availableStories.length === 1) {
+            this.loadStory(availableStories[0]);
+        } else {
+            console.error('❌ ERROR: No valid stories loaded');
+            return;
+        }
+    }
+    
+    showCaseSelection(stories) {
+        this.elements.storyText.innerHTML = `
+            <div class="case-selection">
+                <h2 style="color: #ff6b6b; text-align: center; margin-bottom: 30px;">SELECT CLASSIFIED CASE FILE</h2>
+                <p style="text-align: center; margin-bottom: 40px; color: #e0e0e0;">
+                    Choose which classified investigation you want to pursue. Each case contains authentic historical 
+                    questions and fictional dramatic elements to create an immersive investigative experience.
+                </p>
+            </div>
+        `;
+        
+        stories.forEach((storyData, index) => {
+            setTimeout(() => {
+                const button = document.createElement('button');
+                button.className = `choice-button case-selection-button ${storyData.sealed ? 'sealed' : 'open'}`;
+                button.style.marginBottom = '15px';
+                
+                // Create button content
+                const titleSpan = document.createElement('span');
+                titleSpan.className = 'case-title';
+                titleSpan.textContent = `📁 CASE FILE: ${storyData.name.toUpperCase()}`;
+                button.appendChild(titleSpan);
+                
+                // Add release date for sealed cases
+                if (storyData.sealed && storyData.releaseDate) {
+                    const releaseDateSpan = document.createElement('span');
+                    releaseDateSpan.className = 'release-date';
+                    releaseDateSpan.textContent = storyData.releaseDate;
+                    button.appendChild(releaseDateSpan);
+                }
+                
+                // Set click handler
+                if (storyData.sealed) {
+                    button.onclick = () => this.showSealedCaseMessage(storyData);
+                } else {
+                    button.onclick = () => this.loadStory(storyData);
+                }
+                
+                button.style.opacity = '0';
+                button.style.transform = 'translateY(20px)';
+                this.elements.choicesContainer.appendChild(button);
+                
+                setTimeout(() => {
+                    button.style.transition = 'all 0.5s ease';
+                    button.style.opacity = '1';
+                    button.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 300);
+        });
+    }
+    
+    showSealedCaseMessage(storyData) {
+        // Clear current content
+        this.clearChoices();
+        
+        // Show sealed case message
+        this.elements.storyText.innerHTML = `
+            <div class="sealed-case-message">
+                <div class="classified-stamp">🔒 CLASSIFIED</div>
+                <h2 style="color: #ff6b6b; text-align: center; margin: 30px 0;">SECURITY CLEARANCE REQUIRED</h2>
+                <div class="sealed-case-info">
+                    <p><strong>Case File:</strong> ${storyData.name}</p>
+                    <p><strong>Classification Level:</strong> TOP SECRET</p>
+                    <p><strong>Access Status:</strong> RESTRICTED</p>
+                    ${storyData.releaseDate ? `<p><strong>Estimated Release:</strong> ${storyData.releaseDate}</p>` : ''}
+                </div>
+                <div class="security-message">
+                    <p>This case file is currently sealed by order of the National Security Council. 
+                    Access requires appropriate security clearance and authorization.</p>
+                    <p>Please check back later for updates on case availability.</p>
+                </div>
+            </div>
+        `;
+        
+        // Add back button
+        setTimeout(() => {
+            const backButton = document.createElement('button');
+            backButton.className = 'choice-button';
+            backButton.textContent = '← Return to Case Selection';
+            backButton.onclick = () => this.startGame();
+            
+            backButton.style.opacity = '0';
+            backButton.style.transform = 'translateY(20px)';
+            this.elements.choicesContainer.appendChild(backButton);
+            
+            setTimeout(() => {
+                backButton.style.transition = 'all 0.5s ease';
+                backButton.style.opacity = '1';
+                backButton.style.transform = 'translateY(0)';
+            }, 100);
+        }, 1000);
+    }
+    
+    loadStory(storyData) {
+        this.currentStory = storyData.story;
+        this.currentStoryKey = storyData.key;
+        
+        // Update case title in header
+        const caseTitle = document.getElementById('case-title');
+        if (caseTitle) {
+            caseTitle.textContent = `Case File: ${storyData.name.toUpperCase()}`;
+        }
+        
+        console.log(`✅ LOADED: ${storyData.name} with`, Object.keys(this.currentStory.scenes).length, 'scenes');
+        console.log('✅ AVAILABLE SCENES:', Object.keys(this.currentStory.scenes));
+        
+        this.clearChoices();
         this.loadScene('intro');
     }
     
     setupClickToSkip() {
-        // Add click listener to story text area to skip typing
-        this.elements.storyText.addEventListener('click', () => {
+        // Add multiple click listeners to ensure skip typing works
+        
+        // Primary click listener on story text
+        this.elements.storyText.addEventListener('click', (e) => {
             if (this.isTyping) {
+                e.preventDefault();
+                e.stopPropagation();
                 this.skipTyping = true;
-                console.log('User clicked to skip typing animation');
+                console.log('✅ User clicked story text to skip typing animation');
+            }
+        });
+        
+        // Backup click listener on the entire narrative section
+        const narrativeSection = document.getElementById('narrative-section');
+        if (narrativeSection) {
+            narrativeSection.addEventListener('click', (e) => {
+                if (this.isTyping && e.target.closest('#story-text')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    this.skipTyping = true;
+                    console.log('✅ User clicked narrative section to skip typing animation');
+                }
+            });
+        }
+        
+        // Also add a keyboard shortcut (spacebar) as alternative
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && this.isTyping) {
+                e.preventDefault();
+                this.skipTyping = true;
+                console.log('✅ User pressed spacebar to skip typing animation');
             }
         });
     }
@@ -134,6 +288,9 @@ class GameEngine {
         // Add visual indicator that user can click to skip
         this.elements.storyText.classList.add('typing');
         
+        // Debug logging
+        console.log('🖱️ TYPING STARTED - Click anywhere on text or press SPACEBAR to skip');
+        
         const paragraphs = text.split('\n\n');
         let currentParagraph = 0;
         
@@ -185,6 +342,7 @@ class GameEngine {
     
     completeTypingInstantly(text, callback) {
         // Instantly display all text when user clicks to skip
+        console.log('⚡ TYPING SKIPPED - Displaying all text instantly');
         this.isTyping = false;
         this.skipTyping = false;
         this.elements.storyText.innerHTML = '';

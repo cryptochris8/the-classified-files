@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Classified Files - NAVIGATION FIXED</title>
+    <title>The Classified Files - Multi-Case Investigation</title>
     
     <!-- NUCLEAR CACHE BUSTING - FORCES FRESH LOAD -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -18,7 +18,7 @@
     <div id="game-container">
         <header id="game-header">
             <h1 id="game-title">THE CLASSIFIED FILES</h1>
-            <div id="case-title">Case File: EPSTEIN</div>
+            <div id="case-title">Select Case File</div>
         </header>
         
         <main id="game-main">
@@ -57,15 +57,26 @@
         <source src="audio/suspense.mp3" type="audio/mpeg">
     </audio>
     
-    <!-- OPTION B: LOAD ONLY EXPANDED STORY TO ELIMINATE CONFLICTS -->
-    <script>console.log('🚨 OPTION B: Loading ONLY expanded story - no conflicts!');</script>
+    <!-- LOAD GAME ENGINE AND STORY FILES -->
+    <script>
+        console.log('🚨 Loading game engine and story files');
+        window.addEventListener('error', function(e) {
+            console.error('JavaScript Error:', e.error);
+            console.error('File:', e.filename, 'Line:', e.lineno);
+        });
+    </script>
     <script src="game-engine.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <!-- REMOVED: other story files that could cause conflicts -->
-    <!-- <script src="epstein-story.js"></script> -->
-    <!-- <script src="epstein-story-factual.js"></script> -->  
-    <!-- <script src="epstein-story-hybrid.js"></script> -->
+    <!-- STORY FILES -->
     <script src="epstein-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script src="jfk-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="main.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <script>console.log('🎉 ONLY expanded story loaded - conflicts eliminated!');</script>
+    <script>
+        console.log('🎉 All story files loaded - case selection enabled!');
+        console.log('Available stories:', {
+            Epstein: typeof EpsteinStoryExpanded !== 'undefined',
+            JFK: typeof JFKStoryExpanded !== 'undefined',
+            GameEngine: typeof GameEngine !== 'undefined'
+        });
+    </script>
 </body>
 </html>

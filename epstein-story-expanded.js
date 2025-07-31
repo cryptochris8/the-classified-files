@@ -1,4 +1,6 @@
 const EpsteinStoryExpanded = {
+    sealed: false, // Set to true to seal this case
+    releaseDate: null, // Optional: "Coming Soon" or specific date
     scenes: {
         intro: {
             text: `THE CLASSIFIED FILES: EPSTEIN INVESTIGATION
@@ -969,11 +971,11 @@ FINAL COUNTDOWN: 12 hours to publication or seizure.`,
 
             📊 YOUR INVESTIGATION METRICS:
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-            Evidence Collected: ${this.gameState.evidenceCount}
-            Knowledge Score: ${this.gameState.knowledgeScore}/${this.gameState.totalQuestions}
-            Correct Answers: ${this.gameState.correctAnswers}
-            Scenes Explored: ${this.gameState.visitedScenes.size}
-            Badges Earned: ${this.gameState.badges.length}
+            Evidence Collected: [Dynamic - Updated During Game]
+            Knowledge Score: [Dynamic - Updated During Game]
+            Correct Answers: [Dynamic - Updated During Game]
+            Scenes Explored: [Dynamic - Updated During Game]
+            Badges Earned: [Dynamic - Updated During Game]
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
             KEY FACTS YOU UNCOVERED:
