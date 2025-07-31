@@ -164,6 +164,15 @@ class GameEngine {
                     Access requires appropriate security clearance and authorization.</p>
                     <p>Please check back later for updates on case availability.</p>
                 </div>
+                
+                <!-- Ad placement for sealed cases -->
+                <div class="ad-container sealed-case-ad">
+                    <div class="ad-label">SPONSORED CONTENT</div>
+                    <div data-ea-publisher="classified-files-game" 
+                         data-ea-type="image"
+                         data-ea-style="stickybox"
+                         class="ethical-ad"></div>
+                </div>
             </div>
         `;
         
@@ -514,8 +523,25 @@ The truth behind the Epstein case has been revealed through your investigation. 
 Your choices throughout this investigation have shaped the narrative and uncovered hidden connections that may never see the light of day in official reports.`;
 
         this.typewriterText(completeText, () => {
+            // Add ad before restart button
+            const adContainer = document.createElement('div');
+            adContainer.className = 'ad-container completion-ad';
+            adContainer.innerHTML = `
+                <div class="ad-label">SPONSORED CONTENT</div>
+                <div data-ea-publisher="classified-files-game" 
+                     data-ea-type="text"
+                     class="ethical-ad"></div>
+            `;
+            this.elements.choicesContainer.appendChild(adContainer);
+            
+            // Initialize the ad
+            if (window.ethicalads) {
+                window.ethicalads.reload();
+            }
+            
             const restartButton = document.createElement('button');
             restartButton.className = 'choice-button';
+            restartButton.style.marginTop = '20px';
             restartButton.textContent = 'Restart Investigation';
             restartButton.onclick = () => location.reload();
             this.elements.choicesContainer.appendChild(restartButton);
