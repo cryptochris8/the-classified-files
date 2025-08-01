@@ -86,7 +86,7 @@ body {
 }
 
 #document-image::before {
-    content: "CLASSIFIED DOCUMENT";
+    content: "";
     font-size: 14px;
     opacity: 0.6;
 }

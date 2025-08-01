@@ -114,6 +114,11 @@ class GameEngine {
     }
     
     showCaseSelection(stories) {
+        // Display the classified document image
+        this.elements.documentImage.style.background = `url('images/classifiedtopsecret.png') center/contain no-repeat`;
+        this.elements.documentImage.style.backgroundColor = '#2a2a2a';
+        this.elements.documentImage.innerHTML = '';
+        
         this.elements.storyText.innerHTML = `
             <div class="case-selection">
                 <h2 style="color: #ff6b6b; text-align: center; margin-bottom: 30px;">SELECT CLASSIFIED CASE FILE</h2>
