@@ -112,6 +112,87 @@ class GameEngine {
                 releaseDate: HunterBidenLaptopStoryExpanded.releaseDate || null
             });
         }
+        if (typeof WatergateStoryExpanded !== 'undefined' && WatergateStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'The Watergate Files', 
+                story: WatergateStoryExpanded, 
+                key: 'watergate',
+                sealed: WatergateStoryExpanded.sealed || false,
+                releaseDate: WatergateStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof PentagonPapersStoryExpanded !== 'undefined' && PentagonPapersStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'The Pentagon Papers', 
+                story: PentagonPapersStoryExpanded, 
+                key: 'pentagon-papers',
+                sealed: PentagonPapersStoryExpanded.sealed || false,
+                releaseDate: PentagonPapersStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof MKUltraStoryExpanded !== 'undefined' && MKUltraStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'MKUltra Files', 
+                story: MKUltraStoryExpanded, 
+                key: 'mkultra',
+                sealed: MKUltraStoryExpanded.sealed || false,
+                releaseDate: MKUltraStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof PanamaPapersStoryExpanded !== 'undefined' && PanamaPapersStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Panama Papers', 
+                story: PanamaPapersStoryExpanded, 
+                key: 'panama-papers',
+                sealed: PanamaPapersStoryExpanded.sealed || false,
+                releaseDate: PanamaPapersStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof IranContraStoryExpanded !== 'undefined' && IranContraStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Iran-Contra Affair', 
+                story: IranContraStoryExpanded, 
+                key: 'iran-contra',
+                sealed: IranContraStoryExpanded.sealed || false,
+                releaseDate: IranContraStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof COINTELPROStoryExpanded !== 'undefined' && COINTELPROStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'COINTELPRO Files', 
+                story: COINTELPROStoryExpanded, 
+                key: 'cointelpro',
+                sealed: COINTELPROStoryExpanded.sealed || false,
+                releaseDate: COINTELPROStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof SnowdenRevelationsStoryExpanded !== 'undefined' && SnowdenRevelationsStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Snowden Revelations', 
+                story: SnowdenRevelationsStoryExpanded, 
+                key: 'snowden',
+                sealed: SnowdenRevelationsStoryExpanded.sealed || false,
+                releaseDate: SnowdenRevelationsStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof TuskegeeExperimentStoryExpanded !== 'undefined' && TuskegeeExperimentStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Tuskegee Experiment', 
+                story: TuskegeeExperimentStoryExpanded, 
+                key: 'tuskegee',
+                sealed: TuskegeeExperimentStoryExpanded.sealed || false,
+                releaseDate: TuskegeeExperimentStoryExpanded.releaseDate || null
+            });
+        }
+        if (typeof OperationPaperclipStoryExpanded !== 'undefined' && OperationPaperclipStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Operation Paperclip', 
+                story: OperationPaperclipStoryExpanded, 
+                key: 'paperclip',
+                sealed: OperationPaperclipStoryExpanded.sealed || false,
+                releaseDate: OperationPaperclipStoryExpanded.releaseDate || null
+            });
+        }
         
         if (availableStories.length > 1) {
             this.showCaseSelection(availableStories);
