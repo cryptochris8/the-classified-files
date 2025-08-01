@@ -63,6 +63,7 @@ class GameEngine {
         console.log('JFKStoryExpanded available:', typeof JFKStoryExpanded !== 'undefined');
         console.log('UAPStoryExpanded available:', typeof UAPStoryExpanded !== 'undefined');
         console.log('September11CommissionExpanded available:', typeof September11CommissionExpanded !== 'undefined');
+        console.log('HunterBidenLaptopStoryExpanded available:', typeof HunterBidenLaptopStoryExpanded !== 'undefined');
         
         // Show case selection for all available stories (including sealed ones)
         const availableStories = [];
@@ -100,6 +101,15 @@ class GameEngine {
                 key: 'september11',
                 sealed: September11CommissionExpanded.sealed || false,
                 releaseDate: September11CommissionExpanded.releaseDate || null
+            });
+        }
+        if (typeof HunterBidenLaptopStoryExpanded !== 'undefined' && HunterBidenLaptopStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Hunter Biden Laptop Investigation', 
+                story: HunterBidenLaptopStoryExpanded, 
+                key: 'hunterlaptop',
+                sealed: HunterBidenLaptopStoryExpanded.sealed || false,
+                releaseDate: HunterBidenLaptopStoryExpanded.releaseDate || null
             });
         }
         
@@ -303,9 +313,9 @@ class GameEngine {
         this.clearChoices();
         this.updateDocument();
         this.typewriterText(this.currentScene.text, () => {
+            this.displayChoices();
             this.displaySources();
             this.displayEducationalNote();
-            this.displayChoices();
             this.updateProgress();
             this.processSceneEffects();
         });
@@ -607,6 +617,12 @@ Your choices throughout this investigation have shaped the narrative and uncover
     }
     
     displaySources() {
+        // Remove any existing sources section
+        const existingSources = document.querySelector('.sources-section');
+        if (existingSources) {
+            existingSources.remove();
+        }
+        
         if (this.currentScene.sources && this.currentScene.sources.length > 0) {
             const sourcesDiv = document.createElement('div');
             sourcesDiv.className = 'sources-section';
@@ -616,11 +632,19 @@ Your choices throughout this investigation have shaped the narrative and uncover
                     ${this.currentScene.sources.map(source => `<li>${source}</li>`).join('')}
                 </ul>
             `;
-            this.elements.storyText.appendChild(sourcesDiv);
+            // Append to narrative section after choices container
+            const narrativeSection = document.getElementById('narrative-section');
+            narrativeSection.appendChild(sourcesDiv);
         }
     }
     
     displayEducationalNote() {
+        // Remove any existing educational note
+        const existingNote = document.querySelector('.educational-note');
+        if (existingNote) {
+            existingNote.remove();
+        }
+        
         if (this.currentScene.educationalNote) {
             const noteDiv = document.createElement('div');
             noteDiv.className = 'educational-note';
@@ -628,7 +652,9 @@ Your choices throughout this investigation have shaped the narrative and uncover
                 <div class="note-header">💡 Educational Note:</div>
                 <p>${this.currentScene.educationalNote}</p>
             `;
-            this.elements.storyText.appendChild(noteDiv);
+            // Append to narrative section after sources
+            const narrativeSection = document.getElementById('narrative-section');
+            narrativeSection.appendChild(noteDiv);
         }
     }
     
