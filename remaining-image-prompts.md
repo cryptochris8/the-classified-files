@@ -1,4 +1,4 @@
-# Remaining Image Prompts for The Classified Files
+# Remaining Image Prompts for Declassified
 
 ## Image prompts that still need to be added to scenes:
 

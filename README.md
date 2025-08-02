@@ -1,4 +1,4 @@
-# The Classified Files
+# Declassified
 
 A text-based investigative game exploring fictional classified document cases, starting with the Epstein Files investigation.
 
@@ -71,7 +71,7 @@ To add new cases (Hunter Biden, JFK, etc.):
 ## File Structure
 
 ```
-The-Classified-Files/
+Declassified/
 ├── index.html          # Main game interface
 ├── styles.css          # Game styling and animations
 ├── game-engine.js      # Core game mechanics

@@ -1,4 +1,4 @@
-// Navigation Fix Script for The Classified Files
+// Navigation Fix Script for Declassified
 // This script identifies and fixes missing scene references
 
 console.log('🔧 NAVIGATION FIX SCRIPT STARTING...');

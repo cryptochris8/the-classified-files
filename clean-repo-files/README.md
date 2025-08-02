@@ -1,4 +1,4 @@
-# The Classified Files - Clean Version
+# Declassified - Clean Version
 
 A browser-based investigative journalism game about the Epstein case.
 

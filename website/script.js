@@ -1,4 +1,4 @@
-// Professional website interactivity for The Classified Files
+// Professional website interactivity for Declassified
 class ClassifiedFilesWebsite {
     constructor() {
         this.init();

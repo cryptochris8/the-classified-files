@@ -1,4 +1,4 @@
-// Navigation Test Script for The Classified Files
+// Navigation Test Script for Declassified
 // Run this to verify all navigation paths work correctly
 
 console.log('🧪 NAVIGATION TEST SCRIPT STARTING...');

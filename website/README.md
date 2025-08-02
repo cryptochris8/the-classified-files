@@ -1,6 +1,6 @@
-# The Classified Files - Professional Landing Website
+# Declassified - Professional Landing Website
 
-A modern, responsive landing page for The Classified Files project - an educational platform featuring interactive investigation games based on verified facts and declassified documents.
+A modern, responsive landing page for Declassified project - an educational platform featuring interactive investigation games based on verified facts and declassified documents.
 
 ## 🌟 Features
 
@@ -187,7 +187,7 @@ To contribute to the website:
 
 ## 📄 License
 
-This website is part of The Classified Files educational project. Built for educational purposes with a focus on verified facts and critical thinking development.
+This website is part of Declassified educational project. Built for educational purposes with a focus on verified facts and critical thinking development.
 
 ---
 
