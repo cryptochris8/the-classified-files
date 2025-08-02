@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declassified - Interactive Investigation Games</title>
+    <meta name="description" content="Explore declassified cases through interactive investigative games. Uncover the truth behind history's most controversial files through fact-based gameplay.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗂️</text></svg>">
+
+<style>
+/* New badge styles */
+.new-badge, .trending-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+    text-transform: uppercase;
+    animation: pulse 2s infinite;
+}
+
+.trending-badge {
+    background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+}
+
+.status-badge.hot {
+    background: linear-gradient(135deg, #ff5722 0%, #d32f2f 100%);
+    animation: glow 2s ease-in-out infinite;
+}
+
+.game-card.featured .game-btn {
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+}
+
+.footer-link.featured {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 5px rgba(255, 87, 34, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 87, 34, 0.8); }
+}
+</style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🗂️</span>
+                <span class="brand-text">Declassified</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#games" class="nav-link">Games</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-background">
+                <div class="hero-grid"></div>
+                <div class="hero-particles"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-text">🔓 DECLASSIFIED</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-main">Declassified</span>
+                    <span class="title-sub">Interactive Investigation Games</span>
+                </h1>
+                <p class="hero-description">
+                    Uncover the truth behind history's most controversial cases through immersive, 
+                    fact-based investigative gameplay. Experience the thrill of investigative journalism 
+                    while learning about real declassified documents and official government releases.
+                </p>
+                <div class="hero-cta">
+                    <a href="#games" class="btn-primary">
+                        <span>Start Investigating</span>
+                        <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="#about" class="btn-secondary">
+                        <span>Learn More</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">Free Game Available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">13</span>
+                        <span class="stat-label">Coming Soon</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Replay Value</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section id="games" class="games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Investigation Cases</h2>
+                    <p class="section-subtitle">
+                        Start with our FREE UAP Investigation based on real Pentagon reports, with 13 more cases coming soon. Each combines verified facts 
+                        with engaging gameplay, spanning political scandals, civil rights history, intelligence operations, and national security events.
+                    </p>
+                </div>
+                
+                <div class="games-grid">
+                    <!-- UFO/UAP Files Game -->
+                    <div class="game-card featured" data-game="ufo">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge available">🛸 FREE!</span>
+                            </div>
+                            <div class="game-new">
+                                <span class="new-badge">🆕 NEW</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge intermediate">Intermediate</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/uap_pentagon_briefing.png" 
+                                     alt="UAP Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">🛸</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">UAP Investigation</h3>
+                            <p class="game-description">
+                                Based on real Pentagon UAP reports and congressional testimony. Analyze declassified 
+                                military encounters, radar data, and official government investigations into 
+                                unexplained aerial phenomena.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">🔓 Pentagon Data</span>
+                                <span class="feature-tag">🛡️ Military Reports</span>
+                                <span class="feature-tag">🔬 Scientific</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">40-75 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Evidence</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🔬</span>
+                                    <span class="stat-text">Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn" target="_blank">
+                                <span>Play Now</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Epstein Files Game -->
+                    <div class="game-card coming-soon" data-game="epstein">
+                        <div class="game-card-header">
+                            <div class="game-trending">
+                                <span class="trending-badge">🔥 Most Anticipated</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/educational_conclusion.png" 
+                                     alt="Epstein Files Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">⚖️</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">The Epstein Files</h3>
+                            <p class="game-description">
+                                Investigate the complex web of the Jeffrey Epstein case using recently 
+                                declassified DOJ documents. Uncover the truth about institutional failures 
+                                and the 14-year gap in federal prosecution.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">📚 1000+ Facts</span>
+                                <span class="feature-tag">🧠 Quizzes</span>
+                                <span class="feature-tag">🏆 Achievements</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">45-90 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Multi-Ending</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">📄</span>
+                                    <span class="stat-text">Official</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Watergate Files Game -->
+                    <div class="game-card coming-soon" data-game="watergate">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge expert">Expert</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <span class="icon-emoji">🏛️</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">Watergate Files</h3>
+                            <p class="game-description">
+                                Investigate the political scandal that brought down a presidency. Analyze White House tapes, 
+                                FBI documents, and congressional testimony to understand how investigative journalism 
+                                exposed government corruption at the highest levels.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">🎙️ WH Tapes</span>
+                                <span class="feature-tag">📰 Journalism</span>
+                                <span class="feature-tag">⚖️ Crisis</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">60-90 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Politics</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">📚</span>
+                                    <span class="stat-text">History</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- MLK Jr. Assassination Files Game -->
+                    <div class="game-card coming-soon" data-game="mlk">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <span class="icon-emoji">✊</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">MLK Jr. Assassination Files</h3>
+                            <p class="game-description">
+                                Examine the assassination of civil rights leader Martin Luther King Jr. through 
+                                declassified FBI documents, witness testimonies, and congressional investigations. 
+                                Separate verified facts from conspiracy theories in this pivotal moment in civil rights history.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">📄 FBI COINTELPRO Files</span>
+                                <span class="feature-tag">✊ Civil Rights History</span>
+                                <span class="feature-tag">🔍 Evidence Analysis</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">50-75 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Historical Truth</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">⚖️</span>
+                                    <span class="stat-text">Social Justice</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- 9/11 Commission Files Game -->
+                    <div class="game-card coming-soon" data-game="nine-eleven">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <span class="icon-emoji">🏢</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">9/11 Commission Files</h3>
+                            <p class="game-description">
+                                Investigate the official 9/11 Commission findings and intelligence reports. 
+                                Analyze timeline reconstructions, intelligence failures, and government response 
+                                to understand one of the most thoroughly investigated events in modern history.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">📊 Intelligence Reports</span>
+                                <span class="feature-tag">⏰ Timeline Analysis</span>
+                                <span class="feature-tag">🛡️ National Security</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">70-100 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Complex Investigation</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">📋</span>
+                                    <span class="stat-text">Official Records</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Hunter Biden Game -->
+                    <div class="game-card coming-soon" data-game="hunter-biden">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge intermediate">Intermediate</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <span class="icon-emoji">💻</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">Hunter Biden Laptop Investigation</h3>
+                            <p class="game-description">
+                                Examine the controversial laptop case through verified court documents 
+                                and official statements. Navigate media reports and separate fact from speculation.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">📰 Media Analysis</span>
+                                <span class="feature-tag">⚖️ Legal Documents</span>
+                                <span class="feature-tag">🔍 Fact Checking</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">30-60 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Truth vs Fiction</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">📊</span>
+                                    <span class="stat-text">Data Analysis</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    
+                        <!-- Pentagon Papers Game -->
+                    <div class="game-card coming-soon" data-game="pentagon-papers">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/pentagon_basement_office.png" 
+                                     alt="Pentagon Papers Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">📄</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">The Pentagon Papers</h3>
+                            <p class="game-description">
+                                Investigate the classified study that exposed the truth about America's involvement in Vietnam. 
+                                Follow Daniel Ellsberg's moral crisis and the Supreme Court battle for press freedom.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">📄 Classified Documents</span>
+                                <span class="feature-tag">⚖️ First Amendment</span>
+                                <span class="feature-tag">🏛️ Supreme Court</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">60-90 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Moral Choices</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">📰</span>
+                                    <span class="stat-text">Press Freedom</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- MKUltra Files Game -->
+                    <div class="game-card coming-soon" data-game="mkultra">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge expert">Expert</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/cia_basement_files.png" 
+                                     alt="MKUltra Files Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">🧠</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">MKUltra Files</h3>
+                            <p class="game-description">
+                                Investigate the CIA's secret mind control experiments. Uncover the truth about 
+                                illegal human experimentation, cover-ups, and the victims' fight for justice.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">🧪 CIA Experiments</span>
+                                <span class="feature-tag">🏥 Medical Ethics</span>
+                                <span class="feature-tag">⚖️ Victim Justice</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">75-120 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Complex Investigation</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🔬</span>
+                                    <span class="stat-text">Scientific Ethics</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Panama Papers Game -->
+                    <div class="game-card coming-soon" data-game="panama-papers">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge expert">Expert</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/data_leak_documents.png" 
+                                     alt="Panama Papers Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">💰</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">Panama Papers</h3>
+                            <p class="game-description">
+                                Investigate the world's largest data leak exposing offshore tax havens, 
+                                global corruption, and money laundering by world leaders and celebrities.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">💰 Financial Crimes</span>
+                                <span class="feature-tag">🌍 Global Corruption</span>
+                                <span class="feature-tag">📊 Data Analysis</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">60-90 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Investigative Journalism</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🔍</span>
+                                    <span class="stat-text">Financial Investigation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Iran-Contra Affair Game -->
+                    <div class="game-card coming-soon" data-game="iran-contra">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/white_house_shredding.png" 
+                                     alt="Iran-Contra Affair Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">🗂️</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">Iran-Contra Affair</h3>
+                            <p class="game-description">
+                                Investigate the secret operation that violated Congressional bans on both arms sales 
+                                to Iran and funding for Nicaraguan rebels, exposing executive branch overreach.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">🏛️ Constitutional Crisis</span>
+                                <span class="feature-tag">💼 Congressional Investigation</span>
+                                <span class="feature-tag">🔐 Classified Operations</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">50-80 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Government Accountability</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">⚖️</span>
+                                    <span class="stat-text">Executive Power</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- COINTELPRO Files Game -->
+                    <div class="game-card coming-soon" data-game="cointelpro">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/fbi_office_break_in.png" 
+                                     alt="COINTELPRO Files Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">🕵️</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">COINTELPRO Files</h3>
+                            <p class="game-description">
+                                Investigate the FBI's secret program to surveil, infiltrate, and disrupt domestic 
+                                political organizations, exposed through a daring burglary and citizen activism.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">🕵️ FBI Surveillance</span>
+                                <span class="feature-tag">✊ Civil Rights</span>
+                                <span class="feature-tag">🗳️ Political Activism</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">55-85 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Civil Liberties</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">📋</span>
+                                    <span class="stat-text">Government Overreach</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Snowden Revelations Game -->
+                    <div class="game-card coming-soon" data-game="snowden">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/nsa_hawaii_facility.png" 
+                                     alt="Snowden Revelations Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">🔒</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">Snowden Revelations</h3>
+                            <p class="game-description">
+                                Experience Edward Snowden's moral crisis as he exposes the NSA's mass surveillance 
+                                programs that collected data on millions without warrants, sparking global debate.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">🔐 NSA Surveillance</span>
+                                <span class="feature-tag">📱 Digital Privacy</span>
+                                <span class="feature-tag">⚖️ Whistleblowing Ethics</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">45-75 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Privacy Rights</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🛡️</span>
+                                    <span class="stat-text">National Security</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tuskegee Experiment Game -->
+                    <div class="game-card coming-soon" data-game="tuskegee">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge advanced">Advanced</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/tuskegee_medical_records.png" 
+                                     alt="Tuskegee Experiment Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">⚕️</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">Tuskegee Experiment</h3>
+                            <p class="game-description">
+                                Investigate the unethical medical study that denied treatment to African American men 
+                                with syphilis for 40 years, leading to crucial reforms in medical ethics and consent.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">⚕️ Medical Ethics</span>
+                                <span class="feature-tag">✊ Civil Rights</span>
+                                <span class="feature-tag">🏥 Healthcare Justice</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">40-70 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Informed Consent</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">⚖️</span>
+                                    <span class="stat-text">Medical Justice</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Operation Paperclip Game -->
+                    <div class="game-card coming-soon" data-game="paperclip">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge expert">Expert</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <img src="images/nazi_scientist_recruitment.png" 
+                                     alt="Operation Paperclip Investigation" 
+                                     class="icon-image"
+                                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                <span class="icon-emoji-fallback" style="display:none;">🚀</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">Operation Paperclip</h3>
+                            <p class="game-description">
+                                Investigate the secret recruitment of Nazi scientists to the U.S., examining the moral 
+                                compromises made for technological advantage in the Cold War.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">🚀 Space Program</span>
+                                <span class="feature-tag">⚔️ Cold War</span>
+                                <span class="feature-tag">⚖️ War Crimes</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">65-95 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Moral Compromise</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🌍</span>
+                                    <span class="stat-text">Historical Impact</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- JFK Assassination Game -->
+                    <div class="game-card coming-soon" data-game="jfk">
+                        <div class="game-card-header">
+                            <div class="game-status">
+                                <span class="status-badge coming-soon">Coming Soon</span>
+                            </div>
+                            <div class="game-difficulty">
+                                <span class="difficulty-badge expert">Expert</span>
+                            </div>
+                        </div>
+                        <div class="game-icon">
+                            <div class="icon-background">
+                                <span class="icon-emoji">🎯</span>
+                            </div>
+                            <div class="icon-glow"></div>
+                        </div>
+                        <div class="game-content">
+                            <h3 class="game-title">JFK Assassination Files</h3>
+                            <p class="game-description">
+                                Investigate the assassination of President John F. Kennedy through recently 
+                                declassified documents and official investigations. Examine evidence and separate 
+                                verified facts from conspiracy theories.
+                            </p>
+                            <div class="game-features">
+                                <span class="feature-tag">📋 Warren Commission</span>
+                                <span class="feature-tag">🔍 Evidence Analysis</span>
+                                <span class="feature-tag">📄 Declassified Files</span>
+                            </div>
+                            <div class="game-stats">
+                                <div class="stat-item">
+                                    <span class="stat-icon">⏱️</span>
+                                    <span class="stat-text">80-120 min</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🎯</span>
+                                    <span class="stat-text">Historical Analysis</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-icon">🔍</span>
+                                    <span class="stat-text">Forensic Investigation</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="game-card-footer">
+                            <a href="https://cryptochris8.github.io/the-classified-files/" class="game-btn disabled" target="_blank">
+                                <span>Coming Soon</span>
+                                <svg class="btn-arrow" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About Declassified</h2>
+                        <p class="about-description">
+                            Declassified is an innovative educational platform that transforms 
+                            serious investigative journalism into engaging, interactive experiences. 
+                            Our games are built on a foundation of verified facts, official government 
+                            releases, and declassified documents.
+                        </p>
+                        <p class="about-description">
+                            Each case combines the thrill of investigative storytelling with rigorous 
+                            educational content, helping players develop critical thinking skills while 
+                            learning about real events that shaped our world.
+                        </p>
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <span class="highlight-icon">✅</span>
+                                <span class="highlight-text">100% Verified Facts</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">📚</span>
+                                <span class="highlight-text">Educational Focus</span>
+                            </div>
+                            <div class="highlight-item">
+                                <span class="highlight-icon">🎮</span>
+                                <span class="highlight-text">Engaging Gameplay</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="visual-card">
+                            <div class="card-icon">🔍</div>
+                            <h4>Investigative Method</h4>
+                            <p>Learn real journalism techniques through interactive scenarios</p>
+                        </div>
+                        <div class="visual-card">
+                            <div class="card-icon">📊</div>
+                            <h4>Data-Driven</h4>
+                            <p>All content based on official documents and verified sources</p>
+                        </div>
+                        <div class="visual-card">
+                            <div class="card-icon">🧠</div>
+                            <h4>Critical Thinking</h4>
+                            <p>Develop analytical skills through quiz challenges and branching narratives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose Declassified?</h2>
+                    <p class="section-subtitle">
+                        Our unique approach combines education with entertainment to create 
+                        unforgettable learning experiences.
+                    </p>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span class="icon">🎯</span>
+                        </div>
+                        <h3 class="feature-title">Fact-Based Learning</h3>
+                        <p class="feature-description">
+                            Every piece of information is sourced from official government releases, 
+                            court documents, and verified journalistic investigations.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span class="icon">🎮</span>
+                        </div>
+                        <h3 class="feature-title">Interactive Gameplay</h3>
+                        <p class="feature-description">
+                            Engaging quiz systems, branching narratives, and achievement unlocks 
+                            keep you motivated throughout your investigation.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span class="icon">🔄</span>
+                        </div>
+                        <h3 class="feature-title">Multiple Paths</h3>
+                        <p class="feature-description">
+                            Your choices and knowledge level determine the story progression, 
+                            offering high replay value and personalized experiences.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span class="icon">🏆</span>
+                        </div>
+                        <h3 class="feature-title">Achievement System</h3>
+                        <p class="feature-description">
+                            Earn badges for perfect knowledge, evidence collection, and ethical 
+                            journalism practices as you progress through cases.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span class="icon">📱</span>
+                        </div>
+                        <h3 class="feature-title">Cross-Platform</h3>
+                        <p class="feature-description">
+                            Play on any device with our responsive design that adapts 
+                            perfectly to desktop, tablet, and mobile screens.
+                        </p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <span class="icon">🔒</span>
+                        </div>
+                        <h3 class="feature-title">Privacy Focused</h3>
+                        <p class="feature-description">
+                            No tracking, no data collection, no advertisements. 
+                            Just pure educational content focused on learning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">
+                        <span class="brand-icon">🗂️</span>
+                        <span class="brand-text">Declassified</span>
+                    </div>
+                    <p class="footer-description">
+                        Educational investigative games based on verified facts and official documents.
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4 class="link-title">Games</h4>
+                        <a href="https://cryptochris8.github.io/the-classified-files/" class="footer-link featured" target="_blank">🛸 UAP Investigation (FREE)</a>
+                        <span class="footer-link coming-soon">Epstein Files (Q2 2025)</span>
+                        <span class="footer-link coming-soon">Watergate Files (Q3 2025)</span>
+                        <span class="footer-link coming-soon">JFK Files (Q1 2025)</span>
+                        <span class="footer-link coming-soon">9/11 Commission (Q2 2025)</span>
+                        <span class="footer-link coming-soon">Hunter Biden (Q3 2025)</span>
+                        <span class="footer-link coming-soon">More Coming Soon...</span>
+                    </div>
+                    <div class="link-group">
+                        <h4 class="link-title">Resources</h4>
+                        <a href="https://github.com/cryptochris8/the-classified-files" class="footer-link" target="_blank">Game Repository</a>
+                        <a href="https://github.com/cryptochris8/the-classified-files-site" class="footer-link" target="_blank">Website Repository</a>
+                        <a href="#about" class="footer-link">About Project</a>
+                        <a href="#features" class="footer-link">Features</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © 2025 Declassified. Built for educational purposes with verified facts and official sources.
+                </p>
+                <p class="footer-attribution">
+                    🤖 Enhanced with <a href="https://claude.ai" target="_blank" rel="noopener">Claude Code</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
