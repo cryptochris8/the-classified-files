@@ -5,7 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 8080",
-    "dev": "npx http-server -p 8080 -o"
+    "dev": "npx http-server -p 8080 -o",
+    "build": "echo 'Static site - no build step required'",
+    "test": "echo 'No tests configured'"
   },
   "keywords": ["game", "investigation", "interactive", "text-based"],
   "author": "",
