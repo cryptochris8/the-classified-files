@@ -6,6 +6,7 @@ class GameEngine {
             investigationProgress: 0,
             choices: [],
             visitedScenes: new Set(),
+            visitedChoices: {}, // Track visited choices by scene:choiceIndex
             knowledgeScore: 0,
             correctAnswers: 0,
             totalQuestions: 0,
@@ -248,6 +249,31 @@ class GameEngine {
                     Choose which classified investigation you want to pursue. Each case contains authentic historical 
                     questions and fictional dramatic elements to create an immersive investigative experience.
                 </p>
+                
+                <!-- Game Help Section -->
+                <div class="game-help-wrapper">
+                    <button class="game-help-button">
+                        <span class="help-icon">❓</span>
+                        How to Play
+                    </button>
+                    <div class="game-help-tooltip">
+                        <div class="help-content">
+                            <p><strong>Choice Symbols:</strong></p>
+                            <ul style="list-style: none; padding: 0; margin: 10px 0;">
+                                <li style="margin: 8px 0;"><span style="color: #4a6741;">▶</span> Standard choices - Follow your instincts</li>
+                                <li style="margin: 8px 0;"><span style="color: #4ecdc4;">✓</span> Factual choices - Verified evidence</li>
+                                <li style="margin: 8px 0;"><span style="color: #9f94ff;">?</span> Quiz questions - Test knowledge</li>
+                            </ul>
+                            <p style="margin-top: 15px;"><strong>Tips:</strong></p>
+                            <ul style="list-style: none; padding: 0; margin: 10px 0;">
+                                <li style="margin: 8px 0;">• Click text or SPACEBAR to skip typing</li>
+                                <li style="margin: 8px 0;">• Factual choices (✓) earn badges</li>
+                                <li style="margin: 8px 0;">• Multiple paths - replay to explore</li>
+                                <li style="margin: 8px 0;">• Visited choices appear dimmed</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
         
@@ -405,6 +431,8 @@ class GameEngine {
         console.log('🔍 ATTEMPTING TO LOAD SCENE:', sceneId);
         console.log('🔍 CURRENT STORY:', this.currentStory ? 'LOADED' : 'NOT LOADED');
         
+        this.currentSceneName = sceneId; // Track current scene name for visited choices
+        
         if (!this.currentStory || !this.currentStory.scenes[sceneId]) {
             console.error('❌ Scene not found:', sceneId);
             console.error('❌ Available scenes:', this.currentStory ? Object.keys(this.currentStory.scenes) : 'NO STORY LOADED');
@@ -529,10 +557,47 @@ class GameEngine {
     displayChoices() {
         if (!this.currentScene.choices) return;
         
+        // Add prompt text before choices if provided
+        if (this.currentScene.prompt) {
+            const promptElement = document.createElement('p');
+            promptElement.className = 'choice-prompt';
+            promptElement.textContent = this.currentScene.prompt;
+            this.elements.choicesContainer.appendChild(promptElement);
+        } else if (this.currentScene.choices.length > 0) {
+            // Array of default prompts to choose from randomly
+            const defaultPrompts = [
+                'What would you like to do?',
+                'How will you proceed?',
+                'What\'s your next move?',
+                'Choose your approach:',
+                'What action will you take?',
+                'How do you want to investigate?',
+                'Select your next step:',
+                'What\'s your decision?',
+                'Which path will you follow?',
+                'How will you continue your investigation?'
+            ];
+            
+            // Pick a random default prompt
+            const randomPrompt = defaultPrompts[Math.floor(Math.random() * defaultPrompts.length)];
+            
+            const defaultPrompt = document.createElement('p');
+            defaultPrompt.className = 'choice-prompt';
+            defaultPrompt.textContent = randomPrompt;
+            this.elements.choicesContainer.appendChild(defaultPrompt);
+        }
+        
         this.currentScene.choices.forEach((choice, index) => {
             setTimeout(() => {
                 const button = document.createElement('button');
                 button.className = 'choice-button';
+                
+                // Check if this choice has been visited
+                const choiceKey = `${this.currentSceneName}:${index}`;
+                if (this.gameState.visitedChoices[choiceKey]) {
+                    button.classList.add('visited');
+                }
+                
                 if (choice.factual) {
                     button.classList.add('factual');
                 }
@@ -542,6 +607,8 @@ class GameEngine {
                 button.textContent = choice.text;
                 button.onclick = () => {
                     this.playButtonClickSound();
+                    // Mark choice as visited
+                    this.gameState.visitedChoices[choiceKey] = true;
                     this.makeChoice(choice);
                 };
                 

@@ -154,6 +154,29 @@ body {
     gap: 15px;
 }
 
+/* Choice Prompt */
+.choice-prompt {
+    color: #34d399;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.2);
+    border-radius: 8px;
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { 
+        box-shadow: 0 0 10px rgba(52, 211, 153, 0.3);
+    }
+    50% { 
+        box-shadow: 0 0 20px rgba(52, 211, 153, 0.5);
+    }
+}
+
 .choice-button {
     background: linear-gradient(135deg, #2d4a2d 0%, #1e3a1e 100%);
     border: 2px solid #4a6741;
@@ -551,6 +574,20 @@ body {
 .choice-button.factual::before {
     content: "✓ ";
     color: #4ecdc4;
+}
+
+/* Visited choices */
+.choice-button.visited {
+    opacity: 0.6;
+    background: linear-gradient(135deg, #1a2a1a 0%, #151f15 100%);
+    border-color: #3a4731;
+}
+
+.choice-button.visited::after {
+    content: " (visited)";
+    font-size: 0.85em;
+    color: #888;
+    font-style: italic;
 }
 
 .choice-button.factual:hover {

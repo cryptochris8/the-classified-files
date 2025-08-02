@@ -23,6 +23,7 @@ The weight of scientific truth rests on your analysis.`,
             image: "pentagon_uap_office",
             imagePrompt: "Modern Pentagon office with multiple screens displaying UAP tracking data, female analyst examining classified reports, high-tech government facility atmosphere",
             sources: ["Pentagon AARO Reports 2024", "Congressional UAP Hearings", "Declassified Military Analysis"],
+            prompt: "How will you proceed with your investigation?",
             choices: [
                 {
                     text: "Examine the 757 new UAP reports and statistical breakdown",
