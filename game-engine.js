@@ -29,6 +29,7 @@ class GameEngine {
         
         this.initializeGame();
         this.setupClickToSkip();
+        this.initializeMiniGameEngine();
     }
     
     initializeGame() {
@@ -55,6 +56,25 @@ class GameEngine {
         //     console.log('Auto-play prevented. User interaction required for audio.');
         // });
         console.log('Background music disabled for testing');
+    }
+    
+    initializeMiniGameEngine() {
+        // Initialize the mini-game engine and make it globally available
+        if (typeof MiniGameEngine !== 'undefined') {
+            this.miniGameEngine = new MiniGameEngine(this);
+            window.miniGameEngine = this.miniGameEngine;
+            console.log('Mini-game engine initialized');
+        } else {
+            console.warn('MiniGameEngine not loaded');
+        }
+    }
+    
+    launchMiniGame(gameType, gameData, onComplete) {
+        if (this.miniGameEngine) {
+            this.miniGameEngine.launchGame(gameType, gameData, onComplete);
+        } else {
+            console.error('Mini-game engine not available');
+        }
     }
     
     playButtonClickSound() {
@@ -546,6 +566,12 @@ class GameEngine {
             this.handleQuizAnswer(choice);
         }
         
+        // Check if this choice triggers a mini-game
+        if (choice.miniGame) {
+            this.handleMiniGameChoice(choice);
+            return;
+        }
+        
         if (choice.evidence) {
             this.addEvidence();
         }
@@ -559,6 +585,61 @@ class GameEngine {
         
         this.playChoiceSound();
         this.loadScene(choice.nextScene);
+    }
+    
+    handleMiniGameChoice(choice) {
+        // Show mini-game loading message
+        this.clearChoices();
+        const loadingText = `🎮 LAUNCHING INTERACTIVE ANALYSIS: ${choice.miniGame.title}
+
+${choice.miniGame.description}
+
+Prepare to reconstruct classified evidence...`;
+        
+        this.typewriterText(loadingText, () => {
+            // Launch the mini-game after a brief delay
+            setTimeout(() => {
+                this.launchChoiceMiniGame(choice);
+            }, 1500);
+        });
+    }
+    
+    launchChoiceMiniGame(choice) {
+        const targetScene = choice.nextScene;
+        
+        // Get mini-game data from the target scene
+        const nextScene = this.getCurrentStory().scenes[targetScene];
+        if (!nextScene || !nextScene.miniGameData) {
+            console.error('Mini-game data not found for scene:', targetScene);
+            this.loadScene(targetScene);
+            return;
+        }
+        
+        const gameData = nextScene.miniGameData;
+        
+        // Launch mini-game with completion callback
+        this.launchMiniGame(gameData.type, gameData, (result) => {
+            // Handle mini-game completion
+            if (result.success) {
+                // Add evidence and progress from choice
+                if (choice.evidence) {
+                    this.addEvidence();
+                }
+                if (choice.progressIncrease) {
+                    this.increaseProgress(choice.progressIncrease);
+                }
+                
+                // Award badges for mini-game completion
+                this.checkForBadges(choice);
+            }
+            
+            // Load the target scene
+            this.loadScene(targetScene);
+        });
+    }
+    
+    getCurrentStory() {
+        return this.currentStory;
     }
     
     clearChoices() {

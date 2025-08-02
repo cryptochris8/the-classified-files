@@ -55,9 +55,88 @@ The line goes dead.`,
                     nextScene: "victim_statistics_study",
                     progressIncrease: 8,
                     evidence: true
+                },
+                {
+                    text: "Piece together the shredded classified memo found in the package 🧩",
+                    nextScene: "document_reconstruction",
+                    progressIncrease: 15,
+                    evidence: true,
+                    miniGame: {
+                        type: "document_reconstruction",
+                        title: "Classified Memo Recovery",
+                        description: "A partially destroyed FBI memo was found in the package. Reconstruct it to reveal critical evidence."
+                    }
                 }
             ],
             educationalNote: "This fictional 72-hour deadline creates dramatic tension while you explore real facts about the case."
+        },
+
+        document_reconstruction: {
+            text: `CLASSIFIED MEMO RECONSTRUCTION COMPLETE
+            
+            DAY 1 - 11:45 PM
+            
+            Your careful reconstruction of the shredded memo has revealed critical information:
+            
+            📄 FBI INTERNAL MEMO - RECONSTRUCTED
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            FROM: Special Agent [REDACTED]
+            TO: Deputy Director [REDACTED]
+            RE: EPSTEIN INVESTIGATION STATUS
+            
+            "...high-profile subjects identified through 
+            flight logs and residence searches. Recommend 
+            immediate seizure of client lists before 
+            evidence disappears. Time-sensitive: several 
+            subjects with connections to..."
+            
+            The rest was too damaged to recover, but this confirms your anonymous caller's warning about powerful people trying to suppress evidence.
+            
+            Marcus looks over your shoulder. "Sarah, this is huge. If this memo is authentic, it means the FBI knew about a larger network and was actively investigating it."
+            
+            You notice a date stamp: just 3 weeks before Epstein's death in federal custody.`,
+            image: "classified_memo_reconstructed",
+            imagePrompt: "Reconstructed FBI memo with redacted text, evidence tape, newsroom desk with scattered documents",
+            sources: ["FBI Internal Communications", "DOJ Records", "Congressional Testimony"],
+            miniGameData: {
+                type: "document_reconstruction",
+                gridColumns: 3,
+                gridRows: 3,
+                evidenceReward: "Reconstructed FBI Memo",
+                progressReward: 15,
+                fragments: [
+                    { position: 0, text: "FBI MEMO", type: "header" },
+                    { position: 1, text: "CLASSIFIED", type: "stamp" },
+                    { position: 2, text: "2019-07-15", type: "date" },
+                    { position: 3, text: "SUBJECT: Epstein", type: "subject" },
+                    { position: 4, text: "High-profile targets", type: "body" },
+                    { position: 5, text: "identified through", type: "body" },
+                    { position: 6, text: "flight records and", type: "body" },
+                    { position: 7, text: "client evidence", type: "body" },
+                    { position: 8, text: "TIME-SENSITIVE", type: "footer" }
+                ]
+            },
+            choices: [
+                {
+                    text: "Research the flight logs mentioned in the memo",
+                    nextScene: "flight_logs_analysis",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the timing of the memo vs. Epstein's death",
+                    nextScene: "timeline_investigation",
+                    progressIncrease: 10,
+                    factual: true
+                },
+                {
+                    text: "Continue examining other documents for corroboration",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 8,
+                    evidence: true
+                }
+            ],
+            educationalNote: "While this memo is fictional, real FBI documents showed similar patterns of evidence and time-sensitive investigations."
         },
 
         victim_statistics_study: {
