@@ -44,9 +44,10 @@ If you don't have Node.js, you can run the game by:
 ## Adding Content
 
 ### Audio Files
-Place audio files in the `audio/` directory:
-- `suspense.mp3` - Background music
-- Add other sound effects as needed
+Audio files are organized in subdirectories within `audio/`:
+- `audio/music/suspense.mp3` - Background music
+- `audio/sfx/button-click.wav` - Button click sound effect
+- Add other sound effects in the appropriate subfolder
 
 ### Document Images
 Place document images in the `images/` directory:

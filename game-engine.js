@@ -23,7 +23,8 @@ class GameEngine {
             evidenceNumber: document.getElementById('evidence-number'),
             progressFill: document.getElementById('progress-fill'),
             loadingScreen: document.getElementById('loading-screen'),
-            backgroundMusic: document.getElementById('background-music')
+            backgroundMusic: document.getElementById('background-music'),
+            buttonClickSound: document.getElementById('button-click-sound')
         };
         
         this.initializeGame();
@@ -54,6 +55,16 @@ class GameEngine {
         //     console.log('Auto-play prevented. User interaction required for audio.');
         // });
         console.log('Background music disabled for testing');
+    }
+    
+    playButtonClickSound() {
+        if (this.elements.buttonClickSound) {
+            this.elements.buttonClickSound.currentTime = 0;
+            this.elements.buttonClickSound.volume = 0.5;
+            this.elements.buttonClickSound.play().catch(e => {
+                console.log('Button click sound failed to play:', e);
+            });
+        }
     }
     
     startGame() {
@@ -242,9 +253,15 @@ class GameEngine {
                 
                 // Set click handler
                 if (storyData.sealed) {
-                    button.onclick = () => this.showSealedCaseMessage(storyData);
+                    button.onclick = () => {
+                        this.playButtonClickSound();
+                        this.showSealedCaseMessage(storyData);
+                    };
                 } else {
-                    button.onclick = () => this.loadStory(storyData);
+                    button.onclick = () => {
+                        this.playButtonClickSound();
+                        this.loadStory(storyData);
+                    };
                 }
                 
                 button.style.opacity = '0';
@@ -503,7 +520,10 @@ class GameEngine {
                     button.setAttribute('data-quiz', 'true');
                 }
                 button.textContent = choice.text;
-                button.onclick = () => this.makeChoice(choice);
+                button.onclick = () => {
+                    this.playButtonClickSound();
+                    this.makeChoice(choice);
+                };
                 
                 button.style.opacity = '0';
                 button.style.transform = 'translateY(20px)';

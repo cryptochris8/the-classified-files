@@ -1,10 +1,15 @@
 # Audio Files
 
-To enhance the suspenseful atmosphere, add the following audio files to this directory:
+To enhance the suspenseful atmosphere, audio files are organized in subdirectories:
 
-## Required Files:
+## Music (background music)
+Located in `music/` folder:
 - `suspense.mp3` - Main background music (dark, atmospheric, investigative theme)
-- `choice-click.mp3` - Sound effect for button clicks
+
+## Sound Effects (SFX)
+Located in `sfx/` folder:
+- `button-click.wav` - Sound effect for button clicks (IMPLEMENTED)
+- `choice-click.mp3` - Alternative sound effect for button clicks
 - `document-reveal.mp3` - Sound when new documents are revealed
 - `typing.mp3` - Typewriter sound effect for text animation
 
