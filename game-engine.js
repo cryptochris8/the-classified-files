@@ -72,8 +72,8 @@ class GameEngine {
                 name: 'Epstein Investigation', 
                 story: EpsteinStoryExpanded, 
                 key: 'epstein',
-                sealed: EpsteinStoryExpanded.sealed || false,
-                releaseDate: EpsteinStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('epstein') : (EpsteinStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('epstein') : (EpsteinStoryExpanded.releaseDate || null)
             });
         }
         if (typeof JFKStoryExpanded !== 'undefined' && JFKStoryExpanded.scenes) {
@@ -81,8 +81,8 @@ class GameEngine {
                 name: 'JFK Assassination', 
                 story: JFKStoryExpanded, 
                 key: 'jfk',
-                sealed: JFKStoryExpanded.sealed || false,
-                releaseDate: JFKStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('jfk') : (JFKStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('jfk') : (JFKStoryExpanded.releaseDate || null)
             });
         }
         if (typeof UAPStoryExpanded !== 'undefined' && UAPStoryExpanded.scenes) {
@@ -90,8 +90,8 @@ class GameEngine {
                 name: 'UAP Investigation', 
                 story: UAPStoryExpanded, 
                 key: 'uap',
-                sealed: UAPStoryExpanded.sealed || false,
-                releaseDate: UAPStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('uap') : (UAPStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('uap') : (UAPStoryExpanded.releaseDate || null)
             });
         }
         if (typeof September11CommissionExpanded !== 'undefined' && September11CommissionExpanded.scenes) {
@@ -99,8 +99,8 @@ class GameEngine {
                 name: '9/11 Commission Investigation', 
                 story: September11CommissionExpanded, 
                 key: 'september11',
-                sealed: September11CommissionExpanded.sealed || false,
-                releaseDate: September11CommissionExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('september11') : (September11CommissionExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('september11') : (September11CommissionExpanded.releaseDate || null)
             });
         }
         if (typeof HunterBidenLaptopStoryExpanded !== 'undefined' && HunterBidenLaptopStoryExpanded.scenes) {
@@ -108,8 +108,8 @@ class GameEngine {
                 name: 'Hunter Biden Laptop Investigation', 
                 story: HunterBidenLaptopStoryExpanded, 
                 key: 'hunterlaptop',
-                sealed: HunterBidenLaptopStoryExpanded.sealed || false,
-                releaseDate: HunterBidenLaptopStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('hunterlaptop') : (HunterBidenLaptopStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('hunterlaptop') : (HunterBidenLaptopStoryExpanded.releaseDate || null)
             });
         }
         if (typeof WatergateStoryExpanded !== 'undefined' && WatergateStoryExpanded.scenes) {
@@ -117,8 +117,8 @@ class GameEngine {
                 name: 'The Watergate Files', 
                 story: WatergateStoryExpanded, 
                 key: 'watergate',
-                sealed: WatergateStoryExpanded.sealed || false,
-                releaseDate: WatergateStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('watergate') : (WatergateStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('watergate') : (WatergateStoryExpanded.releaseDate || null)
             });
         }
         if (typeof PentagonPapersStoryExpanded !== 'undefined' && PentagonPapersStoryExpanded.scenes) {
@@ -126,8 +126,8 @@ class GameEngine {
                 name: 'The Pentagon Papers', 
                 story: PentagonPapersStoryExpanded, 
                 key: 'pentagon-papers',
-                sealed: PentagonPapersStoryExpanded.sealed || false,
-                releaseDate: PentagonPapersStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('pentagon-papers') : (PentagonPapersStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('pentagon-papers') : (PentagonPapersStoryExpanded.releaseDate || null)
             });
         }
         if (typeof MKUltraStoryExpanded !== 'undefined' && MKUltraStoryExpanded.scenes) {
@@ -135,8 +135,8 @@ class GameEngine {
                 name: 'MKUltra Files', 
                 story: MKUltraStoryExpanded, 
                 key: 'mkultra',
-                sealed: MKUltraStoryExpanded.sealed || false,
-                releaseDate: MKUltraStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('mkultra') : (MKUltraStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('mkultra') : (MKUltraStoryExpanded.releaseDate || null)
             });
         }
         if (typeof PanamaPapersStoryExpanded !== 'undefined' && PanamaPapersStoryExpanded.scenes) {
@@ -144,8 +144,8 @@ class GameEngine {
                 name: 'Panama Papers', 
                 story: PanamaPapersStoryExpanded, 
                 key: 'panama-papers',
-                sealed: PanamaPapersStoryExpanded.sealed || false,
-                releaseDate: PanamaPapersStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('panama-papers') : (PanamaPapersStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('panama-papers') : (PanamaPapersStoryExpanded.releaseDate || null)
             });
         }
         if (typeof IranContraStoryExpanded !== 'undefined' && IranContraStoryExpanded.scenes) {
@@ -153,8 +153,8 @@ class GameEngine {
                 name: 'Iran-Contra Affair', 
                 story: IranContraStoryExpanded, 
                 key: 'iran-contra',
-                sealed: IranContraStoryExpanded.sealed || false,
-                releaseDate: IranContraStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('iran-contra') : (IranContraStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('iran-contra') : (IranContraStoryExpanded.releaseDate || null)
             });
         }
         if (typeof COINTELPROStoryExpanded !== 'undefined' && COINTELPROStoryExpanded.scenes) {
@@ -162,8 +162,8 @@ class GameEngine {
                 name: 'COINTELPRO Files', 
                 story: COINTELPROStoryExpanded, 
                 key: 'cointelpro',
-                sealed: COINTELPROStoryExpanded.sealed || false,
-                releaseDate: COINTELPROStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('cointelpro') : (COINTELPROStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('cointelpro') : (COINTELPROStoryExpanded.releaseDate || null)
             });
         }
         if (typeof SnowdenRevelationsStoryExpanded !== 'undefined' && SnowdenRevelationsStoryExpanded.scenes) {
@@ -171,8 +171,8 @@ class GameEngine {
                 name: 'Snowden Revelations', 
                 story: SnowdenRevelationsStoryExpanded, 
                 key: 'snowden',
-                sealed: SnowdenRevelationsStoryExpanded.sealed || false,
-                releaseDate: SnowdenRevelationsStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('snowden') : (SnowdenRevelationsStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('snowden') : (SnowdenRevelationsStoryExpanded.releaseDate || null)
             });
         }
         if (typeof TuskegeeExperimentStoryExpanded !== 'undefined' && TuskegeeExperimentStoryExpanded.scenes) {
@@ -180,8 +180,8 @@ class GameEngine {
                 name: 'Tuskegee Experiment', 
                 story: TuskegeeExperimentStoryExpanded, 
                 key: 'tuskegee',
-                sealed: TuskegeeExperimentStoryExpanded.sealed || false,
-                releaseDate: TuskegeeExperimentStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('tuskegee') : (TuskegeeExperimentStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('tuskegee') : (TuskegeeExperimentStoryExpanded.releaseDate || null)
             });
         }
         if (typeof OperationPaperclipStoryExpanded !== 'undefined' && OperationPaperclipStoryExpanded.scenes) {
@@ -189,8 +189,8 @@ class GameEngine {
                 name: 'Operation Paperclip', 
                 story: OperationPaperclipStoryExpanded, 
                 key: 'paperclip',
-                sealed: OperationPaperclipStoryExpanded.sealed || false,
-                releaseDate: OperationPaperclipStoryExpanded.releaseDate || null
+                sealed: window.GameConfig ? GameConfig.isGameSealed('paperclip') : (OperationPaperclipStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('paperclip') : (OperationPaperclipStoryExpanded.releaseDate || null)
             });
         }
         
