@@ -565,7 +565,37 @@ class GameEngine {
     }
     
     displayChoices() {
-        if (!this.currentScene.choices) return;
+        // Check if campaign has ended (no choices available)
+        if (!this.currentScene.choices || this.currentScene.choices.length === 0) {
+            // Create "Back to Main Menu" button for campaign end
+            const endPrompt = document.createElement('p');
+            endPrompt.className = 'choice-prompt';
+            endPrompt.textContent = 'Investigation Complete';
+            this.elements.choicesContainer.appendChild(endPrompt);
+            
+            const backButton = document.createElement('button');
+            backButton.className = 'choice-button main-menu-button';
+            backButton.textContent = '🏠 Back to Main Menu';
+            backButton.onclick = () => {
+                this.playButtonClickSound();
+                // Clear game state and return to main menu
+                this.clearGameState();
+                window.location.href = 'index.html';
+            };
+            
+            // Animate button appearance
+            backButton.style.opacity = '0';
+            backButton.style.transform = 'translateY(20px)';
+            this.elements.choicesContainer.appendChild(backButton);
+            
+            setTimeout(() => {
+                backButton.style.transition = 'all 0.5s ease';
+                backButton.style.opacity = '1';
+                backButton.style.transform = 'translateY(0)';
+            }, 100);
+            
+            return;
+        }
         
         // Add prompt text before choices if provided
         if (this.currentScene.prompt) {
@@ -736,6 +766,34 @@ Prepare to reconstruct classified evidence...`;
     
     clearChoices() {
         this.elements.choicesContainer.innerHTML = '';
+    }
+    
+    clearGameState() {
+        // Reset game state to initial values
+        this.gameState = {
+            evidenceCount: 0,
+            investigationProgress: 0,
+            choices: [],
+            visitedScenes: new Set(),
+            visitedChoices: {},
+            knowledgeScore: 0,
+            correctAnswers: 0,
+            totalQuestions: 0,
+            badges: []
+        };
+        
+        // Clear any active speech
+        if (this.speechSynthesis) {
+            this.speechSynthesis.cancel();
+        }
+        
+        // Clear current scene
+        this.currentScene = null;
+        this.currentStory = null;
+        
+        // Save cleared state to localStorage
+        localStorage.removeItem('gameState');
+        localStorage.removeItem('currentStory');
     }
     
     updateDocument() {
