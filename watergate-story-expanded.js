@@ -200,7 +200,7 @@ const WatergateStoryExpanded = {
                 },
                 {
                     text: "Investigate the White House numbers",
-                    nextScene: "white_house_connection"
+                    nextScene: "hunt_white_house"
                 },
                 {
                     text: "Analyze the surveillance targets",

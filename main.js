@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const game = new GameEngine();
     
+    // Initialize speech controls
+    game.setupSpeechControls();
+    
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             const music = document.getElementById('background-music');

@@ -17,6 +17,12 @@ class GameEngine {
         this.skipTyping = false;
         this.currentTypingCallback = null;
         
+        // Text-to-speech properties
+        this.speechSynthesis = window.speechSynthesis;
+        this.isSpeaking = false;
+        this.speechEnabled = false;
+        this.currentUtterance = null;
+        
         this.elements = {
             storyText: document.getElementById('story-text'),
             choicesContainer: document.getElementById('choices-container'),
@@ -550,6 +556,10 @@ class GameEngine {
         
         // Add a brief delay to show the complete text before showing choices
         setTimeout(() => {
+            // Read text aloud if speech is enabled
+            if (this.speechEnabled && text) {
+                this.speakText(text);
+            }
             if (callback) callback();
         }, 100);
     }
@@ -631,6 +641,21 @@ class GameEngine {
         // Handle quiz mechanics
         if (choice.quizAnswer !== undefined) {
             this.handleQuizAnswer(choice);
+            
+            // Delay scene loading after quiz feedback
+            setTimeout(() => {
+                if (choice.evidence) {
+                    this.addEvidence();
+                }
+                
+                if (choice.progressIncrease) {
+                    this.increaseProgress(choice.progressIncrease);
+                }
+                
+                this.playChoiceSound();
+                this.loadScene(choice.nextScene);
+            }, 2500); // 2.5 second delay to show feedback
+            return;
         }
         
         // Check if this choice triggers a mini-game
@@ -1030,6 +1055,86 @@ Your choices throughout this investigation have shaped the narrative and uncover
         statusBar.appendChild(badgeDiv);
         return badgeDiv;
     }
+    
+    // Text-to-Speech Methods
+    setupSpeechControls() {
+        const speechButton = document.getElementById('speech-toggle');
+        if (!speechButton) return;
+        
+        speechButton.addEventListener('click', () => {
+            this.toggleSpeech();
+        });
+        
+        // Stop speech when scene changes
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('choice-button')) {
+                this.stopSpeech();
+            }
+        });
+    }
+    
+    toggleSpeech() {
+        this.speechEnabled = !this.speechEnabled;
+        const speechButton = document.getElementById('speech-toggle');
+        
+        if (this.speechEnabled) {
+            speechButton.classList.add('active');
+            speechButton.querySelector('.speech-icon').textContent = '🔇';
+            // Start reading current text if available
+            const currentText = this.elements.storyText.textContent;
+            if (currentText && currentText.trim()) {
+                this.speakText(currentText);
+            }
+        } else {
+            speechButton.classList.remove('active');
+            speechButton.querySelector('.speech-icon').textContent = '🔊';
+            this.stopSpeech();
+        }
+    }
+    
+    speakText(text) {
+        if (!this.speechEnabled || !this.speechSynthesis) return;
+        
+        // Stop any current speech
+        this.stopSpeech();
+        
+        // Clean the text for better speech
+        const cleanText = text
+            .replace(/[━─]/g, '') // Remove decorative lines
+            .replace(/[🔍📋📄⚠️☢️]/g, '') // Remove emojis
+            .replace(/\n{3,}/g, '\n\n') // Reduce multiple line breaks
+            .trim();
+        
+        this.currentUtterance = new SpeechSynthesisUtterance(cleanText);
+        this.currentUtterance.rate = 0.9; // Slightly slower for clarity
+        this.currentUtterance.pitch = 1.0;
+        this.currentUtterance.volume = 1.0;
+        
+        // Use a good voice if available
+        const voices = this.speechSynthesis.getVoices();
+        const englishVoice = voices.find(voice => voice.lang.startsWith('en-'));
+        if (englishVoice) {
+            this.currentUtterance.voice = englishVoice;
+        }
+        
+        this.currentUtterance.onend = () => {
+            this.isSpeaking = false;
+        };
+        
+        this.currentUtterance.onstart = () => {
+            this.isSpeaking = true;
+        };
+        
+        this.speechSynthesis.speak(this.currentUtterance);
+    }
+    
+    stopSpeech() {
+        if (this.speechSynthesis && this.speechSynthesis.speaking) {
+            this.speechSynthesis.cancel();
+            this.isSpeaking = false;
+        }
+    }
+    
 }
 
 window.GameEngine = GameEngine;

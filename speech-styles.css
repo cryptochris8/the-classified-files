@@ -1,0 +1,58 @@
+/* Speech/Read Aloud Button Styles */
+.speech-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(52, 211, 153, 0.1);
+    border: 2px solid #34d399;
+    color: #34d399;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+}
+
+.speech-button:hover {
+    background: rgba(52, 211, 153, 0.2);
+    box-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
+}
+
+.speech-button.active {
+    background: rgba(52, 211, 153, 0.3);
+    box-shadow: 0 0 15px rgba(52, 211, 153, 0.6);
+}
+
+.speech-button.active .speech-icon {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.speech-icon {
+    font-size: 1.2em;
+}
+
+.speech-text {
+    display: inline-block;
+}
+
+/* Hide text on mobile */
+@media (max-width: 768px) {
+    .speech-text {
+        display: none;
+    }
+    
+    .speech-button {
+        padding: 8px 12px;
+        top: 10px;
+        right: 10px;
+    }
+}
