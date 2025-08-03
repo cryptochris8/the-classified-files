@@ -22,6 +22,7 @@ class GameEngine {
         this.isSpeaking = false;
         this.speechEnabled = false;
         this.currentUtterance = null;
+        this.musicWasPlaying = false; // Track if music was playing before speech
         
         this.elements = {
             storyText: document.getElementById('story-text'),
@@ -1138,6 +1139,13 @@ Your choices throughout this investigation have shaped the narrative and uncover
         if (this.speechEnabled) {
             speechButton.classList.add('active');
             speechButton.querySelector('.speech-icon').textContent = '🔇';
+            
+            // Pause background music when speech is enabled
+            if (this.elements.backgroundMusic && !this.elements.backgroundMusic.paused) {
+                this.musicWasPlaying = true;
+                this.elements.backgroundMusic.pause();
+            }
+            
             // Start reading current text if available
             const currentText = this.elements.storyText.textContent;
             if (currentText && currentText.trim()) {
@@ -1147,6 +1155,12 @@ Your choices throughout this investigation have shaped the narrative and uncover
             speechButton.classList.remove('active');
             speechButton.querySelector('.speech-icon').textContent = '🔊';
             this.stopSpeech();
+            
+            // Resume background music if it was playing before
+            if (this.elements.backgroundMusic && this.musicWasPlaying) {
+                this.elements.backgroundMusic.play();
+                this.musicWasPlaying = false;
+            }
         }
     }
     
