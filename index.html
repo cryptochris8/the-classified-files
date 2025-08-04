@@ -9,11 +9,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <meta name="cache-killer" content="202507301207-NAVIGATION-FIX">
+    <meta name="cache-killer" content="202508041700-DIDDY-CASE-FIX">
     
-    <link rel="stylesheet" href="styles.css?v=202507301207&force=fresh&fix=navigation">
-    <link rel="stylesheet" href="game-help-styles.css?v=202508021500">
-    <link rel="stylesheet" href="speech-styles.css?v=202508021530">
+    <link rel="stylesheet" href="styles.css?v=202508041700&force=fresh&fix=diddy">
+    <link rel="stylesheet" href="game-help-styles.css?v=202508041700">
+    <link rel="stylesheet" href="speech-styles.css?v=202508041700">
     <link rel="stylesheet" href="payment-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     
@@ -82,9 +82,9 @@
             console.error('File:', e.filename, 'Line:', e.lineno);
         });
     </script>
-    <script src="game-config.js?v=202508021207&force=fresh"></script>
-    <script src="game-engine.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <script src="mini-game-engine.js?v=202508021207&force=fresh"></script>
+    <script src="game-config.js?v=202508041700&force=fresh&fix=diddy"></script>
+    <script src="game-engine.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
+    <script src="mini-game-engine.js?v=202508041700&force=fresh&fix=diddy"></script>
     <!-- STORY FILES -->
     <script src="epstein-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="jfk-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
@@ -100,10 +100,13 @@
     <script src="snowden-revelations-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="tuskegee-experiment-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="operation-paperclip-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
-    <script src="diddy-case-story-expanded.js?v=202508041200&force=fresh"></script>
+    <script src="diddy-case-story-expanded.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
     <script src="payment-system.js"></script>
-    <script src="main.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
+    <script src="main.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
     <script>
+        console.log('🚨 DIDDY CASE DEBUG - START');
+        console.log('Script loaded from:', window.location.href);
+        console.log('Diddy script element exists:', !!document.querySelector('script[src*="diddy-case"]'));
         console.log('🎉 All story files loaded - case selection enabled!');
         console.log('Available stories:', {
             Epstein: typeof EpsteinStoryExpanded !== 'undefined',
