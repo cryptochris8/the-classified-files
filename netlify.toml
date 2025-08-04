@@ -1,6 +1,6 @@
 [build]
-  publish = "."
-  command = "echo 'Deploying full game from main repository'"
+  publish = "website-repo"
+  command = "echo 'Deploying marketing website'"
 
 [[headers]]
   for = "/*.js"
