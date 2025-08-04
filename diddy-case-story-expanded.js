@@ -5,23 +5,27 @@ const DiddyCaseStoryExpanded = {
         intro: {
             text: `THE CLASSIFIED FILES: DIDDY INVESTIGATION
             
-            DAY 1 - TUESDAY, 9:15 AM
+            DAY 1 - TUESDAY, 3:47 AM
             
-You are investigative journalist Alex Rivera, covering the entertainment industry beat for the New York Tribune. You've just received a call from your editor about a major federal indictment that dropped overnight.
+Your phone buzzes you awake. Unknown number. As an investigative journalist covering the dark underbelly of the entertainment industry, you've learned to answer every call.
 
-"Alex, you need to get down to the Southern District courthouse immediately," your editor Marcus says urgently. "The feds just unsealed an indictment against Sean Combs - Diddy. This is bigger than anything we've seen in the music industry."
+"Alex Rivera? This is Agent Sarah Chen, Homeland Security Investigations. We met briefly during the Maxwell case coverage."
 
-You grab your press credentials and notebook, scanning the breaking news alerts flooding your phone:
+You sit up in bed, instantly alert. HSI doesn't call journalists at 4 AM unless something massive is happening.
 
-📱 BREAKING: Hip-hop mogul Sean "Diddy" Combs indicted on federal charges
-📱 SDNY announces sex trafficking, racketeering charges
-📱 Homeland Security arrest made in Manhattan hotel
+"Agent Chen? What's going on?"
 
-Your phone rings - it's Detective Rodriguez from NYPD, someone you've worked with on previous stories.
+"Sean Combs was arrested three hours ago in Manhattan. Federal indictment unsealed at dawn. This isn't just another celebrity scandal, Rivera. We've been building this RICO case for over a year. The scope... it's bigger than anything we've seen in entertainment."
 
-"Rivera? You covering the Combs case? This thing goes back over 15 years. The feds have been building this for months. The indictment is just the beginning."
+Through your apartment window, you see news vans already racing through the empty streets toward Lower Manhattan.
 
-Outside the courthouse, you see other reporters already gathering. This case will define your career in investigative journalism.`,
+"There's something else," Chen continues, her voice dropping. "Someone's been leaking information about our investigation for months. We think there's a coordinated effort to discredit key witnesses. Watch your back."
+
+The line goes dead. You check your secure inbox - a encrypted message from an unknown sender:
+
+"The indictment is just the beginning. The real evidence is buried deeper. Meeting spot: Federal Plaza, 6 AM. Come alone. -A Friend"
+
+Your hands shake as you realize this case will either make your career... or end it.`,
             image: "federal_courthouse_morning",
             imagePrompt: "Federal courthouse in Manhattan with journalists gathering, morning light, serious investigative atmosphere",
             sources: ["SDNY Press Release", "Federal Indictment", "Court Records"],
@@ -34,9 +38,9 @@ Outside the courthouse, you see other reporters already gathering. This case wil
                     evidence: true
                 },
                 {
-                    text: "Interview former associates about the timeline",
-                    nextScene: "associate_interviews",
-                    progressIncrease: 12,
+                    text: "Meet the mysterious contact at Federal Plaza first",
+                    nextScene: "mysterious_contact_meeting",
+                    progressIncrease: 18,
                     evidence: true
                 },
                 {
@@ -65,6 +69,125 @@ Outside the courthouse, you see other reporters already gathering. This case wil
                 }
             ],
             educationalNote: "This case involves real federal charges filed in September 2024 by the U.S. Attorney's Office for the Southern District of New York."
+        },
+
+        mysterious_contact_meeting: {
+            text: `FEDERAL PLAZA RENDEZVOUS
+            
+            DAY 1 - 6:00 AM
+            
+            The early morning air is crisp as you approach Federal Plaza. HSI and FBI agents move purposefully through the building, their faces grim. This is clearly the epicenter of something huge.
+
+            A figure in a dark coat approaches from the shadows near the courthouse steps. Female, mid-40s, carrying a manila envelope marked "CONFIDENTIAL."
+
+            "Rivera? I'm Dr. Lisa Martinez, former entertainment industry consultant. I've been documenting what I witnessed for years, waiting for someone with courage to investigate."
+
+            She hands you the envelope. Inside: photographs, financial documents, and what appears to be pages from a private investigator's report.
+
+            "The federal indictment is solid - everything in there is true. But there's more they couldn't include. Corporate shell companies, international money movements, a network that spans multiple industries."
+
+            Her phone buzzes. She checks it and her face goes pale.
+
+            "They know we're meeting. I have to go. Those documents are copies - I kept the originals hidden. The real story isn't just about one person, Rivera. It's about how power protects power."
+
+            She disappears into the crowd of federal employees entering the building. You're left holding evidence that could blow this case wide open... or make you a target.
+
+            Agent Chen appears beside you. "I see you met our star witness. She's been under federal protection for six months. What she gave you... use it carefully."`,
+            image: "federal_plaza_dawn",
+            imagePrompt: "Federal Plaza at dawn with mysterious figures meeting, HSI building in background, tense atmosphere",
+            sources: ["Witness Protection Program", "Federal Investigation Files", "Confidential Sources"],
+            choices: [
+                {
+                    text: "Examine the secret documents before reading the indictment",
+                    nextScene: "secret_documents_analysis",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Study the federal indictment with this new context",
+                    nextScene: "indictment_analysis",
+                    progressIncrease: 18,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Follow up with Agent Chen about witness protection",
+                    nextScene: "agent_chen_briefing",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the corporate shell companies mentioned",
+                    nextScene: "corporate_investigation",
+                    progressIncrease: 22,
+                    evidence: true
+                }
+            ],
+            educationalNote: "While this meeting is fictional, federal investigations often rely on protected witnesses and confidential sources."
+        },
+
+        secret_documents_analysis: {
+            text: `CONFIDENTIAL DOCUMENTS REVEALED
+            
+            DAY 1 - 7:30 AM - SECURE LOCATION
+            
+            You've found a quiet corner in a 24-hour diner near the courthouse to examine Dr. Martinez's documents. What you see makes your blood run cold:
+
+            📄 PRIVATE INVESTIGATOR REPORT - EXCERPTS
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            
+            "Subject: Sean Combs Enterprise Investigation
+            Duration: 2019-2024
+            Client: [REDACTED - Federal Agency]
+            
+            FINANCIAL NETWORKS IDENTIFIED:
+            - 23 shell companies across 7 states
+            - Bermuda and Cayman accounts (estimated $47M)
+            - Property purchases using intermediary LLCs
+            - Cash transactions exceeding $10M annually
+            
+            PATTERN OF BEHAVIOR DOCUMENTED:
+            - Consistent interstate transportation activities
+            - Multiple properties used for same purposes
+            - Electronic surveillance evidence (court authorized)
+            - Witness statements corroborating federal charges"
+            
+            A handwritten note in the margin reads: "This is just what we could prove. The real network goes deeper."
+
+            Your phone buzzes - text from unknown number: "Stop digging or join the others who disappeared. Last warning."
+
+            Dr. Martinez was right. This isn't just about the federal charges - it's about a system designed to hide the truth. But now you have documentation that bridges the gap between what's public and what's buried.`,
+            image: "confidential_documents",
+            imagePrompt: "Secret documents spread on diner table, redacted pages, coffee cup, tense investigative atmosphere",
+            sources: ["Private Investigation Files", "Financial Records", "Federal Surveillance Reports"],
+            choices: [
+                {
+                    text: "Cross-reference with the official federal indictment",
+                    nextScene: "indictment_analysis",
+                    progressIncrease: 25,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the threatening message sender",
+                    nextScene: "threat_investigation",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Focus on the shell company financial network",
+                    nextScene: "financial_investigation",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Contact Dr. Martinez about the disappeared investigators",
+                    nextScene: "disappeared_investigators",
+                    progressIncrease: 18,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Financial networks and shell companies are common in federal RICO investigations, though specific details here are dramatized."
         },
 
         indictment_analysis: {
