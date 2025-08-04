@@ -310,6 +310,17 @@ class GameEngine {
                         this.playButtonClickSound();
                         this.showSealedCaseMessage(storyData);
                     };
+                } else if (window.paymentSystem && window.paymentSystem.shouldShowPurchasePrompt(storyData.key)) {
+                    // Show premium badge
+                    const premiumBadge = document.createElement('span');
+                    premiumBadge.className = 'premium-badge';
+                    premiumBadge.textContent = 'PREMIUM';
+                    button.appendChild(premiumBadge);
+                    
+                    button.onclick = () => {
+                        this.playButtonClickSound();
+                        this.showPurchasePrompt(storyData);
+                    };
                 } else {
                     button.onclick = () => {
                         this.playButtonClickSound();
@@ -379,6 +390,48 @@ class GameEngine {
                 backButton.style.transform = 'translateY(0)';
             }, 100);
         }, 1000);
+    }
+    
+    showPurchasePrompt(storyData) {
+        if (window.paymentSystem) {
+            const prompt = window.paymentSystem.createPurchasePrompt(storyData.name);
+            document.body.insertAdjacentHTML('beforeend', prompt);
+            
+            // Add close functionality for prompt
+            const purchasePrompt = document.querySelector('.purchase-prompt:last-child');
+            if (purchasePrompt) {
+                purchasePrompt.addEventListener('click', (e) => {
+                    if (e.target === purchasePrompt) {
+                        purchasePrompt.remove();
+                    }
+                });
+                
+                // Add close button
+                const closeButton = document.createElement('button');
+                closeButton.innerHTML = '✕';
+                closeButton.style.cssText = `
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    background: none;
+                    border: none;
+                    color: #fff;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    opacity: 0.7;
+                    transition: opacity 0.3s;
+                `;
+                closeButton.onmouseover = () => closeButton.style.opacity = '1';
+                closeButton.onmouseout = () => closeButton.style.opacity = '0.7';
+                closeButton.onclick = () => purchasePrompt.remove();
+                
+                const purchaseContent = purchasePrompt.querySelector('.purchase-content');
+                if (purchaseContent) {
+                    purchaseContent.style.position = 'relative';
+                    purchaseContent.appendChild(closeButton);
+                }
+            }
+        }
     }
     
     loadStory(storyData) {

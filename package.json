@@ -2,16 +2,21 @@
   "name": "declassified",
   "version": "1.0.0",
   "description": "A text-based investigative game exploring classified document cases",
-  "main": "index.html",
+  "main": "server.js",
   "scripts": {
-    "start": "npx http-server -p 8080",
-    "dev": "npx http-server -p 8080 -o",
+    "start": "node server.js",
+    "dev": "node server.js",
+    "static": "npx http-server -p 8080 -o",
     "build": "echo 'Static site - no build step required'",
     "test": "echo 'No tests configured'"
   },
   "keywords": ["game", "investigation", "interactive", "text-based"],
   "author": "",
   "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "stripe": "^12.0.0"
+  },
   "devDependencies": {
     "http-server": "^14.1.1"
   }

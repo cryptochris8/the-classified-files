@@ -1,0 +1,205 @@
+/* Payment System Styles */
+.purchase-prompt {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.purchase-content {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border: 2px solid #ff6b35;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(255, 107, 53, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.purchase-content h3 {
+    color: #ff6b35;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.5);
+}
+
+.purchase-content p {
+    color: #e0e0e0;
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.price-options {
+    margin: 2rem 0;
+}
+
+.purchase-button {
+    background: linear-gradient(45deg, #ff6b35, #ff8c42);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+}
+
+.purchase-button:hover {
+    background: linear-gradient(45deg, #ff8c42, #ffad5a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+}
+
+.purchase-button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.purchase-content small {
+    color: #888;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Unlock notification */
+.unlock-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001;
+}
+
+.unlock-notification {
+    background: linear-gradient(135deg, #1a4a1a 0%, #2d5d2d 100%);
+    border: 2px solid #4caf50;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(76, 175, 80, 0.3);
+    animation: slideIn 0.3s ease-out;
+}
+
+.unlock-notification h3 {
+    color: #4caf50;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.unlock-notification p {
+    color: #e0e0e0;
+    font-family: 'IBM Plex Mono', monospace;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.unlock-notification button {
+    background: linear-gradient(45deg, #4caf50, #66bb6a);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.unlock-notification button:hover {
+    background: linear-gradient(45deg, #66bb6a, #81c784);
+    transform: translateY(-2px);
+}
+
+/* Locked content styling */
+.locked-content {
+    position: relative;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+.locked-content::after {
+    content: "🔒";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 1rem;
+    border-radius: 50%;
+    border: 2px solid #ff6b35;
+}
+
+/* Premium badge for locked cases */
+.premium-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #ff6b35, #ff8c42);
+    color: white;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .purchase-content {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+    
+    .purchase-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .purchase-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
