@@ -103,6 +103,7 @@ class GameEngine {
         console.log('UAPStoryExpanded available:', typeof UAPStoryExpanded !== 'undefined');
         console.log('September11CommissionExpanded available:', typeof September11CommissionExpanded !== 'undefined');
         console.log('HunterBidenLaptopStoryExpanded available:', typeof HunterBidenLaptopStoryExpanded !== 'undefined');
+        console.log('DiddyCaseStoryExpanded available:', typeof DiddyCaseStoryExpanded !== 'undefined');
         
         // Show case selection for all available stories (including sealed ones)
         const availableStories = [];
@@ -230,6 +231,15 @@ class GameEngine {
                 key: 'paperclip',
                 sealed: window.GameConfig ? GameConfig.isGameSealed('paperclip') : (OperationPaperclipStoryExpanded.sealed || false),
                 releaseDate: window.GameConfig ? GameConfig.getReleaseDate('paperclip') : (OperationPaperclipStoryExpanded.releaseDate || null)
+            });
+        }
+        if (typeof DiddyCaseStoryExpanded !== 'undefined' && DiddyCaseStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Diddy Federal Case', 
+                story: DiddyCaseStoryExpanded, 
+                key: 'diddy-case',
+                sealed: window.GameConfig ? GameConfig.isGameSealed('diddy-case') : (DiddyCaseStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('diddy-case') : (DiddyCaseStoryExpanded.releaseDate || null)
             });
         }
         
