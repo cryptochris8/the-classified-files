@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "echo 'No build step required - static files only'"
+  command = "echo 'Deploying full game from main repository'"
 
 [[headers]]
   for = "/*.js"

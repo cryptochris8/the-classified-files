@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deployment Diagnosis</title>
+    <style>
+        body { font-family: monospace; background: #000; color: #0f0; padding: 20px; }
+        .test { margin: 10px 0; padding: 10px; border: 1px solid #333; }
+        .pass { border-color: #0f0; }
+        .fail { border-color: #f00; color: #f00; }
+        .info { color: #0ff; }
+    </style>
+</head>
+<body>
+    <h1>🔍 DIDDY CASE DEPLOYMENT DIAGNOSIS</h1>
+    
+    <div id="results"></div>
+    
+    <script>
+        const results = document.getElementById('results');
+        
+        function addTest(name, condition, details = '') {
+            const div = document.createElement('div');
+            div.className = `test ${condition ? 'pass' : 'fail'}`;
+            div.innerHTML = `
+                <strong>${condition ? '✅' : '❌'} ${name}</strong><br>
+                <span class="info">${details}</span>
+            `;
+            results.appendChild(div);
+            console.log(`${condition ? '✅' : '❌'} ${name}:`, details);
+        }
+        
+        // Test 1: Script element exists
+        const diddyScript = document.querySelector('script[src*="diddy-case"]');
+        addTest('Diddy Script Element', !!diddyScript, 
+            diddyScript ? `Found: ${diddyScript.src}` : 'Script tag not found in HTML');
+        
+        // Test 2: File loading
+        if (diddyScript) {
+            fetch(diddyScript.src)
+                .then(response => {
+                    addTest('Diddy File Loads', response.ok, 
+                        `Status: ${response.status} ${response.statusText}`);
+                    return response.text();
+                })
+                .then(content => {
+                    addTest('Diddy File Has Content', content.length > 1000,
+                        `File size: ${content.length} characters`);
+                    addTest('DiddyCaseStoryExpanded Defined', content.includes('DiddyCaseStoryExpanded'),
+                        'Variable definition found in file');
+                })
+                .catch(error => {
+                    addTest('Diddy File Loads', false, `Error: ${error.message}`);
+                });
+        }
+        
+        // Test 3: Wait for scripts to load, then test variables
+        setTimeout(() => {
+            addTest('DiddyCaseStoryExpanded Variable', 
+                typeof DiddyCaseStoryExpanded !== 'undefined',
+                typeof DiddyCaseStoryExpanded !== 'undefined' ? 'Variable exists globally' : 'Variable not found');
+            
+            addTest('GameConfig Loaded', 
+                typeof GameConfig !== 'undefined',
+                typeof GameConfig !== 'undefined' ? 'GameConfig exists' : 'GameConfig not found');
+            
+            if (typeof GameConfig !== 'undefined') {
+                const isSealed = GameConfig.isGameSealed('diddy-case');
+                addTest('Diddy Case Configuration', 
+                    !isSealed, 
+                    `Sealed status: ${isSealed} (should be false for open)`);
+            }
+            
+            // Test 4: Environment detection
+            addTest('Environment', true, 
+                `URL: ${window.location.href}<br>
+                 Hostname: ${window.location.hostname}<br>
+                 Protocol: ${window.location.protocol}`);
+                 
+        }, 2000);
+        
+    </script>
+</body>
+</html>
