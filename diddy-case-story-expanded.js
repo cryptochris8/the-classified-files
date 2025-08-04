@@ -26,7 +26,7 @@ The line goes dead. You check your secure inbox - a encrypted message from an un
 "The indictment is just the beginning. The real evidence is buried deeper. Meeting spot: Federal Plaza, 6 AM. Come alone. -A Friend"
 
 Your hands shake as you realize this case will either make your career... or end it.`,
-            image: "federal_courthouse_morning",
+            image: "federal_courthouse_morning.png",
             imagePrompt: "Federal courthouse in Manhattan with journalists gathering, morning light, serious investigative atmosphere",
             sources: ["SDNY Press Release", "Federal Indictment", "Court Records"],
             choices: [
@@ -93,7 +93,7 @@ Your hands shake as you realize this case will either make your career... or end
             She disappears into the crowd of federal employees entering the building. You're left holding evidence that could blow this case wide open... or make you a target.
 
             Agent Chen appears beside you. "I see you met our star witness. She's been under federal protection for six months. What she gave you... use it carefully."`,
-            image: "federal_plaza_dawn",
+            image: "federal_plaza_dawn.png",
             imagePrompt: "Federal Plaza at dawn with mysterious figures meeting, HSI building in background, tense atmosphere",
             sources: ["Witness Protection Program", "Federal Investigation Files", "Confidential Sources"],
             choices: [
@@ -157,7 +157,7 @@ Your hands shake as you realize this case will either make your career... or end
             Your phone buzzes - text from unknown number: "Stop digging or join the others who disappeared. Last warning."
 
             Dr. Martinez was right. This isn't just about the federal charges - it's about a system designed to hide the truth. But now you have documentation that bridges the gap between what's public and what's buried.`,
-            image: "confidential_documents",
+            image: "confidential_documents.png",
             imagePrompt: "Secret documents spread on diner table, redacted pages, coffee cup, tense investigative atmosphere",
             sources: ["Private Investigation Files", "Financial Records", "Federal Surveillance Reports"],
             choices: [
@@ -215,7 +215,7 @@ Your hands shake as you realize this case will either make your career... or end
             The indictment describes what it calls "Freak Offs" - alleged elaborate sexual performances that were arranged, directed, and often recorded.
             
             Your legal source explains: "RICO charges are extremely serious. The government has to prove an ongoing criminal enterprise with a pattern of racketeering activity."`,
-            image: "federal_indictment_document",
+            image: "federal_indictment_document.png",
             imagePrompt: "Official federal indictment document with Department of Justice seal, legal papers spread on desk",
             sources: ["U.S. v. Sean Combs Indictment", "SDNY Court Filings", "Federal Criminal Code"],
             choices: [
@@ -278,7 +278,7 @@ Your hands shake as you realize this case will either make your career... or end
             A former federal prosecutor tells you: "Sixteen years is a long alleged conspiracy. The government needs to prove continuity and that this was an ongoing criminal enterprise, not isolated incidents."
             
             You notice the charges span multiple presidential administrations and changes in federal law enforcement priorities.`,
-            image: "investigation_timeline_board",
+            image: "investigation_timeline_board.png",
             imagePrompt: "Detective-style timeline board with photos, documents, and red string connections showing chronological investigation",
             sources: ["Federal Indictment", "DOJ Timeline", "Court Records"],
             choices: [
@@ -341,7 +341,7 @@ Your hands shake as you realize this case will either make your career... or end
             A federal law enforcement source explains: "These weren't random raids. This represents months, maybe years of investigation. The simultaneous nature suggests they were worried about evidence destruction."
             
             The scope suggests federal investigators built their case methodically, following financial trails and gathering electronic evidence before making arrests.`,
-            image: "federal_raid_evidence",
+            image: "federal_raid_evidence.png",
             imagePrompt: "Federal agents processing evidence boxes, official HSI badges visible, professional law enforcement operation",
             sources: ["HSI Press Releases", "Federal Search Warrants", "DOJ Statements"],
             choices: [
@@ -405,7 +405,7 @@ Your hands shake as you realize this case will either make your career... or end
             A victims' rights attorney explains: "In trafficking cases, witness testimony is crucial. The government needs to prove coercion, force, or fraud. These witnesses provide firsthand accounts of alleged criminal activity."
             
             The prosecution's case relies heavily on these testimonies to establish the pattern of alleged criminal behavior over the 16-year timeframe.`,
-            image: "witness_testimony_courtroom",
+            image: "witness_testimony_courtroom.png",
             imagePrompt: "Federal courtroom with witness stand, serious legal proceedings, professional judicial setting",
             sources: ["Federal Court Testimony", "Victim Impact Statements", "DOJ Witness Protection"],
             choices: [
@@ -467,7 +467,7 @@ Your hands shake as you realize this case will either make your career... or end
             Legal experts are calling it a "partial victory" for both sides. The government failed to prove the most serious racketeering charges but secured convictions on federal transportation charges.
             
             Federal Judge Arun Subramanian: "While the jury rejected the conspiracy allegations, the transportation convictions reflect serious federal crimes that warrant significant punishment."`,
-            image: "federal_courthouse_verdict",
+            image: "federal_courthouse_verdict.png",
             imagePrompt: "Federal courthouse with media gathered outside, serious news reporting atmosphere, justice scales visible",
             sources: ["Federal Court Records", "Jury Verdict", "Sentencing Guidelines"],
             choices: [
@@ -532,7 +532,7 @@ Your hands shake as you realize this case will either make your career... or end
             Your investigation revealed the complex intersection of fame, power, and federal law enforcement in modern America.
             
             INVESTIGATION COMPLETE - CASE ARCHIVED`,
-            image: "final_report_complete",
+            image: "final_report_complete.png",
             imagePrompt: "Completed investigative report with official seals, professional journalism achievement, case files organized",
             sources: ["Complete Case Files", "Federal Court Records", "Investigative Research"],
             choices: [
