@@ -27,7 +27,8 @@ const GameConfig = {
         cointelpro: true,   // Sealed in production
         snowden: true,      // Sealed in production
         tuskegee: true,     // Sealed in production
-        paperclip: true     // Sealed in production
+        paperclip: true,    // Sealed in production
+        'diddy-case': false // Open in production - NEW CASE
     },
     
     // Release dates for sealed games
