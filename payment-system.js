@@ -142,10 +142,10 @@ class PaymentSystem {
                 <div class="purchase-content">
                     <h3>🔒 Premium Case File</h3>
                     <p><strong>${caseTitle}</strong> is part of the full game.</p>
-                    <p>Unlock all 14+ case files with branching storylines, evidence collection, and multiple endings.</p>
+                    <p>Unlock all 13 premium case files with branching storylines, evidence collection, and multiple endings.</p>
                     <div class="price-options">
-                        <button class="purchase-button" data-price-id="price_full_game">
-                            Purchase Full Game - $14.99
+                        <button class="purchase-button" data-price-id="price_1RsoPNQ811jRCI3CbzyowS6j">
+                            Purchase Full Game - $4.99
                         </button>
                     </div>
                     <small>Secure payment powered by Stripe</small>
