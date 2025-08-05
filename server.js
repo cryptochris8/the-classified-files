@@ -2,7 +2,7 @@
 // Run with: node server.js
 
 const express = require('express');
-const stripe = require('stripe')('sk_test_your_stripe_secret_key_here'); // Replace with your secret key
+const stripe = require('stripe')('sk_test_51RYecJQ811jRCI3CZlsVxvVkBmjt4s5X5YeN7xhRnqC7X8Ai2IjdrtV7wyV4Iw2bRln4nkkXRfd8ggljbkYDF4L400sE5It4du');
 const path = require('path');
 
 const app = express();

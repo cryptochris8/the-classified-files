@@ -180,7 +180,7 @@ class PaymentSystem {
 document.addEventListener('DOMContentLoaded', function() {
     // Replace with your actual Stripe publishable key
     // You can get this from your Stripe Dashboard -> Developers -> API keys
-    const STRIPE_PUBLISHABLE_KEY = 'pk_test_your_stripe_publishable_key_here';
+    const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RYecJQ811jRCI3CC7qLYthQ1hrOYeos0OOTbcuWAyNuPB1n9MLe14ZM83TWdk25qPuQ5wVLFnnXDhi1e7ShIktT00soj2QyGX';
     
     if (STRIPE_PUBLISHABLE_KEY === 'pk_test_your_stripe_publishable_key_here') {
         console.warn('⚠️ Please update the Stripe publishable key in payment-system.js');
