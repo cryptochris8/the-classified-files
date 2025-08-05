@@ -39,15 +39,16 @@ class PaymentSystem {
             this.showPurchaseLoading();
 
             // Create checkout session
-            const response = await fetch('/create-checkout-session', {
+            const serverUrl = window.PaymentConfig ? PaymentConfig.SERVER_URL : '';
+            const response = await fetch(serverUrl + '/create-checkout-session', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
                     priceId: priceId,
-                    successUrl: window.location.origin + '/payment-success.html',
-                    cancelUrl: window.location.origin + '/payment-cancel.html'
+                    successUrl: window.PaymentConfig ? PaymentConfig.getSuccessUrl() : window.location.origin + '/payment-success.html',
+                    cancelUrl: window.PaymentConfig ? PaymentConfig.getCancelUrl() : window.location.origin + '/payment-cancel.html'
                 })
             });
 

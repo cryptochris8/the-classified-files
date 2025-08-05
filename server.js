@@ -1,14 +1,29 @@
 // Simple Node.js server for Stripe integration
 // Run with: node server.js
 
+require('dotenv').config();
+
 const express = require('express');
-const stripe = require('stripe')('sk_test_51RYecJQ811jRCI3CZlsVxvVkBmjt4s5X5YeN7xhRnqC7X8Ai2IjdrtV7wyV4Iw2bRln4nkkXRfd8ggljbkYDF4L400sE5It4du');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY || 'sk_test_51RYecJQ811jRCI3CZlsVxvVkBmjt4s5X5YeN7xhRnqC7X8Ai2IjdrtV7wyV4Iw2bRln4nkkXRfd8ggljbkYDF4L400sE5It4du');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// CORS configuration for frontend
+const cors = require('cors');
+const corsOptions = {
+    origin: [
+        'https://cryptochris8.github.io',
+        'http://localhost:8080',
+        'http://localhost:3000',
+        'http://127.0.0.1:8080'
+    ],
+    credentials: true
+};
+
 // Middleware
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.static('.')); // Serve static files from current directory
 
@@ -67,7 +82,7 @@ app.get('/verify-payment/:sessionId', async (req, res) => {
 // Webhook endpoint for Stripe events
 app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
     const sig = req.headers['stripe-signature'];
-    const endpointSecret = 'whsec_your_webhook_secret_here'; // Replace with your webhook secret
+    const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_your_webhook_secret_here';
 
     let event;
 
