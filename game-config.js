@@ -14,38 +14,43 @@ const GameConfig = {
     // Define which games should be sealed in production
     // In development, all games will be open regardless of this setting
     sealedGames: {
-        epstein: true,      // Sealed in production
-        jfk: true,          // Sealed in production
-        uap: false,         // Open in production - FREE LAUNCH GAME
-        september11: true,   // Sealed in production
-        hunterlaptop: true, // Sealed in production
-        watergate: true,    // Sealed in production
-        'pentagon-papers': true,  // Sealed in production
-        mkultra: true,      // Sealed in production
-        'panama-papers': true,    // Sealed in production
-        'iran-contra': true,      // Sealed in production
-        cointelpro: true,   // Sealed in production
-        snowden: true,      // Sealed in production
-        tuskegee: true,     // Sealed in production
-        paperclip: true,    // Sealed in production
-        'diddy-case': false // Open in production - NEW CASE
+        epstein: 'premium',     // Premium content - requires payment
+        jfk: 'premium',         // Premium content - requires payment
+        uap: false,             // FREE - Open in production
+        september11: 'premium', // Premium content - requires payment
+        hunterlaptop: 'scheduled', // FREE starting August 11, 2025
+        watergate: 'premium',   // Premium content - requires payment
+        'pentagon-papers': 'premium',  // Premium content - requires payment
+        mkultra: 'premium',     // Premium content - requires payment
+        'panama-papers': 'premium',    // Premium content - requires payment
+        'iran-contra': 'premium',      // Premium content - requires payment
+        cointelpro: 'premium',  // Premium content - requires payment
+        snowden: 'premium',     // Premium content - requires payment
+        tuskegee: 'premium',    // Premium content - requires payment
+        paperclip: 'premium',   // Premium content - requires payment
+        'diddy-case': false     // FREE - Open in production
     },
     
-    // Release dates for sealed games
+    // Release dates and pricing info
     releaseDates: {
-        epstein: "Coming Q2 2025",
-        jfk: "Coming Q1 2025",
-        september11: "Coming Q2 2025",
-        hunterlaptop: "Coming Q3 2025",
-        watergate: "Coming Q3 2025",
-        'pentagon-papers': "Coming Q4 2025",
-        mkultra: "Coming Q4 2025",
-        'panama-papers': "Coming 2026",
-        'iran-contra': "Coming 2026",
-        cointelpro: "Coming 2026",
-        snowden: "Coming 2026",
-        tuskegee: "Coming 2026",
-        paperclip: "Coming 2026"
+        epstein: "Premium Content - $4.99",
+        jfk: "Premium Content - $4.99",
+        september11: "Premium Content - $4.99",
+        hunterlaptop: "FREE - August 11, 2025",
+        watergate: "Premium Content - $4.99",
+        'pentagon-papers': "Premium Content - $4.99",
+        mkultra: "Premium Content - $4.99",
+        'panama-papers': "Premium Content - $4.99",
+        'iran-contra': "Premium Content - $4.99",
+        cointelpro: "Premium Content - $4.99",
+        snowden: "Premium Content - $4.99",
+        tuskegee: "Premium Content - $4.99",
+        paperclip: "Premium Content - $4.99"
+    },
+    
+    // Scheduled release dates (for date-based unlocking)
+    scheduledReleases: {
+        hunterlaptop: new Date('2025-08-11T00:00:00.000Z')
     },
     
     // Check if a game should be sealed
@@ -56,10 +61,41 @@ const GameConfig = {
             return false;
         }
         
-        // In production, check the sealed status
-        const sealed = this.sealedGames[gameKey] || false;
-        console.log(`🔒 Production mode: ${gameKey} is ${sealed ? 'SEALED' : 'OPEN'}`);
-        return sealed;
+        // Check the sealed status
+        const sealStatus = this.sealedGames[gameKey];
+        
+        // Handle different seal types
+        if (sealStatus === false) {
+            console.log(`🔓 Production mode: ${gameKey} is FREE and OPEN`);
+            return false;
+        } else if (sealStatus === 'premium') {
+            console.log(`💰 Production mode: ${gameKey} is PREMIUM CONTENT`);
+            return 'premium';
+        } else if (sealStatus === 'scheduled') {
+            // Check if scheduled release date has passed
+            const releaseDate = this.scheduledReleases[gameKey];
+            const now = new Date();
+            if (releaseDate && now >= releaseDate) {
+                console.log(`🕐 Production mode: ${gameKey} is SCHEDULED and now FREE`);
+                return false;
+            } else {
+                console.log(`🕐 Production mode: ${gameKey} is SCHEDULED for later`);
+                return 'scheduled';
+            }
+        }
+        
+        // Default to sealed
+        return true;
+    },
+    
+    // Check if game is premium content
+    isPremiumContent: function(gameKey) {
+        return this.sealedGames[gameKey] === 'premium';
+    },
+    
+    // Check if game is scheduled for future release
+    isScheduledContent: function(gameKey) {
+        return this.sealedGames[gameKey] === 'scheduled';
     },
     
     // Get release date for a sealed game
