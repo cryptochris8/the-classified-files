@@ -28,7 +28,7 @@ const GameConfig = {
         snowden: 'premium',     // Premium content - requires payment
         tuskegee: 'premium',    // Premium content - requires payment
         paperclip: 'premium',   // Premium content - requires payment
-        'diddy-case': false     // FREE - Open in production
+        'diddy-case': 'premium' // Premium content - requires payment
     },
     
     // Release dates and pricing info
@@ -37,6 +37,7 @@ const GameConfig = {
         jfk: "Premium Content - $4.99",
         september11: "Premium Content - $4.99",
         hunterlaptop: "FREE - August 11, 2025",
+        'diddy-case': "Premium Content - $4.99",
         watergate: "Premium Content - $4.99",
         'pentagon-papers': "Premium Content - $4.99",
         mkultra: "Premium Content - $4.99",
