@@ -3057,6 +3057,604 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Corroborating evidence is essential in federal prosecutions to support witness testimony and counter defense credibility attacks."
+        },
+
+        cover_preservation_gambit: {
+            text: `COVER IDENTITY PROTECTION OPERATION
+            
+            A critical undercover operation is at risk of exposure. You must decide whether to maintain the cover or extract the operative who has gathered crucial intelligence about the criminal enterprise.
+            
+            UNDERCOVER OPERATION STATUS:
+            
+            OPERATIVE PROFILE:
+            • FBI Special Agent embedded for 18 months
+            • Access to inner circle financial operations
+            • Evidence of money laundering and witness intimidation
+            • Currently trusted by criminal organization leadership
+            
+            INTELLIGENCE GATHERED:
+            • Detailed records of offshore banking operations
+            • Recordings of criminal planning discussions
+            • Evidence of violence against potential witnesses
+            • Documentation of international criminal connections
+            
+            RISK FACTORS:
+            • Defense team hiring private investigators
+            • Increased security screening of associates
+            • Suspicious questioning about operative's background
+            • Potential for violent retaliation if discovered
+            
+            CRITICAL DECISION:
+            • Maintain cover to gather additional evidence
+            • Extract immediately to preserve what we have
+            • Orchestrate a "natural" exit for the operative
+            
+            The operative's safety and case success both hang in the balance.`,
+            image: "undercover_operation_risk",
+            imagePrompt: "FBI undercover agent in dangerous situation, criminal organization meeting, surveillance equipment, tension",
+            sources: ["FBI Undercover Operations Manual", "Operative Safety Assessment", "Intelligence Gathering Report"],
+            choices: [
+                {
+                    text: "Maintain cover to gather more critical evidence",
+                    nextScene: "double_agent_evidence_gathering",
+                    collectEvidence: true
+                },
+                {
+                    text: "Extract the operative immediately for safety",
+                    nextScene: "emergency_evacuation_protection"
+                },
+                {
+                    text: "Create a strategic exit plan over several weeks",
+                    nextScene: "operation_debriefing"
+                }
+            ],
+            educationalNote: "Undercover operations in criminal enterprises involve constant risk assessment and decisions balancing intelligence gathering against operative safety."
+        },
+
+        detention_conditions_analysis: {
+            text: `FEDERAL DETENTION CONDITIONS REVIEW
+            
+            You investigate the conditions of pre-trial detention at the Metropolitan Detention Center, examining how they affect the defendant and potential impact on the case.
+            
+            DETENTION FACILITY CONDITIONS:
+            
+            HOUSING ASSIGNMENT:
+            • Special Housing Unit for high-profile inmates
+            • 23-hour per day lockdown for safety reasons
+            • Limited contact with other inmates
+            • Enhanced security monitoring
+            
+            DAILY CONDITIONS:
+            • Single cell with basic amenities
+            • One hour recreation time in secure area
+            • Limited commissary privileges
+            • Monitored phone calls and visits
+            
+            LEGAL IMPLICATIONS:
+            • Constitutional challenges to detention conditions
+            • Impact on defendant's ability to assist in defense
+            • Potential cruel and unusual punishment claims
+            • Effect on mental health and trial preparation
+            
+            SECURITY CONCERNS:
+            • Multiple death threats received
+            • High media profile requires special protocols
+            • Concerns about retribution against guards or staff
+            • Risk assessment updated weekly
+            
+            The defense argues these conditions prejudice their client's right to fair trial and adequate representation.`,
+            image: "federal_detention_facility",
+            imagePrompt: "Metropolitan Detention Center, high-security prison cell, federal corrections officers, legal consultation room",
+            sources: ["Bureau of Prisons Documentation", "Detention Conditions Report", "Constitutional Law Analysis"],
+            choices: [
+                {
+                    text: "Analyze constitutional challenges to detention conditions",
+                    nextScene: "evidence_legal_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Review security threats and protective measures",
+                    nextScene: "witness_protection_analysis"
+                },
+                {
+                    text: "Examine impact on trial preparation",
+                    nextScene: "trial_preparation_investigation"
+                }
+            ],
+            educationalNote: "Pre-trial detention conditions must balance security needs with constitutional requirements for fair trial preparation and humane treatment."
+        },
+
+        double_agent_evidence_gathering: {
+            text: `DOUBLE AGENT INTELLIGENCE OPERATION
+            
+            Your undercover operative has made a breakthrough - they've been approached by someone claiming to be gathering evidence against the criminal organization, but you suspect this person may actually be a double agent working for the defendants.
+            
+            DOUBLE AGENT PROFILE:
+            • Claims to be a federal informant with inside access
+            • Offers to share intelligence about criminal operations
+            • Requests information about ongoing investigation
+            • Has detailed knowledge suggesting law enforcement background
+            
+            INTELLIGENCE OFFERED:
+            • Financial records from Cayman Islands operations
+            • Names and locations of additional witnesses
+            • Details about planned witness intimidation
+            • Evidence of corruption in law enforcement
+            
+            SUSPICIOUS INDICATORS:
+            • Information too convenient and perfectly targeted
+            • Questions about specific investigation techniques
+            • Attempts to identify other undercover operatives
+            • Knowledge of classified investigation details
+            
+            STRATEGIC CONSIDERATIONS:
+            • Feed false information to test loyalty
+            • Use contact to identify leak sources
+            • Risk exposure of ongoing operations
+            • Potential to turn double agent into triple agent
+            
+            This is a high-stakes intelligence chess game with multiple layers of deception.`,
+            image: "double_agent_meeting",
+            imagePrompt: "Clandestine meeting in shadowy location, two figures exchanging information, surveillance equipment, tension and distrust",
+            sources: ["FBI Counterintelligence Division", "Double Agent Operations Manual", "Intelligence Assessment"],
+            choices: [
+                {
+                    text: "Feed false information to test the double agent's loyalty",
+                    nextScene: "turning_the_mole",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use the contact to identify the leak source",
+                    nextScene: "federal_leak_investigation"
+                },
+                {
+                    text: "Attempt to turn them into a triple agent",
+                    nextScene: "double_agent_gambit"
+                }
+            ],
+            educationalNote: "Double agent operations require sophisticated counterintelligence techniques to identify threats while potentially gaining intelligence advantages."
+        },
+
+        double_agent_gambit: {
+            text: `TRIPLE AGENT RECRUITMENT
+            
+            In a daring counterintelligence move, you attempt to turn the suspected double agent into a triple agent - someone who appears to be working against you but is actually providing intelligence back to federal law enforcement.
+            
+            RECRUITMENT APPROACH:
+            
+            INITIAL CONTACT:
+            • Careful revelation that their identity is known
+            • Offer immunity from prosecution
+            • Present evidence of their vulnerability
+            • Create urgency through implied threats
+            
+            INTELLIGENCE VALUE:
+            • Access to defense strategy and planning
+            • Information about witness intimidation efforts
+            • Financial intelligence about asset hiding
+            • Early warning of escape plans or violence
+            
+            OPERATIONAL REQUIREMENTS:
+            • Maintain credible cover story
+            • Provide genuine but non-critical information to maintain trust
+            • Establish secure communication protocols
+            • Create extraction plan if cover blown
+            
+            RISK ASSESSMENT:
+            • High probability of detection by criminal organization
+            • Potential for disinformation campaign against investigation
+            • Risk to other ongoing operations
+            • Personal safety of recruited agent
+            
+            Success could provide unprecedented insight into defense strategy and criminal operations.`,
+            image: "triple_agent_recruitment",
+            imagePrompt: "Intense federal agent recruitment meeting, psychological pressure, evidence files, counterintelligence operation",
+            sources: ["FBI Counterintelligence Operations", "Agent Recruitment Protocols", "Intelligence Risk Assessment"],
+            choices: [
+                {
+                    text: "Proceed with aggressive recruitment approach",
+                    nextScene: "turning_the_mole",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use more subtle psychological manipulation",
+                    nextScene: "double_agent_rescue_plan"
+                },
+                {
+                    text: "Abandon recruitment and focus on containment",
+                    nextScene: "enhanced_security_investigation"
+                }
+            ],
+            educationalNote: "Triple agent operations represent the pinnacle of counterintelligence work, requiring sophisticated psychological manipulation and operational security."
+        },
+
+        double_agent_rescue_plan: {
+            text: `AGENT EXTRACTION PROTOCOL
+            
+            The triple agent recruitment has been successful, but intelligence indicates their cover is about to be blown. You must execute an emergency extraction that maintains their credibility while ensuring their safety.
+            
+            EXTRACTION SCENARIO:
+            
+            COVER STORY DEVELOPMENT:
+            • Stage a fake arrest to explain disappearance
+            • Create evidence of agent fleeing jurisdiction
+            • Plant false evidence of betrayal by criminal organization
+            • Coordinate with other agencies for credible operation
+            
+            OPERATIONAL TIMELINE:
+            • Phase 1: Begin surveillance detection procedures
+            • Phase 2: Stage public confrontation as cover
+            • Phase 3: Execute extraction under arrest scenario
+            • Phase 4: Relocate to secure federal facility
+            
+            INTELLIGENCE PRESERVATION:
+            • Secure all evidence and recordings collected
+            • Debrief agent on critical intelligence
+            • Document criminal organization structure
+            • Prepare testimony for trial use
+            
+            ONGOING DECEPTION:
+            • Maintain appearance that agent escaped
+            • Plant false intelligence about their location
+            • Use their disappearance to create paranoia in organization
+            • Preserve other ongoing operations
+            
+            The extraction must appear authentic to criminal organization while preserving the intelligence value gained.`,
+            image: "agent_extraction_operation",
+            imagePrompt: "Dramatic federal agent extraction, fake arrest scenario, undercover operation conclusion, tactical team coordination",
+            sources: ["Federal Agent Extraction Protocol", "Undercover Operations Security", "Intelligence Preservation Guidelines"],
+            choices: [
+                {
+                    text: "Execute immediate extraction with full staging",
+                    nextScene: "operation_debriefing",
+                    collectEvidence: true
+                },
+                {
+                    text: "Delay extraction to gather final critical intelligence",
+                    nextScene: "stolen_evidence_recovery"
+                },
+                {
+                    text: "Use extraction as opportunity for broader operation",
+                    nextScene: "synchronized_rescue_arrest"
+                }
+            ],
+            educationalNote: "Agent extraction operations must balance immediate safety needs with long-term operational security and intelligence preservation."
+        },
+
+        emergency_evacuation_protection: {
+            text: `EMERGENCY WITNESS EVACUATION
+            
+            Intelligence indicates imminent threat to multiple witnesses and their families. You coordinate a large-scale emergency evacuation operation to prevent witness elimination.
+            
+            THREAT ASSESSMENT:
+            
+            IMMEDIATE DANGERS:
+            • Assassination teams identified moving toward witness locations
+            • Phone intercepts reveal "cleanup" orders
+            • Financial transfers to known elimination specialists
+            • Timeline suggesting coordinated strikes within 48 hours
+            
+            EVACUATION SCOPE:
+            • 12 primary witnesses and their families
+            • 47 individuals total requiring immediate protection
+            • 8 different locations across 4 states
+            • Coordination with local and federal law enforcement
+            
+            OPERATIONAL CHALLENGES:
+            • Limited time for comprehensive planning
+            • Risk of detection during evacuation
+            • Maintaining cover stories for sudden disappearances
+            • Securing temporary and long-term safe locations
+            
+            RESOURCE REQUIREMENTS:
+            • U.S. Marshals protective teams
+            • FBI tactical response units
+            • Local law enforcement cooperation
+            • Safe house network activation
+            
+            SUCCESS METRICS:
+            • All witnesses and families evacuated safely
+            • No compromise of new locations
+            • Preservation of witness testimony for trial
+            • Disruption of criminal organization elimination plans`,
+            image: "mass_witness_evacuation",
+            imagePrompt: "Federal agents coordinating massive evacuation, families being relocated, tactical vehicles, emergency operations center",
+            sources: ["U.S. Marshals Emergency Protocols", "Multi-State Coordination Plan", "Witness Safety Assessment"],
+            choices: [
+                {
+                    text: "Execute full-scale coordinated evacuation",
+                    nextScene: "witness_protection_program",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on highest-risk witnesses first",
+                    nextScene: "missing_investigators_families"
+                },
+                {
+                    text: "Set up counter-surveillance to catch elimination teams",
+                    nextScene: "high_speed_pursuit"
+                }
+            ],
+            educationalNote: "Emergency witness protection requires rapid coordination between multiple agencies and careful balance between speed and security."
+        },
+
+        encrypted_communications_analysis: {
+            text: `ENCRYPTED COMMUNICATION DECRYPTION
+            
+            The FBI's elite cryptanalysis unit has been working to break encrypted communications seized from the criminal organization. Recent breakthroughs reveal the scope of the criminal enterprise.
+            
+            DECRYPTION ACHIEVEMENTS:
+            
+            COMMUNICATION PLATFORMS:
+            • Signal encrypted messages: 15,000+ decrypted
+            • WhatsApp business communications: 8,900 messages
+            • Telegram criminal coordination: 12,300 messages
+            • Custom encrypted apps: 3,200 messages
+            
+            CRIMINAL CONTENT CATEGORIES:
+            • Money laundering coordination: 2,847 messages
+            • Witness intimidation planning: 1,234 messages
+            • Violence authorization: 567 messages
+            • International operations: 3,921 messages
+            
+            TECHNICAL BREAKTHROUGH:
+            • Quantum computing assisted decryption
+            • Insider knowledge of encryption keys
+            • Traffic analysis revealing communication patterns
+            • Metadata analysis showing organization structure
+            
+            KEY INTELLIGENCE REVEALED:
+            • Hierarchical command structure
+            • Financial flow coordination
+            • Planned witness elimination
+            • International criminal partnerships
+            • Future criminal operations planning
+            
+            The decrypted communications provide unprecedented insight into criminal enterprise operations.`,
+            image: "encrypted_communications_lab",
+            imagePrompt: "NSA/FBI cryptanalysis facility, quantum computers, encrypted message decryption, cybersecurity specialists working",
+            sources: ["FBI Cryptanalysis Division", "NSA Cooperation Agreement", "Digital Evidence Analysis"],
+            choices: [
+                {
+                    text: "Focus on money laundering coordination messages",
+                    nextScene: "money_laundering_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Priority analysis of witness intimidation planning",
+                    nextScene: "witness_protection_analysis"
+                },
+                {
+                    text: "Investigate international criminal partnerships",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Encrypted communication analysis often provides the most damaging evidence in modern criminal enterprises, revealing coordination and planning details."
+        },
+
+        enhanced_security_investigation: {
+            text: `ENHANCED SECURITY PROTOCOLS
+            
+            Following security breaches and threats to the investigation, you implement enhanced security measures to protect the case integrity and personnel safety.
+            
+            SECURITY ENHANCEMENT MEASURES:
+            
+            PERSONNEL PROTECTION:
+            • 24/7 security details for key investigators
+            • Secure transportation protocols
+            • Safe house arrangements for at-risk personnel
+            • Family protection for vulnerable investigators
+            
+            INFORMATION SECURITY:
+            • Compartmentalized access to sensitive materials
+            • Enhanced encryption for all communications
+            • Biometric access controls for evidence storage
+            • Regular security clearance reviews
+            
+            OPERATIONAL SECURITY:
+            • Counter-surveillance operations
+            • Secure meeting locations rotation
+            • Communication protocol changes
+            • False flag operations to confuse adversaries
+            
+            PHYSICAL SECURITY:
+            • Federal building access restrictions
+            • Evidence storage facility upgrades
+            • Courthouse security enhancements
+            • Witness protection facility improvements
+            
+            THREAT MONITORING:
+            • 24/7 intelligence monitoring
+            • Social media surveillance
+            • Financial monitoring for threat indicators
+            • International threat assessment coordination
+            
+            The enhanced security creates multiple layers of protection while maintaining operational effectiveness.`,
+            image: "enhanced_security_operations",
+            imagePrompt: "Federal facility with enhanced security, armed guards, surveillance systems, secure evidence storage, high-tech security measures",
+            sources: ["Federal Security Assessment", "Threat Analysis Report", "Enhanced Protection Protocols"],
+            choices: [
+                {
+                    text: "Focus on identifying and neutralizing specific threats",
+                    nextScene: "assassination_network_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Strengthen information security protocols",
+                    nextScene: "federal_leak_investigation"
+                },
+                {
+                    text: "Coordinate with international security services",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Enhanced security in major federal investigations requires balancing protection needs with operational effectiveness and constitutional rights."
+        },
+
+        enterprise_proof_requirements: {
+            text: `RICO ENTERPRISE PROOF ANALYSIS
+            
+            You review the legal requirements for proving a RICO enterprise, ensuring the prosecution meets all elements necessary for successful conviction.
+            
+            RICO ENTERPRISE ELEMENTS:
+            
+            EXISTENCE REQUIREMENT:
+            • Ongoing organization with structure and hierarchy
+            • Common purpose among organization members
+            • Continuity of structure and personnel over time
+            • Enterprise distinct from pattern of racketeering activity
+            
+            STRUCTURE EVIDENCE:
+            • Leadership hierarchy and chain of command
+            • Division of responsibilities and roles
+            • Decision-making processes and authority
+            • Communication systems and protocols
+            
+            CONTINUITY PROOF:
+            • Enterprise operations spanning multiple years
+            • Consistent organizational structure
+            • Ongoing criminal activities pattern
+            • Personnel changes without organizational dissolution
+            
+            LEGAL CHALLENGES:
+            • Association-in-fact vs. legal entity distinction
+            • Proof of organization beyond criminal acts themselves
+            • Establishing enterprise boundaries and membership
+            • Distinguishing enterprise from conspiracy
+            
+            PROSECUTION STRATEGY:
+            • Organizational charts and witness testimony
+            • Financial records showing enterprise structure
+            • Communications revealing hierarchy and operations
+            • Pattern of activities demonstrating continuity
+            
+            Meeting RICO enterprise requirements is essential for conviction.`,
+            image: "rico_enterprise_legal_analysis",
+            imagePrompt: "Legal research with RICO statute books, enterprise organizational charts, legal brief preparation, federal prosecutor analysis",
+            sources: ["RICO Statute Analysis", "Federal Case Law Review", "Enterprise Element Requirements"],
+            choices: [
+                {
+                    text: "Strengthen organizational structure evidence",
+                    nextScene: "enterprise_structure_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on continuity and pattern proof",
+                    nextScene: "predicate_acts_analysis"
+                },
+                {
+                    text: "Address legal challenges and distinctions",
+                    nextScene: "evidence_legal_analysis"
+                }
+            ],
+            educationalNote: "RICO enterprise proof requires demonstrating ongoing organization structure separate from the criminal acts themselves, often the most challenging element."
+        },
+
+        enterprise_structure_analysis: {
+            text: `CRIMINAL ENTERPRISE STRUCTURE INVESTIGATION
+            
+            Through extensive investigation, you've mapped the complete structure of the alleged criminal enterprise, revealing a sophisticated organizational hierarchy.
+            
+            ENTERPRISE HIERARCHY:
+            
+            LEADERSHIP TIER:
+            • Chief Executive: Overall operation control
+            • Financial Controller: Money management and laundering
+            • Operations Director: Daily criminal activity coordination
+            • Security Chief: Intimidation and violence operations
+            
+            MANAGEMENT TIER:
+            • Regional Managers: Geographic area control
+            • Department Heads: Specialized operation oversight
+            • Financial Specialists: Banking and investment management
+            • Legal Fixers: Problem resolution and cover-up
+            
+            OPERATIONAL TIER:
+            • Field Operatives: Direct criminal activity execution
+            • Support Staff: Administrative and logistical support
+            • Contract Specialists: External service providers
+            • Security Personnel: Protection and enforcement
+            
+            ENTERPRISE FUNCTIONS:
+            • Revenue Generation: Legitimate and criminal income
+            • Money Laundering: Financial crime concealment
+            • Asset Protection: Wealth preservation and hiding
+            • Threat Management: Witness intimidation and elimination
+            • Legal Defense: Obstruction of justice operations
+            
+            The structure demonstrates sophisticated criminal organization with clear hierarchy and specialized roles.`,
+            image: "criminal_enterprise_org_chart",
+            imagePrompt: "Detailed organizational chart showing criminal enterprise hierarchy, FBI investigation board with photos and connections",
+            sources: ["FBI Organized Crime Analysis", "Financial Structure Investigation", "Witness Testimony Compilation"],
+            choices: [
+                {
+                    text: "Focus on proving leadership control and direction",
+                    nextScene: "rico_elements_question",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze financial operations and money laundering",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Investigate security and intimidation operations",
+                    nextScene: "protection_racket_investigation"
+                }
+            ],
+            educationalNote: "Criminal enterprise structure analysis is crucial for RICO prosecutions, demonstrating organized hierarchy and specialized criminal functions."
+        },
+
+        entertainment_services_investigation: {
+            text: `"ENTERTAINMENT SERVICES" CRIMINAL OPERATION
+            
+            Investigation reveals that "entertainment services" was code language for alleged criminal activities within the organization, with detailed financial and operational structures.
+            
+            "ENTERTAINMENT SERVICES" STRUCTURE:
+            
+            OPERATIONAL CATEGORIES:
+            • "Private Parties": Alleged criminal activities at exclusive events
+            • "VIP Services": High-level criminal operations
+            • "Special Events": Major criminal enterprise operations
+            • "Client Management": Alleged victim control and manipulation
+            
+            FINANCIAL FRAMEWORK:
+            • Service Contracts: $2.3 million in documented payments
+            • Performance Bonuses: $890,000 in additional compensation
+            • Travel Expenses: $1.4 million for "service delivery"
+            • Equipment Costs: $650,000 for "technical support"
+            
+            PERSONNEL STRUCTURE:
+            • Service Coordinators: Planning and logistics
+            • Technical Specialists: Recording and documentation
+            • Security Personnel: Enforcement and protection
+            • Administrative Support: Record keeping and communication
+            
+            CRIMINAL ALLEGATIONS:
+            • Services involved illegal activities
+            • Payments were for criminal participation
+            • Structure facilitated ongoing criminal enterprise
+            • International operations extended criminal reach
+            
+            The investigation reveals systematic criminal operations disguised as legitimate entertainment business.`,
+            image: "entertainment_services_investigation",
+            imagePrompt: "FBI investigation board showing entertainment industry facade hiding criminal operations, financial documents, coded communications",
+            sources: ["Financial Crimes Investigation", "Entertainment Industry Analysis", "Criminal Operations Documentation"],
+            choices: [
+                {
+                    text: "Focus on financial evidence of criminal payments",
+                    nextScene: "co_conspirator_payments",
+                    collectEvidence: true
+                },
+                {
+                    text: "Investigate international operations expansion",
+                    nextScene: "offshore_banking_investigation"
+                },
+                {
+                    text: "Analyze personnel structure and criminal roles",
+                    nextScene: "enterprise_structure_analysis"
+                }
+            ],
+            educationalNote: "Criminal enterprises often use legitimate business terminology to disguise illegal operations, requiring careful analysis to decode criminal activities."
         }
     }
 };
