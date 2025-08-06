@@ -4227,6 +4227,478 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Interstate commerce nexus is essential for federal criminal jurisdiction, requiring demonstration of criminal activity's connection to or impact on interstate commerce."
+        },
+
+        journalist_bait_operation: {
+            text: `JOURNALIST INFILTRATION OPERATION
+            
+            Federal agents execute a sophisticated operation using an undercover journalist to gather intelligence on the criminal organization's media manipulation and witness intimidation tactics.
+            
+            OPERATION PARAMETERS:
+            
+            JOURNALIST COVER:
+            • Investigative reporter with credible media credentials
+            • Fake assignment from major news organization
+            • Interest in entertainment industry exposé story
+            • Access to criminal organization through media contacts
+            
+            INTELLIGENCE TARGETS:
+            • Media manipulation and propaganda strategies
+            • Witness intimidation through media pressure
+            • Financial payments to journalists for favorable coverage
+            • Criminal organization public relations operations
+            
+            OPERATIONAL CHALLENGES:
+            • Maintaining journalist credibility under scrutiny
+            • Legal issues regarding undercover journalism
+            • Media ethics and constitutional press freedom concerns
+            • Risk of exposure compromising ongoing investigation
+            
+            EVIDENCE GATHERING:
+            • Recordings of conversations about media manipulation
+            • Financial records of payments to media figures
+            • Documentation of witness intimidation through press
+            • Evidence of obstruction of justice through media
+            
+            STRATEGIC OBJECTIVES:
+            • Expose criminal organization media operations
+            • Identify corrupt media figures and relationships
+            • Gather evidence of witness intimidation tactics
+            • Disrupt criminal organization public relations strategy
+            
+            The operation reveals sophisticated media manipulation by the criminal enterprise.`,
+            image: "journalist_undercover_operation",
+            imagePrompt: "Undercover federal agent posing as journalist, meeting with criminal organization, recording equipment, media credentials",
+            sources: ["FBI Undercover Operations Manual", "Media Investigation Protocols", "Journalist Cover Operations"],
+            choices: [
+                {
+                    text: "Focus on exposing media manipulation and propaganda",
+                    nextScene: "media_security_counterattack",
+                    collectEvidence: true
+                },
+                {
+                    text: "Gather evidence of witness intimidation through media",
+                    nextScene: "witness_protection_analysis"
+                },
+                {
+                    text: "Investigate financial payments to corrupt media figures",
+                    nextScene: "co_conspirator_payments"
+                }
+            ],
+            educationalNote: "Undercover journalist operations require careful legal and ethical consideration while potentially exposing criminal manipulation of media and public opinion."
+        },
+
+        journalist_protection_operation: {
+            text: `JOURNALIST PROTECTION PROTOCOL
+            
+            Legitimate investigative journalists covering the case have received death threats. You coordinate a protection operation to ensure press freedom while maintaining investigation security.
+            
+            THREAT ASSESSMENT:
+            
+            JOURNALIST TARGETS:
+            • Investigative reporters covering criminal enterprise
+            • Entertainment industry journalists with inside sources
+            • Financial crime reporters tracking money laundering
+            • Court reporters covering federal proceedings
+            
+            THREAT INDICATORS:
+            • Direct death threats via phone and email
+            • Surveillance teams following journalists
+            • Break-ins at news organization offices
+            • Cyber attacks on journalist communication systems
+            
+            PROTECTION MEASURES:
+            • Discreet security details for high-risk journalists
+            • Secure communication protocols for sensitive interviews
+            • Counter-surveillance operations around news organizations
+            • Coordination with media security departments
+            
+            OPERATIONAL BALANCE:
+            • Protect journalists without impeding press freedom
+            • Maintain investigation confidentiality while ensuring safety
+            • Coordinate with media organizations on security protocols
+            • Prevent criminal organization intimidation success
+            
+            STRATEGIC IMPLICATIONS:
+            • Public awareness of criminal organization threat to press
+            • Demonstration of criminal enterprise intimidation tactics
+            • Evidence of obstruction of justice through media intimidation
+            • Protection of democratic institutions and press freedom
+            
+            The operation protects both journalists and democratic institutions.`,
+            image: "journalist_protection_detail",
+            imagePrompt: "Federal agents providing discreet protection for investigative journalists, news organization security, press freedom protection",
+            sources: ["Press Freedom Protection Protocols", "Media Security Guidelines", "Journalist Safety Assessment"],
+            choices: [
+                {
+                    text: "Strengthen journalist security while maintaining press freedom",
+                    nextScene: "media_security_counterattack",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use journalist protection to gather intelligence on threats",
+                    nextScene: "assassination_network_investigation"
+                },
+                {
+                    text: "Coordinate with media organizations on security protocols",
+                    nextScene: "enhanced_security_investigation"
+                }
+            ],
+            educationalNote: "Protecting journalists from criminal intimidation is essential for maintaining press freedom and democratic institutions while supporting federal investigations."
+        },
+
+        location_data_analysis: {
+            text: `LOCATION DATA INTELLIGENCE ANALYSIS
+            
+            Advanced analysis of location data from seized devices reveals patterns of movement that corroborate witness testimony and expose criminal activities.
+            
+            LOCATION INTELLIGENCE SOURCES:
+            
+            MOBILE DEVICE DATA:
+            • GPS tracking from smartphones and tablets
+            • Cell tower triangulation records
+            • Wi-Fi network connection logs
+            • Bluetooth proximity data analysis
+            
+            VEHICLE TRACKING:
+            • Luxury car GPS and navigation systems
+            • Private jet flight tracking records
+            • Yacht and boat positioning systems
+            • Commercial transportation booking records
+            
+            DIGITAL FOOTPRINTS:
+            • Social media check-ins and location tags
+            • Credit card transaction geographical patterns
+            • Hotel and restaurant reservation systems
+            • Event attendance and venue access records
+            
+            PATTERN ANALYSIS:
+            • Movement correlation with alleged criminal activities
+            • Proximity analysis showing criminal organization meetings
+            • Timeline reconstruction of key events
+            • Geographic clustering analysis revealing operations centers
+            
+            CORROBORATION EVIDENCE:
+            • Location data confirms witness testimony accuracy
+            • Movement patterns support financial crime timelines
+            • Proximity data validates criminal conspiracy allegations
+            • Geographic analysis reveals criminal enterprise scope
+            
+            The location intelligence creates a comprehensive map of criminal enterprise operations.`,
+            image: "location_data_analysis_center",
+            imagePrompt: "FBI digital analysis center with location tracking maps, GPS data visualization, movement pattern analysis, geographic intelligence",
+            sources: ["FBI Digital Evidence Unit", "Location Intelligence Analysis", "Geographic Investigation Protocols"],
+            choices: [
+                {
+                    text: "Focus on corroborating witness testimony with location data",
+                    nextScene: "corroborating_evidence",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze geographic patterns of criminal enterprise operations",
+                    nextScene: "enterprise_structure_analysis"
+                },
+                {
+                    text: "Use location data to identify additional criminal activities",
+                    nextScene: "encrypted_communications_analysis"
+                }
+            ],
+            educationalNote: "Location data analysis provides powerful corroborating evidence in federal investigations, creating objective timelines and movement patterns that support witness testimony."
+        },
+
+        mann_act_question: {
+            text: `MANN ACT FEDERAL JURISDICTION ANALYSIS
+            
+            You analyze potential Mann Act violations to establish additional federal jurisdiction and charges related to interstate transportation for illegal purposes.
+            
+            MANN ACT ELEMENTS:
+            
+            STATUTORY REQUIREMENTS:
+            • Transportation of individuals across state lines
+            • Knowledge of transportation purpose
+            • Intent to engage in illegal sexual activity
+            • Use of interstate commerce facilities
+            
+            EVIDENCE ANALYSIS:
+            • Private jet flight records between states
+            • Hotel reservations in multiple jurisdictions
+            • Communication records planning interstate travel
+            • Financial records for transportation expenses
+            
+            VICTIM TESTIMONY:
+            • Accounts of interstate transportation
+            • Coercion and deception in travel arrangements
+            • Knowledge of intended illegal activities
+            • Impact testimony regarding exploitation
+            
+            LEGAL CONSIDERATIONS:
+            • Federal vs. state jurisdiction overlap
+            • Constitutional challenges to Mann Act application
+            • Evidentiary requirements for interstate nexus
+            • Sentencing enhancement implications
+            
+            PROSECUTION STRATEGY:
+            • Strengthening federal jurisdiction claims
+            • Adding charges for sentencing leverage
+            • Demonstrating interstate criminal enterprise
+            • Supporting RICO predicate act requirements
+            
+            Mann Act charges would significantly strengthen the federal case and provide additional prosecutorial tools.`,
+            image: "mann_act_legal_analysis",
+            imagePrompt: "Federal legal research on Mann Act, interstate transportation evidence, legal briefs, jurisdiction analysis documentation",
+            sources: ["Mann Act Case Law Analysis", "Federal Jurisdiction Research", "Interstate Crime Documentation"],
+            choices: [
+                {
+                    text: "Strengthen interstate transportation evidence",
+                    nextScene: "interstate_commerce_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on victim testimony regarding interstate travel",
+                    nextScene: "victim_testimony_analysis"
+                },
+                {
+                    text: "Use Mann Act charges to support RICO predicate acts",
+                    nextScene: "predicate_acts_analysis"
+                }
+            ],
+            educationalNote: "Mann Act violations provide strong federal jurisdiction for interstate transportation crimes and often serve as important predicate acts in RICO prosecutions."
+        },
+
+        media_security_counterattack: {
+            text: `MEDIA COUNTERINTELLIGENCE OPERATION
+            
+            In response to criminal organization media manipulation, you launch a sophisticated counterintelligence operation to control information flow and protect investigation integrity.
+            
+            COUNTERINTELLIGENCE STRATEGY:
+            
+            INFORMATION CONTROL:
+            • Selective disclosure of non-sensitive information
+            • Strategic leaks to test media source loyalty
+            • Disinformation campaigns to confuse criminal organization
+            • Media coordination to prevent premature disclosure
+            
+            MEDIA RELATIONSHIP MANAGEMENT:
+            • Trusted journalist network development
+            • Background briefings for reliable reporters
+            • Coordination with news organization security
+            • Press conference timing and message control
+            
+            CRIMINAL ORGANIZATION DISRUPTION:
+            • Counter-propaganda operations
+            • Exposure of criminal organization media manipulation
+            • Public relations campaign highlighting criminal activities
+            • Victim advocacy support and media appearances
+            
+            OPERATIONAL SECURITY:
+            • Protection of sensitive investigation details
+            • Counter-surveillance of media operations
+            • Secure communication protocols for media contact
+            • Compartmentalization of information access
+            
+            STRATEGIC OBJECTIVES:
+            • Control public narrative around investigation
+            • Protect witness and victim privacy
+            • Counter criminal organization propaganda
+            • Maintain public support for prosecution
+            
+            The media counterattack becomes a critical component of overall investigative strategy.`,
+            image: "media_counterintelligence_center",
+            imagePrompt: "Federal media operations center, strategic communications, press briefings, information warfare, public relations coordination",
+            sources: ["Federal Media Relations Protocol", "Counterintelligence Operations", "Strategic Communications Guidelines"],
+            choices: [
+                {
+                    text: "Focus on controlling information flow and preventing leaks",
+                    nextScene: "enhanced_security_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Launch public awareness campaign about criminal organization",
+                    nextScene: "public_exposure_gambit"
+                },
+                {
+                    text: "Coordinate with victim advocacy for media support",
+                    nextScene: "victim_testimony_analysis"
+                }
+            ],
+            educationalNote: "Media counterintelligence operations help federal investigations maintain control over public information while countering criminal organization propaganda efforts."
+        },
+
+        missing_investigators_families: {
+            text: `MISSING INVESTIGATORS' FAMILIES CRISIS
+            
+            A shocking development: Family members of federal investigators have gone missing, creating a crisis that threatens both personal safety and investigation integrity.
+            
+            CRISIS SITUATION:
+            
+            MISSING PERSONS:
+            • Spouse and children of lead FBI investigator
+            • Parents of key prosecutor on the case  
+            • Sister of financial crimes analyst
+            • Brother-in-law of witness protection coordinator
+            
+            THREAT INDICATORS:
+            • No communication since disappearances began
+            • Evidence of professional abduction techniques
+            • Vehicles found abandoned in remote locations
+            • Personal belongings left behind suggesting forced departure
+            
+            CRIMINAL ORGANIZATION INVOLVEMENT:
+            • Encrypted communications mentioning "family reunions"
+            • Financial transfers to known kidnapping specialists
+            • International criminal network activation
+            • Previous threats against investigator families
+            
+            RESPONSE OPERATIONS:
+            • FBI tactical response teams activated
+            • Inter-agency task force formed for family rescue
+            • International cooperation for cross-border search
+            • 24/7 command center established
+            
+            IMPACT ON INVESTIGATION:
+            • Investigator effectiveness compromised by personal crisis
+            • Security protocols enhanced for remaining personnel
+            • Consideration of investigation suspension vs. acceleration
+            • Witness protection program review and enhancement
+            
+            The crisis tests federal law enforcement resolve and family protection capabilities.`,
+            image: "missing_families_crisis_center",
+            imagePrompt: "FBI crisis command center, missing persons investigation, family photos on board, urgent rescue operations coordination",
+            sources: ["FBI Crisis Response Protocol", "Family Protection Emergency Procedures", "Kidnapping Investigation Guidelines"],
+            choices: [
+                {
+                    text: "Focus all resources on family rescue operations",
+                    nextScene: "emergency_evacuation_protection",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use family crisis to accelerate prosecution and arrests",
+                    nextScene: "synchronized_rescue_arrest"
+                },
+                {
+                    text: "Enhance security for all remaining investigation personnel",
+                    nextScene: "enhanced_security_investigation"
+                }
+            ],
+            educationalNote: "Threats to investigators' families represent escalation in criminal organization tactics and require immediate, comprehensive response to protect personnel and maintain investigation integrity."
+        },
+
+        mole_arrest_operation: {
+            text: `MOLE ARREST TACTICAL OPERATION
+            
+            After extensive counterintelligence work, you've identified the mole within federal law enforcement. The arrest operation must be executed with precision to prevent evidence destruction and ensure prosecution success.
+            
+            ARREST OPERATION PLANNING:
+            
+            TARGET PROFILE:
+            • Senior federal agent with 15 years experience
+            • Access to classified investigation materials
+            • Financial motivation: $2.3 million in offshore payments
+            • Family vulnerabilities exploited by criminal organization
+            
+            TACTICAL APPROACH:
+            • Simultaneous arrest at home and office
+            • Evidence preservation teams at multiple locations
+            • Digital forensics immediate device seizure
+            • Interview team prepared for interrogation
+            
+            EVIDENCE COLLECTION:
+            • Banking records showing criminal organization payments
+            • Communication devices containing incriminating messages
+            • Physical documents leaked to criminal organization
+            • Surveillance footage of unauthorized meetings
+            
+            OPERATIONAL SECURITY:
+            • Compartmentalized arrest team to prevent leaks
+            • Counter-surveillance during operation execution
+            • Immediate communication blackout for suspect
+            • Evidence chain of custody protection
+            
+            STRATEGIC IMPLICATIONS:
+            • Restoration of investigation integrity
+            • Recovery of compromised intelligence
+            • Potential cooperation agreement negotiation
+            • Demonstration of consequences for betrayal
+            
+            The mole arrest operation marks a turning point in investigation security and effectiveness.`,
+            image: "federal_mole_arrest",
+            imagePrompt: "FBI tactical arrest of federal agent, evidence seizure, internal affairs investigation, betrayal and justice",
+            sources: ["FBI Internal Affairs Protocol", "Counterintelligence Arrest Procedures", "Federal Employee Security Investigation"],
+            choices: [
+                {
+                    text: "Execute immediate arrest with full tactical support",
+                    nextScene: "turning_the_mole",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on evidence preservation and digital forensics",
+                    nextScene: "deleted_data_recovery"
+                },
+                {
+                    text: "Use arrest to identify additional criminal organization contacts",
+                    nextScene: "co_conspirator_payments"
+                }
+            ],
+            educationalNote: "Internal mole arrests in federal investigations require sophisticated operational security and immediate evidence preservation to prevent further compromise."
+        },
+
+        money_laundering_analysis: {
+            text: `COMPREHENSIVE MONEY LAUNDERING INVESTIGATION
+            
+            The financial crimes investigation reveals a sophisticated international money laundering operation spanning multiple countries and financial institutions.
+            
+            MONEY LAUNDERING STRUCTURE:
+            
+            PLACEMENT PHASE:
+            • Cash deposits structured below reporting thresholds
+            • Casino gambling to convert cash to chips and back
+            • Purchase of high-value assets (art, jewelry, real estate)
+            • Investment in legitimate businesses for cash injection
+            
+            LAYERING PHASE:
+            • Complex web of shell company transactions
+            • International wire transfers through multiple jurisdictions
+            • Cryptocurrency exchanges and mixing services  
+            • Offshore banking and investment accounts
+            
+            INTEGRATION PHASE:
+            • Legitimate business income appearance
+            • Real estate investments and property development
+            • Entertainment industry revenue stream integration
+            • Charitable donations and foundation establishments
+            
+            FINANCIAL EVIDENCE:
+            • Bank records showing suspicious transaction patterns
+            • Business documents revealing shell company operations
+            • International cooperation providing foreign account data
+            • Cryptocurrency blockchain analysis revealing hidden transfers
+            
+            CRIMINAL ENTERPRISE INTEGRATION:
+            • Money laundering supports overall criminal operations
+            • Financial crimes generate additional criminal proceeds
+            • International scope demonstrates enterprise sophistication
+            • Professional advisory involvement shows systemic corruption
+            
+            Total estimated laundered funds: Over $500 million across multiple years.`,
+            image: "money_laundering_investigation",
+            imagePrompt: "Financial crimes investigation center, international money flow charts, banking documents, cryptocurrency analysis, complex financial networks",
+            sources: ["Financial Crimes Enforcement Network", "International Banking Investigation", "Cryptocurrency Analysis Unit"],
+            choices: [
+                {
+                    text: "Focus on international banking cooperation for account seizure",
+                    nextScene: "offshore_banking_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze cryptocurrency transactions and blockchain evidence",
+                    nextScene: "deleted_data_recovery"
+                },
+                {
+                    text: "Investigate professional advisors facilitating laundering",
+                    nextScene: "co_conspirator_payments"
+                }
+            ],
+            educationalNote: "Money laundering investigations require international cooperation and sophisticated financial analysis to trace criminal proceeds through complex layering schemes."
         }
     }
 };
