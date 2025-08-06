@@ -2532,6 +2532,531 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "RICO prosecutions often involve complex business empires where legitimate businesses are allegedly used to facilitate and conceal criminal activities."
+        },
+
+        celebrity_status_legal_analysis: {
+            text: `CELEBRITY STATUS LEGAL IMPLICATIONS
+            
+            You analyze how celebrity status affects federal criminal proceedings, examining the unique challenges prosecutors face when dealing with high-profile defendants.
+            
+            LEGAL CONSIDERATIONS:
+            
+            JURY SELECTION CHALLENGES:
+            • Pre-trial publicity creates bias concerns
+            • Difficulty finding impartial jurors
+            • Celebrity worship vs. celebrity resentment
+            • Media influence on potential jurors
+            
+            COURTROOM SECURITY:
+            • Enhanced security protocols required
+            • Media circus management
+            • Fan demonstrations outside courthouse
+            • Witness intimidation through public exposure
+            
+            DEFENSE ADVANTAGES:
+            • Access to top-tier legal representation
+            • Public relations campaigns to influence opinion
+            • Character witnesses from entertainment industry
+            • Financial resources for expert testimony
+            
+            PROSECUTION CHALLENGES:
+            • Higher burden of proof in public perception
+            • Media scrutiny of every legal decision
+            • Potential jury nullification
+            • Political pressure from various stakeholders
+            
+            The justice system must navigate these complexities while maintaining fairness.`,
+            image: "celebrity_courthouse_media",
+            imagePrompt: "Federal courthouse surrounded by media trucks, photographers, security barriers, celebrity legal proceedings",
+            sources: ["Federal Court Administration", "Judicial Conference Guidelines", "Media Relations Protocols"],
+            choices: [
+                {
+                    text: "Focus on jury selection challenges",
+                    nextScene: "defense_witness_challenge",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze the media impact on proceedings",
+                    nextScene: "media_security_counterattack"
+                },
+                {
+                    text: "Review defense strategy advantages",
+                    nextScene: "defense_strategy_analysis"
+                }
+            ],
+            educationalNote: "Celebrity defendants create unique challenges for the justice system, requiring careful balance between fair proceedings and public interest."
+        },
+
+        civil_lawsuit_analysis: {
+            text: `CIVIL LITIGATION PARALLEL TRACK
+            
+            Running alongside the criminal prosecution are numerous civil lawsuits that could impact the federal case. You review the complex legal landscape.
+            
+            ACTIVE CIVIL CASES:
+            
+            VICTIM LAWSUITS:
+            • Personal injury claims totaling $500+ million
+            • Sexual assault allegations in civil court
+            • Emotional distress and trauma damages
+            • Loss of earnings and future opportunities
+            
+            BUSINESS DISPUTES:
+            • Contract breaches with entertainment partners
+            • Employment violations and wrongful termination
+            • Intellectual property disputes
+            • Shareholder derivative actions
+            
+            GOVERNMENT ACTIONS:
+            • Tax liens and IRS collection proceedings
+            • SEC investigations into business practices
+            • State regulatory violations
+            • Municipal permit and licensing issues
+            
+            STRATEGIC IMPLICATIONS:
+            • Civil depositions may reveal evidence for criminal case
+            • Fifth Amendment challenges in civil proceedings
+            • Asset preservation orders affecting criminal forfeiture
+            • Settlement negotiations impacting criminal cooperation
+            
+            The interaction between civil and criminal cases creates strategic complexity.`,
+            image: "civil_criminal_legal_strategy",
+            imagePrompt: "Legal conference room with multiple case files, civil and criminal court documents, strategy boards",
+            sources: ["Civil Court Filings", "Parallel Litigation Analysis", "Legal Strategy Assessment"],
+            choices: [
+                {
+                    text: "Focus on how civil cases impact criminal prosecution",
+                    nextScene: "evidence_legal_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze victim civil lawsuit evidence",
+                    nextScene: "victim_testimony_analysis"
+                },
+                {
+                    text: "Review business dispute implications",
+                    nextScene: "enterprise_structure_analysis"
+                }
+            ],
+            educationalNote: "Parallel civil and criminal proceedings create complex legal interactions that can significantly impact both case outcomes and strategic decisions."
+        },
+
+        classified_files_access: {
+            text: `CLASSIFIED ACCESS AUTHORIZATION
+            
+            Your federal credentials have been upgraded to access the most sensitive classified materials in the Diddy investigation. The information you're about to see is compartmentalized at the highest levels.
+            
+            CLASSIFICATION LEVELS ACCESSED:
+            
+            SECRET LEVEL:
+            • Financial intelligence from foreign governments
+            • Wiretap transcripts from federal surveillance
+            • Informant reports from within criminal organization
+            • Asset tracing through international banking systems
+            
+            TOP SECRET LEVEL:
+            • National security implications of investigation
+            • International cooperation agreements
+            • Diplomatic communications regarding case
+            • Intelligence agency cooperation protocols
+            
+            COMPARTMENTALIZED ACCESS:
+            • Special Access Program (SAP) materials
+            • Foreign intelligence service cooperation
+            • Ongoing operations that cannot be disclosed
+            • Sources and methods protection protocols
+            
+            WARNING: This material is classified for national security reasons. Unauthorized disclosure carries severe criminal penalties.
+            
+            The scope of classified involvement suggests this case has implications beyond typical criminal prosecution.`,
+            image: "classified_documents_vault",
+            imagePrompt: "Secure federal facility, classified document vault, security clearance verification, top secret stamp",
+            sources: ["Classified Federal Investigation Files", "Intelligence Community Assessment", "National Security Documentation"],
+            choices: [
+                {
+                    text: "Review the most sensitive financial intelligence",
+                    nextScene: "offshore_banking_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Access international cooperation materials",
+                    nextScene: "federal_agency_coordination"
+                },
+                {
+                    text: "Examine national security implications",
+                    nextScene: "enhanced_security_investigation"
+                }
+            ],
+            educationalNote: "Some federal investigations involve classified materials when they intersect with national security, foreign intelligence, or ongoing operations."
+        },
+
+        co_conspirator_payments: {
+            text: `CO-CONSPIRATOR PAYMENT ANALYSIS
+            
+            Following the money trail reveals a network of payments to alleged co-conspirators and enablers. The financial web extends throughout the entertainment industry and beyond.
+            
+            PAYMENT CATEGORIES:
+            
+            DIRECT CO-CONSPIRATORS:
+            • Security personnel: $2.3 million annually
+            • Personal assistants: $1.8 million total
+            • Business associates: $5.7 million in consulting fees
+            • Legal fixers: $3.2 million in attorney fees
+            
+            ENABLERS AND FACILITATORS:
+            • Hotel and venue personnel: $890,000 in payments
+            • Transportation providers: $1.2 million
+            • Medical professionals: $650,000
+            • Technology specialists: $540,000
+            
+            INDIRECT PAYMENTS:
+            • Shell company disbursements: $8.9 million
+            • Charitable donations as cover: $2.1 million
+            • Business investment kickbacks: $4.3 million
+            • Real estate transaction kickbacks: $6.7 million
+            
+            PATTERN ANALYSIS:
+            • Payments increase during alleged criminal activity periods
+            • Bonus payments following "problem resolution"
+            • Loyalty payments to maintain silence
+            • Intimidation payments disguised as business expenses
+            
+            Total identified co-conspirator payments: Over $38 million`,
+            image: "co_conspirator_payment_web",
+            imagePrompt: "Financial crime investigation board showing payment connections, money flow charts, co-conspirator network",
+            sources: ["Financial Crimes Task Force", "Banking Records Analysis", "Money Laundering Investigation"],
+            choices: [
+                {
+                    text: "Focus on the security personnel payment structure",
+                    nextScene: "protection_racket_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze shell company payment mechanisms",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Investigate the loyalty payment system",
+                    nextScene: "witness_protection_analysis"
+                }
+            ],
+            educationalNote: "RICO prosecutions often focus on payment patterns to co-conspirators as evidence of criminal enterprise structure and operations."
+        },
+
+        cayman_islands_investigation: {
+            text: `CAYMAN ISLANDS FINANCIAL NETWORK
+            
+            The investigation extends to the Cayman Islands, revealing sophisticated offshore financial structures designed to hide assets and facilitate money laundering.
+            
+            CAYMAN FINANCIAL STRUCTURE:
+            
+            REGISTERED ENTITIES:
+            • "Global Entertainment Holdings Ltd" - $45 million in assets
+            • "Caribbean Media Investments" - $23 million portfolio
+            • "Island Hospitality Group" - $18 million in properties
+            • "Offshore Music Royalties Inc" - $31 million in IP rights
+            
+            BANKING RELATIONSHIPS:
+            • Cayman National Bank - Primary banking relationship
+            • Butterfield Private Bank - High-net-worth services
+            • HSBC Cayman - International transfer hub
+            • Local credit unions - Smaller transaction processing
+            
+            MONEY LAUNDERING MECHANISMS:
+            • Invoicing for non-existent services
+            • Inflated intellectual property licensing
+            • Fake loan agreements between entities
+            • Round-trip transactions to obscure origins
+            
+            REGULATORY CHALLENGES:
+            • Bank secrecy laws limit information access
+            • Mutual Legal Assistance Treaty (MLAT) required
+            • Political sensitivities around financial services industry
+            • Time delays in obtaining financial records
+            
+            Cayman authorities are cooperating, but the complex structure suggests professional financial advisory involvement.`,
+            image: "cayman_islands_banking",
+            imagePrompt: "Cayman Islands financial district, offshore bank buildings, legal documents, international banking investigation",
+            sources: ["Cayman Islands Monetary Authority", "MLAT Request Documentation", "Offshore Financial Analysis"],
+            choices: [
+                {
+                    text: "Trace the money laundering mechanisms in detail",
+                    nextScene: "money_laundering_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on the intellectual property licensing scheme",
+                    nextScene: "entertainment_services_investigation"
+                },
+                {
+                    text: "Investigate the professional advisors involved",
+                    nextScene: "co_conspirator_payments"
+                }
+            ],
+            educationalNote: "Cayman Islands investigations require international cooperation and understanding of offshore financial structures used to hide criminal proceeds."
+        },
+
+        custom_protection_deal: {
+            text: `WITNESS PROTECTION NEGOTIATION
+            
+            Agent Chen presents you with a critical decision regarding a potential witness who claims to have inside information about the criminal enterprise but demands extensive protection guarantees.
+            
+            WITNESS PROFILE:
+            • Former inner circle member with 8 years of direct access
+            • Claims knowledge of financial crimes and violent incidents
+            • Has evidence including recordings and documents
+            • Currently in hiding after receiving death threats
+            
+            PROTECTION DEMANDS:
+            • Full witness protection program enrollment
+            • Relocation of immediate family (spouse and 2 children)
+            • New identities for entire family
+            • Financial support for 5 years minimum
+            • Guarantee of no prosecution for past involvement
+            
+            POTENTIAL TESTIMONY VALUE:
+            • Direct evidence of RICO predicate acts
+            • Financial crime documentation and procedures
+            • Witness intimidation and violence details
+            • Enterprise structure and hierarchy information
+            
+            RISKS:
+            • Witness credibility issues due to criminal involvement
+            • High cost of protection program
+            • Potential for witness to change story or disappear
+            • Defense will attack witness motivation and reliability
+            
+            The decision could make or break the prosecution's case.`,
+            image: "witness_protection_negotiation",
+            imagePrompt: "Secure government facility, witness protection discussion, family safety planning, federal marshals",
+            sources: ["U.S. Marshals Witness Protection Program", "Witness Cooperation Agreement", "Security Threat Assessment"],
+            choices: [
+                {
+                    text: "Agree to full protection in exchange for complete cooperation",
+                    nextScene: "witness_protection_program",
+                    collectEvidence: true
+                },
+                {
+                    text: "Negotiate limited protection with specific conditions",
+                    nextScene: "custom_protection_deal"
+                },
+                {
+                    text: "Decline and focus on building case without this witness",
+                    nextScene: "independent_investigation_continues"
+                }
+            ],
+            educationalNote: "Witness protection decisions involve balancing potential testimony value against program costs and risks, often determining prosecution success."
+        },
+
+        defense_strategy_analysis: {
+            text: `DEFENSE STRATEGY ASSESSMENT
+            
+            Intelligence gathered from court filings and legal sources reveals the defense team's sophisticated strategy to counter federal prosecution.
+            
+            PRIMARY DEFENSE STRATEGIES:
+            
+            ATTACK PROSECUTION CREDIBILITY:
+            • Challenge government witness reliability and motivation
+            • Expose prosecutorial overreach and selective enforcement
+            • Question investigative methods and evidence collection
+            • Highlight government cooperation deals as "bought testimony"
+            
+            BUSINESS LEGITIMACY ARGUMENT:
+            • Emphasize legitimate business operations and success
+            • Present character witnesses from entertainment industry
+            • Highlight charitable work and community contributions
+            • Argue criminal charges are mischaracterization of business practices
+            
+            CONSTITUTIONAL CHALLENGES:
+            • Fourth Amendment challenges to searches and seizures
+            • Fifth Amendment double jeopardy arguments with civil cases
+            • Sixth Amendment right to speedy trial claims
+            • Due process violations in prosecution conduct
+            
+            RICO STATUTE CHALLENGES:
+            • Argue insufficient proof of criminal enterprise
+            • Challenge pattern of racketeering activity evidence
+            • Dispute interstate commerce nexus requirements
+            • Attack predicate act evidence as insufficient
+            
+            The defense team includes former federal prosecutors familiar with government tactics.`,
+            image: "defense_legal_strategy",
+            imagePrompt: "High-end law firm conference room, defense strategy boards, legal team meeting, constitutional law books",
+            sources: ["Defense Motion Filings", "Legal Strategy Intelligence", "Court Hearing Transcripts"],
+            choices: [
+                {
+                    text: "Analyze the constitutional challenges to strengthen prosecution case",
+                    nextScene: "evidence_legal_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on countering the business legitimacy argument",
+                    nextScene: "enterprise_structure_analysis"
+                },
+                {
+                    text: "Prepare responses to witness credibility attacks",
+                    nextScene: "witness_protection_analysis"
+                }
+            ],
+            educationalNote: "Understanding defense strategy helps prosecutors anticipate challenges and strengthen their case presentation to counter expected arguments."
+        },
+
+        defense_witness_challenge: {
+            text: `DEFENSE WITNESS CREDIBILITY CHALLENGE
+            
+            The defense team launches a coordinated attack on the credibility of prosecution witnesses, using sophisticated tactics to undermine their testimony.
+            
+            CREDIBILITY ATTACK STRATEGIES:
+            
+            COOPERATION AGREEMENT ATTACKS:
+            • Highlight substantial sentence reductions received
+            • Emphasize financial benefits of cooperation
+            • Show history of lying to investigators
+            • Demonstrate bias and motivation to fabricate
+            
+            CHARACTER ASSASSINATION:
+            • Past criminal history exploitation
+            • Personal life scandals and controversies
+            • Drug use and mental health issues
+            • Financial troubles as motivation to lie
+            
+            INCONSISTENCY EXPLOITATION:
+            • Compare multiple statement versions
+            • Highlight changes in story over time
+            • Point out contradictions between witnesses
+            • Show influence of prosecution preparation
+            
+            EXPERT WITNESS CHALLENGES:
+            • Question qualifications and expertise
+            • Challenge methodology and conclusions
+            • Present competing expert interpretations
+            • Attack bias and financial compensation
+            
+            The prosecution must be prepared to rehabilitate witness credibility and demonstrate reliability despite defense attacks.
+            
+            This is a critical battleground that often determines case outcomes.`,
+            image: "courtroom_witness_challenge",
+            imagePrompt: "Federal courtroom during intense cross-examination, defense attorney questioning witness, jury watching",
+            sources: ["Trial Transcript Analysis", "Witness Preparation Files", "Credibility Assessment Reports"],
+            choices: [
+                {
+                    text: "Focus on strengthening witness preparation and rehabilitation",
+                    nextScene: "witness_protection_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Develop corroborating evidence to support witness testimony",
+                    nextScene: "corroborating_evidence"
+                },
+                {
+                    text: "Analyze expert witness vulnerabilities",
+                    nextScene: "expert_legal_analysis"
+                }
+            ],
+            educationalNote: "Witness credibility challenges are central to criminal trials, requiring prosecutors to carefully prepare witnesses and develop corroborating evidence."
+        },
+
+        deleted_data_recovery: {
+            text: `DIGITAL FORENSICS RECOVERY
+            
+            FBI digital forensics specialists have recovered massive amounts of deleted data from seized electronic devices. The recovered information provides crucial evidence of alleged criminal activities.
+            
+            RECOVERY ACHIEVEMENTS:
+            
+            MOBILE DEVICE DATA:
+            • 847,000 deleted text messages recovered
+            • 23,000 deleted photos and videos restored
+            • Call logs spanning 5 years reconstructed
+            • Location data tracking patterns revealed
+            
+            COMPUTER SYSTEMS:
+            • Financial records thought permanently deleted
+            • Communication logs with alleged co-conspirators  
+            • Document drafts showing criminal planning
+            • Internet search history revealing intent
+            
+            CLOUD STORAGE RECOVERY:
+            • iCloud backups containing incriminating material
+            • Google Drive files with business communications
+            • Dropbox account evidence of document sharing
+            • OneDrive financial planning documents
+            
+            TECHNICAL CHALLENGES:
+            • Military-grade encryption on some devices
+            • Professional data destruction attempts
+            • Multiple device synchronization issues
+            • International jurisdiction complications
+            
+            The recovered data creates a digital timeline of alleged criminal enterprise activities spanning multiple years.`,
+            image: "digital_forensics_lab",
+            imagePrompt: "FBI digital forensics laboratory, computer specialists recovering deleted data, multiple screens with evidence",
+            sources: ["FBI Digital Evidence Recovery Unit", "Computer Forensics Reports", "Mobile Device Analysis"],
+            choices: [
+                {
+                    text: "Focus on the most incriminating recovered communications",
+                    nextScene: "encrypted_communications_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze the financial records and money laundering evidence",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Review location data and timeline evidence",
+                    nextScene: "location_data_analysis"
+                }
+            ],
+            educationalNote: "Digital forensics recovery can uncover crucial evidence even when suspects attempt to delete incriminating material, often providing prosecution breakthroughs."
+        },
+
+        corroborating_evidence: {
+            text: `CORROBORATING EVIDENCE COMPILATION
+            
+            To strengthen the prosecution case against expected defense attacks, you compile extensive corroborating evidence that supports key witness testimony and documentary evidence.
+            
+            FINANCIAL CORROBORATION:
+            • Bank records confirming witness testimony about payments
+            • Credit card transactions matching alleged criminal activity dates
+            • Cash transaction reports supporting money laundering claims
+            • International wire transfer records verifying offshore accounts
+            
+            DIGITAL CORROBORATION:
+            • Phone records confirming witness-reported conversations
+            • Social media posts supporting timeline testimony
+            • GPS location data matching witness travel claims
+            • Surveillance footage confirming witness presence at events
+            
+            PHYSICAL EVIDENCE CORROBORATION:
+            • Hotel records supporting witness testimony about locations
+            • Travel records confirming international trips mentioned by witnesses
+            • Property records verifying real estate transactions described
+            • Business documents supporting enterprise structure claims
+            
+            INDEPENDENT WITNESS CORROBORATION:
+            • Third-party witnesses confirming key events
+            • Law enforcement observations supporting witness claims
+            • Expert analysis validating witness technical testimony
+            • Victim statements corroborating witness accounts
+            
+            The extensive corroboration creates multiple layers of evidence supporting the prosecution's case.`,
+            image: "evidence_corroboration_board",
+            imagePrompt: "Investigation room with evidence boards showing multiple sources confirming same facts, connecting lines and verification",
+            sources: ["Evidence Analysis Unit", "Corroboration Assessment Report", "Multi-source Verification Analysis"],
+            choices: [
+                {
+                    text: "Focus on financial evidence corroboration",
+                    nextScene: "money_laundering_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Strengthen digital evidence verification",
+                    nextScene: "location_data_analysis"
+                },
+                {
+                    text: "Develop independent witness testimony",
+                    nextScene: "victim_testimony_analysis"
+                }
+            ],
+            educationalNote: "Corroborating evidence is essential in federal prosecutions to support witness testimony and counter defense credibility attacks."
         }
     }
 };
