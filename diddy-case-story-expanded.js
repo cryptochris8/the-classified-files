@@ -5796,6 +5796,524 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Surveillance evidence provides objective, independent documentation of criminal activities essential for federal prosecution success and witness testimony corroboration."
+        },
+
+        trial_preparation_investigation: {
+            text: `COMPREHENSIVE TRIAL PREPARATION
+            
+            As the federal prosecution approaches trial, you oversee comprehensive preparation ensuring every aspect of the case is ready for successful presentation to a jury.
+            
+            TRIAL PREPARATION COMPONENTS:
+            
+            EVIDENCE ORGANIZATION:
+            • 47,000+ documents organized into chronological and thematic exhibits
+            • 15TB of digital evidence processed and authenticated for court presentation
+            • Surveillance footage edited and prepared for jury viewing
+            • Financial evidence simplified into understandable charts and timelines
+            
+            WITNESS PREPARATION:
+            • 89 cooperating witnesses prepared for direct examination
+            • Cross-examination preparation to counter defense attacks
+            • Witness protection coordination for trial security
+            • Expert witness testimony refined for jury comprehension
+            
+            LEGAL BRIEF PREPARATION:
+            • Pre-trial motions addressing anticipated defense challenges
+            • Evidence admissibility briefs supporting prosecution exhibits
+            • RICO instruction requests for jury education
+            • Sentencing memoranda prepared for post-conviction
+            
+            JURY CONSIDERATIONS:
+            • Jury selection strategy for complex federal prosecution
+            • Demonstrative exhibits designed for jury understanding
+            • Opening statement narrative development
+            • Closing argument strategy emphasizing key evidence
+            
+            SECURITY PREPARATIONS:
+            • Courthouse security enhanced for high-profile trial
+            • Witness protection protocols during trial testimony
+            • Media management and public information strategy
+            • International cooperation for foreign witness testimony
+            
+            The trial preparation represents the culmination of years of federal investigation work.`,
+            image: "trial_preparation_center",
+            imagePrompt: "Federal trial preparation center, organized evidence exhibits, witness preparation rooms, legal brief writing, prosecution team coordination",
+            sources: ["Federal Trial Preparation Guidelines", "Prosecution Strategy Manual", "Complex Case Trial Procedures"],
+            choices: [
+                {
+                    text: "Focus on witness preparation and protection for trial testimony",
+                    nextScene: "witness_protection_program",
+                    collectEvidence: true
+                },
+                {
+                    text: "Emphasize evidence organization for clear jury presentation",
+                    nextScene: "corroborating_evidence"
+                },
+                {
+                    text: "Prepare for anticipated defense challenges and strategies",
+                    nextScene: "defense_strategy_analysis"
+                }
+            ],
+            educationalNote: "Federal trial preparation for complex RICO cases requires extensive organization, witness preparation, and strategic planning to ensure successful prosecution."
+        },
+
+        turning_the_mole: {
+            text: `MOLE INTERROGATION AND COOPERATION
+            
+            The arrested federal mole faces a critical decision: continued loyalty to the criminal organization or cooperation with federal authorities to reduce their sentence.
+            
+            INTERROGATION STRATEGY:
+            
+            PSYCHOLOGICAL PRESSURE:
+            • Evidence of financial payments totaling $2.3 million presented
+            • Family vulnerabilities exploited by criminal organization exposed
+            • Career destruction and federal conviction consequences explained
+            • Potential for reduced sentence through cooperation offered
+            
+            COOPERATION INCENTIVES:
+            • Witness protection program eligibility for informant and family
+            • Substantial sentence reduction for meaningful cooperation
+            • Financial support during cooperation period
+            • Career rehabilitation possibilities after cooperation
+            
+            INTELLIGENCE VALUE:
+            • Inside knowledge of criminal organization operations
+            • Identification of other corrupted federal personnel
+            • Access to criminal organization communication systems
+            • Understanding of criminal organization law enforcement countermeasures
+            
+            OPERATIONAL SECURITY:
+            • Compartmentalized cooperation to prevent criminal organization awareness
+            • Secure communication protocols for ongoing intelligence gathering
+            • Counter-surveillance protection during cooperation period
+            • Evidence preservation for criminal organization prosecution
+            
+            COOPERATION AGREEMENT TERMS:
+            • Complete truthfulness and ongoing cooperation required
+            • Testimony in federal court against criminal organization
+            • Assistance in identifying additional criminal activities
+            • Asset cooperation for financial recovery operations
+            
+            The mole's decision could provide unprecedented insight into criminal organization operations and law enforcement infiltration.`,
+            image: "federal_mole_interrogation",
+            imagePrompt: "Federal agent interrogation room, mole cooperation negotiation, psychological pressure, witness protection discussion",
+            sources: ["Federal Cooperation Agreement Protocol", "Informant Development Guidelines", "Internal Corruption Investigation"],
+            choices: [
+                {
+                    text: "Secure comprehensive cooperation agreement",
+                    nextScene: "enhanced_security_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use mole intelligence to identify additional corruption",
+                    nextScene: "federal_leak_investigation"
+                },
+                {
+                    text: "Protect mole identity while gathering ongoing intelligence",
+                    nextScene: "double_agent_evidence_gathering"
+                }
+            ],
+            educationalNote: "Turning compromised federal personnel into cooperating witnesses can provide crucial intelligence about criminal organization operations and law enforcement infiltration."
+        },
+
+        verdict_legal_analysis: {
+            text: `TRIAL VERDICT LEGAL ANALYSIS
+            
+            As the federal trial concludes, you analyze the jury's verdict and its legal implications for the criminal enterprise prosecution and broader law enforcement efforts.
+            
+            JURY VERDICT ANALYSIS:
+            
+            RICO CONVICTION SUCCESS:
+            • All elements of RICO enterprise proven beyond reasonable doubt
+            • Pattern of racketeering activity established through multiple predicate acts
+            • Defendant's leadership role in criminal enterprise confirmed
+            • Interstate commerce nexus demonstrated through business operations
+            
+            SPECIFIC CHARGE OUTCOMES:
+            • Money laundering: Guilty on 23 of 25 counts
+            • Wire fraud: Guilty on 17 of 20 counts
+            • Extortion: Guilty on 8 of 10 counts
+            • Conspiracy: Guilty on all counts
+            
+            LEGAL PRECEDENT IMPLICATIONS:
+            • Entertainment industry criminal enterprise prosecution precedent
+            • RICO application to celebrity defendant cases
+            • International money laundering prosecution standards
+            • Complex financial evidence presentation techniques
+            
+            SENTENCING IMPLICATIONS:
+            • Federal sentencing guidelines calculation: 25-30 years
+            • Asset forfeiture orders: Over $750 million
+            • Victim restitution requirements: $200+ million
+            • Supervised release and monitoring conditions
+            
+            APPEAL CONSIDERATIONS:
+            • Anticipated defense appeals on constitutional grounds
+            • Evidence admissibility challenges expected
+            • Jury instruction challenges regarding RICO complexity
+            • International evidence authentication appeals
+            
+            BROADER IMPACT:
+            • Criminal enterprise dismantling and associate prosecutions
+            • Entertainment industry compliance and regulatory changes
+            • International cooperation precedents for future cases
+            • Victim advocacy and support program enhancements
+            
+            The verdict represents successful federal prosecution of sophisticated criminal enterprise.`,
+            image: "federal_trial_verdict",
+            imagePrompt: "Federal courtroom during verdict reading, successful prosecution celebration, justice served, legal precedent established",
+            sources: ["Federal Trial Verdict Analysis", "RICO Prosecution Success Assessment", "Legal Precedent Documentation"],
+            choices: [
+                {
+                    text: "Focus on sentencing preparation and asset forfeiture",
+                    nextScene: "sentencing_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Prepare for anticipated appeals and legal challenges",
+                    nextScene: "evidence_legal_analysis"
+                },
+                {
+                    text: "Coordinate follow-up prosecutions of criminal associates",
+                    nextScene: "co_conspirator_payments"
+                }
+            ],
+            educationalNote: "Successful RICO convictions create important legal precedents and provide foundation for dismantling entire criminal enterprises and prosecuting associates."
+        },
+
+        webb_interrogation_deeper_network: {
+            text: `WEBB INTERROGATION: DEEPER NETWORK EXPOSURE
+            
+            The interrogation of a key figure known only as "Webb" reveals connections to an even deeper criminal network spanning international borders and multiple industries.
+            
+            WEBB PROFILE ANALYSIS:
+            
+            BACKGROUND INFORMATION:
+            • International business consultant with 20-year criminal history
+            • Connections to offshore banking and money laundering networks
+            • Professional relationships with criminal organizations worldwide
+            • Technical expertise in financial crimes and asset hiding
+            
+            CRIMINAL NETWORK REVELATIONS:
+            • Entertainment industry criminal enterprises in multiple countries
+            • International money laundering network serving multiple criminal organizations
+            • Corruption networks within international banking systems
+            • Professional criminal service providers operating globally
+            
+            INTERROGATION BREAKTHROUGHS:
+            
+            INTERNATIONAL SCOPE:
+            • Criminal enterprises operating in 15+ countries
+            • Coordinated money laundering through major international banks
+            • Professional criminal services network spanning continents
+            • Government corruption in multiple jurisdictions
+            
+            ADDITIONAL CRIMINAL ACTIVITIES:
+            • Arms trafficking through entertainment industry connections
+            • Human trafficking networks using entertainment venues
+            • Drug trafficking coordination through international tours
+            • Political corruption and election interference operations
+            
+            COOPERATION POTENTIAL:
+            • Detailed knowledge of international criminal network structure
+            • Access to financial records and banking relationships
+            • Information about government officials and law enforcement corruption
+            • Intelligence about ongoing criminal operations and planning
+            
+            STRATEGIC IMPLICATIONS:
+            • International law enforcement cooperation requirements
+            • Diplomatic implications of cross-border criminal prosecution
+            • National security concerns regarding criminal network scope
+            • Long-term investigation expansion possibilities
+            
+            Webb's cooperation could expose criminal networks far beyond the current investigation scope.`,
+            image: "international_criminal_network",
+            imagePrompt: "Global criminal network investigation, international connections, Webb interrogation, worldwide criminal enterprise mapping",
+            sources: ["International Criminal Network Analysis", "Webb Interrogation Transcripts", "Global Criminal Enterprise Intelligence"],
+            choices: [
+                {
+                    text: "Secure Webb cooperation for international network investigation",
+                    nextScene: "federal_agency_coordination",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on immediate prosecution while preserving international intelligence",
+                    nextScene: "trial_preparation_investigation"
+                },
+                {
+                    text: "Coordinate with international law enforcement for broader investigation",
+                    nextScene: "offshore_banking_investigation"
+                }
+            ],
+            educationalNote: "International criminal network investigations require extensive cooperation between law enforcement agencies and careful coordination to address jurisdictional complexities."
+        },
+
+        witness_protection_analysis: {
+            text: `WITNESS PROTECTION PROGRAM COMPREHENSIVE ANALYSIS
+            
+            You conduct a thorough analysis of the witness protection program's effectiveness in safeguarding the 89 cooperating witnesses crucial to the federal prosecution.
+            
+            WITNESS PROTECTION ASSESSMENT:
+            
+            PROGRAM STATISTICS:
+            • 89 cooperating witnesses enrolled in various protection levels
+            • 47 family members relocated for safety
+            • 23 witnesses requiring maximum security protocols
+            • 12 international witness relocations coordinated
+            
+            SECURITY EFFECTIVENESS:
+            • Zero successful criminal organization attacks on protected witnesses
+            • 97% witness cooperation retention rate throughout investigation
+            • Enhanced security protocols implemented after initial threats
+            • Counter-surveillance operations preventing witness location compromise
+            
+            PROTECTION LEVELS:
+            
+            MAXIMUM SECURITY:
+            • Complete identity change and relocation
+            • 24/7 federal marshal protection
+            • Secure communication protocols only
+            • Family member inclusion in protection program
+            
+            STANDARD PROTECTION:
+            • Temporary relocation during testimony period
+            • Regular security check-ins and monitoring
+            • Secure transportation to court proceedings
+            • Communication monitoring and threat assessment
+            
+            MINIMAL PROTECTION:
+            • Enhanced security awareness and training
+            • Emergency contact protocols established
+            • Periodic threat assessment and security updates
+            • Local law enforcement coordination for protection
+            
+            PROGRAM CHALLENGES:
+            • High cost of comprehensive protection programs
+            • Psychological impact on witnesses and families
+            • Long-term sustainability of protection measures
+            • Balance between protection and witness quality of life
+            
+            PROGRAM SUCCESS FACTORS:
+            • Professional witness protection personnel
+            • Comprehensive threat assessment and response
+            • International cooperation for cross-border protection
+            • Victim advocacy and psychological support services
+            
+            The witness protection program has been essential for federal prosecution success.`,
+            image: "witness_protection_analysis",
+            imagePrompt: "U.S. Marshals witness protection analysis, safety statistics, protected witness success stories, comprehensive security assessment",
+            sources: ["U.S. Marshals Witness Protection Program", "Witness Safety Assessment", "Protection Program Effectiveness Analysis"],
+            choices: [
+                {
+                    text: "Enhance protection protocols based on analysis results",
+                    nextScene: "enhanced_security_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use protection program success to encourage additional cooperation",
+                    nextScene: "custom_protection_deal"
+                },
+                {
+                    text: "Share protection program lessons with international partners",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Witness protection program effectiveness is crucial for federal prosecution success, requiring comprehensive security measures and ongoing threat assessment."
+        },
+
+        witness_protection_program: {
+            text: `WITNESS PROTECTION PROGRAM OPERATIONS
+            
+            The federal witness protection program coordinates comprehensive safety measures for cooperating witnesses and their families, ensuring testimony can proceed without intimidation or violence.
+            
+            PROGRAM IMPLEMENTATION:
+            
+            IMMEDIATE PROTECTION MEASURES:
+            • Emergency relocation within 48 hours of cooperation agreement
+            • Secure housing in undisclosed federal protection facilities
+            • Identity documentation preparation for long-term protection
+            • Medical and psychological support services coordination
+            
+            FAMILY PROTECTION INTEGRATION:
+            • Spouse and children included in protection protocols
+            • Extended family threat assessment and protection consideration
+            • Education and employment coordination for family members
+            • Financial support during protection period
+            
+            LONG-TERM SECURITY PLANNING:
+            • Permanent relocation and identity change procedures
+            • Career rehabilitation and employment assistance
+            • Ongoing security monitoring and threat assessment
+            • Emergency contact and response protocols
+            
+            OPERATIONAL COORDINATION:
+            • U.S. Marshals Service primary protection responsibility
+            • FBI coordination for ongoing investigation support
+            • Local law enforcement integration for area security
+            • International cooperation for cross-border witness protection
+            
+            TESTIMONY SECURITY:
+            • Secure transportation to court proceedings
+            • Courthouse security enhancement during witness testimony
+            • Communication security between witnesses and prosecution
+            • Post-testimony security assessment and continued protection
+            
+            PROGRAM OUTCOMES:
+            • 100% witness safety record during federal prosecution
+            • High witness cooperation retention throughout investigation
+            • Successful testimony without intimidation or compromise
+            • Long-term witness and family integration in new identities
+            
+            The witness protection program enables successful federal prosecution while ensuring witness and family safety.`,
+            image: "witness_protection_operations",
+            imagePrompt: "Federal witness protection operations, family relocation, secure facilities, U.S. Marshals coordination, comprehensive safety measures",
+            sources: ["Federal Witness Protection Operations", "U.S. Marshals Protection Protocol", "Witness Safety Program Documentation"],
+            choices: [
+                {
+                    text: "Focus on long-term witness integration and identity protection",
+                    nextScene: "family_reunion_aftermath",
+                    collectEvidence: true
+                },
+                {
+                    text: "Enhance security measures based on ongoing threat assessment",
+                    nextScene: "enhanced_security_investigation"
+                },
+                {
+                    text: "Use protection program success for additional witness recruitment",
+                    nextScene: "custom_protection_deal"
+                }
+            ],
+            educationalNote: "Federal witness protection programs provide comprehensive safety measures enabling successful prosecution of dangerous criminal enterprises while protecting cooperating witnesses."
+        },
+
+        studio_siege_broadcast: {
+            text: `ENTERTAINMENT STUDIO SIEGE RESOLUTION
+            
+            In a final dramatic confrontation, federal agents coordinate a complex operation to resolve a siege situation at a major entertainment studio where criminal organization members have barricaded themselves.
+            
+            SIEGE SITUATION ANALYSIS:
+            
+            TACTICAL SCENARIO:
+            • Criminal organization associates barricaded in recording studio
+            • Multiple hostages including studio personnel and media figures
+            • Evidence destruction attempts ongoing inside facility
+            • Media coverage creating national attention and pressure
+            
+            FEDERAL RESPONSE COORDINATION:
+            • FBI Hostage Rescue Team leading tactical operations
+            • Local SWAT team support and perimeter security
+            • Negotiation specialists attempting peaceful resolution
+            • Evidence preservation teams preparing for facility breach
+            
+            HOSTAGE SITUATION:
+            • 12 civilians held including studio employees and journalists
+            • Criminal organization demands for prosecution dismissal
+            • Hostage welfare monitoring through building surveillance
+            • Medical response teams prepared for casualty treatment
+            
+            MEDIA COMPLICATIONS:
+            • Live television coverage creating operational security challenges
+            • Social media monitoring revealing tactical information
+            • Public relations pressure for rapid peaceful resolution
+            • Criminal organization propaganda attempts through media
+            
+            RESOLUTION STRATEGY:
+            • Psychological operations to reduce criminal organization resolve
+            • Technical surveillance providing interior intelligence
+            • Coordinated assault plan minimizing civilian casualties
+            • Evidence preservation during tactical operations
+            
+            OPERATIONAL OUTCOME:
+            • Successful hostage rescue with zero civilian casualties
+            • Criminal organization associates arrested and charged
+            • Critical evidence preserved preventing destruction
+            • Media coverage demonstrating federal law enforcement effectiveness
+            
+            The studio siege resolution demonstrates federal coordination and tactical excellence while protecting civilians and preserving justice.`,
+            image: "studio_siege_resolution",
+            imagePrompt: "FBI tactical operation at entertainment studio, hostage rescue, media coverage, successful federal law enforcement response",
+            sources: ["FBI Hostage Rescue Operations", "Tactical Response Protocol", "Media Crisis Management"],
+            choices: [
+                {
+                    text: "Use siege resolution success to strengthen prosecution case",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze evidence recovered during siege for additional prosecutions",
+                    nextScene: "stolen_evidence_recovery"
+                },
+                {
+                    text: "Coordinate with media for public awareness and support",
+                    nextScene: "media_security_counterattack"
+                }
+            ],
+            educationalNote: "Complex federal operations require coordination between multiple agencies and careful balance between tactical success, civilian safety, and evidence preservation."
+        },
+
+        surveillance_bluff_attempt: {
+            text: `SURVEILLANCE DECEPTION OPERATION
+            
+            In a sophisticated counterintelligence move, you coordinate a surveillance deception operation designed to mislead the criminal organization while gathering additional intelligence.
+            
+            DECEPTION OPERATION STRATEGY:
+            
+            FALSE SURVEILLANCE INDICATORS:
+            • Deliberately visible surveillance teams to misdirect attention
+            • Fake surveillance equipment placement for criminal organization discovery
+            • False surveillance reports leaked through controlled channels
+            • Decoy investigation activities to confuse criminal organization planning
+            
+            ACTUAL INTELLIGENCE GATHERING:
+            • Covert surveillance operations invisible to criminal organization
+            • Electronic surveillance through compromised communication systems
+            • Human intelligence from deep cover operatives within organization
+            • Financial surveillance through banking cooperation agreements
+            
+            PSYCHOLOGICAL WARFARE ELEMENTS:
+            • Creating paranoia within criminal organization leadership
+            • Encouraging internal suspicion and communication breakdowns
+            • Forcing criminal organization into defensive posture
+            • Disrupting criminal organization operational planning and execution
+            
+            OPERATIONAL SECURITY:
+            • Compartmentalized knowledge of actual vs. deception operations
+            • Counter-surveillance detection to monitor criminal organization response
+            • Communication security preventing deception operation exposure
+            • Evidence preservation during deception activities
+            
+            INTELLIGENCE OBJECTIVES:
+            • Identifying criminal organization counter-surveillance capabilities
+            • Gathering information about criminal organization security protocols
+            • Detecting additional criminal activities through organization reaction
+            • Testing criminal organization communication security and procedures
+            
+            DECEPTION RESULTS:
+            • Criminal organization diverted resources to counter fake surveillance
+            • Real surveillance operations remained undetected and effective
+            • Additional criminal activities revealed through organization panic
+            • Internal criminal organization conflicts created through paranoia
+            
+            The surveillance deception operation successfully confused criminal organization while enhancing federal intelligence gathering.`,
+            image: "surveillance_deception_operation",
+            imagePrompt: "Complex federal surveillance deception, fake surveillance equipment, psychological warfare, criminal organization misdirection",
+            sources: ["FBI Counterintelligence Operations", "Surveillance Deception Techniques", "Psychological Warfare Manual"],
+            choices: [
+                {
+                    text: "Use deception success to launch final coordinated arrests",
+                    nextScene: "synchronized_rescue_arrest",
+                    collectEvidence: true
+                },
+                {
+                    text: "Exploit criminal organization paranoia for additional intelligence",
+                    nextScene: "turning_the_mole"
+                },
+                {
+                    text: "Coordinate with prosecution team for trial evidence presentation",
+                    nextScene: "trial_preparation_investigation"
+                }
+            ],
+            educationalNote: "Surveillance deception operations can effectively mislead criminal organizations while enhancing actual intelligence gathering and creating operational advantages."
         }
     }
 };
