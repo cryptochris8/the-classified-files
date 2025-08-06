@@ -2126,6 +2126,412 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Every federal investigation contributes to our understanding of justice and helps prevent future crimes through precedent and awareness."
+        },
+
+        agency_question: {
+            text: `FEDERAL AGENCY COORDINATION
+            
+            Agent Chen pulls up classified coordination protocols on her secure terminal.
+            
+            "The Diddy investigation involves multiple federal agencies working together. Each has specific jurisdictions and expertise."
+            
+            She shows you the inter-agency coordination chart:
+            
+            • FBI: Criminal enterprise investigation, RICO prosecution
+            • DEA: Drug trafficking elements
+            • IRS: Financial crimes and tax evasion
+            • Homeland Security: Human trafficking aspects
+            • U.S. Marshals: Asset forfeiture and fugitive operations
+            
+            "Understanding which agency leads which aspect is crucial for any federal prosecutor. Which agency would typically take the lead in a RICO case involving organized criminal enterprise?"`,
+            image: "federal_agencies_coordination",
+            imagePrompt: "Multiple federal agency badges and logos displayed on wall, interagency coordination meeting room with officials",
+            sources: ["Department of Justice Guidelines", "Federal Agency Protocols", "RICO Task Force Documentation"],
+            choices: [
+                {
+                    text: "FBI - They handle organized crime and RICO prosecutions",
+                    nextScene: "agent_chen_leak_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "DEA - They focus on drug-related enterprises",
+                    nextScene: "agent_chen_briefing"
+                },
+                {
+                    text: "U.S. Marshals - They handle major criminal cases",
+                    nextScene: "mysterious_contact_meeting"
+                }
+            ],
+            educationalNote: "The FBI typically leads RICO prosecutions as they specialize in organized crime and criminal enterprises, though they coordinate closely with other agencies."
+        },
+
+        agent_chen_leak_investigation: {
+            text: `LEAK INVESTIGATION PROTOCOL
+            
+            Agent Chen activates enhanced security protocols as she briefs you on a critical development.
+            
+            "We've detected unauthorized access to sensitive case files. Someone with high-level clearance has been leaking information about our investigation."
+            
+            She shows you the security breach timeline:
+            
+            TIMELINE OF UNAUTHORIZED ACCESS:
+            • Day 1: First breach detected in financial records division
+            • Day 3: Witness list accessed without authorization
+            • Day 5: Evidence inventory downloaded to external device
+            • Day 7: Your investigation file viewed by unknown user
+            
+            "This isn't random. Someone is specifically targeting our Diddy investigation. We need to identify the mole before they compromise witness safety."
+            
+            Digital forensics shows the breaches originated from within federal law enforcement.`,
+            image: "digital_security_breach",
+            imagePrompt: "Computer screens showing security breach alerts, digital forensics investigation, classified access logs",
+            sources: ["Federal Security Protocols", "Digital Forensics Reports", "Internal Affairs Investigation"],
+            choices: [
+                {
+                    text: "Investigate the digital trail of the security breaches",
+                    nextScene: "deleted_data_recovery",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on identifying suspects within law enforcement",
+                    nextScene: "double_agent_evidence_gathering"
+                },
+                {
+                    text: "Implement immediate security measures to prevent further leaks",
+                    nextScene: "enhanced_security_investigation"
+                }
+            ],
+            educationalNote: "Internal security breaches in federal investigations require immediate response and specialized digital forensics to protect ongoing cases and witness safety."
+        },
+
+        assassination_network_investigation: {
+            text: `ASSASSINATION NETWORK EXPOSED
+            
+            Deep within the classified files, you uncover a disturbing network of hired intimidators and potential assassins connected to the entertainment industry's dark underworld.
+            
+            NETWORK STRUCTURE IDENTIFIED:
+            
+            • Tier 1: Celebrity handlers and fixers
+            • Tier 2: Private security companies with questionable practices  
+            • Tier 3: International contractors specializing in "problem resolution"
+            • Tier 4: Underground network of enforcers and intimidators
+            
+            Financial records show payments to individuals with military backgrounds and histories of violence, all traced back through shell companies to entertainment industry accounts.
+            
+            Phone intercepts reveal code words:
+            "Studio cleanup" = witness intimidation
+            "Final cut" = elimination order
+            "Wrap party" = operation completed
+            
+            You realize this network extends far beyond any single case - it's an industry-wide protection racket.`,
+            image: "assassination_network_chart",
+            imagePrompt: "Dark investigation board with photos, connections, international network chart showing entertainment industry connections to dangerous individuals",
+            sources: ["FBI Financial Crimes Unit", "International Task Force Files", "Classified Intelligence Reports"],
+            choices: [
+                {
+                    text: "Trace the financial connections to identify network leaders",
+                    nextScene: "money_laundering_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on protecting potential targets and witnesses",
+                    nextScene: "witness_protection_program"
+                },
+                {
+                    text: "Coordinate with international law enforcement",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Criminal enterprises often develop sophisticated networks for witness intimidation and elimination, requiring extensive international cooperation to dismantle."
+        },
+
+        asset_forfeiture_analysis: {
+            text: `ASSET FORFEITURE PROCEEDINGS
+            
+            You review the massive civil asset forfeiture case that runs parallel to the criminal prosecution. The scope is staggering.
+            
+            ASSETS SUBJECT TO FORFEITURE:
+            
+            REAL ESTATE:
+            • Miami Beach mansion - $40 million
+            • Los Angeles compound - $35 million  
+            • New York penthouse - $25 million
+            • Private island in the Caribbean - $20 million
+            • Multiple commercial properties - $50 million
+            
+            VEHICLES & LUXURY ITEMS:
+            • Fleet of luxury cars - $5 million
+            • Private jets (2) - $60 million
+            • Yacht collection - $30 million
+            • Art and jewelry - $15 million
+            
+            BUSINESS INTERESTS:
+            • Record label equity - $200 million
+            • Production company holdings - $150 million
+            • Restaurant chains - $75 million
+            
+            Total estimated value: Over $700 million
+            
+            Legal challenge: Proving these assets were obtained through criminal enterprise proceeds.`,
+            image: "luxury_assets_forfeiture",
+            imagePrompt: "Luxury mansion, private jets, expensive cars and jewelry laid out for federal asset forfeiture documentation",
+            sources: ["U.S. Marshals Asset Forfeiture Division", "Financial Crimes Investigation", "Civil Forfeiture Court Filings"],
+            choices: [
+                {
+                    text: "Analyze the paper trail connecting assets to criminal proceeds",
+                    nextScene: "business_documents_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on the business empire's legitimate vs. illegitimate revenue",
+                    nextScene: "business_empire_investigation"
+                },
+                {
+                    text: "Review legal challenges to the forfeiture proceedings",
+                    nextScene: "defense_strategy_analysis"
+                }
+            ],
+            educationalNote: "Civil asset forfeiture allows the government to seize property connected to criminal activity, but requires proving the assets were derived from illegal proceeds."
+        },
+
+        audio_video_evidence: {
+            text: `MULTIMEDIA EVIDENCE ANALYSIS
+            
+            The prosecution's case heavily relies on audio and video evidence seized during federal raids. You review the most damaging recordings.
+            
+            KEY EVIDENCE CATEGORIES:
+            
+            SECURITY FOOTAGE:
+            • Hotel surveillance showing alleged incidents
+            • Private residence cameras capturing suspicious activities
+            • Airport footage tracking movements during criminal periods
+            
+            AUDIO RECORDINGS:
+            • Phone calls discussing "parties" and "entertainment services"
+            • Studio recordings containing incriminating conversations
+            • Wire tap evidence from federal investigation
+            
+            DIGITAL COMMUNICATIONS:
+            • Text messages coordinating alleged criminal activities
+            • Social media posts providing timeline evidence
+            • Email chains showing business structure and payments
+            
+            EXPERT ANALYSIS:
+            • Voice recognition confirms identity of speakers
+            • Video authentication verifies footage integrity
+            • Timeline analysis connects evidence to specific charges
+            
+            The multimedia evidence creates a comprehensive picture of alleged criminal enterprise operations.`,
+            image: "multimedia_evidence_lab",
+            imagePrompt: "FBI evidence analysis lab with multiple screens showing video footage, audio waveforms, and digital communication records",
+            sources: ["FBI Digital Evidence Unit", "Forensic Audio Analysis", "Video Authentication Reports"],
+            choices: [
+                {
+                    text: "Focus on the most incriminating audio recordings",
+                    nextScene: "encrypted_communications_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze video evidence and security footage",
+                    nextScene: "surveillance_evidence_analysis"
+                },
+                {
+                    text: "Review digital communications and metadata",
+                    nextScene: "location_data_analysis"
+                }
+            ],
+            educationalNote: "Multimedia evidence requires careful authentication and expert analysis to ensure admissibility and reliability in federal court."
+        },
+
+        bahamas_financial_trail: {
+            text: `BAHAMAS BANKING INVESTIGATION
+            
+            Following the international financial trail, you uncover a complex network of offshore accounts in the Bahamas designed to launder money and hide assets.
+            
+            OFFSHORE BANKING NETWORK:
+            
+            PRIMARY ACCOUNTS:
+            • Commonwealth Bank of Bahamas - $15 million
+            • Fidelity Bank (Bahamas) - $8 million  
+            • Private banking relationships - $22 million
+            
+            SHELL COMPANY STRUCTURE:
+            • "Caribbean Entertainment Holdings" - Primary holding company
+            • "Island Music Ventures" - Royalty collection entity
+            • "Paradise Resort Management" - Real estate holdings
+            • "Tropical Business Services" - Service company front
+            
+            MONEY FLOW PATTERN:
+            U.S. Revenue → Shell Companies → Offshore Accounts → Asset Purchases → U.S. Real Estate
+            
+            Bahamian authorities are cooperating through mutual legal assistance treaties, but bank secrecy laws complicate the investigation.
+            
+            The sophistication suggests professional money laundering advice from international financial consultants.`,
+            image: "bahamas_offshore_banking",
+            imagePrompt: "Luxury Bahamian bank building, financial documents, international money transfer charts, tropical banking district",
+            sources: ["Bahamian Financial Intelligence Unit", "U.S. Treasury FinCEN", "International Banking Records"],
+            choices: [
+                {
+                    text: "Trace the money back to specific criminal activities",
+                    nextScene: "money_laundering_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on the Cayman Islands connections",
+                    nextScene: "cayman_islands_investigation"
+                },
+                {
+                    text: "Investigate the professional advisors who set up this structure",
+                    nextScene: "co_conspirator_payments"
+                }
+            ],
+            educationalNote: "International money laundering investigations require cooperation between multiple countries and understanding of complex offshore banking structures."
+        },
+
+        bail_denial_analysis: {
+            text: `BAIL HEARING ANALYSIS
+            
+            You review the federal magistrate's decision to deny bail, examining the legal reasoning and evidence that convinced the court the defendant poses a flight risk and danger to the community.
+            
+            PROSECUTION'S BAIL ARGUMENTS:
+            
+            FLIGHT RISK FACTORS:
+            • Multiple private jets and international travel capability
+            • Significant offshore financial assets
+            • No strong community ties relative to wealth
+            • History of evading law enforcement
+            • Access to countries without extradition treaties
+            
+            DANGER TO COMMUNITY:
+            • Pattern of alleged witness intimidation
+            • Access to dangerous criminal associates
+            • History of violent behavior
+            • Ongoing criminal enterprise operations
+            • Threat to victim and witness safety
+            
+            COURT'S DECISION:
+            "No condition or combination of conditions can reasonably assure the appearance of the defendant or the safety of the community."
+            
+            The judge specifically cited the defendant's vast resources and alleged history of obstruction.`,
+            image: "federal_courthouse_bail_hearing",
+            imagePrompt: "Federal courtroom during bail hearing, judge's bench, defendant in custody, legal documents on table",
+            sources: ["Federal Bail Hearing Transcript", "Magistrate's Order", "Pre-trial Services Report"],
+            choices: [
+                {
+                    text: "Analyze the flight risk assessment in detail",
+                    nextScene: "flight_risk_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Review the danger to community evidence",
+                    nextScene: "witness_protection_analysis"
+                },
+                {
+                    text: "Examine defense arguments for bail",
+                    nextScene: "defense_strategy_analysis"
+                }
+            ],
+            educationalNote: "Federal bail decisions consider flight risk and danger to community, with wealthy defendants often facing higher scrutiny due to their resources and ability to flee."
+        },
+
+        business_documents_analysis: {
+            text: `BUSINESS DOCUMENTS INVESTIGATION
+            
+            Seized during federal raids, thousands of business documents reveal the intricate structure of what prosecutors allege was a criminal enterprise disguised as legitimate business operations.
+            
+            KEY DOCUMENT CATEGORIES:
+            
+            CORPORATE STRUCTURE:
+            • Articles of incorporation for 47 shell companies
+            • Operating agreements showing hidden ownership
+            • Board meeting minutes discussing illegal activities
+            • Inter-company loan agreements used for money laundering
+            
+            FINANCIAL RECORDS:
+            • Accounting ledgers with dual bookkeeping systems
+            • Payment authorizations for suspicious services
+            • Expense reports for alleged criminal activities
+            • Investment documents in offshore entities
+            
+            EMPLOYMENT AGREEMENTS:
+            • NDAs with unusual intimidation clauses
+            • "Entertainment services" contracts
+            • Security personnel agreements with questionable duties
+            • Consulting agreements for "problem resolution"
+            
+            The documents show a systematic approach to conducting criminal activity under the guise of legitimate business.`,
+            image: "business_documents_evidence",
+            imagePrompt: "Stacks of corporate documents, financial ledgers, contracts spread across investigation table, FBI evidence tags",
+            sources: ["Federal Raid Evidence", "Corporate Secretary Files", "Accounting Firm Records"],
+            choices: [
+                {
+                    text: "Focus on the corporate structure and shell companies",
+                    nextScene: "enterprise_structure_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze the financial records and dual bookkeeping",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Review employment agreements and NDAs",
+                    nextScene: "entertainment_services_investigation"
+                }
+            ],
+            educationalNote: "Business document analysis is crucial in RICO cases to establish the structure and operations of alleged criminal enterprises hidden within legitimate businesses."
+        },
+
+        business_empire_investigation: {
+            text: `BUSINESS EMPIRE STRUCTURE
+            
+            Your investigation reveals a vast business empire that prosecutors allege served as both legitimate revenue source and criminal enterprise infrastructure.
+            
+            EMPIRE COMPONENTS:
+            
+            ENTERTAINMENT BUSINESSES:
+            • Bad Boy Records - Music production and distribution
+            • Sean John Clothing - Fashion brand and retail
+            • Revolt Media - Television and digital media network  
+            • Blue Flame Agency - Marketing and talent management
+            
+            HOSPITALITY & LIFESTYLE:
+            • Restaurant chains in major cities
+            • Luxury event planning companies
+            • VIP travel and concierge services
+            • Private club memberships and operations
+            
+            INVESTMENT HOLDINGS:
+            • Real estate development projects
+            • Technology startup investments
+            • Liquor brand partnerships
+            • International licensing agreements
+            
+            ALLEGED CRIMINAL INTEGRATION:
+            • Legitimate businesses used to launder criminal proceeds
+            • Corporate structure facilitates illegal activities
+            • Employee infrastructure supports criminal enterprise
+            • International operations provide jurisdictional complexity
+            
+            The challenge: Separating legitimate business from alleged criminal enterprise.`,
+            image: "business_empire_chart",
+            imagePrompt: "Corporate organizational chart showing multiple business entities, legitimate and alleged criminal connections mapped out",
+            sources: ["Corporate Registration Records", "SEC Filings", "Business License Documentation"],
+            choices: [
+                {
+                    text: "Investigate how legitimate businesses allegedly facilitated crimes",
+                    nextScene: "enterprise_structure_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on the international business operations",
+                    nextScene: "offshore_banking_investigation"
+                },
+                {
+                    text: "Analyze the revenue streams and financial integration",
+                    nextScene: "money_laundering_analysis"
+                }
+            ],
+            educationalNote: "RICO prosecutions often involve complex business empires where legitimate businesses are allegedly used to facilitate and conceal criminal activities."
         }
     }
 };
