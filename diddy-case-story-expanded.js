@@ -4699,6 +4699,479 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Money laundering investigations require international cooperation and sophisticated financial analysis to trace criminal proceeds through complex layering schemes."
+        },
+
+        office_break_in_investigation: {
+            text: `PROSECUTOR'S OFFICE BREAK-IN INVESTIGATION
+            
+            A sophisticated break-in at the federal prosecutor's office has compromised sensitive case materials. The investigation reveals professional criminal organization involvement.
+            
+            BREAK-IN ANALYSIS:
+            
+            ENTRY METHODS:
+            • Professional lock picking and security system bypass
+            • Inside knowledge of building layout and security protocols
+            • Advanced surveillance equipment used for reconnaissance
+            • No alarms triggered during entry and exit
+            
+            TARGETED MATERIALS:
+            • Witness protection location information
+            • Evidence inventory and chain of custody documents
+            • Prosecution strategy memos and trial preparation
+            • Financial investigation records and banking documentation
+            
+            SECURITY BREACH IMPLICATIONS:
+            • Witness safety compromised requiring immediate relocation
+            • Investigation strategy exposed to criminal organization
+            • Evidence integrity questions raised for trial preparation
+            • Federal building security protocols require enhancement
+            
+            CRIMINAL ORGANIZATION SOPHISTICATION:
+            • Professional intelligence gathering capabilities
+            • Corruption within building security or maintenance staff
+            • International criminal network technical support
+            • Coordinated attack on federal prosecution infrastructure
+            
+            RESPONSE OPERATIONS:
+            • Crime scene forensics and evidence collection
+            • Enhanced security protocols implementation
+            • Witness protection program emergency activation
+            • Counter-surveillance operations around federal facilities
+            
+            The break-in represents escalation in criminal organization attacks on federal law enforcement.`,
+            image: "federal_office_break_in",
+            imagePrompt: "FBI investigating break-in at prosecutor's office, crime scene analysis, security breach investigation, professional espionage",
+            sources: ["Federal Building Security Assessment", "Crime Scene Investigation Report", "Counterintelligence Analysis"],
+            choices: [
+                {
+                    text: "Focus on identifying insider corruption enabling the break-in",
+                    nextScene: "turning_the_mole",
+                    collectEvidence: true
+                },
+                {
+                    text: "Immediately relocate all compromised witnesses",
+                    nextScene: "emergency_evacuation_protection"
+                },
+                {
+                    text: "Enhance federal building security and counter-surveillance",
+                    nextScene: "enhanced_security_investigation"
+                }
+            ],
+            educationalNote: "Sophisticated break-ins targeting federal prosecutions demonstrate criminal organization intelligence capabilities and require comprehensive security response."
+        },
+
+        offshore_banking_investigation: {
+            text: `INTERNATIONAL OFFSHORE BANKING INVESTIGATION
+            
+            The investigation expands globally to trace criminal proceeds hidden in offshore banking havens, revealing the international scope of the money laundering operation.
+            
+            OFFSHORE BANKING NETWORK:
+            
+            JURISDICTIONAL SCOPE:
+            • Cayman Islands: $117 million in identified accounts
+            • Swiss Banking: $89 million in private banking relationships
+            • British Virgin Islands: $67 million in shell company accounts
+            • Dubai Banking: $45 million in Islamic banking instruments
+            • Singapore: $34 million in wealth management accounts
+            
+            INTERNATIONAL COOPERATION:
+            • Mutual Legal Assistance Treaties (MLATs) activated
+            • Financial Intelligence Unit cooperation agreements
+            • Interpol coordination for international banking records
+            • Diplomatic pressure for account freezing and seizure
+            
+            BANKING RELATIONSHIP ANALYSIS:
+            • Private banking services for high-net-worth criminals
+            • Shell company account management and transactions
+            • Investment advisory services facilitating money laundering
+            • Trust and foundation structures hiding beneficial ownership
+            
+            REGULATORY CHALLENGES:
+            • Bank secrecy laws protecting account holder privacy
+            • Political resistance to financial transparency
+            • Time delays in obtaining banking records
+            • Competing jurisdiction claims over seized assets
+            
+            CRIMINAL ENTERPRISE IMPLICATIONS:
+            • International money laundering demonstrates enterprise sophistication
+            • Offshore banking enables continued criminal operations
+            • Global financial network supports witness intimidation funding
+            • Professional advisory relationships indicate systemic corruption
+            
+            Total identified offshore assets: Over $350 million across multiple jurisdictions.`,
+            image: "offshore_banking_investigation",
+            imagePrompt: "International banking investigation, offshore financial centers, global money laundering network, diplomatic cooperation",
+            sources: ["International Banking Investigation", "MLAT Cooperation Records", "Financial Intelligence Analysis"],
+            choices: [
+                {
+                    text: "Focus on Swiss banking relationships and asset seizure",
+                    nextScene: "asset_forfeiture_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Investigate professional advisors facilitating offshore banking",
+                    nextScene: "co_conspirator_payments"
+                },
+                {
+                    text: "Coordinate international law enforcement for account freezing",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "International offshore banking investigations require extensive diplomatic cooperation and understanding of complex financial structures used to hide criminal proceeds."
+        },
+
+        operation_debriefing: {
+            text: `COMPREHENSIVE OPERATION DEBRIEFING
+            
+            After months of complex federal operations, you conduct a comprehensive debriefing to assess successes, failures, and lessons learned from the investigation.
+            
+            OPERATION ASSESSMENT:
+            
+            INVESTIGATIVE SUCCESSES:
+            • Criminal enterprise structure completely mapped
+            • Financial crimes totaling over $500 million documented
+            • International criminal network relationships exposed
+            • Multiple witness cooperation agreements secured
+            
+            OPERATIONAL CHALLENGES:
+            • Internal security breaches compromising investigation
+            • Criminal organization sophistication exceeding expectations
+            • International cooperation delays affecting evidence collection
+            • Media manipulation campaigns disrupting public support
+            
+            EVIDENCE COLLECTION RESULTS:
+            • Documentary evidence: 47,000+ documents seized and analyzed
+            • Digital evidence: 15TB of electronic data processed
+            • Financial evidence: $750 million in assets identified and frozen
+            • Witness testimony: 89 cooperating witnesses secured
+            
+            PERSONNEL IMPACT:
+            • Investigator families threatened requiring protection
+            • Federal agents compromised by criminal organization corruption
+            • Prosecutor team enhanced security protocols implemented
+            • Inter-agency coordination improved through crisis cooperation
+            
+            STRATEGIC OUTCOMES:
+            • Federal prosecution case strength significantly enhanced
+            • Criminal organization operations disrupted and exposed
+            • International criminal network partially dismantled
+            • Entertainment industry compliance improvements initiated
+            
+            The debriefing reveals both the investigation's complexity and success in penetrating a sophisticated criminal enterprise.`,
+            image: "federal_operation_debriefing",
+            imagePrompt: "Comprehensive federal operation debriefing, investigation assessment, lessons learned analysis, law enforcement leadership",
+            sources: ["Operation Assessment Report", "Federal Investigation Analysis", "Law Enforcement Lessons Learned"],
+            choices: [
+                {
+                    text: "Focus on applying lessons learned to strengthen prosecution",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use debriefing results to enhance ongoing operations",
+                    nextScene: "enhanced_security_investigation"
+                },
+                {
+                    text: "Share intelligence with international partners",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Operation debriefings are crucial for federal investigations to assess effectiveness, identify improvements, and share lessons learned across law enforcement."
+        },
+
+        phone_trace_rescue_operation: {
+            text: `EMERGENCY PHONE TRACE RESCUE MISSION
+            
+            A breakthrough in digital forensics allows you to trace a distress call from missing investigator families, leading to a high-stakes rescue operation.
+            
+            PHONE TRACE INTELLIGENCE:
+            
+            SIGNAL ANALYSIS:
+            • Cell tower triangulation narrowing location to 3-mile radius
+            • Digital forensics recovering partial GPS coordinates
+            • Background audio analysis revealing environmental clues
+            • Voice stress analysis confirming genuine distress call
+            
+            LOCATION INTELLIGENCE:
+            • Remote warehouse complex in industrial district
+            • Limited road access requiring tactical approach planning
+            • Security camera network identified around perimeter
+            • Multiple escape routes available to criminal organization
+            
+            RESCUE OPERATION PLANNING:
+            • FBI Hostage Rescue Team (HRT) deployment
+            • Local SWAT team coordination and backup
+            • Medical response teams on standby for casualties
+            • Communication specialists for hostage negotiation
+            
+            TACTICAL CHALLENGES:
+            • Unknown number of hostages and hostage-takers
+            • Potential for explosive devices or other lethal traps
+            • Limited intelligence on internal building layout
+            • Media presence requiring operational security
+            
+            OPERATIONAL EXECUTION:
+            • Multi-point entry with coordinated timing
+            • Non-lethal force prioritized to protect hostages
+            • Evidence preservation during rescue operations
+            • Immediate medical assessment and family reunification
+            
+            The rescue operation tests federal tactical capabilities and family protection resolve.`,
+            image: "hostage_rescue_operation",
+            imagePrompt: "FBI Hostage Rescue Team tactical operation, warehouse assault, family rescue mission, high-stakes federal response",
+            sources: ["FBI Hostage Rescue Team Protocol", "Tactical Operations Manual", "Emergency Response Procedures"],
+            choices: [
+                {
+                    text: "Execute full tactical rescue with maximum force",
+                    nextScene: "synchronized_rescue_arrest",
+                    collectEvidence: true
+                },
+                {
+                    text: "Attempt negotiation to reduce risk to hostages",
+                    nextScene: "witness_protection_program"
+                },
+                {
+                    text: "Use rescue operation to gather intelligence on criminal organization",
+                    nextScene: "assassination_network_investigation"
+                }
+            ],
+            educationalNote: "Phone trace rescue operations require sophisticated technical analysis and tactical coordination to successfully recover kidnapped individuals."
+        },
+
+        political_connections_investigation: {
+            text: `POLITICAL CONNECTIONS INVESTIGATION
+            
+            The investigation uncovers disturbing connections between the criminal enterprise and political figures, revealing corruption that extends into government institutions.
+            
+            POLITICAL NETWORK ANALYSIS:
+            
+            ELECTED OFFICIALS:
+            • City council members receiving entertainment industry donations
+            • State legislators with business relationships to criminal enterprise
+            • Federal representatives with family connections to organization
+            • Judicial figures with financial ties to criminal proceeds
+            
+            GOVERNMENT EMPLOYEES:
+            • Regulatory officials providing favorable treatment
+            • Law enforcement personnel receiving bribes
+            • Judicial staff facilitating case information leaks
+            • Government contractors providing services to criminal organization
+            
+            POLITICAL INFLUENCE OPERATIONS:
+            • Campaign contributions masking criminal proceeds
+            • Lobbying efforts to prevent regulatory oversight
+            • Political fundraising events laundering criminal money
+            • Government contract awards benefiting criminal enterprise
+            
+            CORRUPTION EVIDENCE:
+            • Financial records showing political payments
+            • Communication records revealing influence operations
+            • Witness testimony about political corruption
+            • Document evidence of government official cooperation
+            
+            NATIONAL SECURITY IMPLICATIONS:
+            • Criminal enterprise infiltration of government institutions
+            • Compromise of law enforcement and judicial processes
+            • Foreign criminal influence in domestic political system
+            • Democratic institution integrity threats
+            
+            The political connections investigation reveals systemic corruption requiring comprehensive law enforcement response.`,
+            image: "political_corruption_investigation",
+            imagePrompt: "FBI investigating political corruption, government building surveillance, elected officials under investigation, democratic institution protection",
+            sources: ["Political Corruption Investigation", "Government Integrity Analysis", "Democratic Institution Assessment"],
+            choices: [
+                {
+                    text: "Focus on documenting criminal enterprise political influence",
+                    nextScene: "co_conspirator_payments",
+                    collectEvidence: true
+                },
+                {
+                    text: "Investigate judicial corruption affecting federal prosecution",
+                    nextScene: "evidence_legal_analysis"
+                },
+                {
+                    text: "Coordinate with political corruption task forces",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Political corruption investigations require careful handling to protect democratic institutions while exposing criminal influence in government."
+        },
+
+        predicate_acts_analysis: {
+            text: `RICO PREDICATE ACTS LEGAL ANALYSIS
+            
+            You conduct detailed analysis of potential RICO predicate acts to ensure the prosecution meets all legal requirements for a successful racketeering conviction.
+            
+            RICO PREDICATE ACTS REQUIREMENTS:
+            
+            STATUTORY PREDICATE ACTS:
+            • Money laundering: Multiple transactions over $500 million
+            • Wire fraud: Interstate communications for fraudulent schemes
+            • Mail fraud: Use of postal services for criminal enterprise
+            • Extortion: Threats and violence for criminal enterprise benefit
+            
+            PATTERN ANALYSIS:
+            • Two or more predicate acts within 10-year period
+            • Relationship between predicate acts and criminal enterprise
+            • Continuity of criminal activity over extended time period
+            • Threat of continued criminal activity in the future
+            
+            EVIDENCE DOCUMENTATION:
+            • Financial records proving money laundering predicate acts
+            • Communication records establishing wire fraud elements
+            • Witness testimony describing extortion and violence
+            • Documentary evidence linking acts to criminal enterprise
+            
+            LEGAL CHALLENGES:
+            • Defense arguments challenging predicate act sufficiency
+            • Constitutional challenges to RICO statute application
+            • Evidentiary challenges to predicate act proof
+            • Sentencing implications of multiple predicate acts
+            
+            PROSECUTION STRATEGY:
+            • Strongest predicate acts emphasized for jury presentation
+            • Multiple alternative predicate acts prepared for defense challenges
+            • Expert testimony explaining predicate act legal requirements
+            • Jury instruction preparation for complex legal concepts
+            
+            Strong predicate acts are essential for RICO conviction success.`,
+            image: "rico_predicate_acts_analysis",
+            imagePrompt: "Legal research on RICO predicate acts, federal prosecutor case preparation, statute analysis, complex legal requirements",
+            sources: ["RICO Statute Analysis", "Predicate Acts Case Law", "Federal Prosecution Guidelines"],
+            choices: [
+                {
+                    text: "Strengthen money laundering predicate act evidence",
+                    nextScene: "money_laundering_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on wire fraud and communication evidence",
+                    nextScene: "encrypted_communications_analysis"
+                },
+                {
+                    text: "Document extortion and violence predicate acts",
+                    nextScene: "assassination_network_investigation"
+                }
+            ],
+            educationalNote: "RICO predicate acts must meet specific legal requirements and demonstrate pattern of racketeering activity connected to criminal enterprise operations."
+        },
+
+        private_jet_evidence_analysis: {
+            text: `PRIVATE JET EVIDENCE INVESTIGATION
+            
+            Analysis of private aircraft records reveals crucial evidence of criminal enterprise operations, international money laundering, and witness intimidation activities.
+            
+            AVIATION EVIDENCE CATEGORIES:
+            
+            FLIGHT RECORDS:
+            • 347 flights analyzed across 18-month investigation period
+            • Interstate and international travel patterns documented
+            • Passenger manifests revealing criminal organization members
+            • Flight timing correlation with alleged criminal activities
+            
+            AIRCRAFT OWNERSHIP:
+            • Shell company ownership structure hiding beneficial owners
+            • International aircraft registration for tax avoidance
+            • Maintenance records showing luxury modifications
+            • Insurance documentation revealing asset values
+            
+            OPERATIONAL EVIDENCE:
+            • Flight crews witness testimony about suspicious activities
+            • Airport surveillance footage confirming passenger identities
+            • Customs declarations showing false information
+            • Fuel and service records documenting expense patterns
+            
+            CRIMINAL ACTIVITY CORRELATION:
+            • Flights to offshore banking locations during money laundering
+            • Travel timing matching witness intimidation campaigns
+            • International flights to non-extradition treaty countries
+            • Emergency flight preparations during law enforcement activity
+            
+            FORENSIC ANALYSIS:
+            • Interior evidence collection revealing criminal activities
+            • Digital device seizure from aircraft electronics
+            • Financial records analysis showing aircraft expense money laundering
+            • International cooperation for foreign jurisdiction evidence
+            
+            Private jet evidence provides comprehensive timeline of criminal enterprise operations.`,
+            image: "private_jet_investigation",
+            imagePrompt: "FBI investigating luxury private jets, aviation records analysis, aircraft forensics, international flight tracking",
+            sources: ["Aviation Investigation Unit", "International Flight Records", "Aircraft Forensics Analysis"],
+            choices: [
+                {
+                    text: "Focus on flight records correlation with criminal activities",
+                    nextScene: "location_data_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Investigate shell company aircraft ownership structure",
+                    nextScene: "business_documents_analysis"
+                },
+                {
+                    text: "Analyze international flights for money laundering evidence",
+                    nextScene: "offshore_banking_investigation"
+                }
+            ],
+            educationalNote: "Private aircraft evidence often provides crucial timeline and location evidence in federal investigations of sophisticated criminal enterprises."
+        },
+
+        property_network_investigation: {
+            text: `REAL ESTATE PROPERTY NETWORK INVESTIGATION
+            
+            Investigation of real estate holdings reveals a vast property network used for money laundering, criminal operations, and asset hiding across multiple jurisdictions.
+            
+            PROPERTY PORTFOLIO ANALYSIS:
+            
+            DOMESTIC REAL ESTATE:
+            • 47 residential properties across 12 states
+            • 23 commercial properties in major metropolitan areas
+            • 8 luxury vacation homes in exclusive resort locations
+            • 15 investment properties generating rental income
+            
+            INTERNATIONAL PROPERTIES:
+            • Caribbean private island estate: $34 million value
+            • European luxury apartments in London and Paris
+            • Asian commercial investments in Hong Kong and Singapore
+            • South American hideaway properties in non-extradition countries
+            
+            OWNERSHIP STRUCTURE:
+            • Shell company ownership hiding beneficial ownership
+            • Trust and foundation structures for asset protection
+            • International corporate entities for tax avoidance
+            • Family member and associate nominee ownership
+            
+            CRIMINAL ENTERPRISE INTEGRATION:
+            • Properties used for alleged criminal activities
+            • Real estate transactions for money laundering
+            • Property rental income mixed with criminal proceeds
+            • International properties for escape planning
+            
+            EVIDENCE COLLECTION:
+            • Property transaction records and financing documentation
+            • Surveillance evidence of criminal activities at properties
+            • Financial records showing money laundering through real estate
+            • Witness testimony about property use for criminal purposes
+            
+            Total estimated property portfolio value: Over $400 million in domestic and international real estate.`,
+            image: "property_network_investigation",
+            imagePrompt: "Real estate investigation board showing property locations, luxury estates, international holdings, money laundering through property",
+            sources: ["Real Estate Investigation Unit", "Property Records Analysis", "International Asset Tracking"],
+            choices: [
+                {
+                    text: "Focus on property seizure and forfeiture proceedings",
+                    nextScene: "asset_forfeiture_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Investigate money laundering through real estate transactions",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Analyze international properties for escape planning evidence",
+                    nextScene: "flight_risk_analysis"
+                }
+            ],
+            educationalNote: "Real estate investigations often reveal extensive money laundering schemes and provide substantial assets for criminal forfeiture proceedings."
         }
     }
 };
