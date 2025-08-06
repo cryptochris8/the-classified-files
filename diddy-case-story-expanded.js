@@ -6317,3 +6317,10 @@ Your hands shake as you realize this case will either make your career... or end
         }
     }
 };
+
+// Export for both Node.js and browser environments
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = DiddyCaseStoryExpanded;
+} else if (typeof window !== 'undefined') {
+    window.DiddyCaseStoryExpanded = DiddyCaseStoryExpanded;
+}
