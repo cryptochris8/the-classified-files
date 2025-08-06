@@ -26,7 +26,7 @@ The line goes dead. You check your secure inbox - a encrypted message from an un
 "The indictment is just the beginning. The real evidence is buried deeper. Meeting spot: Federal Plaza, 6 AM. Come alone. -A Friend"
 
 Your hands shake as you realize this case will either make your career... or end it.`,
-            image: "federal_courthouse_morning.png",
+            image: "federal_courthouse_morning",
             imagePrompt: "Federal courthouse in Manhattan with journalists gathering, morning light, serious investigative atmosphere",
             sources: ["SDNY Press Release", "Federal Indictment", "Court Records"],
             choices: [
@@ -93,7 +93,7 @@ Your hands shake as you realize this case will either make your career... or end
             She disappears into the crowd of federal employees entering the building. You're left holding evidence that could blow this case wide open... or make you a target.
 
             Agent Chen appears beside you. "I see you met our star witness. She's been under federal protection for six months. What she gave you... use it carefully."`,
-            image: "federal_plaza_dawn.png",
+            image: "federal_plaza_dawn",
             imagePrompt: "Federal Plaza at dawn with mysterious figures meeting, HSI building in background, tense atmosphere",
             sources: ["Witness Protection Program", "Federal Investigation Files", "Confidential Sources"],
             choices: [
@@ -157,7 +157,7 @@ Your hands shake as you realize this case will either make your career... or end
             Your phone buzzes - text from unknown number: "Stop digging or join the others who disappeared. Last warning."
 
             Dr. Martinez was right. This isn't just about the federal charges - it's about a system designed to hide the truth. But now you have documentation that bridges the gap between what's public and what's buried.`,
-            image: "confidential_documents.png",
+            image: "confidential_documents",
             imagePrompt: "Secret documents spread on diner table, redacted pages, coffee cup, tense investigative atmosphere",
             sources: ["Private Investigation Files", "Financial Records", "Federal Surveillance Reports"],
             choices: [
@@ -208,7 +208,7 @@ Your hands shake as you realize this case will either make your career... or end
             Agent Torres immediately begins tracing the new message. "They're getting desperate. That was sloppy - we can track this one."
 
             Through the office window, you notice a black SUV parked across the street that wasn't there when you arrived.`,
-            image: "fbi_cyber_division.png",
+            image: "fbi_cyber_division",
             imagePrompt: "FBI cybersecurity office with digital forensics equipment, agent tracing phone calls on computers, high-tech investigation",
             sources: ["FBI Cyber Division", "Digital Forensics", "Witness Intimidation Investigation"],
             choices: [
@@ -272,7 +272,7 @@ Your hands shake as you realize this case will either make your career... or end
             "They were all getting close to something big. The same network we're investigating now."
 
             Dr. Martinez checks her watch nervously. "I have to go. But Rivera... these people don't just threaten. They follow through."`,
-            image: "library_secret_meeting.png",
+            image: "library_secret_meeting",
             imagePrompt: "Private library research room with missing person files spread on table, mysterious atmosphere, archive shelves",
             sources: ["Missing Person Reports", "Private Investigation Files", "NYPD Records"],
             choices: [
@@ -338,7 +338,7 @@ Your hands shake as you realize this case will either make your career... or end
             Agent Chen points to red lines connecting various nodes. "These connections represent financial transfers, communications, and coordinated activities spanning 16 years."
 
             "The federal indictment only scratches the surface. We're building cases against the entire network."`,
-            image: "hsi_classified_briefing.png",
+            image: "hsi_classified_briefing",
             imagePrompt: "Classified HSI briefing room with network diagrams on screens, federal agents, high-security environment",
             sources: ["HSI Intelligence", "Federal Investigation Files", "Network Analysis"],
             choices: [
@@ -403,7 +403,7 @@ Your hands shake as you realize this case will either make your career... or end
             Detective Kim highlights suspicious transactions. "Look at these patterns - large cash deposits followed immediately by wire transfers to offshore accounts. Classic money laundering structure."
 
             A notification pops up on her screen: "URGENT: Federal freeze order issued on 12 accounts. Assets seized: $47.3 million."`,
-            image: "financial_crimes_investigation.png",
+            image: "financial_crimes_investigation",
             imagePrompt: "Financial crimes unit with multiple computer screens showing corporate charts, money flow diagrams, detective analyzing data",
             sources: ["FinCEN Reports", "Corporate Registration Records", "Banking Compliance"],
             choices: [
@@ -461,7 +461,7 @@ Your hands shake as you realize this case will either make your career... or end
             The indictment describes what it calls "Freak Offs" - alleged elaborate sexual performances that were arranged, directed, and often recorded.
             
             Your legal source explains: "RICO charges are extremely serious. The government has to prove an ongoing criminal enterprise with a pattern of racketeering activity."`,
-            image: "federal_indictment_document.png",
+            image: "federal_indictment_document",
             imagePrompt: "Official federal indictment document with Department of Justice seal, legal papers spread on desk",
             sources: ["U.S. v. Sean Combs Indictment", "SDNY Court Filings", "Federal Criminal Code"],
             choices: [
@@ -524,7 +524,7 @@ Your hands shake as you realize this case will either make your career... or end
             A former federal prosecutor tells you: "Sixteen years is a long alleged conspiracy. The government needs to prove continuity and that this was an ongoing criminal enterprise, not isolated incidents."
             
             You notice the charges span multiple presidential administrations and changes in federal law enforcement priorities.`,
-            image: "investigation_timeline_board.png",
+            image: "investigation_timeline_board",
             imagePrompt: "Detective-style timeline board with photos, documents, and red string connections showing chronological investigation",
             sources: ["Federal Indictment", "DOJ Timeline", "Court Records"],
             choices: [
@@ -587,7 +587,7 @@ Your hands shake as you realize this case will either make your career... or end
             A federal law enforcement source explains: "These weren't random raids. This represents months, maybe years of investigation. The simultaneous nature suggests they were worried about evidence destruction."
             
             The scope suggests federal investigators built their case methodically, following financial trails and gathering electronic evidence before making arrests.`,
-            image: "federal_raid_evidence.png",
+            image: "federal_raid_evidence",
             imagePrompt: "Federal agents processing evidence boxes, official HSI badges visible, professional law enforcement operation",
             sources: ["HSI Press Releases", "Federal Search Warrants", "DOJ Statements"],
             choices: [
@@ -651,7 +651,7 @@ Your hands shake as you realize this case will either make your career... or end
             A victims' rights attorney explains: "In trafficking cases, witness testimony is crucial. The government needs to prove coercion, force, or fraud. These witnesses provide firsthand accounts of alleged criminal activity."
             
             The prosecution's case relies heavily on these testimonies to establish the pattern of alleged criminal behavior over the 16-year timeframe.`,
-            image: "witness_testimony_courtroom.png",
+            image: "witness_testimony_courtroom",
             imagePrompt: "Federal courtroom with witness stand, serious legal proceedings, professional judicial setting",
             sources: ["Federal Court Testimony", "Victim Impact Statements", "DOJ Witness Protection"],
             choices: [
@@ -713,7 +713,7 @@ Your hands shake as you realize this case will either make your career... or end
             Legal experts are calling it a "partial victory" for both sides. The government failed to prove the most serious racketeering charges but secured convictions on federal transportation charges.
             
             Federal Judge Arun Subramanian: "While the jury rejected the conspiracy allegations, the transportation convictions reflect serious federal crimes that warrant significant punishment."`,
-            image: "federal_courthouse_verdict.png",
+            image: "federal_courthouse_verdict",
             imagePrompt: "Federal courthouse with media gathered outside, serious news reporting atmosphere, justice scales visible",
             sources: ["Federal Court Records", "Jury Verdict", "Sentencing Guidelines"],
             choices: [
@@ -779,7 +779,7 @@ Your hands shake as you realize this case will either make your career... or end
             4. Interstate commerce nexus
             
             A former federal prosecutor explains: "RICO is designed for organized crime. The government alleges this wasn't random criminal acts, but a systematic criminal enterprise disguised as legitimate business operations."`,
-            image: "rico_investigation_board.png",
+            image: "rico_investigation_board",
             imagePrompt: "Federal investigation board showing RICO enterprise chart with connections between associates and criminal activities",
             sources: ["RICO Statute", "Federal Indictment", "Legal Precedents"],
             choices: [
@@ -823,7 +823,7 @@ Your hands shake as you realize this case will either make your career... or end
             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
             
             Understanding these laws is crucial for following this investigation. Let's see how well you know federal criminal law:`,
-            image: "legal_education_quiz.png",
+            image: "legal_education_quiz",
             imagePrompt: "Law books and federal statutes open on desk, educational setting for legal knowledge",
             sources: ["Federal Criminal Code", "Legal Education Materials"],
             choices: [
@@ -892,7 +892,7 @@ Your hands shake as you realize this case will either make your career... or end
             - Social media communications
             
             The scope of evidence suggests a systematic operation rather than isolated incidents.`,
-            image: "evidence_processing_lab.png",
+            image: "evidence_processing_lab",
             imagePrompt: "Federal evidence processing facility with agents cataloging seized items, professional forensics environment",
             sources: ["Federal Search Warrants", "Evidence Inventory", "Forensics Reports"],
             miniGameData: {
@@ -971,7 +971,7 @@ Your hands shake as you realize this case will either make your career... or end
             - Security camera systems data
             
             FBI Cyber Agent Rodriguez: "The digital evidence creates a detailed timeline of alleged criminal behavior. Modern criminals leave digital fingerprints everywhere."`,
-            image: "digital_forensics_lab.png",
+            image: "digital_forensics_lab",
             imagePrompt: "High-tech FBI digital forensics laboratory with multiple computer screens showing data analysis",
             sources: ["FBI Digital Forensics", "Electronic Evidence", "Metadata Analysis"],
             choices: [
@@ -1039,7 +1039,7 @@ Your hands shake as you realize this case will either make your career... or end
             - Business interests under federal control
             
             Treasury Agent Kim: "The financial evidence shows this wasn't amateur hour. This was sophisticated money laundering designed to hide criminal proceeds."`,
-            image: "treasury_financial_investigation.png",
+            image: "treasury_financial_investigation",
             imagePrompt: "Treasury Department financial crimes unit with charts showing money flows and banking records",
             sources: ["FinCEN Reports", "Banking Records", "Asset Forfeiture Orders"],
             choices: [
@@ -1103,7 +1103,7 @@ Your hands shake as you realize this case will either make your career... or end
             "The threats are real," Agent Chen warns. "Three investigators have disappeared. Your choice affects not just your safety, but how deep you can dig into this case."
             
             Your decision will shape how the rest of this investigation unfolds.`,
-            image: "federal_protection_briefing.png",
+            image: "federal_protection_briefing",
             imagePrompt: "Federal building secure briefing room with protection options being discussed by HSI agents",
             sources: ["Witness Protection Program", "Federal Security Protocols"],
             choices: [
@@ -1169,7 +1169,7 @@ Your hands shake as you realize this case will either make your career... or end
             "Entertainment RICO cases are challenging," explains Professor Martinez, criminal law expert. "You need to prove the business was primarily criminal, not just that crimes occurred within a legitimate business."
             
             The precedents show mixed success rates, with conviction depending on the strength of the criminal enterprise evidence.`,
-            image: "legal_precedents_research.png",
+            image: "legal_precedents_research",
             imagePrompt: "Law library with RICO case books and legal precedents being researched by investigative journalist",
             sources: ["Federal Case Law", "RICO Precedents", "Legal Analysis"],
             choices: [
@@ -1224,7 +1224,7 @@ Your hands shake as you realize this case will either make your career... or end
             "These cases often come down to credibility. Did the jury believe the witnesses? Is there corroborating evidence? Celebrity defendants present unique challenges - fame can work for or against them."
             
             The consensus: This is a complex case that will test the boundaries of federal criminal law.`,
-            image: "legal_expert_panel.png",
+            image: "legal_expert_panel",
             imagePrompt: "Panel of legal experts discussing federal criminal law in professional law school setting",
             sources: ["Legal Expert Interviews", "Academic Analysis", "Federal Court Experience"],
             choices: [
@@ -1292,7 +1292,7 @@ Your hands shake as you realize this case will either make your career... or end
             - Appeals of bail denial unsuccessful
             
             Former federal prosecutor: "Flight risk determination considers wealth, international connections, and severity of charges. With potential life sentence, bail is often denied in trafficking cases."`,
-            image: "federal_detention_facility.png",
+            image: "federal_detention_facility",
             imagePrompt: "Federal detention center with secure facilities, serious law enforcement atmosphere",
             sources: ["Court Records", "Bail Hearing Transcripts", "Federal Bureau of Prisons"],
             choices: [
@@ -1353,7 +1353,7 @@ Your hands shake as you realize this case will either make your career... or end
             Suddenly, one of his men points at your jacket. "Boss, this guy's wired up."
             
             Webb's friendly demeanor vanishes. The exits are blocked. You're trapped.`,
-            image: "undercover_surveillance_nightclub.png",
+            image: "undercover_surveillance_nightclub",
             imagePrompt: "Dark nightclub surveillance operation, undercover journalist with wire, tension and danger, VIP booth meeting",
             sources: ["FBI Surveillance Protocols", "Undercover Operations", "Witness Intimidation Evidence"],
             choices: [
@@ -1412,7 +1412,7 @@ Your hands shake as you realize this case will either make your career... or end
             Through the kitchen window, you see black SUVs speeding away into the night.
             
             "The operation was blown," Torres admits. "Someone tipped them off. We have a leak in federal law enforcement."`,
-            image: "fbi_raid_nightclub_chaos.png",
+            image: "fbi_raid_nightclub_chaos",
             imagePrompt: "FBI tactical raid in nightclub with chaos, broken glass, federal agents in action, emergency extraction",
             sources: ["FBI Tactical Operations", "Emergency Extraction Protocols", "Federal Raid Procedures"],
             choices: [
@@ -1473,7 +1473,7 @@ Your hands shake as you realize this case will either make your career... or end
             "Here's the problem, Rivera. The timing of that call matches exactly when you were getting wired up for the operation. Whoever called had real-time intelligence."
             
             Your blood runs cold. One of your trusted sources is working for the other side.`,
-            image: "fbi_internal_affairs_investigation.png",
+            image: "fbi_internal_affairs_investigation",
             imagePrompt: "FBI Internal Affairs sterile investigation room with suspect photos and phone records spread on table",
             sources: ["FBI Internal Affairs", "OPSEC Investigation", "Counter-Intelligence"],
             choices: [
@@ -1537,7 +1537,7 @@ Your hands shake as you realize this case will either make your career... or end
             Agent Stone's voice crackles through your earpiece: "It's a trap, Rivera. Chen just burned her cover by reacting to our fake intelligence. She's trying to eliminate you before we can arrest her."
             
             You're standing outside Federal Plaza. Agent Chen approaches from the shadows, just like your first meeting. But this time, you know she's working for the other side.`,
-            image: "federal_plaza_trap_meeting.png",
+            image: "federal_plaza_trap_meeting",
             imagePrompt: "Federal Plaza at dusk with dangerous confrontation brewing, agent approaching with hidden motives, tense atmosphere",
             sources: ["Counter-Intelligence Operations", "Sting Operations", "Federal Security"],
             choices: [
@@ -1600,7 +1600,7 @@ Your hands shake as you realize this case will either make your career... or end
             She pulls out a burner phone. "They're expecting a call in ten minutes. If I don't report that you've been eliminated, they'll know something's wrong."
             
             In the distance, you see FBI tactical teams moving into position. Agent Stone has been listening to everything through your wire.`,
-            image: "emotional_mole_confession.png",
+            image: "emotional_mole_confession",
             imagePrompt: "Federal agent breaking down emotionally on building steps, showing photo of kidnapped daughter, dramatic confrontation",
             sources: ["Compromised Agent Scenarios", "Kidnapping and Extortion", "Federal Employee Protection"],
             choices: [
@@ -1665,7 +1665,7 @@ Your hands shake as you realize this case will either make your career... or end
             CHARLIE: "Aircraft stopped! Three subjects arrested! Evidence recovered!"
             
             But Webb's voice cuts through the radio chatter: "You think this ends anything? The network goes deeper than you know! Other journalists will die for this!"`,
-            image: "synchronized_federal_operation.png",
+            image: "synchronized_federal_operation",
             imagePrompt: "FBI command center with multiple operation screens, agents coordinating complex multi-location raid",
             sources: ["FBI Hostage Rescue", "Coordinated Federal Operations", "Multi-Jurisdiction Arrests"],
             choices: [
@@ -1728,7 +1728,7 @@ Your hands shake as you realize this case will either make your career... or end
             "Rivera? This is Jessica Rodriguez, Washington Post. I just got a call that someone broke into my apartment. My editor is dead. They left a note: 'Stop investigating or join Rivera.'"
             
             The operation is still active. Even with Webb in custody, the killing network is still operational.`,
-            image: "journalist_kill_list_evidence.png",
+            image: "journalist_kill_list_evidence",
             imagePrompt: "FBI evidence table showing assassination contracts, journalist photos with red X marks, threatening documents",
             sources: ["Journalist Safety Investigation", "Professional Assassination Networks", "Media Intimidation Campaigns"],
             choices: [
@@ -1789,7 +1789,7 @@ Your hands shake as you realize this case will either make your career... or end
             Cooper's earpiece crackles. His face goes pale. "Alex, we're getting reports of armed men entering the building. Security is... oh God."
             
             The studio lights go out. Emergency power kicks in. This was supposed to protect you by going public, but you've just painted a target on everyone in the building.`,
-            image: "live_tv_revelation_danger.png",
+            image: "live_tv_revelation_danger",
             imagePrompt: "CNN studio during live broadcast with assassination documents, emergency lighting, danger approaching",
             sources: ["Live Television Journalism", "Public Disclosure Protection", "Media Security Threats"],
             choices: [
@@ -1852,7 +1852,7 @@ Your hands shake as you realize this case will either make your career... or end
             Your investigation revealed the complex intersection of fame, power, and federal law enforcement in modern America.
             
             INVESTIGATION COMPLETE - CASE ARCHIVED`,
-            image: "final_report_complete.png",
+            image: "final_report_complete",
             imagePrompt: "Completed investigative report with official seals, professional journalism achievement, case files organized",
             sources: ["Complete Case Files", "Federal Court Records", "Investigative Research"],
             choices: [
