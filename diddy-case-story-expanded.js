@@ -1869,6 +1869,263 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "This comprehensive investigation covered the complete federal case from indictment through trial verdict and sentencing."
+        },
+
+        inner_circle_investigation: {
+            text: `INNER CIRCLE INVESTIGATION
+            
+            HSI CLASSIFIED BRIEFING - TIER 1 ASSOCIATES
+            
+            Agent Chen pulls up a complex network diagram on the secure terminal. "These are the key figures in Combs' inner circle. Each one played a specific role in the alleged criminal enterprise."
+            
+            THE INNER CIRCLE:
+            
+            CHIEF OF STAFF - Kristina Khorram
+            - Role: Gatekeeper and enforcer
+            - Controlled access to Combs
+            - Allegedly threatened victims who tried to leave
+            - Managed NDAs and legal threats
+            
+            HEAD OF SECURITY - [REDACTED]
+            - Former law enforcement
+            - Oversaw surveillance operations
+            - Allegedly intimidated witnesses
+            - Controlled evidence destruction
+            
+            BUSINESS MANAGER - [REDACTED]
+            - Managed financial transactions
+            - Created shell company structures
+            - Allegedly facilitated money laundering
+            - Controlled victim payments
+            
+            "What's disturbing," Agent Chen notes, "is how professional this operation was. This wasn't amateur hour - they had protocols, procedures, and contingency plans."
+            
+            A new file appears: "LOYALTY ENFORCEMENT METHODS"
+            - Financial control over associates
+            - Blackmail material on key figures
+            - Promises of career advancement
+            - Threats of industry blacklisting`,
+            image: "inner_circle_network_diagram",
+            imagePrompt: "Federal investigation board showing network connections, photos of associates, organizational hierarchy charts",
+            sources: ["HSI Intelligence Files", "Witness Testimonies", "Corporate Records"],
+            choices: [
+                {
+                    text: "Investigate Kristina Khorram's role deeper",
+                    nextScene: "chief_of_staff_investigation",
+                    progressIncrease: 20,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Follow the security apparatus trail",
+                    nextScene: "security_network_investigation",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Trace the financial manager connections",
+                    nextScene: "financial_investigation",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Criminal enterprises often have structured hierarchies similar to legitimate businesses, making RICO prosecutions effective."
+        },
+
+        seized_accounts_analysis: {
+            text: `FEDERAL ASSET SEIZURE ANALYSIS
+            
+            FINANCIAL CRIMES UNIT - ASSET FREEZE REPORT
+            
+            Detective Kim displays the seized account details on multiple screens. "The federal government moved fast. Within hours of the indictment, they froze everything."
+            
+            SEIZED ASSETS - INITIAL WAVE:
+            
+            Bank Accounts:
+            - Chase Private Client: $12.3 million
+            - Bank of America: $8.7 million
+            - Wells Fargo Business: $5.2 million
+            - Citibank: $3.8 million
+            
+            Investment Accounts:
+            - Morgan Stanley: $9.4 million in securities
+            - Goldman Sachs: $6.2 million mixed portfolio
+            - Cryptocurrency wallets: $1.8 million (Bitcoin, Ethereum)
+            
+            Real Estate (Liens Placed):
+            - Miami Beach Mansion: $48 million
+            - Los Angeles Compound: $39 million
+            - Manhattan Penthouse: $35 million
+            - Atlanta Properties: $22 million combined
+            
+            "But here's what's interesting," she continues, pulling up transaction histories. "Look at the movement patterns in the 48 hours before arrest."
+            
+            SUSPICIOUS PRE-ARREST ACTIVITY:
+            - Large wire transfers to offshore accounts
+            - Rapid liquidation of investments
+            - Unusual cryptocurrency transactions
+            - Property transfers to shell companies
+            
+            "Someone knew this was coming. They tried to move assets but we caught most of it. The question is - who tipped them off?"`,
+            image: "seized_assets_federal_freeze",
+            imagePrompt: "Financial crimes unit with multiple monitors showing frozen accounts, asset charts, federal seizure documents",
+            sources: ["Federal Asset Forfeiture Records", "Banking Compliance Reports", "Court Orders"],
+            choices: [
+                {
+                    text: "Trace the offshore wire transfers",
+                    nextScene: "offshore_banking_investigation",
+                    progressIncrease: 22,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Investigate the tip-off source",
+                    nextScene: "federal_leak_investigation",
+                    progressIncrease: 22,
+                    evidence: true
+                },
+                {
+                    text: "Analyze cryptocurrency movements",
+                    nextScene: "crypto_investigation",
+                    progressIncrease: 22,
+                    evidence: true
+                },
+                {
+                    text: "Review property transfer documents",
+                    nextScene: "property_network_investigation",
+                    progressIncrease: 22,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Federal asset forfeiture laws allow the government to seize property connected to criminal activity, even before conviction."
+        },
+
+        financial_providers_investigation: {
+            text: `FINANCIAL SERVICES PROVIDER INVESTIGATION
+            
+            FBI FINANCIAL CRIMES - SERVICE PROVIDER ANALYSIS
+            
+            Agent Martinez from Financial Crimes presents her findings. "We've identified the key financial service providers who enabled this enterprise. Some knew, some should have known."
+            
+            KEY FINANCIAL FACILITATORS:
+            
+            ACCOUNTING FIRM - [Major Firm Redacted]
+            - Managed complex corporate structures
+            - Created offshore entities
+            - Filed suspicious tax returns
+            - Red flags: Ignored unusual transaction patterns
+            
+            BANKING RELATIONSHIPS:
+            - Private banking services at 3 major banks
+            - VIP treatment overrode compliance checks
+            - Suspicious Activity Reports (SARs) filed but not acted upon
+            - Relationship managers received lavish gifts
+            
+            PAYMENT PROCESSORS:
+            - Cash App for Business: $2.3M processed
+            - Stripe: $1.8M in suspicious transactions
+            - PayPal: Multiple flagged accounts
+            - Crypto exchanges: Unregistered money transmission
+            
+            "The pattern is clear," Agent Martinez explains. "When you're dealing with a celebrity client, normal compliance procedures were routinely bypassed."
+            
+            She pulls up communication records. "Look at these emails between bank executives. They knew something was wrong but chose profits over compliance."
+            
+            CRIMINAL EXPOSURE:
+            - Banks face potential criminal charges
+            - Accountants may lose licenses
+            - Payment processors under federal investigation
+            - Individual executives facing prosecution`,
+            image: "financial_services_investigation",
+            imagePrompt: "FBI financial crimes unit investigating bank records, compliance documents, executive communications on screens",
+            sources: ["FinCEN Reports", "Bank Compliance Records", "Federal Subpoenas"],
+            choices: [
+                {
+                    text: "Focus on the accounting firm's role",
+                    nextScene: "accounting_firm_investigation",
+                    progressIncrease: 23,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Investigate banking compliance failures",
+                    nextScene: "banking_compliance_investigation",
+                    progressIncrease: 23,
+                    evidence: true
+                },
+                {
+                    text: "Trace payment processor violations",
+                    nextScene: "payment_processor_investigation",
+                    progressIncrease: 23,
+                    evidence: true
+                },
+                {
+                    text: "Review executive criminal exposure",
+                    nextScene: "executive_prosecution_analysis",
+                    progressIncrease: 23,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Financial institutions have legal obligations to report suspicious activities and can face criminal charges for willful blindness."
+        },
+
+        case_selection: {
+            text: `CASE FILE SELECTION
+            
+            THE CLASSIFIED FILES DATABASE
+            
+            You return to the secure terminal in the federal document archive. Multiple case files are available for investigation.
+            
+            Each file represents a different chapter in America's classified history - some resolved, others still shrouded in mystery.
+            
+            Your credentials grant you access to previously sealed documents, witness testimonies, and evidence that shaped these pivotal moments.
+            
+            Which classified case will you investigate?`,
+            image: "classified_files_archive",
+            imagePrompt: "Secure government archive room with multiple case file folders, classified stamps, investigator at terminal",
+            sources: ["Federal Archives", "Declassified Documents", "Congressional Records"],
+            choices: [
+                {
+                    text: "Return to main case selection",
+                    isEndChoice: true
+                }
+            ],
+            educationalNote: "The Classified Files contain some of America's most significant investigations, each revealing different aspects of power, justice, and truth."
+        },
+
+        archive_complete: {
+            text: `CASE ARCHIVED
+            
+            FEDERAL INVESTIGATION ARCHIVE - CASE CLOSED
+            
+            Your comprehensive investigation of the Diddy Federal Case has been archived in the permanent record.
+            
+            CASE SUMMARY:
+            - Investigation Duration: Extensive
+            - Evidence Collected: ${window.gameState ? window.gameState.evidenceCount : 'Multiple'} pieces
+            - Key Revelations: Criminal enterprise structure exposed
+            - Impact: Landmark RICO prosecution in entertainment industry
+            
+            Your work contributed to public understanding of:
+            - Federal RICO prosecutions
+            - Entertainment industry criminal enterprises
+            - Financial crimes and money laundering
+            - Witness protection protocols
+            - Modern federal investigation techniques
+            
+            This case file is now part of the permanent historical record.
+            
+            Thank you for your service to truth and justice.`,
+            image: "case_archived_complete",
+            imagePrompt: "Official case file being stamped ARCHIVED, filing into permanent federal records, achievement recognition",
+            sources: ["Complete Investigation Records", "Federal Archives", "Historical Documentation"],
+            choices: [
+                {
+                    text: "Return to case selection",
+                    isEndChoice: true
+                }
+            ],
+            educationalNote: "Every federal investigation contributes to our understanding of justice and helps prevent future crimes through precedent and awareness."
         }
     }
 };
