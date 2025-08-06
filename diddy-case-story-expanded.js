@@ -5172,6 +5172,630 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Real estate investigations often reveal extensive money laundering schemes and provide substantial assets for criminal forfeiture proceedings."
+        },
+
+        prosecution_burden_analysis: {
+            text: `PROSECUTION BURDEN OF PROOF ANALYSIS
+            
+            You conduct a comprehensive analysis of the prosecution's burden of proof requirements to ensure the federal case meets all legal standards for successful conviction.
+            
+            BURDEN OF PROOF REQUIREMENTS:
+            
+            BEYOND REASONABLE DOUBT STANDARD:
+            • Highest burden of proof in criminal law
+            • Evidence must exclude every reasonable hypothesis of innocence
+            • Jury must be firmly convinced of defendant's guilt
+            • Circumstantial evidence must be sufficient to support conviction
+            
+            RICO PROSECUTION SPECIFIC BURDENS:
+            • Prove existence of criminal enterprise
+            • Demonstrate pattern of racketeering activity
+            • Establish defendant's participation in enterprise
+            • Show interstate commerce nexus
+            
+            EVIDENCE SUFFICIENCY ANALYSIS:
+            • Financial evidence: $750 million in documented criminal proceeds
+            • Witness testimony: 89 cooperating witnesses with corroboration
+            • Documentary evidence: 47,000+ authenticated documents
+            • Digital evidence: 15TB of electronic data with forensic analysis
+            
+            PROSECUTION STRENGTHS:
+            • Multiple independent sources of evidence
+            • Extensive corroborating physical and documentary evidence
+            • International cooperation providing foreign evidence
+            • Expert testimony explaining complex financial schemes
+            
+            POTENTIAL WEAKNESSES:
+            • Cooperating witness credibility challenges
+            • Complex financial evidence requiring expert explanation
+            • International evidence authentication complications
+            • Defense alternative theory possibilities
+            
+            The analysis confirms the prosecution meets burden of proof requirements for conviction.`,
+            image: "prosecution_burden_analysis",
+            imagePrompt: "Federal prosecutors analyzing burden of proof requirements, legal research, evidence sufficiency review, case strength assessment",
+            sources: ["Federal Criminal Law Analysis", "Burden of Proof Standards", "RICO Prosecution Guidelines"],
+            choices: [
+                {
+                    text: "Strengthen witness testimony credibility and corroboration",
+                    nextScene: "corroborating_evidence",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on simplifying complex financial evidence presentation",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Prepare responses to anticipated defense alternative theories",
+                    nextScene: "defense_strategy_analysis"
+                }
+            ],
+            educationalNote: "Federal prosecutors must ensure evidence meets beyond reasonable doubt standard and addresses specific legal requirements for successful RICO convictions."
+        },
+
+        prosecutor_office_investigation: {
+            text: `PROSECUTOR OFFICE SECURITY INVESTIGATION
+            
+            Following the break-in, you conduct a comprehensive investigation of prosecutor office security and potential internal corruption that enabled the breach.
+            
+            SECURITY VULNERABILITY ASSESSMENT:
+            
+            PHYSICAL SECURITY FAILURES:
+            • Outdated access control systems easily bypassed
+            • Insufficient surveillance camera coverage in sensitive areas
+            • Security guard protocols not followed during night shift
+            • Backup security systems failed during critical period
+            
+            PERSONNEL SECURITY REVIEW:
+            • Background checks revealing financial vulnerabilities
+            • Access logs showing suspicious after-hours building entry
+            • Communication monitoring detecting unauthorized contact
+            • Lifestyle analysis indicating possible corruption or compromise
+            
+            INFORMATION SECURITY BREACHES:
+            • Computer systems accessed without authorization
+            • Confidential files copied to external devices
+            • Email systems compromised revealing investigation details
+            • Secure communications intercepted and decoded
+            
+            INTERNAL INVESTIGATION RESULTS:
+            • Building maintenance contractor with criminal organization ties
+            • Security company employee receiving suspicious payments
+            • Administrative staff member showing unexplained wealth
+            • IT contractor with access to sensitive systems compromised
+            
+            CORRECTIVE MEASURES IMPLEMENTED:
+            • Complete security system upgrade and modernization
+            • Enhanced personnel background check requirements
+            • Compartmentalized information access protocols
+            • Counter-surveillance operations around federal buildings
+            
+            The investigation reveals systematic infiltration requiring comprehensive security overhaul.`,
+            image: "prosecutor_office_security",
+            imagePrompt: "Federal building security investigation, prosecutor office security assessment, internal corruption investigation, enhanced protection",
+            sources: ["Federal Building Security Report", "Internal Investigation Files", "Security Enhancement Protocol"],
+            choices: [
+                {
+                    text: "Focus on prosecuting identified corrupt personnel",
+                    nextScene: "turning_the_mole",
+                    collectEvidence: true
+                },
+                {
+                    text: "Implement comprehensive security overhaul",
+                    nextScene: "enhanced_security_investigation"
+                },
+                {
+                    text: "Investigate extent of criminal organization infiltration",
+                    nextScene: "assassination_network_investigation"
+                }
+            ],
+            educationalNote: "Federal prosecutor office security requires multi-layered protection against sophisticated criminal organization intelligence and infiltration attempts."
+        },
+
+        protection_racket_investigation: {
+            text: `PROTECTION RACKET INVESTIGATION
+            
+            Investigation reveals a sophisticated protection racket operation that extends throughout the entertainment industry, providing security services while facilitating criminal activities.
+            
+            PROTECTION RACKET STRUCTURE:
+            
+            LEGITIMATE SECURITY SERVICES:
+            • Personal protection for high-profile entertainment figures
+            • Event security for concerts, parties, and industry gatherings
+            • Residential security for celebrity homes and estates
+            • Transportation security for travel and movement
+            
+            CRIMINAL PROTECTION SERVICES:
+            • Witness intimidation and elimination services
+            • Evidence destruction and crime scene cleanup
+            • Law enforcement interference and corruption facilitation
+            • Victim silencing through threats and violence
+            
+            FINANCIAL STRUCTURE:
+            • Legitimate security contracts masking criminal payments
+            • Protection fee structure based on threat level and services
+            • International security operations extending criminal reach
+            • Insurance and bonding arrangements for liability protection
+            
+            PERSONNEL NETWORK:
+            • Former law enforcement and military personnel
+            • International security contractors with violence experience
+            • Technical specialists for surveillance and counter-surveillance
+            • Administrative support for legitimate business operations
+            
+            EVIDENCE DOCUMENTATION:
+            • Security contracts revealing criminal service provisions
+            • Financial records showing protection racket payments
+            • Communication records coordinating criminal protection services
+            • Witness testimony about intimidation and violence
+            
+            The protection racket serves as enforcement arm of the criminal enterprise while maintaining legitimate business facade.`,
+            image: "protection_racket_investigation",
+            imagePrompt: "FBI investigating entertainment industry protection racket, security personnel under investigation, legitimate and criminal services analysis",
+            sources: ["Protection Racket Investigation", "Security Industry Analysis", "Criminal Enterprise Enforcement"],
+            choices: [
+                {
+                    text: "Focus on criminal protection services and witness intimidation",
+                    nextScene: "witness_protection_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Investigate financial structure and payment systems",
+                    nextScene: "co_conspirator_payments"
+                },
+                {
+                    text: "Analyze personnel network and recruitment",
+                    nextScene: "assassination_network_investigation"
+                }
+            ],
+            educationalNote: "Protection rackets in criminal enterprises often combine legitimate security services with criminal enforcement, requiring careful analysis to separate legal and illegal activities."
+        },
+
+        r_kelly_case_comparison: {
+            text: `R. KELLY CASE PRECEDENT ANALYSIS
+            
+            You analyze the R. Kelly federal prosecution as a precedent for entertainment industry RICO cases, examining successful strategies and potential challenges.
+            
+            R. KELLY CASE PRECEDENT REVIEW:
+            
+            PROSECUTION STRATEGIES:
+            • RICO charges based on criminal enterprise structure
+            • Multiple victim testimony with corroborating evidence
+            • Financial crimes integration with sexual offense charges
+            • Interstate commerce nexus through entertainment business
+            
+            EVIDENCE PRESENTATION:
+            • Documentary evidence from business operations
+            • Digital evidence from communications and recordings
+            • Witness testimony from victims and associates
+            • Expert testimony explaining criminal enterprise operations
+            
+            DEFENSE CHALLENGES OVERCOME:
+            • Celebrity status and public relations campaigns
+            • Victim credibility attacks and character assassination
+            • Complex legal issues regarding RICO application
+            • Media manipulation and public opinion influence
+            
+            SUCCESSFUL CONVICTION ELEMENTS:
+            • Strong witness preparation and protection
+            • Comprehensive corroborating evidence
+            • Expert testimony explaining complex legal concepts
+            • Effective prosecution narrative and case presentation
+            
+            LESSONS LEARNED:
+            • Importance of witness protection and support
+            • Need for simplified evidence presentation to jury
+            • Value of international cooperation for evidence collection
+            • Significance of public awareness and victim advocacy
+            
+            CURRENT CASE APPLICATION:
+            • Similar criminal enterprise structure and operations
+            • Comparable witness testimony and corroboration needs
+            • Parallel financial crimes and money laundering evidence
+            • Identical celebrity status and public relations challenges
+            
+            The R. Kelly precedent provides valuable guidance for prosecution strategy and evidence presentation.`,
+            image: "r_kelly_case_comparison",
+            imagePrompt: "Federal prosecutors studying R. Kelly case precedent, legal research comparison, entertainment industry prosecution strategies",
+            sources: ["R. Kelly Case Files", "Entertainment Industry Prosecution Precedents", "RICO Case Law Analysis"],
+            choices: [
+                {
+                    text: "Apply R. Kelly witness protection and preparation strategies",
+                    nextScene: "witness_protection_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use R. Kelly evidence presentation techniques",
+                    nextScene: "trial_preparation_investigation"
+                },
+                {
+                    text: "Implement R. Kelly media strategy and public relations approach",
+                    nextScene: "media_security_counterattack"
+                }
+            ],
+            educationalNote: "R. Kelly case precedent provides valuable lessons for prosecuting entertainment industry RICO cases involving celebrity defendants and complex criminal enterprises."
+        },
+
+        rico_elements_question: {
+            text: `RICO ELEMENTS COMPREHENSIVE REVIEW
+            
+            You conduct a final comprehensive review of all RICO elements to ensure the prosecution case meets every legal requirement for successful conviction.
+            
+            RICO STATUTORY ELEMENTS:
+            
+            ENTERPRISE ELEMENT:
+            • Ongoing organization with structure and hierarchy ✓
+            • Common purpose among organization members ✓
+            • Continuity of structure and personnel over time ✓
+            • Enterprise distinct from pattern of racketeering activity ✓
+            
+            PATTERN OF RACKETEERING ACTIVITY:
+            • Two or more predicate acts within 10-year period ✓
+            • Relationship between predicate acts and enterprise ✓
+            • Continuity of criminal activity over extended time ✓
+            • Threat of continued criminal activity ✓
+            
+            INTERSTATE COMMERCE NEXUS:
+            • Criminal activities affecting interstate commerce ✓
+            • Use of facilities of interstate commerce ✓
+            • Interstate travel in furtherance of criminal enterprise ✓
+            • Economic impact on interstate commercial activities ✓
+            
+            DEFENDANT PARTICIPATION:
+            • Active participation in criminal enterprise operations ✓
+            • Knowledge of enterprise criminal purpose ✓
+            • Substantial participation in enterprise affairs ✓
+            • Pattern of racketeering activity connection ✓
+            
+            EVIDENCE SUFFICIENCY:
+            • Documentary evidence supporting all elements ✓
+            • Witness testimony corroborating legal requirements ✓
+            • Expert analysis explaining complex legal concepts ✓
+            • International evidence enhancing case strength ✓
+            
+            LEGAL REVIEW CONCLUSION:
+            All RICO elements sufficiently proven with strong evidence foundation for successful prosecution.`,
+            image: "rico_elements_checklist",
+            imagePrompt: "Federal prosecutor reviewing comprehensive RICO elements checklist, legal requirements verification, case strength confirmation",
+            sources: ["RICO Statute Comprehensive Analysis", "Federal Prosecution Checklist", "Legal Element Verification"],
+            choices: [
+                {
+                    text: "Finalize trial preparation based on RICO elements review",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Strengthen any remaining evidence gaps",
+                    nextScene: "corroborating_evidence"
+                },
+                {
+                    text: "Prepare jury instructions for complex RICO concepts",
+                    nextScene: "evidence_legal_analysis"
+                }
+            ],
+            educationalNote: "Comprehensive RICO elements review ensures prosecution meets all statutory requirements and provides strong foundation for successful criminal conviction."
+        },
+
+        rico_failure_analysis: {
+            text: `RICO PROSECUTION FAILURE RISK ANALYSIS
+            
+            You analyze potential failure points in the RICO prosecution to identify vulnerabilities and develop mitigation strategies.
+            
+            POTENTIAL FAILURE SCENARIOS:
+            
+            ENTERPRISE ELEMENT CHALLENGES:
+            • Defense arguments that organization was loose association
+            • Difficulty proving enterprise structure separate from crimes
+            • Challenge to enterprise continuity over time
+            • Alternative interpretation of business relationships
+            
+            PREDICATE ACT INSUFFICIENCY:
+            • Individual predicate acts failing to meet legal standards
+            • Lack of sufficient connection between acts and enterprise
+            • Timing issues with predicate act occurrence
+            • Constitutional challenges to predicate act definitions
+            
+            WITNESS CREDIBILITY COLLAPSE:
+            • Cooperating witnesses changing testimony or recanting
+            • Successful defense attacks on witness motivation
+            • Witness protection failures compromising testimony
+            • Discovery of witness perjury or inconsistencies
+            
+            EVIDENCE SUPPRESSION:
+            • Constitutional challenges to search and seizure
+            • International evidence authentication failures
+            • Chain of custody problems with physical evidence
+            • Hearsay objections to documentary evidence
+            
+            JURY NULLIFICATION RISKS:
+            • Celebrity defendant sympathy affecting jury decision
+            • Complex evidence creating jury confusion
+            • Defense alternative narrative gaining jury acceptance
+            • Media influence on jury despite instructions
+            
+            MITIGATION STRATEGIES:
+            • Multiple backup evidence sources for each element
+            • Extensive witness preparation and protection
+            • Simplified evidence presentation techniques
+            • Comprehensive jury selection and education
+            
+            Risk analysis reveals manageable vulnerabilities with proper preparation.`,
+            image: "rico_failure_analysis",
+            imagePrompt: "Federal prosecutors analyzing prosecution failure risks, vulnerability assessment, mitigation strategy development, case preparation",
+            sources: ["RICO Prosecution Risk Assessment", "Federal Trial Strategy Analysis", "Case Failure Prevention"],
+            choices: [
+                {
+                    text: "Implement comprehensive mitigation strategies",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Strengthen witness protection and preparation",
+                    nextScene: "witness_protection_analysis"
+                },
+                {
+                    text: "Develop alternative prosecution theories",
+                    nextScene: "evidence_legal_analysis"
+                }
+            ],
+            educationalNote: "RICO prosecution failure analysis helps identify and mitigate risks that could compromise successful conviction in complex criminal enterprise cases."
+        },
+
+        sentencing_analysis: {
+            text: `FEDERAL SENTENCING ANALYSIS
+            
+            You analyze potential federal sentencing outcomes under current guidelines to understand prosecution leverage and defendant motivation for cooperation.
+            
+            FEDERAL SENTENCING GUIDELINES:
+            
+            RICO CONVICTION PENALTIES:
+            • Base offense level: 19 (Federal Sentencing Guidelines)
+            • Criminal history enhancement based on prior record
+            • Leadership role enhancement: +4 levels for enterprise leadership
+            • Money laundering enhancement: +2 levels for financial crimes
+            
+            SPECIFIC CHARGE PENALTIES:
+            • RICO violation: Up to 20 years per count
+            • Money laundering: Up to 20 years per count
+            • Wire fraud: Up to 20 years per count
+            • Extortion: Up to 20 years per count
+            
+            SENTENCE ENHANCEMENT FACTORS:
+            • Extensive criminal history and prior convictions
+            • Leadership role in criminal enterprise operations
+            • Witness intimidation and obstruction of justice
+            • International scope of criminal activities
+            
+            ASSET FORFEITURE IMPLICATIONS:
+            • Criminal forfeiture of enterprise proceeds: $750 million
+            • Real estate forfeiture: $400 million in properties
+            • Personal asset forfeiture: Luxury items and investments
+            • Business asset forfeiture: Entertainment industry holdings
+            
+            COOPERATION AGREEMENT POTENTIAL:
+            • Substantial assistance reduction: Up to 50% sentence reduction
+            • Information about other criminal enterprises
+            • Testimony against co-conspirators and associates
+            • Asset cooperation for victim restitution
+            
+            REALISTIC SENTENCING RANGE:
+            Without cooperation: 25-30 years federal prison
+            With substantial cooperation: 12-15 years federal prison
+            
+            Total financial penalties and forfeiture: Over $1 billion`,
+            image: "federal_sentencing_analysis",
+            imagePrompt: "Federal sentencing guidelines analysis, courthouse legal research, penalty assessment, cooperation agreement consideration",
+            sources: ["Federal Sentencing Guidelines", "RICO Penalty Analysis", "Asset Forfeiture Assessment"],
+            choices: [
+                {
+                    text: "Use sentencing analysis for cooperation agreement negotiations",
+                    nextScene: "custom_protection_deal",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on maximizing asset forfeiture for victim restitution",
+                    nextScene: "asset_forfeiture_analysis"
+                },
+                {
+                    text: "Prepare sentencing memorandum for maximum penalties",
+                    nextScene: "trial_preparation_investigation"
+                }
+            ],
+            educationalNote: "Federal sentencing analysis provides prosecution leverage for cooperation agreements while ensuring appropriate penalties for serious criminal enterprise crimes."
+        },
+
+        stolen_evidence_recovery: {
+            text: `STOLEN EVIDENCE RECOVERY OPERATION
+            
+            Critical evidence stolen during the prosecutor's office break-in must be recovered before it can be destroyed or used to compromise the investigation.
+            
+            STOLEN EVIDENCE INVENTORY:
+            
+            CRITICAL DOCUMENTS:
+            • Witness protection location lists and security protocols
+            • Financial investigation summaries and banking records
+            • Digital forensics reports and analysis summaries
+            • Prosecution strategy memos and trial preparation notes
+            
+            INTELLIGENCE GATHERING:
+            • Criminal organization plans for evidence use
+            • Witness intimidation strategy based on stolen information
+            • Media manipulation using confidential investigation details
+            • Defense strategy advantage from prosecution exposure
+            
+            RECOVERY OPERATIONS:
+            
+            ELECTRONIC SURVEILLANCE:
+            • Communication intercepts revealing evidence location
+            • Financial transaction monitoring showing evidence buyers
+            • Digital forensics tracking stolen information distribution
+            • Social media monitoring for evidence exposure
+            
+            HUMAN INTELLIGENCE:
+            • Informant networks within criminal organization
+            • Undercover operations to identify evidence handlers
+            • Witness cooperation providing inside information
+            • Criminal organization member surveillance and investigation
+            
+            TACTICAL RECOVERY:
+            • Search warrant execution at suspected evidence locations
+            • Undercover purchase operations to recover materials
+            • International cooperation for cross-border evidence recovery
+            • Digital forensics recovery of electronically transmitted evidence
+            
+            SUCCESS METRICS:
+            • Recovery of physical evidence preventing destruction
+            • Identification of additional criminal organization members
+            • Protection of witness safety through location security
+            • Preservation of prosecution strategy confidentiality
+            
+            Evidence recovery operation becomes critical for investigation success.`,
+            image: "evidence_recovery_operation",
+            imagePrompt: "FBI tactical evidence recovery operation, stolen document investigation, criminal organization infiltration, evidence preservation",
+            sources: ["Evidence Recovery Protocol", "Stolen Information Investigation", "Criminal Organization Infiltration"],
+            choices: [
+                {
+                    text: "Focus on immediate witness protection relocation",
+                    nextScene: "emergency_evacuation_protection",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use recovery operation to identify criminal organization structure",
+                    nextScene: "assassination_network_investigation"
+                },
+                {
+                    text: "Accelerate prosecution timeline to prevent further compromise",
+                    nextScene: "trial_preparation_investigation"
+                }
+            ],
+            educationalNote: "Stolen evidence recovery requires rapid response to prevent witness compromise and preserve prosecution integrity in federal investigations."
+        },
+
+        studio_negotiation_attempt: {
+            text: `ENTERTAINMENT STUDIO NEGOTIATION
+            
+            In a dramatic development, representatives from major entertainment studios attempt to negotiate a resolution to avoid industry-wide scandal and regulatory oversight.
+            
+            STUDIO NEGOTIATION PROPOSAL:
+            
+            INDUSTRY REPRESENTATIVES:
+            • Major record label executives and legal counsel
+            • Entertainment conglomerate corporate leadership
+            • Industry association representatives and lobbyists
+            • High-profile entertainment lawyers and fixers
+            
+            PROPOSED SETTLEMENT TERMS:
+            • Significant financial settlement for victim compensation
+            • Industry-wide compliance and oversight program implementation
+            • Charitable contributions to victim advocacy organizations
+            • Enhanced industry standards and monitoring systems
+            
+            INDUSTRY CONCERNS:
+            • Public relations damage from criminal prosecution
+            • Regulatory oversight and government intervention
+            • Financial market impact on publicly traded companies
+            • International business relationship damage
+            
+            FEDERAL RESPONSE CONSIDERATIONS:
+            
+            PROSECUTION POSITION:
+            • Criminal charges cannot be negotiated away through civil settlements
+            • Public interest in holding criminal enterprise accountable
+            • Deterrent effect of successful criminal prosecution
+            • Victim rights and justice considerations
+            
+            REGULATORY IMPLICATIONS:
+            • SEC investigations into entertainment industry business practices
+            • Tax authority reviews of industry financial arrangements
+            • International regulatory cooperation and oversight
+            • Congressional oversight and potential legislation
+            
+            STRATEGIC DECISION:
+            The negotiation attempt represents industry recognition of criminal liability but cannot substitute for criminal justice.`,
+            image: "studio_negotiation_meeting",
+            imagePrompt: "High-stakes entertainment industry negotiation, corporate lawyers, federal prosecutors, industry damage control attempt",
+            sources: ["Industry Settlement Negotiation", "Corporate Legal Strategy", "Federal Prosecution Policy"],
+            choices: [
+                {
+                    text: "Reject settlement and proceed with full criminal prosecution",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use negotiation to gather additional evidence and cooperation",
+                    nextScene: "co_conspirator_payments"
+                },
+                {
+                    text: "Coordinate with regulatory agencies for comprehensive response",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Entertainment industry settlement negotiations cannot substitute for criminal prosecution but may provide opportunities for enhanced cooperation and industry reform."
+        },
+
+        surveillance_evidence_analysis: {
+            text: `COMPREHENSIVE SURVEILLANCE EVIDENCE ANALYSIS
+            
+            Analysis of extensive surveillance evidence collected throughout the investigation reveals patterns of criminal behavior and enterprise operations.
+            
+            SURVEILLANCE EVIDENCE CATEGORIES:
+            
+            VIDEO SURVEILLANCE:
+            • Security camera footage from 47 different locations
+            • Hotel and venue surveillance showing alleged criminal activities
+            • Private residence cameras capturing suspicious behavior
+            • Airport and transportation surveillance tracking movement
+            
+            AUDIO SURVEILLANCE:
+            • Wiretap recordings of criminal planning conversations
+            • Undercover recording devices capturing criminal admissions
+            • Environmental surveillance of criminal enterprise meetings
+            • Phone call recordings revealing criminal coordination
+            
+            ELECTRONIC SURVEILLANCE:
+            • Email and text message communications
+            • Social media monitoring and digital footprint analysis
+            • Financial transaction surveillance and pattern analysis
+            • Internet activity monitoring revealing criminal planning
+            
+            PHYSICAL SURVEILLANCE:
+            • FBI surveillance teams documenting criminal enterprise activities
+            • Counter-surveillance detection revealing criminal awareness
+            • International surveillance cooperation providing foreign evidence
+            • Undercover operative surveillance from within criminal organization
+            
+            EVIDENCE ANALYSIS RESULTS:
+            • Timeline reconstruction of criminal enterprise operations
+            • Pattern analysis revealing criminal behavior consistency
+            • Geographic analysis showing criminal activity scope
+            • Behavioral analysis demonstrating criminal intent and planning
+            
+            CORROBORATION VALUE:
+            • Independent verification of witness testimony
+            • Objective documentation of alleged criminal activities
+            • Timeline confirmation supporting prosecution narrative
+            • Comprehensive evidence foundation for trial presentation
+            
+            Surveillance evidence provides objective foundation for entire federal prosecution.`,
+            image: "surveillance_evidence_center",
+            imagePrompt: "FBI surveillance evidence analysis center, multiple screens showing video and audio evidence, comprehensive criminal activity documentation",
+            sources: ["FBI Surveillance Division", "Electronic Evidence Analysis", "Multi-source Intelligence Integration"],
+            choices: [
+                {
+                    text: "Focus on timeline reconstruction for trial presentation",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use surveillance evidence to corroborate witness testimony",
+                    nextScene: "corroborating_evidence"
+                },
+                {
+                    text: "Analyze surveillance evidence for additional criminal activities",
+                    nextScene: "encrypted_communications_analysis"
+                }
+            ],
+            educationalNote: "Surveillance evidence provides objective, independent documentation of criminal activities essential for federal prosecution success and witness testimony corroboration."
         }
     }
 };
