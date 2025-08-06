@@ -1,0 +1,150 @@
+{
+  "timestamp": "2025-08-06T02:18:29.973Z",
+  "totalScenes": 74,
+  "successCount": 0,
+  "errorCount": 20,
+  "successRate": "0.0%",
+  "estimatedCost": "0.00",
+  "results": [
+    {
+      "sceneId": "agency_question",
+      "filename": "federal_agencies_coordination.png",
+      "prompt": "Multiple federal agency badges and logos displayed on wall, interagency coordination meeting room with officials",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "agent_chen_leak_investigation",
+      "filename": "digital_security_breach.png",
+      "prompt": "Computer screens showing security breach alerts, digital forensics investigation, classified access logs",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "assassination_network_investigation",
+      "filename": "assassination_network_chart.png",
+      "prompt": "Dark investigation board with photos, connections, international network chart showing entertainment industry connections to dangerous individuals",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "asset_forfeiture_analysis",
+      "filename": "luxury_assets_forfeiture.png",
+      "prompt": "Luxury mansion, private jets, expensive cars and jewelry laid out for federal asset forfeiture documentation",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "audio_video_evidence",
+      "filename": "multimedia_evidence_lab.png",
+      "prompt": "FBI evidence analysis lab with multiple screens showing video footage, audio waveforms, and digital communication records",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "bahamas_financial_trail",
+      "filename": "bahamas_offshore_banking.png",
+      "prompt": "Luxury Bahamian bank building, financial documents, international money transfer charts, tropical banking district",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "bail_denial_analysis",
+      "filename": "federal_courthouse_bail_hearing.png",
+      "prompt": "Federal courtroom during bail hearing, judge's bench, defendant in custody, legal documents on table",
+      "status": "error",
+      "error": "fetch failed"
+    },
+    {
+      "sceneId": "co_conspirator_payments",
+      "filename": "co_conspirator_payment_web.png",
+      "prompt": "Financial crime investigation board showing payment connections, money flow charts, co-conspirator network",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "cover_preservation_gambit",
+      "filename": "undercover_operation_risk.png",
+      "prompt": "FBI undercover agent in dangerous situation, criminal organization meeting, surveillance equipment, tension",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "double_agent_rescue_plan",
+      "filename": "agent_extraction_operation.png",
+      "prompt": "Dramatic federal agent extraction, fake arrest scenario, undercover operation conclusion, tactical team coordination",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "enterprise_structure_analysis",
+      "filename": "criminal_enterprise_org_chart.png",
+      "prompt": "Detailed organizational chart showing criminal enterprise hierarchy, FBI investigation board with photos and connections",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "federal_agency_coordination",
+      "filename": "federal_task_force_meeting.png",
+      "prompt": "Inter-agency coordination meeting with representatives from FBI, DEA, IRS, Homeland Security, and US Marshals around conference table",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "industry_impact_analysis",
+      "filename": "industry_impact_assessment.png",
+      "prompt": "Entertainment industry boardrooms discussing compliance changes, regulatory documents, business practice reforms, industry transformation",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "mann_act_question",
+      "filename": "mann_act_legal_analysis.png",
+      "prompt": "Federal legal research on Mann Act, interstate transportation evidence, legal briefs, jurisdiction analysis documentation",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "office_break_in_investigation",
+      "filename": "federal_office_break_in.png",
+      "prompt": "FBI investigating break-in at prosecutor's office, crime scene analysis, security breach investigation, professional espionage",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "political_connections_investigation",
+      "filename": "political_corruption_investigation.png",
+      "prompt": "FBI investigating political corruption, government building surveillance, elected officials under investigation, democratic institution protection",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "prosecutor_office_investigation",
+      "filename": "prosecutor_office_security.png",
+      "prompt": "Federal building security investigation, prosecutor office security assessment, internal corruption investigation, enhanced protection",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "sentencing_analysis",
+      "filename": "federal_sentencing_analysis.png",
+      "prompt": "Federal sentencing guidelines analysis, courthouse legal research, penalty assessment, cooperation agreement consideration",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "turning_the_mole",
+      "filename": "federal_mole_interrogation.png",
+      "prompt": "Federal agent interrogation room, mole cooperation negotiation, psychological pressure, witness protection discussion",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    },
+    {
+      "sceneId": "studio_siege_broadcast",
+      "filename": "studio_siege_resolution.png",
+      "prompt": "FBI tactical operation at entertainment studio, hostage rescue, media coverage, successful federal law enforcement response",
+      "status": "error",
+      "error": "The \"path\" argument must be of type string. Received an instance of Object"
+    }
+  ]
+}
