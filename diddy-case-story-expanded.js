@@ -3655,6 +3655,578 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Criminal enterprises often use legitimate business terminology to disguise illegal operations, requiring careful analysis to decode criminal activities."
+        },
+
+        evidence_legal_analysis: {
+            text: `EVIDENCE LEGAL ADMISSIBILITY REVIEW
+            
+            You conduct a comprehensive legal analysis of all evidence to ensure admissibility and prepare for expected defense challenges in federal court.
+            
+            EVIDENCE CATEGORIES:
+            
+            DOCUMENTARY EVIDENCE:
+            • Financial records: Authenticated bank statements and wire transfers
+            • Business documents: Corporate filings and contracts
+            • Communications: Emails, texts, and recorded conversations
+            • Government records: Court filings and regulatory documents
+            
+            TESTIMONIAL EVIDENCE:
+            • Cooperating witness testimony with corroboration requirements
+            • Expert witness analysis and methodology validation
+            • Victim testimony and trauma-informed examination procedures
+            • Law enforcement officer testimony and report authentication
+            
+            PHYSICAL EVIDENCE:
+            • Electronic devices with proper chain of custody
+            • Audio/video recordings with authentication protocols
+            • Property seized under valid search warrants
+            • Forensic evidence processed by certified laboratories
+            
+            ADMISSIBILITY CHALLENGES:
+            • Hearsay objections and exceptions analysis
+            • Fourth Amendment search and seizure challenges
+            • Fifth Amendment self-incrimination issues
+            • Sixth Amendment confrontation clause implications
+            
+            Each piece of evidence must meet Federal Rules of Evidence standards for admission.`,
+            image: "legal_evidence_analysis",
+            imagePrompt: "Federal courthouse law library, legal research materials, evidence authentication documents, prosecutor preparation",
+            sources: ["Federal Rules of Evidence", "Legal Admissibility Analysis", "Evidence Authentication Protocols"],
+            choices: [
+                {
+                    text: "Focus on strengthening documentary evidence authentication",
+                    nextScene: "business_documents_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Address constitutional challenges to evidence collection",
+                    nextScene: "defense_strategy_analysis"
+                },
+                {
+                    text: "Prepare witness testimony for admissibility challenges",
+                    nextScene: "witness_protection_analysis"
+                }
+            ],
+            educationalNote: "Evidence legal analysis is crucial for federal prosecutions, ensuring all evidence meets constitutional and evidentiary standards for court admission."
+        },
+
+        fake_elimination_gambit: {
+            text: `FALSE ELIMINATION DECEPTION OPERATION
+            
+            In a sophisticated psychological operation, you stage the fake elimination of a key witness to deceive the criminal organization while secretly protecting the witness and gathering intelligence.
+            
+            DECEPTION OPERATION ELEMENTS:
+            
+            STAGING PREPARATION:
+            • Create realistic crime scene evidence
+            • Coordinate with medical examiner for false death certificate
+            • Plant evidence suggesting criminal organization involvement
+            • Establish secure location for witness hiding
+            
+            PSYCHOLOGICAL WARFARE:
+            • Target criminal organization leadership with false information
+            • Create paranoia about law enforcement capabilities
+            • Use deception to flush out additional criminal activities
+            • Monitor organization reaction and communications
+            
+            OPERATIONAL SECURITY:
+            • Witness and family complete identity change
+            • Secure communication protocols for ongoing contact
+            • Counter-surveillance to ensure deception success
+            • Compartmentalized knowledge to prevent leaks
+            
+            INTELLIGENCE GATHERING:
+            • Monitor criminal organization response to "elimination"
+            • Identify additional criminal activities revealed by organization confidence
+            • Track financial movements and asset transfers
+            • Document criminal organization relief and subsequent actions
+            
+            The fake elimination serves multiple strategic purposes while protecting the witness.`,
+            image: "fake_elimination_operation",
+            imagePrompt: "Staged crime scene for deception, federal agents coordinating false evidence, witness protection relocation, psychological operation",
+            sources: ["FBI Deception Operations Manual", "Witness Protection Advanced Protocols", "Psychological Warfare Techniques"],
+            choices: [
+                {
+                    text: "Execute the fake elimination with full operational support",
+                    nextScene: "witness_protection_program",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use the deception to identify additional criminal activities",
+                    nextScene: "enhanced_security_investigation"
+                },
+                {
+                    text: "Focus on gathering intelligence from organization reaction",
+                    nextScene: "encrypted_communications_analysis"
+                }
+            ],
+            educationalNote: "Deception operations in federal investigations require sophisticated planning and legal oversight to ensure they don't compromise prosecution or violate constitutional rights."
+        },
+
+        family_reunion_aftermath: {
+            text: `WITNESS FAMILY REUNION OPERATION
+            
+            After months in witness protection, a successful reunion operation has brought together separated family members. You assess the operation's success and ongoing security implications.
+            
+            REUNION OPERATION RESULTS:
+            
+            FAMILY REUNIFICATION:
+            • Primary witness reunited with spouse and children
+            • Extended family members brought into protection program
+            • Secure housing established for entire family unit
+            • New identity documentation for all family members
+            
+            PSYCHOLOGICAL IMPACT:
+            • Significant improvement in witness cooperation and mental health
+            • Children adapting to new identities and location
+            • Family stress reduction improving testimony reliability
+            • Enhanced motivation to continue cooperation with prosecution
+            
+            SECURITY ASSESSMENT:
+            • No compromise of new location detected
+            • Counter-surveillance confirms no criminal organization tracking
+            • Communication monitoring shows no security breaches
+            • Local law enforcement cooperation established
+            
+            ONGOING CHALLENGES:
+            • Education and employment integration for family
+            • Medical care coordination with protection protocols
+            • Long-term financial support sustainability
+            • Trial testimony preparation with family present
+            
+            The successful reunion strengthens the prosecution case while ensuring witness and family safety.`,
+            image: "family_reunion_protection",
+            imagePrompt: "Joyful family reunion in secure location, federal marshals providing security, new life beginning under witness protection",
+            sources: ["U.S. Marshals Witness Protection Program", "Family Reunification Protocols", "Witness Cooperation Assessment"],
+            choices: [
+                {
+                    text: "Focus on strengthening witness testimony preparation",
+                    nextScene: "witness_protection_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Assess long-term security and support needs",
+                    nextScene: "witness_protection_program"
+                },
+                {
+                    text: "Use witness improvement to encourage other cooperation",
+                    nextScene: "custom_protection_deal"
+                }
+            ],
+            educationalNote: "Successful witness protection family reunification often significantly improves witness cooperation and testimony reliability in federal prosecutions."
+        },
+
+        federal_agency_coordination: {
+            text: `MULTI-AGENCY TASK FORCE COORDINATION
+            
+            The complexity of the case requires unprecedented coordination between federal agencies, each bringing specialized capabilities to the investigation.
+            
+            AGENCY COORDINATION STRUCTURE:
+            
+            FBI LEADERSHIP:
+            • Overall investigation coordination
+            • Criminal enterprise analysis
+            • Witness protection and cooperation
+            • Evidence collection and analysis
+            
+            DEA INVOLVEMENT:
+            • Drug trafficking elements investigation
+            • International narcotics cooperation
+            • Chemical precursor tracking
+            • Money laundering through drug proceeds
+            
+            IRS CRIMINAL INVESTIGATION:
+            • Tax evasion analysis
+            • Financial crimes investigation  
+            • Asset tracing and recovery
+            • International tax haven cooperation
+            
+            HOMELAND SECURITY:
+            • Human trafficking investigation
+            • Border security and immigration issues
+            • International cooperation protocols
+            • National security implications assessment
+            
+            U.S. MARSHALS SERVICE:
+            • Fugitive operations
+            • Asset forfeiture execution
+            • Witness protection program
+            • Court security during proceedings
+            
+            The coordinated approach leverages each agency's unique expertise and authority.`,
+            image: "federal_task_force_meeting",
+            imagePrompt: "Inter-agency coordination meeting with representatives from FBI, DEA, IRS, Homeland Security, and US Marshals around conference table",
+            sources: ["Multi-Agency Task Force Protocol", "Federal Agency Coordination Agreement", "Joint Investigation Guidelines"],
+            choices: [
+                {
+                    text: "Focus on international cooperation and intelligence sharing",
+                    nextScene: "offshore_banking_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Strengthen financial crimes investigation coordination",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Coordinate witness protection across agencies",
+                    nextScene: "witness_protection_program"
+                }
+            ],
+            educationalNote: "Complex federal investigations often require multi-agency task forces to leverage specialized expertise and jurisdictional authorities effectively."
+        },
+
+        flight_risk_analysis: {
+            text: `FLIGHT RISK ASSESSMENT ANALYSIS
+            
+            You conduct a detailed analysis of the defendant's flight risk to support the prosecution's position on pre-trial detention and bail denial.
+            
+            FLIGHT RISK FACTORS:
+            
+            FINANCIAL RESOURCES:
+            • Liquid assets exceeding $100 million
+            • Multiple private jets and aircraft access
+            • International property portfolio
+            • Offshore banking relationships
+            
+            INTERNATIONAL CONNECTIONS:
+            • Business relationships in non-extradition countries
+            • Personal residences in multiple countries
+            • Private security teams with international capability
+            • Diplomatic and political connections abroad
+            
+            CRIMINAL BEHAVIOR PATTERNS:
+            • History of evading law enforcement
+            • Pattern of obstruction of justice
+            • Witness intimidation and elimination attempts
+            • Use of aliases and false documentation
+            
+            MOTIVATIONAL FACTORS:
+            • Facing life imprisonment if convicted
+            • Massive financial losses from asset forfeiture
+            • International reputation and legacy concerns
+            • Family and business empire protection
+            
+            CAPABILITY ASSESSMENT:
+            • Demonstrated ability to coordinate complex operations
+            • Access to criminal organization resources
+            • International criminal network support
+            • Professional evasion and counter-surveillance capabilities
+            
+            The analysis supports continued detention as necessary to ensure court appearance.`,
+            image: "flight_risk_assessment",
+            imagePrompt: "FBI analysis board showing flight risk factors, international connections, private jets, escape route possibilities",
+            sources: ["Federal Flight Risk Assessment Protocol", "International Criminal Intelligence", "Asset Analysis Report"],
+            choices: [
+                {
+                    text: "Focus on international escape route analysis",
+                    nextScene: "offshore_banking_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze criminal organization support capabilities",
+                    nextScene: "assassination_network_investigation"
+                },
+                {
+                    text: "Review asset freeze and monitoring procedures",
+                    nextScene: "asset_forfeiture_analysis"
+                }
+            ],
+            educationalNote: "Flight risk analysis in high-profile cases considers financial resources, international connections, criminal history, and motivation to flee jurisdiction."
+        },
+
+        high_speed_pursuit: {
+            text: `HIGH-SPEED PURSUIT OPERATION
+            
+            Intelligence indicates an imminent escape attempt. Federal agents coordinate a high-speed pursuit operation to prevent the defendant from fleeing jurisdiction.
+            
+            PURSUIT SCENARIO:
+            
+            INITIAL INTELLIGENCE:
+            • Private jet fueled and flight plan filed to non-extradition country
+            • Convoy of security vehicles moving toward airport
+            • Communication intercepts confirming escape timeline
+            • International contacts prepared to assist evasion
+            
+            TACTICAL RESPONSE:
+            • FBI tactical teams positioned at multiple locations
+            • Air support coordinating with ground units
+            • Local law enforcement traffic control assistance
+            • Airport security preventing aircraft departure
+            
+            PURSUIT DYNAMICS:
+            • High-speed chase through urban environment
+            • Multiple security vehicles attempting to create diversions
+            • Tactical intervention to stop convoy safely
+            • Coordination with aviation authorities to ground aircraft
+            
+            OPERATIONAL CHALLENGES:
+            • Public safety concerns during high-speed pursuit
+            • Media helicopter presence complicating operations
+            • Multiple potential escape routes requiring coverage
+            • International diplomatic pressure to prevent escape
+            
+            SUCCESS METRICS:
+            • Prevent escape without public endangerment
+            • Capture all individuals involved in escape attempt
+            • Secure additional evidence of obstruction of justice
+            • Demonstrate consequences of flight attempts
+            
+            The pursuit becomes a high-stakes operation with national implications.`,
+            image: "high_speed_federal_pursuit",
+            imagePrompt: "High-speed federal agent pursuit, tactical vehicles, helicopter support, airport intervention, dramatic chase scene",
+            sources: ["Federal Tactical Response Protocol", "High-Speed Pursuit Guidelines", "Fugitive Apprehension Procedures"],
+            choices: [
+                {
+                    text: "Focus on coordinating tactical intervention to stop escape",
+                    nextScene: "synchronized_rescue_arrest",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use pursuit to gather intelligence on criminal organization support",
+                    nextScene: "assassination_network_investigation"
+                },
+                {
+                    text: "Coordinate with international authorities to prevent flight",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "High-speed federal pursuits require coordination between multiple agencies and careful balance between apprehension success and public safety."
+        },
+
+        independent_investigation_continues: {
+            text: `INDEPENDENT INVESTIGATION CONTINUATION
+            
+            Despite setbacks and challenges, you decide to continue the investigation independently, relying on alternative evidence sources and investigative approaches.
+            
+            ALTERNATIVE INVESTIGATION STRATEGIES:
+            
+            OPEN SOURCE INTELLIGENCE:
+            • Public records and court filing analysis
+            • Social media and digital footprint investigation
+            • News media and journalism cooperation
+            • Academic and researcher collaboration
+            
+            FINANCIAL INVESTIGATION:
+            • Banking records through legal subpoenas
+            • Public business registration analysis
+            • SEC filing and regulatory document review
+            • International financial intelligence cooperation
+            
+            DIGITAL FORENSICS:
+            • Publicly available digital communications
+            • Metadata analysis from social media posts
+            • Website and server log analysis
+            • Cryptocurrency transaction tracking
+            
+            WITNESS DEVELOPMENT:
+            • Voluntary cooperation from industry insiders
+            • Victim outreach and support programs
+            • Professional whistleblower protection
+            • Anonymous tip line and information gathering
+            
+            LEGAL STRATEGIES:
+            • Civil litigation support and cooperation
+            • Regulatory investigation coordination
+            • Congressional oversight collaboration
+            • International legal assistance requests
+            
+            The independent approach ensures investigation continues despite obstacles.`,
+            image: "independent_federal_investigation",
+            imagePrompt: "Dedicated federal investigators working independently, alternative evidence sources, digital analysis, determination despite challenges",
+            sources: ["Independent Investigation Protocols", "Alternative Evidence Sources", "Investigative Resilience Guidelines"],
+            choices: [
+                {
+                    text: "Focus on developing new witness sources",
+                    nextScene: "witness_protection_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Strengthen financial investigation using alternative methods",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Coordinate with civil litigation for evidence sharing",
+                    nextScene: "civil_lawsuit_analysis"
+                }
+            ],
+            educationalNote: "Independent federal investigations often succeed by adapting to challenges and using alternative evidence sources when traditional approaches face obstacles."
+        },
+
+        industry_executive_investigation: {
+            text: `ENTERTAINMENT INDUSTRY EXECUTIVE INVESTIGATION
+            
+            The investigation expands to examine other entertainment industry executives who may have been involved in or aware of the alleged criminal enterprise operations.
+            
+            EXECUTIVE NETWORK ANALYSIS:
+            
+            RECORD LABEL EXECUTIVES:
+            • Senior management at major music labels
+            • A&R executives with artist relationships
+            • Business affairs executives handling contracts
+            • Financial officers managing artist payments
+            
+            MEDIA COMPANY LEADERSHIP:
+            • Television and streaming platform executives
+            • Production company heads and producers
+            • Distribution network management
+            • Marketing and publicity executives
+            
+            TALENT AGENCY INVESTIGATION:
+            • Booking agents and talent representatives
+            • Personal managers with client relationships
+            • Entertainment lawyers facilitating deals
+            • Business managers handling financial affairs
+            
+            FINANCIAL SERVICES PROVIDERS:
+            • Entertainment industry banks and lenders
+            • Investment advisors and wealth managers
+            • Accounting firms providing financial services
+            • Insurance companies covering entertainment risks
+            
+            EVIDENCE OF INVOLVEMENT:
+            • Knowledge of criminal activities and failure to report
+            • Financial benefits from criminal enterprise
+            • Active facilitation of money laundering
+            • Witness intimidation and obstruction participation
+            
+            The industry-wide investigation reveals systemic issues beyond individual cases.`,
+            image: "entertainment_industry_investigation",
+            imagePrompt: "Entertainment industry executives under investigation, record label offices, corporate boardrooms, federal agents interviewing",
+            sources: ["Entertainment Industry Analysis", "Corporate Investigation Files", "Executive Background Checks"],
+            choices: [
+                {
+                    text: "Focus on record label executive involvement",
+                    nextScene: "business_empire_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Investigate financial services provider roles",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Analyze talent agency and management connections",
+                    nextScene: "co_conspirator_payments"
+                }
+            ],
+            educationalNote: "Entertainment industry investigations often reveal broader patterns of criminal activity and complicity across multiple companies and executives."
+        },
+
+        industry_impact_analysis: {
+            text: `ENTERTAINMENT INDUSTRY IMPACT ASSESSMENT
+            
+            You analyze the broader impact of the federal investigation and prosecution on the entertainment industry, examining changes in business practices and regulatory responses.
+            
+            INDUSTRY IMPACT CATEGORIES:
+            
+            BUSINESS PRACTICE CHANGES:
+            • Enhanced due diligence for artist partnerships
+            • Improved financial oversight and reporting
+            • Strengthened compliance and ethics programs
+            • Independent monitoring and audit requirements
+            
+            REGULATORY RESPONSES:
+            • Increased federal oversight of entertainment businesses
+            • New reporting requirements for large financial transactions
+            • Enhanced background check requirements for industry executives
+            • Expanded whistleblower protection programs
+            
+            FINANCIAL MARKET EFFECTS:
+            • Stock price impacts for publicly traded entertainment companies
+            • Investment community reassessment of industry risks
+            • Insurance premium increases for entertainment businesses
+            • Credit rating impacts for major entertainment corporations
+            
+            CULTURAL AND SOCIAL IMPLICATIONS:
+            • Public awareness of entertainment industry criminal issues
+            • Victim advocacy and support program development
+            • Industry association code of conduct revisions
+            • Academic and research focus on entertainment industry ethics
+            
+            INTERNATIONAL IMPLICATIONS:
+            • Global entertainment industry practice changes
+            • International cooperation on entertainment crime investigations
+            • Foreign investment policy changes affecting entertainment
+            • Cross-border regulatory coordination improvements
+            
+            The case creates lasting changes throughout the entertainment industry.`,
+            image: "industry_impact_assessment",
+            imagePrompt: "Entertainment industry boardrooms discussing compliance changes, regulatory documents, business practice reforms, industry transformation",
+            sources: ["Industry Impact Analysis", "Regulatory Response Assessment", "Business Practice Evolution Report"],
+            choices: [
+                {
+                    text: "Focus on regulatory and compliance improvements",
+                    nextScene: "federal_agency_coordination",
+                    collectEvidence: true
+                },
+                {
+                    text: "Analyze long-term business practice changes",
+                    nextScene: "business_empire_investigation"
+                },
+                {
+                    text: "Review victim advocacy and support improvements",
+                    nextScene: "victim_testimony_analysis"
+                }
+            ],
+            educationalNote: "Major federal prosecutions often create lasting industry changes, improving business practices and regulatory oversight to prevent future criminal activity."
+        },
+
+        interstate_commerce_analysis: {
+            text: `INTERSTATE COMMERCE NEXUS ANALYSIS
+            
+            You analyze the interstate commerce connections required for federal jurisdiction, ensuring the prosecution can demonstrate the necessary federal nexus for all charges.
+            
+            INTERSTATE COMMERCE ELEMENTS:
+            
+            BUSINESS OPERATIONS:
+            • Multi-state business operations and subsidiaries
+            • Interstate transportation of goods and services
+            • Cross-state financial transactions and payments
+            • National and international distribution networks
+            
+            CRIMINAL ACTIVITIES:
+            • Alleged crimes occurring across multiple states
+            • Interstate transportation of victims and evidence
+            • Use of interstate communication systems
+            • Financial crimes affecting interstate banking
+            
+            FEDERAL JURISDICTION FACTORS:
+            • Wire communications crossing state lines
+            • Interstate travel in furtherance of criminal enterprise
+            • Use of facilities of interstate commerce
+            • Financial transactions affecting interstate commerce
+            
+            LEGAL REQUIREMENTS:
+            • Minimal impact on interstate commerce sufficient
+            • Cumulative effect of activities on interstate commerce
+            • Use of instrumentalities of interstate commerce
+            • Economic impact on interstate commercial activities
+            
+            EVIDENCE DOCUMENTATION:
+            • Banking records showing interstate transactions
+            • Transportation records crossing state lines
+            • Communication records between multiple states
+            • Business registration in multiple jurisdictions
+            
+            The analysis confirms strong federal jurisdiction for prosecution.`,
+            image: "interstate_commerce_analysis",
+            imagePrompt: "Federal jurisdiction analysis, multi-state business operations map, interstate commerce documentation, legal research",
+            sources: ["Federal Jurisdiction Analysis", "Interstate Commerce Documentation", "Constitutional Law Research"],
+            choices: [
+                {
+                    text: "Strengthen evidence of interstate criminal activities",
+                    nextScene: "enterprise_structure_analysis",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on interstate financial transaction evidence",
+                    nextScene: "money_laundering_analysis"
+                },
+                {
+                    text: "Document interstate communication and transportation",
+                    nextScene: "encrypted_communications_analysis"
+                }
+            ],
+            educationalNote: "Interstate commerce nexus is essential for federal criminal jurisdiction, requiring demonstration of criminal activity's connection to or impact on interstate commerce."
         }
     }
 };
