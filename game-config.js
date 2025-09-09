@@ -27,7 +27,8 @@ const GameConfig = {
         cointelpro: true,   // Sealed in production
         snowden: true,      // Sealed in production
         tuskegee: true,     // Sealed in production
-        paperclip: true     // Sealed in production
+        paperclip: true,    // Sealed in production
+        diddy: true         // Sealed in production
     },
     
     // Release dates for sealed games
@@ -44,7 +45,8 @@ const GameConfig = {
         cointelpro: "Coming 2026",
         snowden: "Coming 2026",
         tuskegee: "Coming 2026",
-        paperclip: "Coming 2026"
+        paperclip: "Coming 2026",
+        diddy: "Coming Q1 2025"
     },
     
     // Check if a game should be sealed

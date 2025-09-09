@@ -231,6 +231,15 @@ class GameEngine {
                 releaseDate: window.GameConfig ? GameConfig.getReleaseDate('paperclip') : (OperationPaperclipStoryExpanded.releaseDate || null)
             });
         }
+        if (typeof DiddyCaseStoryExpanded !== 'undefined' && DiddyCaseStoryExpanded.scenes) {
+            availableStories.push({ 
+                name: 'Diddy Federal Case', 
+                story: DiddyCaseStoryExpanded, 
+                key: 'diddy',
+                sealed: window.GameConfig ? GameConfig.isGameSealed('diddy') : (DiddyCaseStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('diddy') : (DiddyCaseStoryExpanded.releaseDate || null)
+            });
+        }
         
         if (availableStories.length > 1) {
             this.showCaseSelection(availableStories);
