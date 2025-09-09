@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Successful - Declassified</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-header">
+            <h1 id="game-title">DECLASSIFIED</h1>
+            <div id="case-title">Purchase Successful</div>
+        </header>
+        
+        <main id="game-main">
+            <div id="success-content" style="text-align: center; padding: 40px;">
+                <div class="success-icon" style="font-size: 72px; margin-bottom: 30px;">🔓</div>
+                <h2 style="color: #4ecdc4; margin-bottom: 20px;">ACCESS GRANTED!</h2>
+                <p style="color: #e0e0e0; margin-bottom: 30px; font-size: 18px;">
+                    Your classified case file has been unlocked and is now available for investigation.
+                </p>
+                
+                <div id="case-info" style="background: rgba(44, 62, 80, 0.8); border: 2px solid #4ecdc4; border-radius: 12px; padding: 20px; margin: 20px auto; max-width: 500px;">
+                    <h3 style="color: #4ecdc4; margin-bottom: 15px;">Case Details</h3>
+                    <div id="purchased-case-name" style="color: #e0e0e0; font-size: 16px; margin-bottom: 10px;"></div>
+                    <div style="color: #a0a0a0; font-size: 14px;">Status: UNLOCKED ✓</div>
+                </div>
+                
+                <button onclick="returnToGame()" style="background: linear-gradient(135deg, #4ecdc4, #44a08d); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; cursor: pointer; font-size: 16px; margin-top: 20px;">
+                    🎮 Start Investigation
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="payment-config.js"></script>
+    <script>
+        // Get case key from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const caseKey = urlParams.get('case');
+        
+        if (caseKey && window.paymentManager) {
+            // Mark the case as purchased
+            window.paymentManager.handleSuccessfulPurchase(caseKey);
+            
+            // Update the UI with case info
+            const productInfo = window.paymentManager.getProductInfo(caseKey);
+            if (productInfo) {
+                document.getElementById('purchased-case-name').textContent = productInfo.name;
+            }
+        }
+        
+        function returnToGame() {
+            // Redirect back to main game
+            window.location.href = '/';
+        }
+        
+        // Auto-redirect after 10 seconds
+        setTimeout(() => {
+            returnToGame();
+        }, 10000);
+    </script>
+</body>
+</html>

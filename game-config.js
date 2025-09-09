@@ -57,6 +57,12 @@ const GameConfig = {
             return false;
         }
         
+        // Check if user has purchased this game
+        if (window.paymentManager && window.paymentManager.hasPurchased(gameKey)) {
+            console.log(`💰 Purchased: ${gameKey} is UNLOCKED`);
+            return false;
+        }
+        
         // In production, check the sealed status
         const sealed = this.sealedGames[gameKey] || false;
         console.log(`🔒 Production mode: ${gameKey} is ${sealed ? 'SEALED' : 'OPEN'}`);

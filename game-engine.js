@@ -354,9 +354,24 @@ class GameEngine {
                     ${storyData.releaseDate ? `<p><strong>Estimated Release:</strong> ${storyData.releaseDate}</p>` : ''}
                 </div>
                 <div class="security-message">
-                    <p>This case file is currently sealed by order of the National Security Council. 
-                    Access requires appropriate security clearance and authorization.</p>
-                    <p>Please check back later for updates on case availability.</p>
+                    <p>This case file is currently sealed and requires purchase to access.</p>
+                    <p>Unlock this classified investigation with our secure payment system.</p>
+                </div>
+                
+                <!-- Purchase Section -->
+                <div class="purchase-section">
+                    <h3>🔓 UNLOCK ACCESS</h3>
+                    <p>Get immediate access to this classified investigation case file.</p>
+                    <ul class="purchase-benefits">
+                        <li>Complete investigative storyline</li>
+                        <li>Classified documents and evidence</li>
+                        <li>Interactive decision-making</li>
+                        <li>Educational content and sources</li>
+                        <li>Lifetime access</li>
+                    </ul>
+                    <button class="purchase-button" onclick="window.paymentManager.purchaseCase('${storyData.key}')">
+                        🔓 Unlock Case File <span class="price">$4.99</span>
+                    </button>
                 </div>
                 
                 <!-- Ad placement for sealed cases -->
