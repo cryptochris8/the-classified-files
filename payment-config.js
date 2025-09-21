@@ -124,8 +124,8 @@ class PaymentManager {
         // In production, you'll set this via environment variables
         // For now, return test key (you'll replace this)
         return this.isProduction ?
-            'pk_live_your_live_key_here' :
-            'pk_test_your_test_key_here';
+            'pk_live_YOUR_ACTUAL_LIVE_KEY_HERE' :  // Replace with your pk_live_ key
+            'pk_test_YOUR_ACTUAL_TEST_KEY_HERE';   // Replace with your pk_test_ key
     }
 
     // Check if user has purchased a case
