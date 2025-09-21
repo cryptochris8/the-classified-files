@@ -1,6 +1,6 @@
 [build]
-  publish = "."
-  command = "echo 'No build step required - static files only'"
+  publish = "website-repo"
+  command = "echo 'Deploying marketing website'"
 
 [[headers]]
   for = "/*.js"

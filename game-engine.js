@@ -22,6 +22,7 @@ class GameEngine {
         this.isSpeaking = false;
         this.speechEnabled = false;
         this.currentUtterance = null;
+        this.musicWasPlaying = false; // Track if music was playing before speech
         
         this.elements = {
             storyText: document.getElementById('story-text'),
@@ -102,6 +103,7 @@ class GameEngine {
         console.log('UAPStoryExpanded available:', typeof UAPStoryExpanded !== 'undefined');
         console.log('September11CommissionExpanded available:', typeof September11CommissionExpanded !== 'undefined');
         console.log('HunterBidenLaptopStoryExpanded available:', typeof HunterBidenLaptopStoryExpanded !== 'undefined');
+        console.log('DiddyCaseStoryExpanded available:', typeof DiddyCaseStoryExpanded !== 'undefined');
         
         // Show case selection for all available stories (including sealed ones)
         const availableStories = [];
@@ -235,9 +237,9 @@ class GameEngine {
             availableStories.push({ 
                 name: 'Diddy Federal Case', 
                 story: DiddyCaseStoryExpanded, 
-                key: 'diddy',
-                sealed: window.GameConfig ? GameConfig.isGameSealed('diddy') : (DiddyCaseStoryExpanded.sealed || false),
-                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('diddy') : (DiddyCaseStoryExpanded.releaseDate || null)
+                key: 'diddy-case',
+                sealed: window.GameConfig ? GameConfig.isGameSealed('diddy-case') : (DiddyCaseStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('diddy-case') : (DiddyCaseStoryExpanded.releaseDate || null)
             });
         }
         
@@ -317,6 +319,17 @@ class GameEngine {
                     button.onclick = () => {
                         this.playButtonClickSound();
                         this.showSealedCaseMessage(storyData);
+                    };
+                } else if (window.paymentSystem && window.paymentSystem.shouldShowPurchasePrompt(storyData.key)) {
+                    // Show premium badge
+                    const premiumBadge = document.createElement('span');
+                    premiumBadge.className = 'premium-badge';
+                    premiumBadge.textContent = 'PREMIUM';
+                    button.appendChild(premiumBadge);
+                    
+                    button.onclick = () => {
+                        this.playButtonClickSound();
+                        this.showPurchasePrompt(storyData);
                     };
                 } else {
                     button.onclick = () => {
@@ -402,6 +415,48 @@ class GameEngine {
                 backButton.style.transform = 'translateY(0)';
             }, 100);
         }, 1000);
+    }
+    
+    showPurchasePrompt(storyData) {
+        if (window.paymentSystem) {
+            const prompt = window.paymentSystem.createPurchasePrompt(storyData.name);
+            document.body.insertAdjacentHTML('beforeend', prompt);
+            
+            // Add close functionality for prompt
+            const purchasePrompt = document.querySelector('.purchase-prompt:last-child');
+            if (purchasePrompt) {
+                purchasePrompt.addEventListener('click', (e) => {
+                    if (e.target === purchasePrompt) {
+                        purchasePrompt.remove();
+                    }
+                });
+                
+                // Add close button
+                const closeButton = document.createElement('button');
+                closeButton.innerHTML = '✕';
+                closeButton.style.cssText = `
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    background: none;
+                    border: none;
+                    color: #fff;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                    opacity: 0.7;
+                    transition: opacity 0.3s;
+                `;
+                closeButton.onmouseover = () => closeButton.style.opacity = '1';
+                closeButton.onmouseout = () => closeButton.style.opacity = '0.7';
+                closeButton.onclick = () => purchasePrompt.remove();
+                
+                const purchaseContent = purchasePrompt.querySelector('.purchase-content');
+                if (purchaseContent) {
+                    purchaseContent.style.position = 'relative';
+                    purchaseContent.appendChild(closeButton);
+                }
+            }
+        }
     }
     
     loadStory(storyData) {
@@ -589,7 +644,37 @@ class GameEngine {
     }
     
     displayChoices() {
-        if (!this.currentScene.choices) return;
+        // Check if campaign has ended (no choices available)
+        if (!this.currentScene.choices || this.currentScene.choices.length === 0) {
+            // Create "Back to Main Menu" button for campaign end
+            const endPrompt = document.createElement('p');
+            endPrompt.className = 'choice-prompt';
+            endPrompt.textContent = 'Investigation Complete';
+            this.elements.choicesContainer.appendChild(endPrompt);
+            
+            const backButton = document.createElement('button');
+            backButton.className = 'choice-button main-menu-button';
+            backButton.textContent = '🏠 Back to Main Menu';
+            backButton.onclick = () => {
+                this.playButtonClickSound();
+                // Clear game state and return to main menu
+                this.clearGameState();
+                window.location.href = 'index.html';
+            };
+            
+            // Animate button appearance
+            backButton.style.opacity = '0';
+            backButton.style.transform = 'translateY(20px)';
+            this.elements.choicesContainer.appendChild(backButton);
+            
+            setTimeout(() => {
+                backButton.style.transition = 'all 0.5s ease';
+                backButton.style.opacity = '1';
+                backButton.style.transform = 'translateY(0)';
+            }, 100);
+            
+            return;
+        }
         
         // Add prompt text before choices if provided
         if (this.currentScene.prompt) {
@@ -760,6 +845,34 @@ Prepare to reconstruct classified evidence...`;
     
     clearChoices() {
         this.elements.choicesContainer.innerHTML = '';
+    }
+    
+    clearGameState() {
+        // Reset game state to initial values
+        this.gameState = {
+            evidenceCount: 0,
+            investigationProgress: 0,
+            choices: [],
+            visitedScenes: new Set(),
+            visitedChoices: {},
+            knowledgeScore: 0,
+            correctAnswers: 0,
+            totalQuestions: 0,
+            badges: []
+        };
+        
+        // Clear any active speech
+        if (this.speechSynthesis) {
+            this.speechSynthesis.cancel();
+        }
+        
+        // Clear current scene
+        this.currentScene = null;
+        this.currentStory = null;
+        
+        // Save cleared state to localStorage
+        localStorage.removeItem('gameState');
+        localStorage.removeItem('currentStory');
     }
     
     updateDocument() {
@@ -1104,6 +1217,13 @@ Your choices throughout this investigation have shaped the narrative and uncover
         if (this.speechEnabled) {
             speechButton.classList.add('active');
             speechButton.querySelector('.speech-icon').textContent = '🔇';
+            
+            // Pause background music when speech is enabled
+            if (this.elements.backgroundMusic && !this.elements.backgroundMusic.paused) {
+                this.musicWasPlaying = true;
+                this.elements.backgroundMusic.pause();
+            }
+            
             // Start reading current text if available
             const currentText = this.elements.storyText.textContent;
             if (currentText && currentText.trim()) {
@@ -1113,6 +1233,12 @@ Your choices throughout this investigation have shaped the narrative and uncover
             speechButton.classList.remove('active');
             speechButton.querySelector('.speech-icon').textContent = '🔊';
             this.stopSpeech();
+            
+            // Resume background music if it was playing before
+            if (this.elements.backgroundMusic && this.musicWasPlaying) {
+                this.elements.backgroundMusic.play();
+                this.musicWasPlaying = false;
+            }
         }
     }
     

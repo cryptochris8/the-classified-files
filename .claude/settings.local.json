@@ -9,7 +9,9 @@
       "Bash(grep:*)",
       "Bash(git log:*)",
       "Bash(git stash show:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "Bash(node:*)",
+      "Bash(cp:*)"
     ],
     "deny": []
   }

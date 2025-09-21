@@ -5,9 +5,9 @@ class PaymentManager {
     constructor() {
         // Initialize Stripe (will be loaded from CDN)
         this.stripe = null;
-        this.isProduction = window.location.hostname !== 'localhost' && 
+        this.isProduction = window.location.hostname !== 'localhost' &&
                            window.location.hostname !== '127.0.0.1';
-        
+
         // Product configurations with prices and Stripe price IDs
         this.products = {
             epstein: {
@@ -93,12 +93,18 @@ class PaymentManager {
                 price: 4.99,
                 description: "Federal RICO investigation files and evidence",
                 priceId: this.isProduction ? 'price_live_diddy' : 'price_test_diddy'
+            },
+            'diddy-case': {
+                name: "Diddy Federal Case",
+                price: 4.99,
+                description: "Federal RICO investigation files and evidence",
+                priceId: this.isProduction ? 'price_live_diddy' : 'price_test_diddy'
             }
         };
-        
+
         this.initializeStripe();
     }
-    
+
     async initializeStripe() {
         // Load Stripe.js from CDN
         if (!window.Stripe) {
@@ -113,21 +119,21 @@ class PaymentManager {
             this.stripe = Stripe(this.getPublishableKey());
         }
     }
-    
+
     getPublishableKey() {
         // In production, you'll set this via environment variables
         // For now, return test key (you'll replace this)
-        return this.isProduction ? 
-            'pk_live_your_live_key_here' : 
+        return this.isProduction ?
+            'pk_live_your_live_key_here' :
             'pk_test_your_test_key_here';
     }
-    
+
     // Check if user has purchased a case
     hasPurchased(caseKey) {
         const purchases = JSON.parse(localStorage.getItem('purchasedCases') || '[]');
         return purchases.includes(caseKey);
     }
-    
+
     // Mark a case as purchased
     markAsPurchased(caseKey) {
         const purchases = JSON.parse(localStorage.getItem('purchasedCases') || '[]');
@@ -136,20 +142,20 @@ class PaymentManager {
             localStorage.setItem('purchasedCases', JSON.stringify(purchases));
         }
     }
-    
+
     // Create checkout session for a case
     async purchaseCase(caseKey) {
         if (!this.stripe) {
             console.error('Stripe not initialized');
             return;
         }
-        
+
         const product = this.products[caseKey];
         if (!product) {
             console.error('Product not found:', caseKey);
             return;
         }
-        
+
         try {
             // Call your serverless function to create checkout session
             const response = await fetch('/api/create-checkout', {
@@ -164,41 +170,41 @@ class PaymentManager {
                     cancelUrl: window.location.origin + '/cancel'
                 })
             });
-            
+
             const session = await response.json();
-            
+
             if (session.error) {
                 console.error('Checkout error:', session.error);
                 return;
             }
-            
+
             // Redirect to Stripe Checkout
             const result = await this.stripe.redirectToCheckout({
                 sessionId: session.sessionId
             });
-            
+
             if (result.error) {
                 console.error('Stripe redirect error:', result.error);
             }
-            
+
         } catch (error) {
             console.error('Purchase error:', error);
         }
     }
-    
+
     // Handle successful purchase (called from success page)
     handleSuccessfulPurchase(caseKey) {
         this.markAsPurchased(caseKey);
-        
+
         // Show success message
         this.showPurchaseSuccess(caseKey);
-        
+
         // Refresh game to unlock the case
         if (window.gameEngine) {
             window.gameEngine.startGame();
         }
     }
-    
+
     showPurchaseSuccess(caseKey) {
         const product = this.products[caseKey];
         const notification = document.createElement('div');
@@ -211,26 +217,46 @@ class PaymentManager {
                 <p>You can now access this classified investigation.</p>
             </div>
         `;
-        
+
         document.body.appendChild(notification);
-        
+
         setTimeout(() => {
             notification.style.opacity = '1';
             notification.style.transform = 'translateY(0)';
         }, 100);
-        
+
         setTimeout(() => {
             notification.style.opacity = '0';
             setTimeout(() => notification.remove(), 500);
         }, 5000);
     }
-    
+
     // Get product info for display
     getProductInfo(caseKey) {
         return this.products[caseKey];
     }
 }
 
+// Payment Config for server connection
+const PaymentConfig = {
+    // Change this to your deployed server URL when going live
+    SERVER_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+        ? 'http://localhost:3000'  // Local development
+        : 'https://your-server-url.railway.app', // Production (update after deployment)
+
+    // Frontend URLs for redirects
+    getSuccessUrl: () => {
+        const baseUrl = window.location.origin;
+        return baseUrl + '/payment-success.html';
+    },
+
+    getCancelUrl: () => {
+        const baseUrl = window.location.origin;
+        return baseUrl + '/payment-cancel.html';
+    }
+};
+
 // Make it globally available
 window.PaymentManager = PaymentManager;
 window.paymentManager = new PaymentManager();
+window.PaymentConfig = PaymentConfig;

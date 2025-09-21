@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - Declassified</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment-styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <div class="unlock-message">
+            <div class="unlock-notification">
+                <h3>🎉 Payment Successful!</h3>
+                <p>Thank you for purchasing the full game.</p>
+                <p>You now have access to all 13 premium case files!</p>
+                <button onclick="handleSuccess()" class="choice-button">Start Playing</button>
+            </div>
+        </div>
+    </div>
+    <script src="payment-config.js"></script>
+    <script>
+        async function handleSuccess() {
+            // Get session ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const sessionId = urlParams.get('session_id');
+            
+            if (sessionId) {
+                // Store unlock status
+                localStorage.setItem('gameUnlocked', 'true');
+                localStorage.setItem('purchaseData', JSON.stringify({
+                    sessionId: sessionId,
+                    timestamp: new Date().toISOString()
+                }));
+                
+                // Verify payment with server
+                try {
+                    const serverUrl = window.PaymentConfig ? PaymentConfig.SERVER_URL : '';
+                    const response = await fetch(serverUrl + '/verify-payment/' + sessionId);
+                    const data = await response.json();
+                    console.log('Payment verified:', data);
+                } catch (error) {
+                    console.log('Could not verify payment, but proceeding anyway');
+                }
+            }
+            
+            // Redirect to main game
+            window.location.href = '/';
+        }
+    </script>
+</body>
+</html>

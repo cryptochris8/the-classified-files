@@ -57,6 +57,13 @@ The weight of scientific truth rests on your analysis.`,
                     progressIncrease: 8,
                     factual: true,
                     evidence: true
+                },
+                {
+                    text: "Investigate reports of a 'Black Triangle' UAP stalking your investigation team",
+                    nextScene: "black_triangle_threat",
+                    progressIncrease: 20,
+                    dangerous: true,
+                    evidence: true
                 }
             ],
             educationalNote: "This investigation uses real data from Pentagon AARO reports and congressional testimony to explore factual UAP phenomena."
@@ -1507,6 +1514,486 @@ The radar data provides objective measurement of impossible flight characteristi
                 }
             ],
             educationalNote: "Radar tracking provides objective, quantifiable evidence of anomalous flight characteristics."
+        },
+
+        black_triangle_threat: {
+            text: `BLACK TRIANGLE STALKING - IMMINENT DANGER
+            
+            DAY 2 - 11:47 PM
+            
+            You've been working late analyzing data when your colleague Dr. Kim bursts into your office, visibly shaken.
+            
+            "Amanda, we have a problem. A massive black triangular craft has been hovering outside the Pentagon for the past hour. It's tracking our investigation."
+            
+            Your secure phone buzzes with an emergency alert: "UNKNOWN AERIAL VEHICLE - PENTAGON AIRSPACE VIOLATION - ALL PERSONNEL SHELTER IN PLACE"
+            
+            Through your office window, you see it - a 300-foot black triangle, silent, motionless, directly above your building. No lights except three pulsing red orbs at each corner.
+            
+            Dr. Kim grabs your arm. "Amanda, it appeared right after you accessed the classified nuclear facility files. This isn't coincidence."
+            
+            Your computer screen flickers. All your UAP files are being accessed by an unknown entity. The investigation data is being copied in real-time.
+            
+            Security alarms blare throughout the Pentagon. Armed guards are evacuating floors below you. You hear helicopters approaching, but they maintain distance from the craft.
+            
+            Your phone rings. Unknown number. Against protocol, you answer.
+            
+            A distorted voice: "Dr. Torres, you're getting too close to the truth. Stop the investigation now, or face the consequences."
+            
+            The line goes dead. The black triangle pulses brighter.`,
+            image: "black_triangle_pentagon",
+            imagePrompt: "Massive black triangular UFO hovering over Pentagon at night, red pulsing lights, emergency vehicles below, dark threatening atmosphere",
+            sources: ["Classified Pentagon Security Reports", "Military UAP Encounters"],
+            choices: [
+                {
+                    text: "Continue the investigation despite the threat",
+                    nextScene: "defiant_investigation",
+                    progressIncrease: 25,
+                    dangerous: true,
+                    evidence: true
+                },
+                {
+                    text: "Attempt to evacuate the building immediately", 
+                    nextScene: "evacuation_attempt",
+                    progressIncrease: 10,
+                    dangerous: true
+                },
+                {
+                    text: "Try to communicate with the craft using military protocols",
+                    nextScene: "communication_attempt",
+                    progressIncrease: 15,
+                    dangerous: true
+                },
+                {
+                    text: "Comply with the threat and shut down the investigation",
+                    nextScene: "career_ending_compliance",
+                    progressIncrease: -50,
+                    careerEnding: true
+                }
+            ],
+            educationalNote: "Black triangle UAPs are among the most commonly reported unexplained craft, often near military installations."
+        },
+
+        defiant_investigation: {
+            text: `DEFYING THE THREAT - LIFE ON THE LINE
+            
+            DAY 2 - 11:52 PM
+            
+            You stand firm. "I'm a scientist, Dr. Kim. I won't be intimidated by threats, no matter their origin."
+            
+            You continue accessing the classified files. The black triangle responds immediately - dropping to just 50 feet above your office window. The building shakes from an unknown energy field.
+            
+            Your computer screens flicker violently. The lights go out. Emergency power kicks in with red lighting.
+            
+            Dr. Kim pleads: "Amanda, this is insane! We need to leave NOW!"
+            
+            Suddenly, your office door slams shut and won't open. The electronic locks have engaged. You're trapped.
+            
+            Through the window, you see the craft's underside - geometric patterns pulsing with energy. It's scanning your office with beams of light.
+            
+            Your secure phone receives a text: "Final warning, Dr. Torres. You have 60 seconds to delete all UAP files or face elimination."
+            
+            The temperature in your office plummets. Ice forms on the windows. Something is draining all energy from the room.
+            
+            You notice your backup drive with all the critical UAP evidence. This could be your only chance to preserve the truth.
+            
+            30 seconds remaining...`,
+            image: "office_under_attack",
+            imagePrompt: "Pentagon office under alien attack, black triangle UFO outside window, emergency lighting, ice forming, scientist at computer with UAP data",
+            sources: ["Pentagon Emergency Protocols", "UAP Encounter Reports"],
+            choices: [
+                {
+                    text: "Upload the evidence to a secure off-site server before it's too late",
+                    nextScene: "data_transmission_success",
+                    progressIncrease: 30,
+                    heroic: true,
+                    evidence: true
+                },
+                {
+                    text: "Destroy the evidence to save your life",
+                    nextScene: "evidence_destroyed",
+                    progressIncrease: -30,
+                    survival: true
+                },
+                {
+                    text: "Try to break through the locked door",
+                    nextScene: "escape_attempt_failure",
+                    progressIncrease: 0,
+                    fatal: true
+                },
+                {
+                    text: "Stand your ground and refuse to comply",
+                    nextScene: "ultimate_sacrifice",
+                    progressIncrease: 50,
+                    fatal: true,
+                    heroic: true
+                }
+            ],
+            educationalNote: "UAP encounters often involve electromagnetic effects and unexplained technology interactions."
+        },
+
+        evacuation_attempt: {
+            text: `EVACUATION GONE WRONG
+            
+            DAY 2 - 11:49 PM
+            
+            "You're right, Dr. Kim. We need to get out of here immediately."
+            
+            You grab the most critical UAP files and head for the emergency exit. The hallways are filled with panicked personnel.
+            
+            As you reach the stairwell, all the lights cut out. Emergency lighting fails. You're in complete darkness.
+            
+            Dr. Kim grabs your arm. "Amanda, something's wrong. The emergency exits should have power."
+            
+            You hear a low humming sound growing louder. The black triangle has moved directly over the exit routes.
+            
+            Your phone's flashlight reveals something horrifying - the stairwell walls are covered in ice. The temperature has dropped to subzero levels.
+            
+            Other evacuees ahead of you have collapsed from hypothermia. Their breath is visible in the freezing air.
+            
+            The humming intensifies. You realize the craft is systematically disabling each escape route.
+            
+            Dr. Kim's lips are turning blue. "Amanda... can't... feel my legs..."
+            
+            You have seconds before hypothermia sets in.`,
+            image: "frozen_evacuation",
+            imagePrompt: "Pentagon stairwell covered in ice, frozen personnel, emergency evacuation failing, black triangle UFO effect",
+            sources: ["Pentagon Emergency Response", "UAP Environmental Effects"],
+            choices: [
+                {
+                    text: "Return to your office where it's warmer",
+                    nextScene: "return_to_office_trap",
+                    progressIncrease: 5,
+                    dangerous: true
+                },
+                {
+                    text: "Push through the cold to reach an exit",
+                    nextScene: "hypothermia_death",
+                    progressIncrease: 0,
+                    fatal: true
+                },
+                {
+                    text: "Use the service elevator to reach a different floor",
+                    nextScene: "elevator_malfunction",
+                    progressIncrease: 10,
+                    dangerous: true
+                },
+                {
+                    text: "Break into a secure communications room to call for help",
+                    nextScene: "communications_rescue",
+                    progressIncrease: 15,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Many UAP encounters report sudden temperature changes and environmental anomalies."
+        },
+
+        communication_attempt: {
+            text: `ATTEMPTING FIRST CONTACT - DANGEROUS PROTOCOL
+            
+            DAY 2 - 11:50 PM
+            
+            "Dr. Kim, this could be the most important moment in human history. We need to try to communicate."
+            
+            You access the Pentagon's emergency broadcast system and transmit on multiple frequencies: "Unknown craft, this is Dr. Amanda Torres, Pentagon UAP Research. We seek peaceful communication."
+            
+            The response is immediate and terrifying.
+            
+            The black triangle descends to just 20 feet above your office. The windows crack from the pressure. Your ears pop painfully.
+            
+            Every electronic device in your office activates simultaneously - phones ringing, computers typing by themselves, printers spewing pages of alien symbols.
+            
+            Then, impossibly, a voice emanates from every speaker in the building: "Dr. Torres, your species is not ready for this knowledge. Your investigation threatens the carefully maintained balance."
+            
+            The voice continues: "We have observed your kind for millennia. Your leaders know of our presence. The investigation you conduct will lead to panic and chaos."
+            
+            Dr. Kim collapses, overwhelmed by the psychic pressure. "Amanda... I can hear them... in my mind... they're showing me things..."
+            
+            The voice concludes: "You have one choice: Join our liaison program and help manage disclosure, or be eliminated as a threat to planetary stability."
+            
+            The craft hovers silently, awaiting your response.`,
+            image: "alien_communication",
+            imagePrompt: "Pentagon office with alien communication equipment, black triangle UFO outside, electromagnetic effects, scientist making first contact",
+            sources: ["Pentagon Communication Protocols", "First Contact Scenarios"],
+            choices: [
+                {
+                    text: "Accept their liaison offer and join the program",
+                    nextScene: "alien_collaboration",
+                    progressIncrease: 40,
+                    worldChanging: true
+                },
+                {
+                    text: "Refuse and demand they respect human independence",
+                    nextScene: "defiant_rejection",
+                    progressIncrease: 20,
+                    dangerous: true,
+                    heroic: true
+                },
+                {
+                    text: "Ask for time to consider their offer",
+                    nextScene: "negotiation_attempt",
+                    progressIncrease: 15,
+                    diplomatic: true
+                },
+                {
+                    text: "Try to record everything for evidence before they leave",
+                    nextScene: "evidence_gathering_risk",
+                    progressIncrease: 25,
+                    dangerous: true,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Some UAP researchers theorize that advanced civilizations may be monitoring human technological development."
+        },
+
+        career_ending_compliance: {
+            text: `CAREER DESTROYED - INVESTIGATION TERMINATED
+            
+            DAY 2 - 11:51 PM
+            
+            Fear overwhelms your scientific integrity. You immediately begin deleting all UAP investigation files.
+            
+            "Dr. Kim, help me destroy everything. We're not equipped for this."
+            
+            As the files disappear, the black triangle slowly ascends and vanishes into the night sky. The immediate threat is gone, but so is your life's work.
+            
+            Dr. Kim looks at you with disappointment. "Amanda, we just destroyed evidence that could have changed human understanding of the universe."
+            
+            Within hours, news of your "equipment malfunction" and "data corruption" spreads throughout AARO. Your colleagues question your competence.
+            
+            By morning, your security clearance is revoked. Your reputation as a reliable scientist is destroyed.
+            
+            The Pentagon reassigns you to analyzing weather balloon reports. Your career in UAP research is over.
+            
+            Months later, you watch other researchers present the same evidence you had discovered. They're hailed as heroes while you're forgotten.
+            
+            You saved your life, but lost everything that made it meaningful.
+            
+            Dr. Kim transfers to another department, unable to work with someone who chose fear over truth.
+            
+            The UAP phenomenon continues, but without your participation.
+            
+            INVESTIGATION TERMINATED - CAREER ENDED
+            
+            You compromised scientific integrity and lost everything that mattered to your professional life.`,
+            image: "career_destroyed",
+            imagePrompt: "Empty office with deleted computer files, scientist in despair, Pentagon badge being revoked, professional failure",
+            sources: ["Pentagon Personnel Records", "Scientific Ethics Cases"],
+            choices: [
+                {
+                    text: "Try to restart your investigation privately",
+                    nextScene: "private_investigation_danger",
+                    progressIncrease: 10,
+                    dangerous: true
+                }
+            ],
+            educationalNote: "Scientific integrity often requires personal sacrifice to preserve truth and evidence."
+        },
+
+        ultimate_sacrifice: {
+            text: `THE ULTIMATE SACRIFICE - HERO'S END
+            
+            DAY 2 - 11:53 PM
+            
+            You stand defiantly in your freezing office as the countdown reaches zero.
+            
+            "I'm a scientist. I serve the truth, not threats. Do your worst."
+            
+            The black triangle pulses with blinding energy. Your office windows explode inward from an invisible force.
+            
+            Dr. Kim screams as she's thrown against the wall. "AMANDA, NO!"
+            
+            You feel an overwhelming energy surge through your body. Your vision blurs, but you use your final moments to hit 'SEND' on the data transmission.
+            
+            The evidence uploads to servers worldwide just as the alien energy overwhelms your nervous system.
+            
+            Your last conscious thought: "The truth will survive, even if I don't."
+            
+            You collapse, but your sacrifice ensures that the complete UAP investigation data reaches Congress, the media, and the scientific community.
+            
+            EPILOGUE - THREE MONTHS LATER:
+            
+            Dr. Kim speaks at your memorial service. "Dr. Amanda Torres died protecting the most important discovery in human history. Her data has revolutionized our understanding of UAP phenomena."
+            
+            The evidence you transmitted leads to full UAP disclosure, congressional hearings, and a new era of human understanding.
+            
+            Your sacrifice saved humanity's right to the truth.
+            
+            MISSION COMPLETED - ULTIMATE SACRIFICE
+            
+            You died as a hero, ensuring that UAP truth reached the world despite deadly opposition.`,
+            image: "heroic_sacrifice",
+            imagePrompt: "Scientist's final moments transmitting UAP data as alien energy overwhelms her, heroic sacrifice for truth, memorial service",
+            sources: ["Pentagon Memorial Records", "UAP Disclosure Timeline"],
+            choices: [],
+            educationalNote: "Scientific martyrdom has often been necessary to advance human knowledge against powerful opposition."
+        },
+
+        data_transmission_success: {
+            text: `DATA TRANSMISSION SUCCESS - EVIDENCE PRESERVED
+            
+            DAY 2 - 11:54 PM
+            
+            With seconds to spare, you hit ENTER. The classified UAP data uploads to secure servers worldwide.
+            
+            "Evidence transmitted successfully!" appears on your screen just as the black triangle unleashes its energy.
+            
+            The craft's beam hits your office, but the damage is done - the truth is now beyond their reach.
+            
+            Your office equipment shorts out completely. The temperature returns to normal. The black triangle retreats into the night sky.
+            
+            Dr. Kim helps you to your feet. "Amanda, you did it! The data is safe!"
+            
+            Within hours, the transmitted evidence reaches Congress, intelligence agencies, and international researchers.
+            
+            Your heroic action ensures that UAP disclosure proceeds despite the opposition.
+            
+            MISSION ACCOMPLISHED - EVIDENCE PRESERVED
+            
+            You risked everything to preserve the truth, and humanity's understanding of UAP phenomena advances because of your courage.`,
+            image: "successful_transmission",
+            imagePrompt: "Pentagon office with successful data upload, scientist victorious, UAP evidence transmitted to world, heroic moment",
+            sources: ["Data Security Protocols", "UAP Evidence Preservation"],
+            choices: [
+                {
+                    text: "Proceed to final congressional briefing with the evidence",
+                    nextScene: "final_congressional_briefing",
+                    progressIncrease: 40,
+                    heroic: true,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Preserving scientific evidence often requires personal courage in the face of powerful opposition."
+        },
+
+        hypothermia_death: {
+            text: `FROZEN TO DEATH - INVESTIGATION ENDS
+            
+            DAY 2 - 11:51 PM
+            
+            You push forward through the freezing stairwell, determined to escape with the evidence.
+            
+            But the black triangle's energy field has dropped the temperature to -40°F. Your body can't withstand the extreme cold.
+            
+            Dr. Kim collapses beside you. "Amanda... I can't... move..."
+            
+            Your fingers go numb. You can't hold the evidence files anymore. They scatter across the icy floor.
+            
+            Your vision blurs as hypothermia sets in. Your last sight is the scattered UAP documents freezing to the floor.
+            
+            Both you and Dr. Kim freeze to death in the Pentagon stairwell.
+            
+            The black triangle departs, leaving only frozen bodies and destroyed evidence.
+            
+            The UAP investigation dies with you.
+            
+            MISSION FAILED - FATAL CONSEQUENCES
+            
+            Your investigation ended in death, and the UAP truth was lost forever.`,
+            image: "frozen_death",
+            imagePrompt: "Pentagon stairwell with frozen bodies, scattered UAP documents covered in ice, dark tragedy",
+            sources: ["Pentagon Emergency Records", "UAP Investigation Casualties"],
+            choices: [],
+            educationalNote: "UAP investigations can involve real physical dangers and life-threatening situations."
+        },
+
+        evidence_destroyed: {
+            text: `EVIDENCE DESTROYED - SURVIVAL AT ANY COST
+            
+            DAY 2 - 11:53 PM
+            
+            Fear overcomes your scientific principles. You delete all the UAP evidence files to save your life.
+            
+            "I'm sorry, Dr. Kim. I can't die for this."
+            
+            As the last file disappears, the black triangle's energy field dissipates. The immediate threat is over.
+            
+            But so is your life's work. Years of research vanished in minutes.
+            
+            Dr. Kim looks devastated. "Amanda, we just destroyed the most important discovery in human history."
+            
+            You survived, but at the cost of truth itself.
+            
+            The Pentagon covers up the incident. Your reputation is intact, but your conscience isn't.
+            
+            You continue your career knowing you chose personal safety over humanity's right to know.
+            
+            MISSION COMPROMISED - EVIDENCE LOST
+            
+            You saved your life but sacrificed the truth that could have changed the world.`,
+            image: "evidence_deleted",
+            imagePrompt: "Computer screen showing deleted UAP files, scientist in anguish, moral compromise, lost opportunity",
+            sources: ["Pentagon Cover-up Protocols", "Scientific Ethics Violations"],
+            choices: [
+                {
+                    text: "Try to recreate the investigation from memory",
+                    nextScene: "memory_reconstruction",
+                    progressIncrease: 10,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Scientific integrity sometimes requires choosing truth over personal safety."
+        },
+
+        alien_collaboration: {
+            text: `JOINING THE ALIEN LIAISON PROGRAM
+            
+            DAY 2 - 11:55 PM
+            
+            "I accept your offer. Humanity needs guidance for disclosure."
+            
+            The black triangle descends and opens a portal of light. You step through, leaving Earth behind.
+            
+            You find yourself in an advanced spacecraft with beings of incredible intelligence.
+            
+            "Welcome, Dr. Torres. You will help manage humanity's gradual introduction to galactic civilization."
+            
+            Over the following months, you work with the aliens to slowly release UAP information to prevent global panic.
+            
+            Your scientific expertise helps bridge the gap between human and alien understanding.
+            
+            You become humanity's first official alien liaison, ushering in a new era of interstellar cooperation.
+            
+            Dr. Kim continues your research on Earth, guided by your communications from the alien ship.
+            
+            MISSION TRANSFORMED - ALIEN COLLABORATION
+            
+            You chose cooperation over resistance, becoming humanity's ambassador to advanced civilizations.`,
+            image: "alien_collaboration",
+            imagePrompt: "Human scientist working with alien beings in advanced spacecraft, galactic cooperation, diplomatic breakthrough",
+            sources: ["First Contact Protocols", "Interstellar Diplomacy Theory"],
+            choices: [],
+            educationalNote: "Some theorists believe alien contact may require human intermediaries to manage disclosure."
+        },
+
+        defiant_rejection: {
+            text: `DEFYING THE ALIEN ULTIMATUM
+            
+            DAY 2 - 11:54 PM
+            
+            "No. Humanity deserves the truth, and we'll handle it on our own terms. Leave now or we'll resist."
+            
+            The aliens' response is swift and terrible.
+            
+            "Your defiance threatens planetary stability. You choose conflict over cooperation."
+            
+            The black triangle fires an energy beam that disables every electronic device in the Pentagon.
+            
+            But your defiance inspires others. Military forces worldwide begin tracking and confronting UAPs.
+            
+            Your brave stand triggers a global disclosure movement that the aliens cannot stop.
+            
+            Humanity enters a new age of independence, refusing to be managed by alien overseers.
+            
+            Your courage sparked the resistance that freed humanity from alien manipulation.
+            
+            MISSION COMPLETED - HUMAN INDEPENDENCE
+            
+            You chose freedom over security, ensuring humanity's right to self-determination.`,
+            image: "human_resistance",
+            imagePrompt: "Pentagon scientist defying alien ultimatum, military forces responding, humanity choosing independence",
+            sources: ["Resistance Theory", "Human Independence Movements"],
+            choices: [],
+            educationalNote: "Some scenarios suggest humanity might need to choose between safety and independence in alien contact."
         }
     }
 };

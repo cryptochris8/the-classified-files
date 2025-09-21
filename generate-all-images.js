@@ -15,6 +15,7 @@ require('./jfk-story-expanded.js');
 require('./uap-story-expanded.js');
 require('./hunter-biden-laptop-story-expanded.js');
 require('./september11-commission-expanded.js');
+require('./diddy-case-story-expanded.js');
 
 // Get the stories from the mocked window object
 const stories = {
@@ -22,7 +23,8 @@ const stories = {
     jfk: window.JFKStoryExpanded,
     uap: window.UAPStoryExpanded,
     hunterBiden: window.HunterBidenLaptopStoryExpanded,
-    september11: window.September11CommissionExpanded
+    september11: window.September11CommissionExpanded,
+    diddy: window.DiddyCaseStoryExpanded
 };
 
 async function generateAllImages() {

@@ -1,0 +1,170 @@
+{
+  "timestamp": "2025-08-06T02:18:18.644Z",
+  "totalFound": 109,
+  "alreadyExisting": 69,
+  "attempted": 40,
+  "successful": 40,
+  "failed": 0,
+  "results": [
+    {
+      "success": true,
+      "filename": "flight_risk_assessment.png"
+    },
+    {
+      "success": true,
+      "filename": "high_speed_federal_pursuit.png"
+    },
+    {
+      "success": true,
+      "filename": "independent_federal_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "entertainment_industry_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "industry_impact_assessment.png"
+    },
+    {
+      "success": true,
+      "filename": "interstate_commerce_analysis.png"
+    },
+    {
+      "success": true,
+      "filename": "journalist_undercover_operation.png"
+    },
+    {
+      "success": true,
+      "filename": "journalist_protection_detail.png"
+    },
+    {
+      "success": true,
+      "filename": "location_data_analysis_center.png"
+    },
+    {
+      "success": true,
+      "filename": "mann_act_legal_analysis.png"
+    },
+    {
+      "success": true,
+      "filename": "media_counterintelligence_center.png"
+    },
+    {
+      "success": true,
+      "filename": "missing_families_crisis_center.png"
+    },
+    {
+      "success": true,
+      "filename": "federal_mole_arrest.png"
+    },
+    {
+      "success": true,
+      "filename": "money_laundering_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "federal_office_break_in.png"
+    },
+    {
+      "success": true,
+      "filename": "offshore_banking_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "federal_operation_debriefing.png"
+    },
+    {
+      "success": true,
+      "filename": "hostage_rescue_operation.png"
+    },
+    {
+      "success": true,
+      "filename": "political_corruption_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "rico_predicate_acts_analysis.png"
+    },
+    {
+      "success": true,
+      "filename": "private_jet_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "property_network_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "prosecution_burden_analysis.png"
+    },
+    {
+      "success": true,
+      "filename": "prosecutor_office_security.png"
+    },
+    {
+      "success": true,
+      "filename": "protection_racket_investigation.png"
+    },
+    {
+      "success": true,
+      "filename": "r_kelly_case_comparison.png"
+    },
+    {
+      "success": true,
+      "filename": "rico_elements_checklist.png"
+    },
+    {
+      "success": true,
+      "filename": "rico_failure_analysis.png"
+    },
+    {
+      "success": true,
+      "filename": "federal_sentencing_analysis.png"
+    },
+    {
+      "success": true,
+      "filename": "evidence_recovery_operation.png"
+    },
+    {
+      "success": true,
+      "filename": "studio_negotiation_meeting.png"
+    },
+    {
+      "success": true,
+      "filename": "surveillance_evidence_center.png"
+    },
+    {
+      "success": true,
+      "filename": "trial_preparation_center.png"
+    },
+    {
+      "success": true,
+      "filename": "federal_mole_interrogation.png"
+    },
+    {
+      "success": true,
+      "filename": "federal_trial_verdict.png"
+    },
+    {
+      "success": true,
+      "filename": "international_criminal_network.png"
+    },
+    {
+      "success": true,
+      "filename": "witness_protection_analysis.png"
+    },
+    {
+      "success": true,
+      "filename": "witness_protection_operations.png"
+    },
+    {
+      "success": true,
+      "filename": "studio_siege_resolution.png"
+    },
+    {
+      "success": true,
+      "filename": "surveillance_deception_operation.png"
+    }
+  ]
+}
