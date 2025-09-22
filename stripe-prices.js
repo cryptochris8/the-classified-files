@@ -16,7 +16,7 @@ const StripePrices = {
     'snowden': 'price_your_snowden_price_id_here',
     'tuskegee': 'price_your_tuskegee_price_id_here',
     'paperclip': 'price_your_paperclip_price_id_here',
-    'diddy-case': 'price_your_diddy_case_price_id_here',
+    'diddy-case': 'price_1SA0B6PmM4NpiDNLKs5qANcY',
     
     // Bundle deals (optional)
     'all-cases': 'price_your_all_cases_bundle_price_id_here' // e.g., $39.99 for all cases
