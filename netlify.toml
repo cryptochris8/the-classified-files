@@ -1,6 +1,6 @@
 [build]
-  publish = "website-repo"
-  command = "echo 'Deploying marketing website'"
+  publish = "."
+  command = "echo 'Deploying unified Classified Files game'"
 
 [[headers]]
   for = "/*.js"
