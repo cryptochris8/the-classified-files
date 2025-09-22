@@ -1,5 +1,9 @@
 class PaymentSystem {
     constructor(stripePublishableKey) {
+        if (!stripePublishableKey) {
+            console.error('Stripe publishable key is required');
+            return;
+        }
         this.stripe = Stripe(stripePublishableKey);
         this.isUnlocked = this.checkUnlockStatus();
         this.setupEventListeners();
@@ -31,6 +35,24 @@ class PaymentSystem {
                 this.initiatePurchase(e.target.dataset.priceId);
             }
         });
+    }
+
+    // Create a purchase button for a specific case
+    createPurchaseButton(caseKey, caseName) {
+        const priceId = window.StripePrices ? window.StripePrices[caseKey] : null;
+        if (!priceId) {
+            console.error(`No price ID found for case: ${caseKey}`);
+            return null;
+        }
+
+        const button = document.createElement('button');
+        button.className = 'purchase-button';
+        button.dataset.priceId = priceId;
+        button.innerHTML = `
+            <span class="purchase-icon">💳</span>
+            <span class="purchase-text">Unlock ${caseName} - $4.99</span>
+        `;
+        return button;
     }
 
     async initiatePurchase(priceId) {
@@ -131,9 +153,9 @@ class PaymentSystem {
 
     shouldShowPurchasePrompt(caseId) {
         if (this.isUnlocked) return false;
-        
+
         // Free cases that don't require purchase
-        const freeCases = ['epstein-files', 'jfk-files'];
+        const freeCases = ['epstein-files', 'jfk-files', 'uap'];
         return !freeCases.includes(caseId);
     }
 

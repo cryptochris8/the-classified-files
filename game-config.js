@@ -35,6 +35,7 @@ const GameConfig = {
     releaseDates: {
         epstein: "Premium Content - $4.99",
         jfk: "Premium Content - $4.99",
+        uap: "FREE - Always Available",
         september11: "Premium Content - $4.99",
         hunterlaptop: "FREE - August 11, 2025",
         'diddy-case': "Premium Content - $4.99",
