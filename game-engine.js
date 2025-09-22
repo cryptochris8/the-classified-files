@@ -315,13 +315,24 @@ class GameEngine {
                 }
                 
                 // Set click handler
-                if (storyData.sealed) {
+                if (storyData.sealed === 'premium') {
+                    // Premium content - show purchase option
+                    const premiumBadge = document.createElement('span');
+                    premiumBadge.className = 'premium-badge';
+                    premiumBadge.textContent = 'PREMIUM';
+                    button.appendChild(premiumBadge);
+
+                    button.onclick = () => {
+                        this.playButtonClickSound();
+                        this.showPurchasePrompt(storyData);
+                    };
+                } else if (storyData.sealed === 'scheduled' || storyData.sealed === true) {
                     button.onclick = () => {
                         this.playButtonClickSound();
                         this.showSealedCaseMessage(storyData);
                     };
                 } else if (window.paymentSystem && window.paymentSystem.shouldShowPurchasePrompt(storyData.key)) {
-                    // Show premium badge
+                    // Legacy premium check (shouldn't reach here with proper config)
                     const premiumBadge = document.createElement('span');
                     premiumBadge.className = 'premium-badge';
                     premiumBadge.textContent = 'PREMIUM';
