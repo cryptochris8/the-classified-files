@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize speech controls
     game.setupSpeechControls();
+
+    // Payment system is initialized in payment-system.js
+    // No need to initialize here as it would override the proper initialization
     
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
