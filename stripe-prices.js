@@ -23,7 +23,7 @@ const StripePrices = {
 };
 
 // Stripe Publishable Key (safe to include in frontend)
-const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RYecJQ811jRCI3CC7qLYthQ1hrOYeos0OOTbcuWAyNuPB1n9MLe14ZM83TWdk25qPuQ5wVLFnnXDhi1e7ShIktT00soj2QyGX';
+const STRIPE_PUBLISHABLE_KEY = 'pk_live_51RsoBfPmM4NpiDNLUle3BIuWMyxeRthSGHync5nWsh0EL6wn7pUVhLjuvgMkxmg7i89OQ1H6W7RH9vr67ZouARVM00QATgHCQk';
 
 // Make available globally
 window.StripePrices = StripePrices;

@@ -159,7 +159,11 @@ class PaymentSystem {
         return !freeCases.includes(caseId);
     }
 
-    createPurchasePrompt(caseTitle) {
+    createPurchasePrompt(caseTitle, caseKey) {
+        // Get the specific price ID for this case
+        const priceId = window.StripePrices && window.StripePrices[caseKey];
+        const hasValidPriceId = priceId && !priceId.includes('price_your_');
+
         return `
             <div class="purchase-prompt">
                 <div class="purchase-content">
@@ -167,9 +171,13 @@ class PaymentSystem {
                     <p><strong>${caseTitle}</strong> is part of the full game.</p>
                     <p>Unlock all 13 premium case files with branching storylines, evidence collection, and multiple endings.</p>
                     <div class="price-options">
-                        <button class="purchase-button" data-price-id="price_1RsoPNQ811jRCI3CbzyowS6j">
-                            Purchase Full Game - $4.99
-                        </button>
+                        ${hasValidPriceId ?
+                            `<button class="purchase-button" data-price-id="${priceId}">
+                                Purchase ${caseTitle} - $4.99
+                            </button>` :
+                            `<p style="color: #ff6b6b;">⚠️ Payment not configured for this case yet.</p>
+                             <p style="font-size: 0.9em;">Please check back later or contact support.</p>`
+                        }
                     </div>
                     <small>Secure payment powered by Stripe</small>
                 </div>
@@ -201,12 +209,12 @@ class PaymentSystem {
 
 // Initialize payment system when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Replace with your actual Stripe publishable key
-    // You can get this from your Stripe Dashboard -> Developers -> API keys
-    const STRIPE_PUBLISHABLE_KEY = 'pk_test_51RYecJQ811jRCI3CC7qLYthQ1hrOYeos0OOTbcuWAyNuPB1n9MLe14ZM83TWdk25qPuQ5wVLFnnXDhi1e7ShIktT00soj2QyGX';
-    
-    if (STRIPE_PUBLISHABLE_KEY === 'pk_test_your_stripe_publishable_key_here') {
-        console.warn('⚠️ Please update the Stripe publishable key in payment-system.js');
+    // Get the Stripe publishable key from stripe-prices.js
+    // This key is loaded from stripe-prices.js which should be included before this file
+    if (typeof window.STRIPE_PUBLISHABLE_KEY === 'undefined' ||
+        window.STRIPE_PUBLISHABLE_KEY === 'pk_test_your_publishable_key_here' ||
+        window.STRIPE_PUBLISHABLE_KEY === 'pk_live_your_publishable_key_here') {
+        console.warn('⚠️ Please update the Stripe publishable key in stripe-prices.js');
         // For development, create a mock payment system
         window.paymentSystem = {
             isUnlocked: false,
@@ -223,6 +231,6 @@ document.addEventListener('DOMContentLoaded', function() {
             `
         };
     } else {
-        window.paymentSystem = new PaymentSystem(STRIPE_PUBLISHABLE_KEY);
+        window.paymentSystem = new PaymentSystem(window.STRIPE_PUBLISHABLE_KEY);
     }
 });

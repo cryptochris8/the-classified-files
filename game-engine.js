@@ -415,7 +415,7 @@ class GameEngine {
     
     showPurchasePrompt(storyData) {
         if (window.paymentSystem) {
-            const prompt = window.paymentSystem.createPurchasePrompt(storyData.name);
+            const prompt = window.paymentSystem.createPurchasePrompt(storyData.name, storyData.key);
             document.body.insertAdjacentHTML('beforeend', prompt);
             
             // Add close functionality for prompt
