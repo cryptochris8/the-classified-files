@@ -14,41 +14,41 @@ const GameConfig = {
     // Define which games should be sealed in production
     // In development, all games will be open regardless of this setting
     sealedGames: {
-        epstein: 'premium',     // Premium content - requires payment
-        jfk: 'premium',         // Premium content - requires payment
-        uap: false,             // FREE - Open in production
-        september11: 'premium', // Premium content - requires payment
-        hunterlaptop: 'scheduled', // FREE starting August 11, 2025
-        watergate: 'premium',   // Premium content - requires payment
-        'pentagon-papers': 'premium',  // Premium content - requires payment
-        mkultra: 'premium',     // Premium content - requires payment
-        'panama-papers': 'premium',    // Premium content - requires payment
-        'iran-contra': 'premium',      // Premium content - requires payment
-        cointelpro: 'premium',  // Premium content - requires payment
-        snowden: 'premium',     // Premium content - requires payment
-        tuskegee: 'premium',    // Premium content - requires payment
-        paperclip: 'premium',   // Premium content - requires payment
-        diddy: 'premium',       // Premium content - requires payment
-        'diddy-case': 'premium' // Premium content - requires payment
+        epstein: 'coming_soon',     // Coming Soon
+        jfk: 'coming_soon',         // Coming Soon
+        uap: false,                 // FREE - Open in production
+        september11: 'coming_soon', // Coming Soon
+        hunterlaptop: 'coming_soon', // Coming Soon
+        watergate: 'coming_soon',   // Coming Soon
+        'pentagon-papers': 'coming_soon',  // Coming Soon
+        mkultra: 'coming_soon',     // Coming Soon
+        'panama-papers': 'coming_soon',    // Coming Soon
+        'iran-contra': 'coming_soon',      // Coming Soon
+        cointelpro: 'coming_soon',  // Coming Soon
+        snowden: 'coming_soon',     // Coming Soon
+        tuskegee: 'coming_soon',    // Coming Soon
+        paperclip: 'coming_soon',   // Coming Soon
+        diddy: 'coming_soon',       // Coming Soon
+        'diddy-case': 'premium'     // Premium content - requires payment
     },
     
     // Release dates and pricing info
     releaseDates: {
-        epstein: "Premium Content - $4.99",
-        jfk: "Premium Content - $4.99",
-        september11: "Premium Content - $4.99",
-        hunterlaptop: "FREE - August 11, 2025",
-        diddy: "Premium Content - $4.99",
+        epstein: "Coming Soon",
+        jfk: "Coming Soon",
+        september11: "Coming Soon",
+        hunterlaptop: "Coming Soon",
+        diddy: "Coming Soon",
         'diddy-case': "Premium Content - $4.99",
-        watergate: "Premium Content - $4.99",
-        'pentagon-papers': "Premium Content - $4.99",
-        mkultra: "Premium Content - $4.99",
-        'panama-papers': "Premium Content - $4.99",
-        'iran-contra': "Premium Content - $4.99",
-        cointelpro: "Premium Content - $4.99",
-        snowden: "Premium Content - $4.99",
-        tuskegee: "Premium Content - $4.99",
-        paperclip: "Premium Content - $4.99"
+        watergate: "Coming Soon",
+        'pentagon-papers': "Coming Soon",
+        mkultra: "Coming Soon",
+        'panama-papers': "Coming Soon",
+        'iran-contra': "Coming Soon",
+        cointelpro: "Coming Soon",
+        snowden: "Coming Soon",
+        tuskegee: "Coming Soon",
+        paperclip: "Coming Soon"
     },
 
     // Scheduled release dates (for date-based unlocking)
@@ -80,6 +80,9 @@ const GameConfig = {
         } else if (sealStatus === 'premium') {
             console.log(`💰 Production mode: ${gameKey} is PREMIUM CONTENT`);
             return 'premium';
+        } else if (sealStatus === 'coming_soon') {
+            console.log(`🚧 Production mode: ${gameKey} is COMING SOON`);
+            return 'coming_soon';
         } else if (sealStatus === 'scheduled') {
             // Check if scheduled release date has passed
             const releaseDate = this.scheduledReleases[gameKey];
@@ -105,6 +108,11 @@ const GameConfig = {
     // Check if game is scheduled for future release
     isScheduledContent: function(gameKey) {
         return this.sealedGames[gameKey] === 'scheduled';
+    },
+
+    // Check if game is coming soon
+    isComingSoon: function(gameKey) {
+        return this.sealedGames[gameKey] === 'coming_soon';
     },
     
     // Get release date for a sealed game

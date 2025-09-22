@@ -124,8 +124,8 @@ class PaymentManager {
         // In production, you'll set this via environment variables
         // For now, return test key (you'll replace this)
         return this.isProduction ?
-            'pk_live_YOUR_ACTUAL_LIVE_KEY_HERE' :  // Replace with your pk_live_ key
-            'pk_test_YOUR_ACTUAL_TEST_KEY_HERE';   // Replace with your pk_test_ key
+            'pk_live_51RsoBfPmM4NpiDNLUle3BIuWMyxeRthSGHync5nWsh0EL6wn7pUVhLjuvgMkxmg7i89OQ1H6W7RH9vr67ZouARVM00QATgHCQk' :  // Your live key
+            'pk_test_51RsoBfPmM4NpiDNL6yYOgFbwKCsD4sojKMDpAM3MN6GEjRcQ8Ci7y7bsLOe7Y2u6kSwVJz2LCzfR4YtOIe5H4sZf00tVy9CQkH';   // Test key (if you have one)
     }
 
     // Check if user has purchased a case
@@ -242,7 +242,7 @@ const PaymentConfig = {
     // Change this to your deployed server URL when going live
     SERVER_URL: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
         ? 'http://localhost:3000'  // Local development
-        : 'https://your-server-url.railway.app', // Production (update after deployment)
+        : 'https://the-classified-files-production.up.railway.app', // Production Railway URL
 
     // Frontend URLs for redirects
     getSuccessUrl: () => {
