@@ -4,20 +4,33 @@
 require('dotenv').config();
 
 const express = require('express');
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY || 'sk_test_51RYecJQ811jRCI3CZlsVxvVkBmjt4s5X5YeN7xhRnqC7X8Ai2IjdrtV7wyV4Iw2bRln4nkkXRfd8ggljbkYDF4L400sE5It4du');
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+// Validate required environment variables
+if (!process.env.STRIPE_SECRET_KEY) {
+    console.error('❌ STRIPE_SECRET_KEY is required. Please add it to your .env file.');
+    process.exit(1);
+}
+
+console.log('✅ Stripe initialized with key:', process.env.STRIPE_SECRET_KEY.substring(0, 12) + '...');
 
 // CORS configuration for frontend
 const cors = require('cors');
 const corsOptions = {
     origin: [
         'https://cryptochris8.github.io',
+        /https:\/\/.*\.netlify\.app$/,  // Any Netlify subdomain
+        /https:\/\/.*\.netlify\.com$/,  // Any Netlify subdomain
         'http://localhost:8080',
         'http://localhost:3000',
         'http://127.0.0.1:8080'
+        // Add your custom domain here when you get one:
+        // 'https://declassified-files.com',
+        // 'https://www.declassified-files.com'
     ],
     credentials: true
 };
@@ -82,7 +95,7 @@ app.get('/verify-payment/:sessionId', async (req, res) => {
 // Webhook endpoint for Stripe events
 app.post('/webhook', express.raw({type: 'application/json'}), (req, res) => {
     const sig = req.headers['stripe-signature'];
-    const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_your_webhook_secret_here';
+    const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET;
 
     let event;
 
