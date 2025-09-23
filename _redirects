@@ -1,0 +1,14 @@
+# Netlify Redirects File
+# This file handles URL redirects and rewrites
+
+# API proxy to avoid CORS issues (if needed in future)
+# /api/* https://the-classified-files-production.up.railway.app/:splat 200
+
+# Handle SPA routing (if you add client-side routing later)
+# /* /index.html 200
+
+# Redirect www to non-www (when you add custom domain)
+# https://www.your-domain.com/* https://your-domain.com/:splat 301!
+
+# Force HTTPS
+# http://your-domain.com/* https://your-domain.com/:splat 301!

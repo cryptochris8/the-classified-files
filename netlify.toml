@@ -1,23 +1,79 @@
+# Netlify Configuration File
+# This file configures how Netlify builds and deploys your site
+
 [build]
-  publish = "website-repo"
-  command = "echo 'Deploying marketing website'"
+  # Directory to publish (the root directory with your HTML files)
+  publish = "."
+
+  # No build command needed since this is a static site
+  # command = "echo 'No build required'"
+
+[build.environment]
+  # Node version for any build tools (if needed in future)
+  NODE_VERSION = "18"
 
 [[headers]]
+  # Apply security headers to all routes
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Content Security Policy - adjust as needed
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com https://media.ethicalads.io;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      font-src 'self' https://fonts.gstatic.com;
+      img-src 'self' data: https: blob:;
+      connect-src 'self' https://the-classified-files-production.up.railway.app https://api.stripe.com;
+      frame-src https://js.stripe.com https://checkout.stripe.com;
+    """
+
+    # Cache control for static assets
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  # Long cache for images
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
+  # Long cache for audio files
+  for = "/audio/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, immutable"
+
+[[headers]]
+  # Cache JavaScript and CSS with versioning
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=31536000, immutable"
 
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=86400"
+    Cache-Control = "public, max-age=31536000, immutable"
 
-[[headers]]
-  for = "/audio/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
+# Redirect rules
+[[redirects]]
+  # Redirect Netlify subdomain to custom domain (when you add one)
+  # from = "https://your-site-name.netlify.app/*"
+  # to = "https://www.your-custom-domain.com/:splat"
+  # status = 301
+  # force = true
 
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=604800"
+# Branch deploy context
+[context.production]
+  # Production-specific environment variables can be set in Netlify UI
+  # These would include things like API keys that shouldn't be in the repo
+
+[context.deploy-preview]
+  # Settings for deploy previews (PRs)
+  # Could use test Stripe keys here if needed
+
+[context.branch-deploy]
+  # Settings for branch deploys
