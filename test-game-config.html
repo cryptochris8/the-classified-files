@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Configuration Test</title>
+</head>
+<body>
+    <h1>Game Configuration Test</h1>
+    <div id="results"></div>
+    
+    <script src="game-config.js"></script>
+    <script>
+        const games = [
+            'epstein', 'jfk', 'uap', 'september11', 'hunterlaptop',
+            'watergate', 'pentagon-papers', 'mkultra', 'panama-papers',
+            'iran-contra', 'cointelpro', 'snowden', 'tuskegee', 
+            'paperclip', 'diddy'
+        ];
+        
+        let html = '<h2>Production Mode Results:</h2>';
+        html += '<p>Current hostname: ' + window.location.hostname + '</p>';
+        html += '<p>Is Development: ' + GameConfig.isDevelopment() + '</p>';
+        html += '<table border="1" cellpadding="5">';
+        html += '<tr><th>Game</th><th>Sealed Status</th><th>Release Date</th></tr>';
+        
+        games.forEach(game => {
+            const sealed = GameConfig.isGameSealed(game);
+            const releaseDate = GameConfig.getReleaseDate(game);
+            const status = sealed ? '🔒 SEALED' : '🔓 OPEN';
+            const color = sealed ? 'red' : 'green';
+            
+            html += `<tr>
+                <td>${game}</td>
+                <td style="color: ${color}; font-weight: bold;">${status}</td>
+                <td>${releaseDate || 'Available Now'}</td>
+            </tr>`;
+        });
+        
+        html += '</table>';
+        
+        document.getElementById('results').innerHTML = html;
+    </script>
+</body>
+</html>

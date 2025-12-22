@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles.css?v=202508041700&force=fresh&fix=diddy">
     <link rel="stylesheet" href="game-help-styles.css?v=202508041700">
     <link rel="stylesheet" href="speech-styles.css?v=202508041700">
-    <link rel="stylesheet" href="payment-styles.css">
+    <link rel="stylesheet" href="payment-styles.css?v=202508041700">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     
     <!-- Stripe JS -->
@@ -82,6 +82,7 @@
             console.error('File:', e.filename, 'Line:', e.lineno);
         });
     </script>
+    <script src="payment-config.js?v=202508041700&force=fresh"></script>
     <script src="game-config.js?v=202508041700&force=fresh&fix=diddy"></script>
     <script src="game-engine.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
     <script src="mini-game-engine.js?v=202508041700&force=fresh&fix=diddy"></script>
@@ -101,8 +102,7 @@
     <script src="tuskegee-experiment-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="operation-paperclip-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="diddy-case-story-expanded.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
-    <script src="payment-config.js"></script>
-    <script src="payment-system.js"></script>
+    <script src="payment-system.js?v=202508041700"></script>
     <script src="main.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
     <script>
         console.log('🚨 DIDDY CASE DEBUG - START');
@@ -125,6 +125,7 @@
             Snowden: typeof SnowdenRevelationsStoryExpanded !== 'undefined',
             Tuskegee: typeof TuskegeeExperimentStoryExpanded !== 'undefined',
             Paperclip: typeof OperationPaperclipStoryExpanded !== 'undefined',
+            Diddy: typeof DiddyCaseStoryExpanded !== 'undefined',
             GameEngine: typeof GameEngine !== 'undefined'
         });
     </script>

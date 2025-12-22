@@ -315,7 +315,12 @@ class GameEngine {
                 }
                 
                 // Set click handler
-                if (storyData.sealed === 'premium') {
+                if (storyData.sealed === 'coming_soon') {
+                    button.onclick = () => {
+                        this.playButtonClickSound();
+                        this.showComingSoonMessage(storyData);
+                    };
+                } else if (storyData.sealed === 'premium') {
                     // Premium content - show purchase option
                     const premiumBadge = document.createElement('span');
                     premiumBadge.className = 'premium-badge';
@@ -326,21 +331,10 @@ class GameEngine {
                         this.playButtonClickSound();
                         this.showPurchasePrompt(storyData);
                     };
-                } else if (storyData.sealed === 'scheduled' || storyData.sealed === true) {
+                } else if (storyData.sealed) {
                     button.onclick = () => {
                         this.playButtonClickSound();
                         this.showSealedCaseMessage(storyData);
-                    };
-                } else if (window.paymentSystem && window.paymentSystem.shouldShowPurchasePrompt(storyData.key)) {
-                    // Legacy premium check (shouldn't reach here with proper config)
-                    const premiumBadge = document.createElement('span');
-                    premiumBadge.className = 'premium-badge';
-                    premiumBadge.textContent = 'PREMIUM';
-                    button.appendChild(premiumBadge);
-                    
-                    button.onclick = () => {
-                        this.playButtonClickSound();
-                        this.showPurchasePrompt(storyData);
                     };
                 } else {
                     button.onclick = () => {
@@ -362,10 +356,58 @@ class GameEngine {
         });
     }
     
+    showComingSoonMessage(storyData) {
+        // Clear current content
+        this.clearChoices();
+
+        // Show coming soon message
+        this.elements.storyText.innerHTML = `
+            <div class="coming-soon-message">
+                <div class="classified-stamp">🚧 COMING SOON</div>
+                <h2 style="color: #ffa500; text-align: center; margin: 30px 0;">CASE FILE IN DEVELOPMENT</h2>
+                <div class="coming-soon-info">
+                    <p><strong>Case File:</strong> ${storyData.name}</p>
+                    <p><strong>Status:</strong> Under Investigation</p>
+                    <p><strong>Expected Release:</strong> ${storyData.releaseDate}</p>
+                </div>
+                <div class="development-message">
+                    <p>This classified investigation is currently being developed by our research team.</p>
+                    <p>We're working hard to bring you the most accurate and engaging investigative experience.</p>
+                    <p>Stay tuned for updates on the release date!</p>
+                </div>
+
+                <!-- Newsletter signup or notification -->
+                <div class="notification-section">
+                    <h3>📧 GET NOTIFIED</h3>
+                    <p>Want to be notified when this case file is released?</p>
+                    <p>Follow our updates or bookmark this page to check back later.</p>
+                </div>
+            </div>
+        `;
+
+        // Add back button
+        setTimeout(() => {
+            const backButton = document.createElement('button');
+            backButton.className = 'choice-button';
+            backButton.textContent = '← Return to Case Selection';
+            backButton.onclick = () => this.startGame();
+
+            backButton.style.opacity = '0';
+            backButton.style.transform = 'translateY(20px)';
+            this.elements.choicesContainer.appendChild(backButton);
+
+            setTimeout(() => {
+                backButton.style.transition = 'all 0.5s ease';
+                backButton.style.opacity = '1';
+                backButton.style.transform = 'translateY(0)';
+            }, 100);
+        }, 1000);
+    }
+
     showSealedCaseMessage(storyData) {
         // Clear current content
         this.clearChoices();
-        
+
         // Show sealed case message
         this.elements.storyText.innerHTML = `
             <div class="sealed-case-message">
@@ -378,33 +420,48 @@ class GameEngine {
                     ${storyData.releaseDate ? `<p><strong>Estimated Release:</strong> ${storyData.releaseDate}</p>` : ''}
                 </div>
                 <div class="security-message">
-                    <p>This case file is currently sealed by order of the National Security Council. 
-                    Access requires appropriate security clearance and authorization.</p>
-                    <p>Please check back later for updates on case availability.</p>
+                    <p>This case file is currently sealed and requires purchase to access.</p>
+                    <p>Unlock this classified investigation with our secure payment system.</p>
                 </div>
-                
+
+                <!-- Purchase Section -->
+                <div class="purchase-section">
+                    <h3>🔓 UNLOCK ACCESS</h3>
+                    <p>Get immediate access to this classified investigation case file.</p>
+                    <ul class="purchase-benefits">
+                        <li>Complete investigative storyline</li>
+                        <li>Classified documents and evidence</li>
+                        <li>Interactive decision-making</li>
+                        <li>Educational content and sources</li>
+                        <li>Lifetime access</li>
+                    </ul>
+                    <button class="purchase-button" onclick="window.paymentManager.purchaseCase('${storyData.key}')">
+                        🔓 Unlock Case File <span class="price">$4.99</span>
+                    </button>
+                </div>
+
                 <!-- Ad placement for sealed cases -->
                 <div class="ad-container sealed-case-ad">
                     <div class="ad-label">SPONSORED CONTENT</div>
-                    <div data-ea-publisher="classified-files-game" 
+                    <div data-ea-publisher="classified-files-game"
                          data-ea-type="image"
                          data-ea-style="stickybox"
                          class="ethical-ad"></div>
                 </div>
             </div>
         `;
-        
+
         // Add back button
         setTimeout(() => {
             const backButton = document.createElement('button');
             backButton.className = 'choice-button';
             backButton.textContent = '← Return to Case Selection';
             backButton.onclick = () => this.startGame();
-            
+
             backButton.style.opacity = '0';
             backButton.style.transform = 'translateY(20px)';
             this.elements.choicesContainer.appendChild(backButton);
-            
+
             setTimeout(() => {
                 backButton.style.transition = 'all 0.5s ease';
                 backButton.style.opacity = '1';

@@ -7,8 +7,12 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(grep:*)",
+      "Bash(git log:*)",
+      "Bash(git stash show:*)",
+      "Bash(git checkout:*)",
       "Bash(node:*)",
-      "Bash(cp:*)"
+      "Bash(cp:*)",
+      "WebSearch"
     ],
     "deny": []
   }

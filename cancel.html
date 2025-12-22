@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Cancelled - Declassified</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <header id="game-header">
+            <h1 id="game-title">DECLASSIFIED</h1>
+            <div id="case-title">Purchase Cancelled</div>
+        </header>
+        
+        <main id="game-main">
+            <div id="cancel-content" style="text-align: center; padding: 40px;">
+                <div style="font-size: 72px; margin-bottom: 30px;">🔒</div>
+                <h2 style="color: #ff6b6b; margin-bottom: 20px;">ACCESS DENIED</h2>
+                <p style="color: #e0e0e0; margin-bottom: 30px; font-size: 18px;">
+                    Your purchase was cancelled. The classified case file remains sealed.
+                </p>
+                
+                <div style="background: rgba(44, 62, 80, 0.8); border: 2px solid #ff6b6b; border-radius: 12px; padding: 20px; margin: 20px auto; max-width: 500px;">
+                    <h3 style="color: #ff6b6b; margin-bottom: 15px;">What happened?</h3>
+                    <p style="color: #e0e0e0; font-size: 14px; margin-bottom: 10px;">
+                        • Payment was cancelled or interrupted<br>
+                        • No charges were made to your account<br>
+                        • Case file access remains restricted
+                    </p>
+                </div>
+                
+                <button onclick="returnToGame()" style="background: linear-gradient(135deg, #4ecdc4, #44a08d); color: white; border: none; padding: 15px 30px; border-radius: 8px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; cursor: pointer; font-size: 16px; margin-top: 20px;">
+                    🔙 Return to Case Selection
+                </button>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        function returnToGame() {
+            // Redirect back to main game
+            window.location.href = '/';
+        }
+        
+        // Auto-redirect after 8 seconds
+        setTimeout(() => {
+            returnToGame();
+        }, 8000);
+    </script>
+</body>
+</html>
