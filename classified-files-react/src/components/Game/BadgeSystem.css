@@ -1,0 +1,125 @@
+/* Badge Display */
+.badge-display {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(78, 205, 196, 0.2);
+  border: 1px solid rgba(78, 205, 196, 0.3);
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: help;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: rgba(78, 205, 196, 0.3);
+  transform: scale(1.1);
+}
+
+/* Badge Notification */
+.badge-notification {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.badge-earned {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+  border: 2px solid #4ecdc4;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(78, 205, 196, 0.2);
+}
+
+.badge-icon-large {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.5));
+}
+
+.badge-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.badge-label {
+  color: #4ecdc4;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.badge-name {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.badge-desc {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* Quiz Feedback */
+.quiz-feedback {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.quiz-feedback.correct {
+  background: rgba(78, 205, 196, 0.15);
+  border: 1px solid rgba(78, 205, 196, 0.3);
+}
+
+.quiz-feedback.partial {
+  background: rgba(255, 215, 0, 0.15);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.quiz-feedback.incorrect {
+  background: rgba(255, 107, 107, 0.15);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.feedback-icon {
+  font-size: 1.5rem;
+}
+
+.feedback-message {
+  color: #e0e0e0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .badge-notification {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+  .badge-earned {
+    padding: 1rem;
+  }
+
+  .badge-icon-large {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,134 @@
+.choice-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #2a2a3e 0%, #1e1e2e 100%);
+  border: 2px solid #4a6741;
+  color: #e0e0e0;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  position: relative;
+  gap: 0.75rem;
+}
+
+.choice-button:hover:not(.disabled) {
+  background: linear-gradient(135deg, #3a3a4e 0%, #2e2e3e 100%);
+  border-color: #5a8751;
+  box-shadow: 0 4px 12px rgba(74, 103, 65, 0.2);
+}
+
+.choice-button:active:not(.disabled) {
+  transform: scale(0.98);
+}
+
+/* Disabled state */
+.choice-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Visited state */
+.choice-button.visited {
+  opacity: 0.7;
+  border-style: dashed;
+}
+
+.choice-button.visited:hover:not(.disabled) {
+  opacity: 0.85;
+}
+
+/* Factual choice */
+.choice-button.factual {
+  border-color: #4ecdc4;
+}
+
+.choice-button.factual:hover:not(.disabled) {
+  border-color: #6ee6de;
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.2);
+}
+
+/* Quiz choice */
+.choice-button.quiz {
+  border-color: #9f94ff;
+}
+
+.choice-button.quiz:hover:not(.disabled) {
+  border-color: #b8afff;
+  box-shadow: 0 4px 12px rgba(159, 148, 255, 0.2);
+}
+
+/* Number indicator */
+.choice-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.choice-button:hover:not(.disabled) .choice-number {
+  background: rgba(255, 255, 255, 0.2);
+  color: #b0b0b0;
+}
+
+/* Type indicator */
+.choice-indicator {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.choice-indicator.standard {
+  color: #4a6741;
+}
+
+.choice-indicator.factual {
+  color: #4ecdc4;
+}
+
+.choice-indicator.quiz {
+  color: #9f94ff;
+}
+
+/* Choice text */
+.choice-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* Evidence badge */
+.evidence-badge {
+  font-size: 1rem;
+  margin-left: 0.5rem;
+  opacity: 0.8;
+}
+
+/* Visited indicator */
+.visited-indicator {
+  color: #666;
+  font-size: 0.9rem;
+  margin-left: 0.5rem;
+}
+
+/* Has evidence indicator glow */
+.choice-button.has-evidence::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, transparent 60%, rgba(78, 205, 196, 0.1));
+  pointer-events: none;
+}

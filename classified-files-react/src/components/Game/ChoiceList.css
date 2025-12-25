@@ -1,0 +1,33 @@
+.choice-list {
+  margin-top: 2rem;
+}
+
+.choice-prompt {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.choices-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.keyboard-hint {
+  color: #555;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .choice-list {
+    margin-top: 1.5rem;
+  }
+
+  .keyboard-hint {
+    display: none;
+  }
+}

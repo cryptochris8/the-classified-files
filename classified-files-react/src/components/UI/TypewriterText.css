@@ -1,0 +1,45 @@
+.typewriter-text {
+  cursor: pointer;
+  user-select: none;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.typewriter-text.typing {
+  cursor: pointer;
+}
+
+.typewriter-paragraph {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  animation: blink 0.7s infinite;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.skip-hint {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+  font-style: italic;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.typewriter-text:hover .skip-hint {
+  opacity: 1;
+}
