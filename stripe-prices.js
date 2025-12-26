@@ -2,23 +2,22 @@
 // Update these with your actual price IDs from Stripe Dashboard
 
 const StripePrices = {
-    // Premium Cases - $4.99 each
-    // Replace these price IDs with your actual ones from Stripe Dashboard
-    'epstein': 'price_your_epstein_price_id_here',
-    'jfk': 'price_your_jfk_price_id_here', 
-    'september11': 'price_your_september11_price_id_here',
-    'watergate': 'price_your_watergate_price_id_here',
-    'pentagon-papers': 'price_your_pentagon_papers_price_id_here',
-    'mkultra': 'price_your_mkultra_price_id_here',
-    'panama-papers': 'price_your_panama_papers_price_id_here',
-    'iran-contra': 'price_your_iran_contra_price_id_here',
-    'cointelpro': 'price_your_cointelpro_price_id_here',
-    'snowden': 'price_your_snowden_price_id_here',
-    'tuskegee': 'price_your_tuskegee_price_id_here',
-    'paperclip': 'price_your_paperclip_price_id_here',
+    // Premium Cases - $4.99 each - ALL CONFIGURED ✅
+    'epstein': 'price_1Si6m0PmM4NpiDNLMSLjKv2g',
+    'jfk': 'price_1Si6okPmM4NpiDNLIGyIv6CW',
+    'september11': 'price_1Si6rkPmM4NpiDNLuFyr9nuw',
+    'watergate': 'price_1Si6zBPmM4NpiDNL2xT7wsRO',
+    'pentagon-papers': 'price_1Si74mPmM4NpiDNLWQyr31Br',
+    'mkultra': 'price_1Si7C1PmM4NpiDNLlx7e7EaY',
+    'panama-papers': 'price_1Si7HwPmM4NpiDNLomHwUPrq',
+    'iran-contra': 'price_1Si7W0PmM4NpiDNLIdY3RTTU',
+    'cointelpro': 'price_1Si7bJPmM4NpiDNLQNhLYht5',
+    'snowden': 'price_1Si7coPmM4NpiDNLVCwptqiF',
+    'tuskegee': 'price_1Si7eIPmM4NpiDNLGcb5LNYo',
+    'paperclip': 'price_1Si7fdPmM4NpiDNLoSdt541g',
     'diddy-case': 'price_1SA0B6PmM4NpiDNLKs5qANcY',
-    
-    // Bundle deals (optional)
+
+    // Bundle deals (optional - configure later if needed)
     'all-cases': 'price_your_all_cases_bundle_price_id_here' // e.g., $39.99 for all cases
 };
 

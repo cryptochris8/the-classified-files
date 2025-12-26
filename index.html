@@ -19,7 +19,13 @@
     
     <!-- Stripe JS -->
     <script src="https://js.stripe.com/v3/"></script>
-    
+
+    <!-- DOMPurify for XSS Protection -->
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+
+    <!-- Google Analytics 4 -->
+    <script src="analytics.js?v=202512241800"></script>
+
     <!-- EthicalAds Integration -->
     <script async src="https://media.ethicalads.io/media/client/ethicalads.min.js"></script>
 </head>
@@ -82,6 +88,8 @@
             console.error('File:', e.filename, 'Line:', e.lineno);
         });
     </script>
+    <!-- DOM Utilities for Safe HTML Rendering -->
+    <script src="dom-utils.js?v=202512241800"></script>
     <script src="payment-config.js?v=202508041700&force=fresh"></script>
     <script src="game-config.js?v=202508041700&force=fresh&fix=diddy"></script>
     <script src="game-engine.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>

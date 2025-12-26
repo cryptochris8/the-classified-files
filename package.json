@@ -4,22 +4,38 @@
   "description": "A text-based investigative game exploring classified document cases",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js",
+    "start": "node server-secure.js",
+    "dev": "node server-secure.js",
+    "legacy": "node server.js",
     "static": "npx http-server -p 8080 -o",
     "build": "echo 'Static site - no build step required'",
-    "test": "echo 'No tests configured'"
+    "test": "echo 'No tests configured'",
+    "optimize-images": "node optimize-images.js",
+    "update-image-refs": "node update-image-refs.js",
+    "validate-stripe": "node validate-stripe-setup.js",
+    "generate-jwt-secret": "node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\""
   },
-  "keywords": ["game", "investigation", "interactive", "text-based"],
+  "keywords": [
+    "game",
+    "investigation",
+    "interactive",
+    "text-based"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.18.2",
-    "stripe": "^14.21.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3"
+    "dompurify": "^3.3.1",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.2.1",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "stripe": "^14.21.0"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "sharp": "^0.34.5"
   }
 }

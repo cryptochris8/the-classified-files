@@ -12,7 +12,19 @@
       "Bash(git checkout:*)",
       "Bash(node:*)",
       "Bash(cp:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(dir /s /b \"D:\\the-classified-files\")",
+      "Bash(npm install)",
+      "Bash(tree:*)",
+      "Bash(npm run build:*)",
+      "Bash(git -C \"D:\\the-classified-files\" log --oneline)",
+      "Bash(npm install:*)",
+      "Bash(npm run validate-stripe:*)",
+      "Bash(npm run generate-jwt-secret:*)",
+      "Bash(npm start)",
+      "Bash(curl:*)",
+      "Bash(cat:*)",
+      "Bash(npm run optimize-images:*)"
     ],
     "deny": []
   }
