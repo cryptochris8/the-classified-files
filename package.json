@@ -2,7 +2,7 @@
   "name": "declassified",
   "version": "1.0.0",
   "description": "A text-based investigative game exploring classified document cases",
-  "main": "server.js",
+  "main": "server-secure.js",
   "scripts": {
     "start": "node server-secure.js",
     "dev": "node server-secure.js",

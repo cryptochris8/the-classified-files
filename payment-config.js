@@ -247,7 +247,7 @@ const PaymentConfig = {
             return 'http://localhost:3000';  // Local development
         } else {
             // Production: works for both Netlify domains and custom domains
-            return 'https://the-classified-files-production.up.railway.app';
+            return 'https://the-classified-files-production-1c78.up.railway.app';
         }
     })(),
 
