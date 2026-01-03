@@ -9,96 +9,97 @@ class PaymentManager {
                            window.location.hostname !== '127.0.0.1';
 
         // Product configurations with prices and Stripe price IDs
+        // Now using actual price IDs from stripe-prices.js (loaded via index.html)
         this.products = {
             epstein: {
                 name: "Epstein Investigation",
                 price: 4.99,
                 description: "Access the classified Epstein investigation files",
-                priceId: this.isProduction ? 'price_live_epstein' : 'price_test_epstein'
+                priceId: window.StripePrices?.epstein || 'price_1Si6m0PmM4NpiDNLMSLjKv2g'
             },
             jfk: {
                 name: "JFK Assassination Files",
                 price: 4.99,
                 description: "Declassified documents from the JFK assassination investigation",
-                priceId: this.isProduction ? 'price_live_jfk' : 'price_test_jfk'
+                priceId: window.StripePrices?.jfk || 'price_1Si6okPmM4NpiDNLIGyIv6CW'
             },
             september11: {
                 name: "9/11 Commission Investigation",
                 price: 4.99,
                 description: "Classified 9/11 investigation documents and testimonies",
-                priceId: this.isProduction ? 'price_live_september11' : 'price_test_september11'
+                priceId: window.StripePrices?.september11 || 'price_1Si6rkPmM4NpiDNLuFyr9nuw'
             },
             hunterlaptop: {
                 name: "Hunter Biden Laptop Investigation",
                 price: 4.99,
                 description: "Forensic analysis of the Hunter Biden laptop controversy",
-                priceId: this.isProduction ? 'price_live_hunterlaptop' : 'price_test_hunterlaptop'
+                priceId: window.StripePrices?.hunterlaptop || 'price_test_hunterlaptop'
             },
             watergate: {
                 name: "Watergate Files",
                 price: 4.99,
                 description: "Complete Watergate scandal investigation documents",
-                priceId: this.isProduction ? 'price_live_watergate' : 'price_test_watergate'
+                priceId: window.StripePrices?.watergate || 'price_1Si6zBPmM4NpiDNL2xT7wsRO'
             },
             'pentagon-papers': {
                 name: "Pentagon Papers",
                 price: 4.99,
                 description: "The classified Pentagon Papers leak investigation",
-                priceId: this.isProduction ? 'price_live_pentagon_papers' : 'price_test_pentagon_papers'
+                priceId: window.StripePrices?.['pentagon-papers'] || 'price_1Si74mPmM4NpiDNLWQyr31Br'
             },
             mkultra: {
                 name: "MKUltra Files",
                 price: 4.99,
                 description: "Declassified CIA MKUltra mind control experiments",
-                priceId: this.isProduction ? 'price_live_mkultra' : 'price_test_mkultra'
+                priceId: window.StripePrices?.mkultra || 'price_1Si7C1PmM4NpiDNLlx7e7EaY'
             },
             'panama-papers': {
                 name: "Panama Papers",
                 price: 4.99,
                 description: "International financial corruption investigation",
-                priceId: this.isProduction ? 'price_live_panama_papers' : 'price_test_panama_papers'
+                priceId: window.StripePrices?.['panama-papers'] || 'price_1Si7HwPmM4NpiDNLomHwUPrq'
             },
             'iran-contra': {
                 name: "Iran-Contra Affair",
                 price: 4.99,
                 description: "Reagan administration scandal investigation files",
-                priceId: this.isProduction ? 'price_live_iran_contra' : 'price_test_iran_contra'
+                priceId: window.StripePrices?.['iran-contra'] || 'price_1Si7W0PmM4NpiDNLIdY3RTTU'
             },
             cointelpro: {
                 name: "COINTELPRO Files",
                 price: 4.99,
                 description: "FBI surveillance and infiltration program documents",
-                priceId: this.isProduction ? 'price_live_cointelpro' : 'price_test_cointelpro'
+                priceId: window.StripePrices?.cointelpro || 'price_1Si7bJPmM4NpiDNLQNhLYht5'
             },
             snowden: {
                 name: "Snowden Revelations",
                 price: 4.99,
                 description: "NSA surveillance program leaked documents",
-                priceId: this.isProduction ? 'price_live_snowden' : 'price_test_snowden'
+                priceId: window.StripePrices?.snowden || 'price_1Si7coPmM4NpiDNLVCwptqiF'
             },
             tuskegee: {
                 name: "Tuskegee Experiment",
                 price: 4.99,
                 description: "Unethical medical experiment investigation files",
-                priceId: this.isProduction ? 'price_live_tuskegee' : 'price_test_tuskegee'
+                priceId: window.StripePrices?.tuskegee || 'price_1Si7eIPmM4NpiDNLGcb5LNYo'
             },
             paperclip: {
                 name: "Operation Paperclip",
                 price: 4.99,
                 description: "Nazi scientist recruitment program documents",
-                priceId: this.isProduction ? 'price_live_paperclip' : 'price_test_paperclip'
+                priceId: window.StripePrices?.paperclip || 'price_1Si7fdPmM4NpiDNLoSdt541g'
             },
             diddy: {
                 name: "Diddy Federal Case",
                 price: 4.99,
                 description: "Federal RICO investigation files and evidence",
-                priceId: this.isProduction ? 'price_live_diddy' : 'price_test_diddy'
+                priceId: window.StripePrices?.['diddy-case'] || 'price_1SA0B6PmM4NpiDNLKs5qANcY'
             },
             'diddy-case': {
                 name: "Diddy Federal Case",
                 price: 4.99,
                 description: "Federal RICO investigation files and evidence",
-                priceId: this.isProduction ? 'price_live_diddy' : 'price_test_diddy'
+                priceId: window.StripePrices?.['diddy-case'] || 'price_1SA0B6PmM4NpiDNLKs5qANcY'
             }
         };
 

@@ -218,10 +218,10 @@ app.post('/create-checkout-session',
             .matches(/^price_[a-zA-Z0-9]+$/)
             .withMessage('Invalid price ID format'),
         body('successUrl')
-            .isURL({ protocols: ['http', 'https'] })
+            .isURL({ protocols: ['http', 'https'], require_tld: false })
             .withMessage('Invalid success URL'),
         body('cancelUrl')
-            .isURL({ protocols: ['http', 'https'] })
+            .isURL({ protocols: ['http', 'https'], require_tld: false })
             .withMessage('Invalid cancel URL'),
     ],
     handleValidationErrors,
