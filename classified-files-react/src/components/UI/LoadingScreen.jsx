@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './LoadingScreen.css'
 
@@ -23,6 +23,7 @@ export function LoadingScreen({
   const [messageIndex, setMessageIndex] = useState(0)
   const [progress, setProgress] = useState(0)
   const [canDismiss, setCanDismiss] = useState(false)
+  const hasCompleted = useRef(false)
 
   // Cycle through loading messages
   useEffect(() => {
@@ -61,9 +62,10 @@ export function LoadingScreen({
     return () => clearTimeout(timer)
   }, [minDisplayTime])
 
-  // Call onComplete when loading is done
+  // Call onComplete when loading is done (only once)
   useEffect(() => {
-    if (canDismiss && progress >= 100) {
+    if (canDismiss && progress >= 100 && !hasCompleted.current) {
+      hasCompleted.current = true
       const timer = setTimeout(onComplete, 500)
       return () => clearTimeout(timer)
     }

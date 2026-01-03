@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { GameProvider } from '@contexts/GameContext'
+import { AudioProvider } from '@contexts/AudioContext'
 import AppRouter from '@routes/index'
 import './App.css'
 
@@ -18,11 +19,13 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <GameProvider>
-        <div className="app">
-          <AppRouter />
-        </div>
-      </GameProvider>
+      <AudioProvider>
+        <GameProvider>
+          <div className="app">
+            <AppRouter />
+          </div>
+        </GameProvider>
+      </AudioProvider>
     </QueryClientProvider>
   )
 }

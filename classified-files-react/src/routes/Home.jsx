@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import LoadingScreen from '@components/UI/LoadingScreen'
@@ -8,9 +8,9 @@ export function Home() {
   const [showLoading, setShowLoading] = useState(true)
   const navigate = useNavigate()
 
-  const handleLoadingComplete = () => {
+  const handleLoadingComplete = useCallback(() => {
     setShowLoading(false)
-  }
+  }, [])
 
   const handleStartGame = () => {
     navigate('/cases')
