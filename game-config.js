@@ -14,22 +14,22 @@ const GameConfig = {
     // Define which games should be sealed in production
     // In development, all games will be open regardless of this setting
     sealedGames: {
-        epstein: 'coming_soon',     // Coming Soon
-        jfk: 'coming_soon',         // Coming Soon
+        epstein: 'premium',         // Premium - $4.99
+        jfk: 'premium',             // Premium - $4.99
         uap: false,                 // FREE - Open in production
-        september11: 'coming_soon', // Coming Soon
-        hunterlaptop: 'coming_soon', // Coming Soon
-        watergate: 'coming_soon',   // Coming Soon
-        'pentagon-papers': 'coming_soon',  // Coming Soon
-        mkultra: 'coming_soon',     // Coming Soon
-        'panama-papers': 'coming_soon',    // Coming Soon
-        'iran-contra': 'coming_soon',      // Coming Soon
-        cointelpro: 'coming_soon',  // Coming Soon
-        snowden: 'coming_soon',     // Coming Soon
-        tuskegee: 'coming_soon',    // Coming Soon
-        paperclip: 'coming_soon',   // Coming Soon
-        diddy: 'coming_soon',       // Coming Soon
-        'diddy-case': 'premium'     // Premium content - requires payment
+        september11: 'premium',     // Premium - $4.99
+        hunterlaptop: 'premium',    // Premium - $4.99
+        watergate: 'premium',       // Premium - $4.99
+        'pentagon-papers': 'premium',  // Premium - $4.99
+        mkultra: 'premium',         // Premium - $4.99
+        'panama-papers': 'premium',    // Premium - $4.99
+        'iran-contra': 'premium',      // Premium - $4.99
+        cointelpro: 'premium',      // Premium - $4.99
+        snowden: 'premium',         // Premium - $4.99
+        tuskegee: 'premium',        // Premium - $4.99
+        paperclip: 'premium',       // Premium - $4.99
+        diddy: 'premium',           // Premium - $4.99
+        'diddy-case': 'premium'     // Premium - $4.99
     },
     
     // Release dates and pricing info

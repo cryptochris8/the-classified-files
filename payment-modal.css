@@ -203,6 +203,60 @@
     background: rgba(255, 107, 107, 0.7);
 }
 
+/* Case-specific modal styles */
+.case-highlight {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 107, 107, 0.05) 100%);
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.case-highlight h3 {
+    color: #ff6b6b;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+}
+
+.case-highlight p {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.upgrade-option {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 12px;
+}
+
+.upgrade-option p {
+    color: #10b981;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.purchase-button-secondary {
+    width: 100%;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.3);
+}
+
+.purchase-button-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .purchase-modal-content {
@@ -218,12 +272,17 @@
         font-size: 2.5rem;
     }
 
-    .purchase-button-primary {
+    .purchase-button-primary,
+    .purchase-button-secondary {
         padding: 15px 30px;
         font-size: 1rem;
     }
 
     .case-list {
         max-height: 250px;
+    }
+
+    .case-highlight h3 {
+        font-size: 1.1rem;
     }
 }

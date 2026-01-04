@@ -209,11 +209,81 @@ class PaymentSystem {
     // Show purchase modal if coming from marketing site
     showPurchaseModalIfRequested() {
         const urlParams = new URLSearchParams(window.location.search);
+        const caseParam = urlParams.get('case');
+
         if (urlParams.get('purchase') === 'true' && !this.isUnlocked) {
             // Wait a bit for the page to load
             setTimeout(() => {
-                this.showAllCasesPurchaseModal();
+                if (caseParam) {
+                    // Show case-specific purchase modal
+                    this.showCaseSpecificPurchaseModal(caseParam);
+                } else {
+                    // Show all cases purchase modal
+                    this.showAllCasesPurchaseModal();
+                }
             }, 500);
+        }
+    }
+
+    // Show purchase modal for a specific case
+    showCaseSpecificPurchaseModal(caseKey) {
+        const caseNames = {
+            'diddy': 'Diddy Federal Case',
+            'diddy-case': 'Diddy Federal Case',
+            'epstein': 'The Epstein Files',
+            'jfk': 'JFK Assassination Files',
+            'watergate': 'Watergate Files',
+            'september11': '9/11 Commission Files',
+            'hunterlaptop': 'Hunter Biden Laptop Investigation',
+            'pentagon-papers': 'Pentagon Papers',
+            'mkultra': 'MKUltra Files',
+            'panama-papers': 'Panama Papers',
+            'iran-contra': 'Iran-Contra Affair',
+            'cointelpro': 'COINTELPRO Files',
+            'snowden': 'Snowden Revelations',
+            'tuskegee': 'Tuskegee Experiment',
+            'paperclip': 'Operation Paperclip'
+        };
+
+        const caseName = caseNames[caseKey] || 'Premium Case';
+
+        const modal = document.createElement('div');
+        modal.className = 'purchase-modal';
+        modal.innerHTML = `
+            <div class="purchase-modal-overlay" onclick="this.parentElement.remove()"></div>
+            <div class="purchase-modal-content">
+                <button class="modal-close" onclick="this.closest('.purchase-modal').remove()">✕</button>
+                <h2>🔓 Unlock ${caseName}</h2>
+                <p>Get lifetime access to this premium investigation case</p>
+                <div class="case-highlight">
+                    <h3>${caseName}</h3>
+                    <p>Immersive investigation with branching storylines, evidence collection, and multiple endings based on verified facts and official documents.</p>
+                </div>
+                <div class="price-display">
+                    <span class="price">$4.99</span>
+                    <span class="price-description">One-time purchase • Lifetime access</span>
+                </div>
+                <button class="purchase-button-primary" data-price-id="${window.StripePrices?.premium || ''}">
+                    Purchase ${caseName} Now
+                </button>
+                <div class="upgrade-option">
+                    <p><strong>Or get ALL 14 premium cases for the same price!</strong></p>
+                    <button class="purchase-button-secondary" onclick="this.closest('.purchase-modal').remove(); window.paymentSystem.showAllCasesPurchaseModal();">
+                        View All Cases Bundle
+                    </button>
+                </div>
+                <small>Secure payment powered by Stripe • 100% verified facts • Educational content</small>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Add event listener to purchase button
+        const purchaseBtn = modal.querySelector('.purchase-button-primary');
+        if (purchaseBtn && purchaseBtn.dataset.priceId) {
+            purchaseBtn.addEventListener('click', () => {
+                this.initiatePurchase(purchaseBtn.dataset.priceId);
+            });
         }
     }
 
