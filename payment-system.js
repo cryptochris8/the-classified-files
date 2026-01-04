@@ -188,22 +188,81 @@ class PaymentSystem {
     // Utility method to check if specific content should be locked
     isContentLocked(contentType, contentId) {
         if (this.isUnlocked) return false;
-        
+
         // Define what content is free vs premium
         const freeContent = {
             cases: ['epstein-files', 'jfk-files'],
             scenes: ['intro', 'case-selection', 'demo']
         };
-        
+
         if (contentType === 'case') {
             return !freeContent.cases.includes(contentId);
         }
-        
+
         if (contentType === 'scene') {
             return !freeContent.scenes.includes(contentId);
         }
-        
+
         return false;
+    }
+
+    // Show purchase modal if coming from marketing site
+    showPurchaseModalIfRequested() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('purchase') === 'true' && !this.isUnlocked) {
+            // Wait a bit for the page to load
+            setTimeout(() => {
+                this.showAllCasesPurchaseModal();
+            }, 500);
+        }
+    }
+
+    // Show a modal to purchase all premium cases
+    showAllCasesPurchaseModal() {
+        const modal = document.createElement('div');
+        modal.className = 'purchase-modal';
+        modal.innerHTML = `
+            <div class="purchase-modal-overlay" onclick="this.parentElement.remove()"></div>
+            <div class="purchase-modal-content">
+                <button class="modal-close" onclick="this.closest('.purchase-modal').remove()">✕</button>
+                <h2>🔓 Unlock All Premium Cases</h2>
+                <p>Get access to all 14 premium investigation cases:</p>
+                <ul class="case-list">
+                    <li>✓ Diddy Federal Case (RICO thriller)</li>
+                    <li>✓ Epstein Files</li>
+                    <li>✓ JFK Assassination Files</li>
+                    <li>✓ Watergate Files</li>
+                    <li>✓ 9/11 Commission Files</li>
+                    <li>✓ Hunter Biden Laptop Investigation</li>
+                    <li>✓ Pentagon Papers</li>
+                    <li>✓ MKUltra Files</li>
+                    <li>✓ Panama Papers</li>
+                    <li>✓ Iran-Contra Affair</li>
+                    <li>✓ COINTELPRO Files</li>
+                    <li>✓ Snowden Revelations</li>
+                    <li>✓ Tuskegee Experiment</li>
+                    <li>✓ Operation Paperclip</li>
+                </ul>
+                <div class="price-display">
+                    <span class="price">$4.99</span>
+                    <span class="price-description">One-time purchase • Lifetime access</span>
+                </div>
+                <button class="purchase-button-primary" data-price-id="${window.StripePrices?.premium || ''}">
+                    Purchase All Cases Now
+                </button>
+                <small>Secure payment powered by Stripe • 100% verified facts • Educational content</small>
+            </div>
+        `;
+
+        document.body.appendChild(modal);
+
+        // Add event listener to purchase button
+        const purchaseBtn = modal.querySelector('.purchase-button-primary');
+        if (purchaseBtn && purchaseBtn.dataset.priceId) {
+            purchaseBtn.addEventListener('click', () => {
+                this.initiatePurchase(purchaseBtn.dataset.priceId);
+            });
+        }
     }
 }
 
@@ -228,9 +287,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button onclick="this.closest('.purchase-prompt').remove()">Close</button>
                     </div>
                 </div>
-            `
+            `,
+            showPurchaseModalIfRequested: () => {}
         };
     } else {
         window.paymentSystem = new PaymentSystem(window.STRIPE_PUBLISHABLE_KEY);
+        // Check if we should show purchase modal
+        window.paymentSystem.showPurchaseModalIfRequested();
     }
 });

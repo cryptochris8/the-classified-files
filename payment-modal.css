@@ -1,0 +1,229 @@
+/* Purchase Modal Styles */
+.purchase-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.purchase-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.purchase-modal-content {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 2px solid #ff6b6b;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(255, 107, 107, 0.3),
+                0 0 40px rgba(255, 107, 107, 0.2);
+    animation: slideUp 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: #999;
+    font-size: 28px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    transform: rotate(90deg);
+}
+
+.purchase-modal-content h2 {
+    font-size: 2rem;
+    color: #ff6b6b;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+}
+
+.purchase-modal-content > p {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.case-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+    max-height: 300px;
+    overflow-y: auto;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.case-list li {
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, rgba(255, 107, 107, 0.1) 0%, transparent 100%);
+    border-left: 3px solid #ff6b6b;
+    border-radius: 6px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.case-list li:hover {
+    background: linear-gradient(90deg, rgba(255, 107, 107, 0.2) 0%, transparent 100%);
+    transform: translateX(5px);
+}
+
+.price-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 107, 107, 0.05) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.price {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ff6b6b;
+    line-height: 1;
+    text-shadow: 0 0 30px rgba(255, 107, 107, 0.5);
+}
+
+.price-description {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.purchase-button-primary {
+    width: 100%;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.purchase-button-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(135deg, #ff7b7b 0%, #ff6a7f 100%);
+}
+
+.purchase-button-primary:active {
+    transform: translateY(-1px);
+}
+
+.purchase-modal-content small {
+    display: block;
+    text-align: center;
+    color: #888;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar styling for case list */
+.case-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.case-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.case-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 107, 107, 0.5);
+    border-radius: 10px;
+}
+
+.case-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 107, 107, 0.7);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .purchase-modal-content {
+        padding: 30px 20px;
+        max-height: 95vh;
+    }
+
+    .purchase-modal-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .purchase-button-primary {
+        padding: 15px 30px;
+        font-size: 1rem;
+    }
+
+    .case-list {
+        max-height: 250px;
+    }
+}
