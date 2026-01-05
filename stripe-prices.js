@@ -16,6 +16,7 @@ const StripePrices = {
     'tuskegee': 'price_1Si7eIPmM4NpiDNLGcb5LNYo',
     'paperclip': 'price_1Si7fdPmM4NpiDNLoSdt541g',
     'diddy-case': 'price_1SA0B6PmM4NpiDNLKs5qANcY',
+    'charlie-kirk': 'price_1SmF9XPmM4NpiDNLlzPfdnja',
 
     // Bundle deals (optional - configure later if needed)
     'all-cases': 'price_your_all_cases_bundle_price_id_here' // e.g., $39.99 for all cases

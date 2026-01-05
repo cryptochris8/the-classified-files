@@ -242,7 +242,8 @@ class PaymentSystem {
             'cointelpro': 'COINTELPRO Files',
             'snowden': 'Snowden Revelations',
             'tuskegee': 'Tuskegee Experiment',
-            'paperclip': 'Operation Paperclip'
+            'paperclip': 'Operation Paperclip',
+            'charlie-kirk': 'Charlie Kirk Assassination'
         };
 
         const caseName = caseNames[caseKey] || 'Premium Case';
@@ -296,8 +297,9 @@ class PaymentSystem {
             <div class="purchase-modal-content">
                 <button class="modal-close" onclick="this.closest('.purchase-modal').remove()">✕</button>
                 <h2>🔓 Unlock All Premium Cases</h2>
-                <p>Get access to all 14 premium investigation cases:</p>
+                <p>Get access to all 15 premium investigation cases:</p>
                 <ul class="case-list">
+                    <li>✓ Charlie Kirk Assassination</li>
                     <li>✓ Diddy Federal Case (RICO thriller)</li>
                     <li>✓ Epstein Files</li>
                     <li>✓ JFK Assassination Files</li>
