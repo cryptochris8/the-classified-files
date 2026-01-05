@@ -104,6 +104,7 @@ class GameEngine {
         console.log('September11CommissionExpanded available:', typeof September11CommissionExpanded !== 'undefined');
         console.log('HunterBidenLaptopStoryExpanded available:', typeof HunterBidenLaptopStoryExpanded !== 'undefined');
         console.log('DiddyCaseStoryExpanded available:', typeof DiddyCaseStoryExpanded !== 'undefined');
+        console.log('CharlieKirkStoryExpanded available:', typeof CharlieKirkStoryExpanded !== 'undefined');
         
         // Show case selection for all available stories (including sealed ones)
         const availableStories = [];
@@ -234,15 +235,24 @@ class GameEngine {
             });
         }
         if (typeof DiddyCaseStoryExpanded !== 'undefined' && DiddyCaseStoryExpanded.scenes) {
-            availableStories.push({ 
-                name: 'Diddy Federal Case', 
-                story: DiddyCaseStoryExpanded, 
+            availableStories.push({
+                name: 'Diddy Federal Case',
+                story: DiddyCaseStoryExpanded,
                 key: 'diddy-case',
                 sealed: window.GameConfig ? GameConfig.isGameSealed('diddy-case') : (DiddyCaseStoryExpanded.sealed || false),
                 releaseDate: window.GameConfig ? GameConfig.getReleaseDate('diddy-case') : (DiddyCaseStoryExpanded.releaseDate || null)
             });
         }
-        
+        if (typeof CharlieKirkStoryExpanded !== 'undefined' && CharlieKirkStoryExpanded.scenes) {
+            availableStories.push({
+                name: 'Charlie Kirk Assassination',
+                story: CharlieKirkStoryExpanded,
+                key: 'charlie-kirk',
+                sealed: window.GameConfig ? GameConfig.isGameSealed('charlie-kirk') : (CharlieKirkStoryExpanded.sealed || false),
+                releaseDate: window.GameConfig ? GameConfig.getReleaseDate('charlie-kirk') : (CharlieKirkStoryExpanded.releaseDate || null)
+            });
+        }
+
         if (availableStories.length > 1) {
             this.showCaseSelection(availableStories);
         } else if (availableStories.length === 1) {

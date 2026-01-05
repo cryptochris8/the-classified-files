@@ -29,7 +29,8 @@ const GameConfig = {
         tuskegee: 'premium',        // Premium - $4.99
         paperclip: 'premium',       // Premium - $4.99
         diddy: 'premium',           // Premium - $4.99
-        'diddy-case': 'premium'     // Premium - $4.99
+        'diddy-case': 'premium',    // Premium - $4.99
+        'charlie-kirk': 'premium'   // Premium - $4.99
     },
     
     // Release dates and pricing info
@@ -49,7 +50,8 @@ const GameConfig = {
         cointelpro: "Coming Soon",
         snowden: "Coming Soon",
         tuskegee: "Coming Soon",
-        paperclip: "Coming Soon"
+        paperclip: "Coming Soon",
+        'charlie-kirk': "Premium Content - $4.99"
     },
 
     // Scheduled release dates (for date-based unlocking)
