@@ -247,6 +247,7 @@ class PaymentSystem {
         };
 
         const caseName = caseNames[caseKey] || 'Premium Case';
+        const priceId = window.StripePrices?.[caseKey] || '';
 
         const modal = document.createElement('div');
         modal.className = 'purchase-modal';
@@ -264,10 +265,10 @@ class PaymentSystem {
                     <span class="price">$4.99</span>
                     <span class="price-description">One-time purchase • Lifetime access</span>
                 </div>
-                <button class="purchase-button-primary" data-price-id="${window.StripePrices?.premium || ''}">
+                <button class="purchase-button-primary" data-price-id="${priceId}">
                     Purchase ${caseName} Now
                 </button>
-                                <small>Secure payment powered by Stripe • 100% verified facts • Educational content</small>
+                <small>Secure payment powered by Stripe • 100% verified facts • Educational content</small>
             </div>
         `;
 
@@ -275,10 +276,15 @@ class PaymentSystem {
 
         // Add event listener to purchase button
         const purchaseBtn = modal.querySelector('.purchase-button-primary');
-        if (purchaseBtn && purchaseBtn.dataset.priceId) {
+        if (purchaseBtn && priceId) {
             purchaseBtn.addEventListener('click', () => {
-                this.initiatePurchase(purchaseBtn.dataset.priceId);
+                this.initiatePurchase(priceId);
             });
+        } else {
+            console.error('No price ID found for case:', caseKey);
+            purchaseBtn.style.opacity = '0.5';
+            purchaseBtn.style.cursor = 'not-allowed';
+            purchaseBtn.textContent = 'Purchase unavailable';
         }
     }
 
