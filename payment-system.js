@@ -267,13 +267,7 @@ class PaymentSystem {
                 <button class="purchase-button-primary" data-price-id="${window.StripePrices?.premium || ''}">
                     Purchase ${caseName} Now
                 </button>
-                <div class="upgrade-option">
-                    <p><strong>Or get ALL 14 premium cases for the same price!</strong></p>
-                    <button class="purchase-button-secondary" onclick="this.closest('.purchase-modal').remove(); window.paymentSystem.showAllCasesPurchaseModal();">
-                        View All Cases Bundle
-                    </button>
-                </div>
-                <small>Secure payment powered by Stripe • 100% verified facts • Educational content</small>
+                                <small>Secure payment powered by Stripe • 100% verified facts • Educational content</small>
             </div>
         `;
 
