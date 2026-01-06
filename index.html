@@ -112,7 +112,9 @@
     <script src="operation-paperclip-story-expanded.js?v=202507301207&force=fresh&fix=navigation&t=NOW"></script>
     <script src="diddy-case-story-expanded.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
     <script src="charlie-kirk-story-expanded.js?v=202601041200&force=fresh&fix=kirk&t=NOW"></script>
-    <script src="payment-system.js?v=202508041700"></script>
+    <!-- Stripe Configuration - MUST load before payment-system.js -->
+    <script src="stripe-prices.js?v=202601051500"></script>
+    <script src="payment-system.js?v=202601051500"></script>
     <script src="main.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
     <script>
         console.log('🚨 DIDDY CASE DEBUG - START');
