@@ -364,8 +364,39 @@ class GameEngine {
                 }, 100);
             }, index * 300);
         });
+
+        // Add "Restore Purchases" button for iOS users
+        if (window.paymentAbstraction && window.paymentAbstraction.isIOS()) {
+            setTimeout(() => {
+                const restoreButton = document.createElement('button');
+                restoreButton.className = 'choice-button restore-purchases-button';
+                restoreButton.style.marginTop = '30px';
+                restoreButton.style.backgroundColor = '#2a4a3a';
+                restoreButton.style.borderColor = '#4ecdc4';
+                restoreButton.innerHTML = '🔄 Restore Previous Purchases';
+                restoreButton.onclick = async () => {
+                    restoreButton.disabled = true;
+                    restoreButton.innerHTML = '⏳ Restoring...';
+                    try {
+                        const restored = await window.paymentAbstraction.restorePurchases();
+                        if (restored.length > 0) {
+                            alert(`Successfully restored ${restored.length} purchase(s)!`);
+                            location.reload();
+                        } else {
+                            alert('No previous purchases found.');
+                        }
+                    } catch (error) {
+                        alert('Failed to restore purchases. Please try again.');
+                        console.error('Restore error:', error);
+                    }
+                    restoreButton.disabled = false;
+                    restoreButton.innerHTML = '🔄 Restore Previous Purchases';
+                };
+                this.elements.choicesContainer.appendChild(restoreButton);
+            }, stories.length * 300 + 500);
+        }
     }
-    
+
     showComingSoonMessage(storyData) {
         // Clear current content
         this.clearChoices();
@@ -445,7 +476,7 @@ class GameEngine {
                         <li>Educational content and sources</li>
                         <li>Lifetime access</li>
                     </ul>
-                    <button class="purchase-button" onclick="window.paymentManager.purchaseCase('${storyData.key}')">
+                    <button class="purchase-button" onclick="window.paymentAbstraction ? window.paymentAbstraction.purchaseCase('${storyData.key}').then(r => r.success && location.reload()) : (window.paymentManager && window.paymentManager.purchaseCase('${storyData.key}'))">
                         🔓 Unlock Case File <span class="price">$4.99</span>
                     </button>
                 </div>

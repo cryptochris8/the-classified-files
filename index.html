@@ -18,8 +18,21 @@
     <link rel="stylesheet" href="payment-modal.css?v=202508041700">
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     
-    <!-- Stripe JS -->
-    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Capacitor (loads when running as native app) -->
+    <script src="capacitor.js" onerror="console.log('[Capacitor] Running in web mode')"></script>
+
+    <!-- Stripe JS - Only load on web (not in native app) -->
+    <script>
+        // Conditionally load Stripe only on web platform
+        if (!window.Capacitor || !window.Capacitor.isNativePlatform()) {
+            const stripeScript = document.createElement('script');
+            stripeScript.src = 'https://js.stripe.com/v3/';
+            stripeScript.onload = () => console.log('[Stripe] Loaded for web platform');
+            document.head.appendChild(stripeScript);
+        } else {
+            console.log('[Stripe] Skipped - running in native app');
+        }
+    </script>
 
     <!-- DOMPurify for XSS Protection -->
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
@@ -114,6 +127,12 @@
     <script src="charlie-kirk-story-expanded.js?v=202601041200&force=fresh&fix=kirk&t=NOW"></script>
     <!-- Stripe Configuration - MUST load before payment-system.js -->
     <script src="stripe-prices.js?v=202601051500"></script>
+    <!-- RevenueCat Config (injected during Codemagic build) -->
+    <script src="revenuecat-config.js?v=202601060200"></script>
+    <!-- Payment Abstraction Layer - Platform-aware payments -->
+    <script src="providers/stripe-provider.js?v=202601060200"></script>
+    <script src="providers/apple-iap-provider.js?v=202601060200"></script>
+    <script src="payment-abstraction.js?v=202601060100"></script>
     <script src="payment-system.js?v=202601051500"></script>
     <script src="main.js?v=202508041700&force=fresh&fix=diddy&t=NOW"></script>
     <script>
