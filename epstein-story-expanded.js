@@ -2692,6 +2692,439 @@ Your investigation continues to uncover evidence of systematic failure and insti
                 }
             ],
             educationalNote: "Legal protection allows journalists to focus on investigative excellence without fear."
+        },
+
+        flight_logs_analysis: {
+            text: `FLIGHT LOGS ANALYSIS - THE LOLITA EXPRESS RECORDS
+
+            You dive into the flight logs from Epstein's private aircraft, infamously dubbed the "Lolita Express":
+
+            ✈️ DOCUMENTED FLIGHTS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            THE AIRCRAFT:
+            • Boeing 727-200 (N908JE)
+            • Gulfstream II (N986JS)
+            • Multiple helicopters for island transport
+
+            FLIGHT LOG FINDINGS:
+            • Hundreds of documented flights 1998-2005
+            • Passengers included celebrities, politicians, businessmen
+            • Regular routes to: New York, Palm Beach, Virgin Islands
+            • International flights to Paris, London, Africa
+
+            KEY NAMES APPEARING:
+            Multiple high-profile individuals documented as passengers, though presence on flights doesn't prove knowledge of or participation in criminal activity.
+
+            CRITICAL EVIDENCE:
+            The logs were subpoenaed in 2008 but many names were redacted. The FBI memo mentions these same logs as evidence of a "larger network."
+
+            Marcus notes: "Flight logs place people at locations. The question is what happened there."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "flight_logs_evidence",
+            imagePrompt: "Aviation flight logs with passenger manifests, private jet records, investigative documents spread on desk",
+            sources: [
+                "Court-released flight logs (Giuffre v. Maxwell)",
+                "FAA records",
+                "Deposition testimony"
+            ],
+            choices: [
+                {
+                    text: "Cross-reference flight dates with victim testimony",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the timing of the memo vs. Epstein's death",
+                    nextScene: "timeline_investigation",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Focus on Little St. James Island connections",
+                    nextScene: "island_investigation",
+                    progressIncrease: 12,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The flight logs became crucial evidence but also sparked controversy, as some argued that flying on Epstein's planes didn't necessarily imply knowledge of his crimes."
+        },
+
+        timeline_investigation: {
+            text: `TIMELINE INVESTIGATION - THE SUSPICIOUS SEQUENCE
+
+            You construct a timeline of events leading to Epstein's death:
+
+            📅 CRITICAL TIMELINE:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            JULY 6, 2019:
+            Epstein arrested at Teterboro Airport returning from Paris.
+
+            JULY 8, 2019:
+            Indicted on sex trafficking charges. Bail denied due to flight risk.
+
+            JULY 15, 2019 (per reconstructed memo):
+            FBI memo warns of "high-profile subjects" and recommends immediate evidence seizure.
+
+            JULY 23, 2019:
+            Epstein found unconscious in cell with marks on neck. Placed on suicide watch.
+
+            JULY 29, 2019:
+            Removed from suicide watch after 6 days.
+
+            AUGUST 9, 2019:
+            Court unseals 2,000 pages of documents naming powerful individuals.
+
+            AUGUST 10, 2019:
+            Epstein found dead in cell. Both guards allegedly asleep. Cameras malfunctioned.
+
+            THE QUESTIONS:
+            • Why was he removed from suicide watch?
+            • Why did cameras fail that specific night?
+            • Why were guards not checking regularly?
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "timeline_evidence",
+            imagePrompt: "Investigation timeline board with dates and events connected by red string, suspicious pattern emerging",
+            sources: [
+                "Bureau of Prisons records",
+                "Court filing dates",
+                "Medical examiner report",
+                "DOJ Inspector General investigation"
+            ],
+            choices: [
+                {
+                    text: "Investigate the security failures in detail",
+                    nextScene: "security_failures_deep",
+                    progressIncrease: 15,
+                    factual: true
+                },
+                {
+                    text: "Examine the document release timing",
+                    nextScene: "document_release_analysis",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Review the medical examiner controversy",
+                    nextScene: "medical_examiner_controversy",
+                    progressIncrease: 14,
+                    factual: true
+                }
+            ],
+            educationalNote: "The timeline raised legitimate questions about the failure of multiple security protocols simultaneously on the night documents naming powerful people were released."
+        },
+
+        island_investigation: {
+            text: `LITTLE ST. JAMES ISLAND - THE PRIVATE RETREAT
+
+            You investigate Epstein's private Caribbean island:
+
+            🏝️ THE ISLAND:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            LOCATION:
+            Little St. James Island, U.S. Virgin Islands
+            Purchased by Epstein in 1998 for $7.95 million
+
+            DOCUMENTED STRUCTURES:
+            • Main residence complex
+            • Guest houses
+            • Mysterious "temple" building with blue dome
+            • Sundial structure
+            • Underground facilities (purpose unknown)
+
+            WITNESS TESTIMONY:
+            Multiple victims testified to being transported to the island where abuse occurred. The isolation made escape virtually impossible.
+
+            FBI RAID:
+            FBI searched the island after Epstein's 2019 arrest but critics questioned why it took so long and whether evidence had been destroyed.
+
+            SATELLITE IMAGERY:
+            Observers noted construction and demolition activity on the island after Epstein's arrest.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "island_investigation",
+            imagePrompt: "Aerial view of private island with mysterious structures, Caribbean setting, investigation evidence",
+            sources: [
+                "Property records",
+                "Victim testimony",
+                "FBI search documentation"
+            ],
+            choices: [
+                {
+                    text: "Continue examining victim testimony",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the Maxwell connection",
+                    nextScene: "maxwell_investigation",
+                    progressIncrease: 15,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The island became a symbol of how wealth can enable crimes hidden from public view. Its isolation facilitated Epstein's criminal enterprise."
+        },
+
+        security_failures_deep: {
+            text: `SECURITY FAILURES - DETAILED ANALYSIS
+
+            You investigate the multiple simultaneous failures on August 10, 2019:
+
+            🚨 THE FAILURES:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            CAMERA MALFUNCTION:
+            Two cameras monitoring Epstein's cell area malfunctioned or had footage that was "unusable." The FBI later found some footage was corrupted beyond recovery.
+
+            GUARD MISCONDUCT:
+            Both guards assigned to check on Epstein every 30 minutes:
+            • Falsified records showing checks occurred
+            • Admitted to sleeping and browsing internet
+            • Failed to check for approximately 8 hours
+
+            CELLMATE REMOVED:
+            Epstein's cellmate was transferred out the day before his death, leaving him alone despite recent suicide attempt.
+
+            SUICIDE WATCH REMOVAL:
+            Removed from suicide watch after only 6 days, despite standard protocols calling for longer observation.
+
+            UNDERSTAFFING:
+            MCC was severely understaffed, with mandatory overtime creating exhausted guards.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "security_analysis",
+            imagePrompt: "Prison security cameras, guard stations, investigation into multiple failures, incident report",
+            sources: [
+                "DOJ Inspector General Report",
+                "Guard deposition testimony",
+                "Bureau of Prisons internal investigation"
+            ],
+            choices: [
+                {
+                    text: "Examine the medical examiner controversy",
+                    nextScene: "medical_examiner_controversy",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Continue building the story",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 10,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The concentration of failures on one night remains unprecedented. Both guards later pleaded guilty to falsifying records."
+        },
+
+        document_release_analysis: {
+            text: `DOCUMENT RELEASE TIMING - THE COINCIDENCE
+
+            You analyze the timing of document releases:
+
+            📄 THE PATTERN:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            AUGUST 9, 2019 - 5:00 PM:
+            Court orders release of 2,000 pages of previously sealed documents from the Giuffre v. Maxwell case.
+
+            CONTENTS OF DOCUMENTS:
+            • Names of powerful individuals
+            • Detailed victim accounts
+            • Flight log references
+            • Employment records
+
+            AUGUST 10, 2019 - EARLY MORNING:
+            Epstein found dead approximately 12 hours after document release.
+
+            THE QUESTION:
+            Was this timing coincidental, or did the document release trigger action?
+
+            STATISTICAL ANALYSIS:
+            The probability of multiple security failures occurring simultaneously on the same night as major document release is statistically improbable but not impossible.
+
+            Marcus observes: "Correlation isn't causation, but the timing demands scrutiny."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "document_timing",
+            imagePrompt: "Court documents with timestamps, calendar showing critical dates, statistical analysis",
+            sources: [
+                "Court docket records",
+                "Document release timestamps",
+                "Bureau of Prisons incident logs"
+            ],
+            choices: [
+                {
+                    text: "Continue investigating security failures",
+                    nextScene: "security_failures_deep",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Focus on the victim testimony in documents",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 12,
+                    evidence: true
+                }
+            ],
+            educationalNote: "While suspicious timing alone doesn't prove conspiracy, it legitimately raised questions that warranted investigation."
+        },
+
+        medical_examiner_controversy: {
+            text: `MEDICAL EXAMINER CONTROVERSY - THE DISPUTED FINDINGS
+
+            You investigate the disputed autopsy findings:
+
+            🔬 THE AUTOPSY:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            OFFICIAL RULING:
+            New York City Chief Medical Examiner Dr. Barbara Sampson ruled the death a suicide by hanging.
+
+            DISSENTING OPINION:
+            Dr. Michael Baden (hired by Epstein's brother):
+            • Multiple neck fractures more consistent with homicide
+            • Hyoid bone break rare in suicidal hanging
+            • Bruising patterns warranted further investigation
+
+            THE DEBATE:
+            • Hyoid bone breaks occur in ~25% of hangings over age 50
+            • Position of fractures was unusual
+            • Both homicide and suicide remain medically possible
+
+            BROTHER'S STATEMENT:
+            Mark Epstein: "I don't accept the finding. Too many unanswered questions."
+
+            THE LIMITATION:
+            Without independent investigation access, definitive conclusions remain impossible.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "autopsy_controversy",
+            imagePrompt: "Medical examiner documents, forensic analysis, disputed findings, professional disagreement",
+            sources: [
+                "NYC Medical Examiner official report",
+                "Dr. Michael Baden analysis",
+                "Forensic pathology expert opinions"
+            ],
+            choices: [
+                {
+                    text: "Focus on what we can verify - the victim stories",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Investigate the broader institutional failures",
+                    nextScene: "institutional_failure_investigation",
+                    progressIncrease: 12,
+                    factual: true
+                }
+            ],
+            educationalNote: "The autopsy controversy illustrates how reasonable experts can disagree on forensic evidence, making definitive conclusions difficult."
+        },
+
+        maxwell_investigation: {
+            text: `GHISLAINE MAXWELL - THE ALLEGED ACCOMPLICE
+
+            You investigate Epstein's longtime associate:
+
+            👤 GHISLAINE MAXWELL:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            BACKGROUND:
+            • Daughter of media mogul Robert Maxwell
+            • Met Epstein in early 1990s
+            • Described as his "girlfriend" then "best friend"
+            • Moved in elite social circles globally
+
+            ALLEGATIONS:
+            Multiple victims testified Maxwell:
+            • Recruited young girls for Epstein
+            • Participated in abuse
+            • Managed day-to-day operations
+            • Normalized the exploitation
+
+            LEGAL OUTCOME:
+            • Arrested July 2020
+            • Convicted December 2021 on multiple counts
+            • Sentenced to 20 years in prison
+            • Currently appealing conviction
+
+            THE BROADER NETWORK:
+            Victims testified that Maxwell was part of a larger system designed to identify, groom, and exploit young women.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "maxwell_investigation",
+            imagePrompt: "Investigation board with connections, court documents, convicted accomplice case files",
+            sources: [
+                "United States v. Ghislaine Maxwell",
+                "Victim testimony from trial",
+                "Court documents and sentencing"
+            ],
+            choices: [
+                {
+                    text: "Continue building the comprehensive story",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Investigate institutional failures that enabled the crimes",
+                    nextScene: "institutional_failure_investigation",
+                    progressIncrease: 12,
+                    factual: true
+                }
+            ],
+            educationalNote: "Maxwell's conviction proved that Epstein did not act alone and that accomplices could be held accountable even after his death."
+        },
+
+        institutional_failure_investigation: {
+            text: `INSTITUTIONAL FAILURES - HOW THE SYSTEM FAILED
+
+            You investigate how multiple institutions failed to stop Epstein:
+
+            🏛️ THE FAILURES:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            JUSTICE SYSTEM (2008):
+            • Sweetheart plea deal allowed Epstein to serve 13 months
+            • Work release let him leave jail 12 hours/day
+            • Victims not notified as required by law
+            • Federal charges dropped
+
+            LAW ENFORCEMENT:
+            • Palm Beach Police built strong case in 2005
+            • Federal prosecutors undercut local efforts
+            • Alexander Acosta later admitted to "unusual" handling
+
+            PRISON SYSTEM (2019):
+            • Failed to protect high-profile prisoner
+            • Multiple protocol violations
+            • Understaffing and poor oversight
+
+            SOCIAL INSTITUTIONS:
+            • Elite circles protected and enabled
+            • Donations to institutions bought access
+            • Warnings about Epstein were ignored
+
+            The pattern: wealth and connections override accountability.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "institutional_failure",
+            imagePrompt: "Broken scales of justice, failed institutions, systemic corruption visualization",
+            sources: [
+                "Julie K. Brown, 'Perversion of Justice'",
+                "DOJ OPR Report on 2008 case",
+                "Congressional investigations"
+            ],
+            choices: [
+                {
+                    text: "Focus on the victim stories that matter most",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 15,
+                    evidence: true,
+                    factual: true
+                }
+            ],
+            educationalNote: "The Epstein case revealed systemic failures across multiple institutions, raising questions about justice for the wealthy and powerful."
         }
     }
 };

@@ -1,0 +1,11 @@
+const fs = require('fs');
+const file = process.argv[2] || 'panama-papers-story-expanded.js';
+const content = fs.readFileSync(file, 'utf8');
+const nextSceneMatches = content.match(/nextScene:\s*['"]([^'"]+)['"]/g) || [];
+const referencedScenes = new Set(nextSceneMatches.map(m => m.match(/['"]([^'"]+)['"]/)[1]));
+const sceneMatches = content.match(/^\s{4,8}(\w+):\s*\{/gm) || [];
+const definedScenes = new Set(sceneMatches.map(m => m.trim().replace(/:\s*\{$/, '')));
+const missing = [...referencedScenes].filter(s => !definedScenes.has(s));
+console.log('File:', file);
+console.log('Defined:', definedScenes.size, 'Referenced:', referencedScenes.size);
+console.log('Missing:', missing.length > 0 ? missing.join(', ') : 'None');

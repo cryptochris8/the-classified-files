@@ -1994,6 +1994,632 @@ The radar data provides objective measurement of impossible flight characteristi
             sources: ["Resistance Theory", "Human Independence Movements"],
             choices: [],
             educationalNote: "Some scenarios suggest humanity might need to choose between safety and independence in alien contact."
+        },
+
+        military_sensor_data: {
+            text: `MILITARY SENSOR DATA ANALYSIS
+
+DAY 1 - 10:45 PM
+
+You access the classified military sensor archives containing the most compelling UAP detection data:
+
+📡 SENSOR CONFIRMATION DATA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Radar tracking from multiple installations
+• Infrared signatures from military aircraft
+• Electro-optical camera recordings
+• Satellite observation confirmations
+• Radio frequency anomaly detection
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The data shows consistent patterns across multiple sensor types - objects displaying capabilities that exceed known aerospace technology.
+
+Dr. Kim analyzes the radar returns. "Amanda, these objects are showing accelerations of 400+ G-forces with no visible propulsion. No known human technology can achieve this."
+
+You note the sensor redundancy: "Multiple independent systems recording the same anomalous behavior. This rules out sensor malfunction."
+
+The military sensor data provides the most compelling scientific evidence of genuinely anomalous aerial phenomena.`,
+            image: "military_sensor_data",
+            imagePrompt: "Military radar displays showing UAP tracking, infrared imagery, multiple sensor confirmations, classified analysis room",
+            sources: ["Pentagon Sensor Data Archives", "Military UAP Detection Reports"],
+            choices: [
+                {
+                    text: "Cross-reference with pilot testimony",
+                    nextScene: "pilot_testimony_review",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Analyze the flight characteristics data",
+                    nextScene: "anomalous_cases_study",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Check nuclear facility incident correlations",
+                    nextScene: "nuclear_facility_incidents",
+                    progressIncrease: 22,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Multiple independent sensor confirmations provide the strongest evidence for anomalous UAP capabilities."
+        },
+
+        malmstrom_incident_study: {
+            text: `MALMSTROM AFB INCIDENT - NUCLEAR WEAPONS INTERFERENCE
+
+DAY 1 - 11:30 PM
+
+You examine the classified files on one of the most significant UAP-nuclear incidents:
+
+🔴 MALMSTROM AFB - MARCH 16, 1967:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LOCATION: Montana, USA
+FACILITY: Oscar Flight Launch Control Center
+WITNESSES: Captain Robert Salas + crew
+INCIDENT: 10 Minuteman ICBMs went offline
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+"A glowing, oval-shaped UAP hovered over the front gate," Salas's sworn testimony states. "Security guards reported it. Within minutes, all 10 missiles went into 'No-Go' status - they were disabled."
+
+The incident remains officially unexplained despite decades of investigation.
+
+Multiple similar incidents occurred at other nuclear facilities during the same period.
+
+Dr. Kim examines the technical analysis. "Amanda, Boeing engineers could not explain how the missiles were disabled. The fail-safe systems should have prevented this."
+
+This pattern of UAP activity near nuclear weapons represents one of the most concerning aspects of the phenomenon.`,
+            image: "malmstrom_incident",
+            imagePrompt: "1960s military nuclear missile facility, glowing UAP hovering over base, security personnel witnessing, ICBM silos",
+            sources: ["Captain Robert Salas Testimony", "Malmstrom AFB Incident Records", "Nuclear Weapons UAP Reports"],
+            choices: [
+                {
+                    text: "Interview Captain Salas directly",
+                    nextScene: "nuclear_facility_incidents",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Search for other nuclear facility incidents",
+                    nextScene: "nuclear_facility_incidents",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Analyze the weapons system interference",
+                    nextScene: "military_sensor_data",
+                    progressIncrease: 18,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The Malmstrom incident is one of several documented cases where UAPs allegedly interfered with nuclear weapons systems."
+        },
+
+        disinformation_impact_analysis: {
+            text: `DISINFORMATION IMPACT ANALYSIS
+
+DAY 2 - 2:00 AM
+
+You assess how decades of government disinformation have affected UAP research:
+
+📊 DISINFORMATION DAMAGE ASSESSMENT:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Scientific credibility destroyed
+• Legitimate researchers discredited
+• Witness intimidation documented
+• False explanations promoted
+• Media ridicule encouraged
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The Robertson Panel's 1953 recommendations created a systematic approach to UAP denial that persisted for decades.
+
+"The strategy worked," you note. "UAP research became career suicide for serious scientists. The stigma was deliberately manufactured."
+
+Dr. Kim examines the timeline. "Amanda, we're seeing the long-term consequences - a 70-year gap in serious scientific study because of intentional suppression."
+
+The disinformation campaign successfully prevented meaningful UAP research for generations, leaving humanity unprepared for potential contact scenarios.`,
+            image: "disinformation_analysis",
+            imagePrompt: "Analysis of government disinformation campaign, timeline of UAP ridicule, scientific suppression documentation",
+            sources: ["Robertson Panel Documents", "CIA UAP Disinformation Records", "Scientific Stigma Studies"],
+            choices: [
+                {
+                    text: "Examine how to overcome the stigma",
+                    nextScene: "scientific_method_application",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Return to factual case analysis",
+                    nextScene: "anomalous_cases_study",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Prepare findings for congressional briefing",
+                    nextScene: "final_congressional_briefing",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Government disinformation campaigns have significantly impacted scientific UAP research and public understanding."
+        },
+
+        escape_attempt_failure: {
+            text: `ESCAPE ATTEMPT FAILS
+
+DAY 2 - 11:52 PM
+
+You sprint toward the emergency exit, but the black triangle's energy field intensifies.
+
+The doors won't budge - electromagnetically sealed by the alien technology.
+
+"Amanda, we're trapped!" Dr. Kim's voice is panicked.
+
+The temperature drops further as ice forms on the walls. Your breath crystallizes in the air.
+
+Through the frosted windows, you see the triangular craft repositioning, its lights pulsing ominously.
+
+You have moments to decide your next move. The building's communications are still partially functional, but the exits are sealed.
+
+Your scientific training kicks in - panic won't help, but rational analysis might.`,
+            image: "trapped_building",
+            imagePrompt: "Pentagon hallway with sealed doors, ice forming on walls, black triangle visible through window, trapped scientists",
+            sources: ["Emergency Response Protocols", "UAP Encounter Survival Records"],
+            choices: [
+                {
+                    text: "Try to transmit the evidence before it's too late",
+                    nextScene: "data_transmission_race",
+                    progressIncrease: 30,
+                    heroic: true,
+                    evidence: true
+                },
+                {
+                    text: "Search for another escape route",
+                    nextScene: "hypothermia_death",
+                    progressIncrease: 0,
+                    dangerous: true
+                },
+                {
+                    text: "Attempt to communicate with the craft",
+                    nextScene: "negotiation_attempt",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "UAP encounters may require rapid decision-making under extreme stress conditions."
+        },
+
+        return_to_office_trap: {
+            text: `RETURNING TO OFFICE - WALKING INTO A TRAP
+
+DAY 2 - 11:48 PM
+
+You decide to return to your office to gather additional evidence, but something feels wrong.
+
+The hallway lights flicker. The temperature drops sharply.
+
+"Amanda, wait!" Dr. Kim grabs your arm. "Look at the security monitors."
+
+The black triangle has repositioned directly above the building. Its energy field is intensifying.
+
+You realize returning to your office means walking directly under the craft's influence.
+
+But your most critical evidence files are still on your desk. Without them, the congressional briefing will be incomplete.
+
+The choice is clear: risk yourself for the evidence, or escape with what you have.`,
+            image: "office_trap",
+            imagePrompt: "Pentagon hallway with ominous lighting, security monitors showing UAP position, scientist facing difficult choice",
+            sources: ["UAP Encounter Decision Analysis", "Risk Assessment Protocols"],
+            choices: [
+                {
+                    text: "Risk it - the evidence is too important",
+                    nextScene: "data_transmission_race",
+                    progressIncrease: 25,
+                    heroic: true,
+                    evidence: true
+                },
+                {
+                    text: "Escape now with what you have",
+                    nextScene: "escape_attempt_failure",
+                    progressIncrease: 10,
+                    dangerous: true
+                },
+                {
+                    text: "Try to access the files remotely",
+                    nextScene: "communications_rescue",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Scientific investigation sometimes requires weighing personal risk against the value of evidence."
+        },
+
+        elevator_malfunction: {
+            text: `ELEVATOR MALFUNCTION - TRAPPED
+
+DAY 2 - 11:50 PM
+
+The elevator lurches to a stop between floors. The lights flicker and die.
+
+Emergency lighting kicks in, casting an eerie red glow.
+
+"The building's power grid is being affected," Dr. Kim says, checking her tablet. "The black triangle is directly overhead."
+
+Through the small window in the elevator door, you see frost forming on the walls outside.
+
+Your tablet still has partial signal. You might be able to transmit some of the evidence before the power completely fails.
+
+The elevator control panel sparks. Time is running out.`,
+            image: "elevator_trapped",
+            imagePrompt: "Pentagon elevator stuck between floors, emergency lighting, frost visible through door window, scientists trapped",
+            sources: ["Emergency Building Protocols", "UAP Electromagnetic Interference"],
+            choices: [
+                {
+                    text: "Use the tablet to transmit evidence immediately",
+                    nextScene: "data_transmission_race",
+                    progressIncrease: 28,
+                    heroic: true,
+                    evidence: true
+                },
+                {
+                    text: "Attempt to pry open the doors",
+                    nextScene: "escape_attempt_failure",
+                    progressIncrease: 5,
+                    dangerous: true
+                },
+                {
+                    text: "Call for emergency rescue",
+                    nextScene: "communications_rescue",
+                    progressIncrease: 15,
+                    evidence: true
+                }
+            ],
+            educationalNote: "UAP encounters may involve electromagnetic interference affecting electronic systems and infrastructure."
+        },
+
+        communications_rescue: {
+            text: `COMMUNICATIONS RESCUE ATTEMPT
+
+DAY 2 - 11:51 PM
+
+You activate the emergency communication system, hoping to reach outside help.
+
+"AARO Emergency Protocol - requesting immediate assistance. Pentagon building experiencing anomalous electromagnetic interference."
+
+Static fills the line, then a voice breaks through: "Dr. Torres, this is Air Force Command. We have visual on an unidentified aerial object over your location. What is your status?"
+
+"We have critical UAP evidence that must reach Congress. Can you establish a secure uplink?"
+
+"Affirmative, Dr. Torres. Establishing satellite link now. Transmit your data immediately."
+
+The connection stabilizes just long enough for a partial data transfer. Some evidence gets through before the black triangle's interference cuts the signal.
+
+You've preserved at least part of the truth.`,
+            image: "communications_rescue",
+            imagePrompt: "Emergency communication equipment, satellite uplink establishing, partial data transmission, military coordination",
+            sources: ["Emergency Communication Protocols", "Military UAP Response Procedures"],
+            choices: [
+                {
+                    text: "Continue attempting to transmit remaining evidence",
+                    nextScene: "data_transmission_success",
+                    progressIncrease: 35,
+                    heroic: true,
+                    evidence: true
+                },
+                {
+                    text: "Focus on survival until help arrives",
+                    nextScene: "final_congressional_briefing",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "In crisis situations, preserving evidence through multiple channels increases chances of truth reaching the public."
+        },
+
+        negotiation_attempt: {
+            text: `ATTEMPTING TO NEGOTIATE
+
+DAY 2 - 11:53 PM
+
+You decide to attempt communication with the black triangle.
+
+"If there is intelligence controlling this craft, we request dialogue. We mean no harm - we are scientists seeking understanding."
+
+The craft's lights pulse in a complex pattern. The temperature stabilizes.
+
+A voice - or something like a voice - enters your mind:
+
+"Your species approaches a threshold. The information you possess will determine whether you advance or destroy yourselves. We are... observing."
+
+"Why interfere with our nuclear weapons?" you ask.
+
+"To demonstrate capability. To discourage extinction-level conflict. Your weapons threatened more than your own world."
+
+The revelation is staggering. UAPs have been protecting Earth from nuclear catastrophe while monitoring human development.`,
+            image: "alien_negotiation",
+            imagePrompt: "Scientist attempting communication with hovering black triangle, telepathic contact, cosmic negotiation",
+            sources: ["First Contact Scenarios", "UAP Communication Attempts"],
+            choices: [
+                {
+                    text: "Ask about full disclosure",
+                    nextScene: "alien_collaboration",
+                    progressIncrease: 40,
+                    evidence: true
+                },
+                {
+                    text: "Demand they leave humanity alone",
+                    nextScene: "defiant_rejection",
+                    progressIncrease: 30,
+                    heroic: true
+                },
+                {
+                    text: "Request time to share this with others",
+                    nextScene: "data_transmission_success",
+                    progressIncrease: 35,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Communication protocols for potential alien contact remain a subject of serious scientific discussion."
+        },
+
+        evidence_gathering_risk: {
+            text: `HIGH-RISK EVIDENCE GATHERING
+
+DAY 2 - 10:30 PM
+
+You decide to personally investigate the black triangle sighting, despite the obvious dangers.
+
+Armed with sensor equipment and a secure communication device, you position yourself on the Pentagon's observation deck.
+
+The craft appears at 11:15 PM - exactly as witnesses described. It's enormous, silent, and defies everything you know about aerodynamics.
+
+Your equipment captures unprecedented data: electromagnetic readings, thermal signatures, visual recordings.
+
+But the craft notices you. Its lights focus on your position.
+
+You have seconds to decide: continue recording or retreat with partial evidence.`,
+            image: "evidence_gathering_risk",
+            imagePrompt: "Scientist on rooftop with UAP monitoring equipment, black triangle approaching, high-risk data collection",
+            sources: ["UAP Field Research Protocols", "High-Risk Evidence Collection"],
+            choices: [
+                {
+                    text: "Keep recording - this data is invaluable",
+                    nextScene: "data_transmission_race",
+                    progressIncrease: 35,
+                    heroic: true,
+                    evidence: true
+                },
+                {
+                    text: "Retreat with what you have",
+                    nextScene: "return_to_office_trap",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Attempt to communicate with the craft",
+                    nextScene: "negotiation_attempt",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Scientific evidence gathering sometimes requires accepting personal risk to document rare phenomena."
+        },
+
+        private_investigation_danger: {
+            text: `PRIVATE INVESTIGATION - DANGEROUS TERRITORY
+
+DAY 2 - 8:00 PM
+
+Following leads outside official channels, you investigate private UAP research facilities.
+
+Dr. Kim warns you: "Amanda, this isn't sanctioned. If something goes wrong, AARO can't protect you."
+
+You visit a civilian research group that claims to have recovered UAP materials. Their laboratory is impressive, but something feels off.
+
+The researchers show you materials they claim exhibit anomalous properties - but the chain of custody is questionable.
+
+As you examine their data, you notice surveillance cameras tracking your movements.
+
+"Dr. Torres," one researcher says quietly, "you should leave. Now. People who dig too deep into this subject... have accidents."
+
+The warning is clear. But the data they have could be the breakthrough you need.`,
+            image: "private_investigation",
+            imagePrompt: "Civilian UAP research laboratory, suspicious atmosphere, surveillance cameras, scientist receiving warning",
+            sources: ["Private UAP Research Groups", "Investigation Safety Protocols"],
+            choices: [
+                {
+                    text: "Leave immediately - safety first",
+                    nextScene: "final_congressional_briefing",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Risk it - examine their evidence",
+                    nextScene: "evidence_gathering_risk",
+                    progressIncrease: 25,
+                    dangerous: true,
+                    evidence: true
+                },
+                {
+                    text: "Report the facility to authorities",
+                    nextScene: "anomalous_cases_study",
+                    progressIncrease: 18,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Private UAP research operates outside official oversight, with varying degrees of credibility and safety."
+        },
+
+        pilot_testimony_review: {
+            text: `MILITARY PILOT TESTIMONY REVIEW
+
+DAY 1 - 11:00 PM
+
+You review sworn testimony from military pilots who encountered UAPs:
+
+👨‍✈️ COMMANDER DAVID FRAVOR (2004 Nimitz Encounter):
+"It accelerated like nothing I've ever seen. It went from hovering to gone in less than a second."
+
+👨‍✈️ LIEUTENANT RYAN GRAVES (2014-2015 East Coast):
+"We were seeing these things every day for years. They would be stationary in hurricane-force winds, then accelerate instantaneously."
+
+📋 COMMON OBSERVATIONS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• No visible propulsion systems
+• Instantaneous acceleration
+• Transmedium capability (air/water)
+• Apparent awareness of observers
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+These are trained military observers with no history of fabrication.`,
+            image: "pilot_testimony",
+            imagePrompt: "Military pilots testifying about UAP encounters, congressional hearing, credible witnesses",
+            sources: ["Congressional UAP Hearings", "Pentagon Pilot Debriefs"],
+            choices: [
+                {
+                    text: "Cross-reference with sensor data",
+                    nextScene: "military_sensor_data",
+                    progressIncrease: 22,
+                    evidence: true
+                },
+                {
+                    text: "Prepare pilot testimony for Congress",
+                    nextScene: "final_congressional_briefing",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Military pilot testimony provides credible UAP evidence due to training and multiple witness corroboration."
+        },
+
+        scientific_method_application: {
+            text: `APPLYING SCIENTIFIC METHOD TO UAP RESEARCH
+
+DAY 2 - 3:00 AM
+
+You outline a rigorous scientific approach to overcome decades of stigma:
+
+🔬 SCIENTIFIC UAP METHODOLOGY:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. OBSERVATION: Document with multiple sensors
+2. HYPOTHESIS: Propose explanations
+3. TESTING: Apply known physics comparisons
+4. ANALYSIS: Statistical evaluation
+5. PEER REVIEW: Independent verification
+6. CONCLUSION: Acknowledge explained and unexplained
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dr. Kim reviews your framework. "Amanda, this is exactly what's been missing - treating UAPs as a legitimate scientific question."
+
+This evidence-based approach transforms UAP research from speculation to science.`,
+            image: "scientific_method",
+            imagePrompt: "Scientific methodology diagram for UAP research, rigorous analysis framework",
+            sources: ["Scientific Method Standards", "UAP Research Methodology"],
+            choices: [
+                {
+                    text: "Apply this method to anomalous cases",
+                    nextScene: "anomalous_cases_study",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Present methodology to Congress",
+                    nextScene: "final_congressional_briefing",
+                    progressIncrease: 25,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Applying rigorous scientific methodology is essential for legitimate UAP research."
+        },
+
+        data_transmission_race: {
+            text: `RACE TO TRANSMIT DATA
+
+DAY 2 - 11:52 PM
+
+The black triangle's energy field intensifies. You have seconds to transmit the evidence.
+
+💻 TRANSMISSION STATUS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Congressional servers: UPLOADING... 67%
+AARO backup archive: UPLOADING... 45%
+Academic network: UPLOADING... 23%
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The lights flicker. Your screen glitches.
+
+"Amanda, the interference is increasing!" Dr. Kim shouts.
+
+Ice forms on your keyboard.
+
+89%... 94%... 97%...
+
+The craft's energy pulse surges. Everything depends on the next few seconds.`,
+            image: "data_transmission_race",
+            imagePrompt: "Urgent data transmission, upload progress bars, electromagnetic interference, scientist racing time",
+            sources: ["Emergency Data Protocols", "Evidence Preservation"],
+            choices: [
+                {
+                    text: "Focus everything on completing the upload",
+                    nextScene: "data_transmission_success",
+                    progressIncrease: 40,
+                    heroic: true,
+                    evidence: true
+                },
+                {
+                    text: "Sacrifice yourself to ensure transmission completes",
+                    nextScene: "ultimate_sacrifice",
+                    progressIncrease: 50,
+                    heroic: true
+                },
+                {
+                    text: "Abort and try to escape",
+                    nextScene: "escape_attempt_failure",
+                    progressIncrease: 10,
+                    dangerous: true
+                }
+            ],
+            educationalNote: "Preserving evidence often requires quick thinking under extreme pressure."
+        },
+
+        memory_reconstruction: {
+            text: `ATTEMPTING MEMORY RECONSTRUCTION
+
+THREE MONTHS LATER
+
+After destroying the evidence to save your life, you attempt to reconstruct what you can remember.
+
+Working with Dr. Kim, you document every detail you can recall:
+
+📋 RECONSTRUCTED DATA:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Key statistical findings
+• Witness testimony summaries
+• Sensor data patterns
+• Nuclear facility incident details
+• Black triangle characteristics
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+The reconstructed data is incomplete, but it provides a foundation for renewed investigation.
+
+Dr. Kim helps verify your memories against her own observations. "Amanda, it's not everything, but it's a start."
+
+You commit to rebuilding the investigation, knowing the truth is still out there waiting to be discovered.
+
+INVESTIGATION CONTINUES - PARTIAL RECOVERY
+
+You lost the original evidence, but your knowledge and determination allow the work to continue.`,
+            image: "memory_reconstruction",
+            imagePrompt: "Scientist reconstructing UAP data from memory, notes and diagrams, colleague assisting, rebuilding investigation",
+            sources: ["Scientific Memory Reconstruction", "Investigation Recovery Protocols"],
+            choices: [
+                {
+                    text: "Begin a new investigation with lessons learned",
+                    nextScene: "intro",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Scientific investigation can continue even after setbacks, building on accumulated knowledge and experience."
         }
     }
 };

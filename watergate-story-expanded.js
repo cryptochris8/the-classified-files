@@ -884,7 +884,1449 @@ const WatergateStoryExpanded = {
                 }
             ]
         },
-        
+
+        surveillance_tech: {
+            text: `SOPHISTICATED SURVEILLANCE TECHNOLOGY
+
+            Examining the equipment found on the burglars:
+
+            🔧 EQUIPMENT INVENTORY:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • Miniature transmitters (bugs)
+            • Telephone tap devices
+            • Camera with 40 exposures taken
+            • Walkie-talkies with earpieces
+            • Locksmith tools (professional grade)
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📡 ANALYSIS:
+            This equipment isn't available commercially - it's intelligence-grade surveillance technology, the kind used by the CIA.
+
+            The sophistication of the equipment proves this wasn't amateur hour. Someone with serious resources planned this operation.`,
+            image: "surveillance_equipment_analysis",
+            imagePrompt: "1970s spy surveillance equipment laid out on evidence table, bugs, wiretaps, cameras, professional intelligence gear",
+            choices: [
+                {
+                    text: "Investigate CIA connection",
+                    nextScene: "cia_angle",
+                    progressIncrease: 15
+                },
+                {
+                    text: "Focus on who provided the equipment",
+                    nextScene: "hunt_white_house",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Analyze what they were targeting",
+                    nextScene: "dnc_targets"
+                }
+            ],
+            educationalNote: "The sophisticated equipment used in the break-in suggested intelligence agency involvement from the start."
+        },
+
+        cia_angle: {
+            text: `THE CIA CONNECTION
+
+            Multiple burglars have CIA backgrounds:
+
+            🕵️ CIA CONNECTIONS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            JAMES McCORD: 20-year CIA veteran
+            E. HOWARD HUNT: CIA officer, Bay of Pigs
+            BERNARD BARKER: CIA asset in Cuba
+            EUGENIO MARTINEZ: Active CIA informant
+            FRANK STURGIS: CIA contractor
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🎯 THE QUESTION:
+            Was the CIA involved in Watergate? Or were former agents acting on their own?
+
+            Nixon later tried to use the CIA to block the FBI investigation, claiming Watergate involved "national security."
+
+            CIA Director Richard Helms refused to help cover it up.`,
+            image: "cia_headquarters",
+            imagePrompt: "CIA headquarters Langley, aerial view, 1970s, government intelligence agency, secretive atmosphere",
+            choices: [
+                {
+                    text: "Investigate the White House Plumbers",
+                    nextScene: "plumbers_unit",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Focus on campaign connections",
+                    nextScene: "creep_investigation",
+                    progressIncrease: 20
+                },
+                {
+                    text: "Look at Hunt's role",
+                    nextScene: "hunt_white_house"
+                }
+            ],
+            educationalNote: "While many Watergate figures had CIA backgrounds, the agency itself declined to help Nixon cover up the scandal."
+        },
+
+        dnc_targets: {
+            text: `WHAT WERE THEY AFTER?
+
+            Analyzing what the burglars targeted at the DNC:
+
+            🎯 DNC TARGETS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • Chairman Lawrence O'Brien's office
+            • Phone lines (for wiretapping)
+            • Files on Democratic strategy
+            • Donor lists and financial records
+            • Internal memos and correspondence
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 PREVIOUS BREAK-IN (MAY 28):
+            They had already successfully broken in once before! They:
+            • Photographed documents
+            • Planted listening devices
+            • But one bug wasn't working properly
+
+            This second break-in was to fix the malfunctioning bug on O'Brien's phone.
+
+            What was Nixon so desperate to know about the Democrats?`,
+            image: "dnc_headquarters",
+            imagePrompt: "Democratic National Committee headquarters office, 1970s political office, desks and phones, campaign materials",
+            choices: [
+                {
+                    text: "Investigate what they were afraid of",
+                    nextScene: "operation_gemstone",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Follow the chain of command",
+                    nextScene: "creep_investigation",
+                    progressIncrease: 20
+                },
+                {
+                    text: "Look at the money behind it",
+                    nextScene: "follow_the_money"
+                }
+            ],
+            educationalNote: "The June 17 break-in was actually the second Watergate burglary - they returned to fix a malfunctioning wiretap."
+        },
+
+        early_publication: {
+            text: `PUBLISHING TOO SOON
+
+            You rush the McCord-CRP connection story:
+
+            📰 YOUR HEADLINE:
+            "Watergate Burglar Worked for Nixon Campaign"
+
+            ⚠️ WHITE HOUSE RESPONSE:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            Press Secretary Ron Ziegler dismisses it as "a third-rate burglary attempt" with no White House connection.
+
+            CRP issues statement: "McCord was a contractor, not an employee. His actions were unauthorized."
+
+            Without more evidence, the story fades.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            💭 LESSON LEARNED:
+            You needed more sources, more documentation. The White House is adept at denial.
+
+            Time to dig deeper.`,
+            image: "newspaper_early_story",
+            imagePrompt: "Newspaper with Watergate story, lukewarm public response, White House denial, journalism challenge",
+            choices: [
+                {
+                    text: "Find more sources",
+                    nextScene: "deep_throat_intro",
+                    progressIncrease: 15
+                },
+                {
+                    text: "Follow the money trail",
+                    nextScene: "follow_the_money",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Investigate CRP more deeply",
+                    nextScene: "creep_investigation"
+                }
+            ],
+            educationalNote: "Early Watergate stories were dismissed by the White House. Building an airtight case required months of investigation."
+        },
+
+        stans_confrontation: {
+            text: `CONFRONTING MAURICE STANS
+
+            You approach CRP Finance Chairman Maurice Stans:
+
+            💼 INTERVIEW WITH STANS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            YOU: "Mr. Stans, we've traced funds from your committee to the Watergate burglars."
+
+            STANS: "I have no knowledge of any such payments. The finance committee operates separately from campaign operations."
+
+            YOU: "But the checks went through your accounts..."
+
+            STANS: "I delegated financial matters. If there were irregularities, I was unaware."
+
+            YOU: "Kenneth Dahlberg's $25,000 check?"
+
+            STANS: [Pause] "I... cannot comment on specific donations."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            His evasions speak volumes.`,
+            image: "stans_confrontation",
+            imagePrompt: "Nervous finance chairman in office being questioned by reporter, defensive body language, 1970s business attire",
+            choices: [
+                {
+                    text: "Press him on Dahlberg check",
+                    nextScene: "dahlberg_confession",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Investigate Stans's records",
+                    nextScene: "slush_fund_discovery",
+                    progressIncrease: 20
+                },
+                {
+                    text: "Look for other sources",
+                    nextScene: "deep_throat_intro"
+                }
+            ],
+            educationalNote: "Maurice Stans was eventually convicted of campaign finance violations related to Watergate."
+        },
+
+        hunt_connection: {
+            text: `CONNECTING HUNT TO THE BREAK-IN
+
+            Building the case against E. Howard Hunt:
+
+            🔗 THE HUNT CONNECTION:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • Phone number in burglars' address books
+            • Check from his wife to Barker
+            • White House phone records
+            • Library books on lockpicking
+            • Recruited the Cuban burglars
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 HUNT'S WHITE HOUSE ACTIVITIES:
+            • Office in Executive Office Building
+            • Direct phone line to Colson
+            • "Consultant" with no clear duties
+            • Security clearance: Top Secret
+
+            The trail leads directly from the Watergate to 1600 Pennsylvania Avenue.`,
+            image: "hunt_evidence_board",
+            imagePrompt: "Investigation board connecting Hunt to Watergate burglars, photos, string connections, evidence mounting",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Investigate Hunt's White House role",
+                    nextScene: "plumbers_unit",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Look at Charles Colson",
+                    nextScene: "colson_involvement",
+                    progressIncrease: 20
+                },
+                {
+                    text: "Trace Hunt's payments",
+                    nextScene: "payment_trail"
+                }
+            ],
+            educationalNote: "E. Howard Hunt was the crucial link between the Watergate burglars and the White House."
+        },
+
+        colson_involvement: {
+            text: `CHARLES COLSON - NIXON'S HATCHET MAN
+
+            Investigating the Special Counsel to the President:
+
+            👤 CHARLES WENDELL COLSON:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            Title: Special Counsel to the President
+            Role: Political operations/"dirty tricks"
+            Reputation: "Would walk over his grandmother for Nixon"
+            Direct supervisor of: E. Howard Hunt
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🎯 COLSON'S ACTIVITIES:
+            • Maintained "Enemies List"
+            • Ordered Hunt to forge cables
+            • Planned disruption of protests
+            • Discussed firebombing Brookings
+            • Direct access to Nixon
+
+            Nixon on tape: "Colson would do anything. Anything."
+
+            How far up does this go?`,
+            image: "colson_office",
+            imagePrompt: "White House office, political operative at desk, enemies list visible, aggressive political atmosphere",
+            choices: [
+                {
+                    text: "Find what Nixon knew",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 35,
+                    evidence: true
+                },
+                {
+                    text: "Document dirty tricks",
+                    nextScene: "dirty_tricks",
+                    progressIncrease: 20
+                },
+                {
+                    text: "Connect to Watergate planning",
+                    nextScene: "operation_gemstone"
+                }
+            ],
+            educationalNote: "Charles Colson was Nixon's chief political operative and supervised Howard Hunt at the White House."
+        },
+
+        deep_throat_hints: {
+            text: `DEEP THROAT OFFERS HINTS
+
+            In the darkness of the parking garage:
+
+            🗣️ DEEP THROAT:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "I can't give you names directly. But I can tell you where to look.
+
+            The key players are:
+            • The former Attorney General
+            • The President's Chief of Staff
+            • The domestic affairs advisor
+
+            They're all involved. All of them.
+
+            And there's a lawyer - the President's personal counsel. He knows everything. He's starting to crack."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Mitchell... Haldeman... Ehrlichman... and Dean?`,
+            image: "deep_throat_hints",
+            imagePrompt: "Mysterious figure in shadows giving cryptic information, parking garage, dramatic noir lighting",
+            badges: ["deepThroat"],
+            choices: [
+                {
+                    text: "Investigate John Mitchell",
+                    nextScene: "mitchell_connection",
+                    progressIncrease: 25
+                },
+                {
+                    text: "Look at Haldeman",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Find John Dean",
+                    nextScene: "ehrlichman_connection",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Deep Throat guided reporters toward key figures without directly naming them."
+        },
+
+        deep_throat_money: {
+            text: `DEEP THROAT ON THE MONEY
+
+            You ask about the financial trail:
+
+            💰 DEEP THROAT'S GUIDANCE:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "The money is the key. You've found some of it, but there's more.
+
+            • There's a secret fund - hundreds of thousands
+            • Five people control it
+            • The payments continue - even now
+            • They're paying the burglars to stay quiet
+
+            Hush money. Obstruction of justice. That's what will bring them down.
+
+            Who controls the fund? Follow it to the top."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            You have a new lead: ongoing payments to keep the burglars silent.`,
+            image: "deep_throat_money_advice",
+            imagePrompt: "Shadowy figure pointing to invisible trail, dollar signs in shadows, financial conspiracy visualization",
+            choices: [
+                {
+                    text: "Investigate the hush money",
+                    nextScene: "slush_fund_discovery",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Find who controls the fund",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 25
+                },
+                {
+                    text: "Document the obstruction",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Deep Throat's tip about 'follow the money' became the most famous advice in investigative journalism history."
+        },
+
+        gemstone_revelation: {
+            text: `OPERATION GEMSTONE EXPOSED
+
+            Your story on Operation Gemstone hits the front page:
+
+            📰 WASHINGTON POST HEADLINE:
+            "Nixon Campaign Approved Massive Spy Operation"
+
+            🎯 KEY REVELATIONS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • $250,000 budget for illegal activities
+            • Former AG Mitchell approved plan
+            • Multiple break-ins planned
+            • Wiretapping, sabotage, disruption
+            • White House officials involved
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📺 PUBLIC REACTION:
+            "This goes beyond dirty tricks - this is criminal conspiracy at the highest levels!"
+
+            The White House can no longer dismiss this as a "third-rate burglary."`,
+            image: "gemstone_headline",
+            imagePrompt: "Washington Post front page with Gemstone revelation, public shock, major breaking story, journalism triumph",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Push for congressional hearings",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 40,
+                    evidence: true
+                },
+                {
+                    text: "Document the full cover-up",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 30
+                },
+                {
+                    text: "Get witness testimony",
+                    nextScene: "magruder_testimony",
+                    progressIncrease: 35
+                }
+            ],
+            educationalNote: "The exposure of Operation Gemstone proved Watergate wasn't an isolated incident but part of a larger conspiracy."
+        },
+
+        magruder_testimony: {
+            text: `JEB MAGRUDER BREAKS
+
+            CRP Deputy Director Jeb Magruder begins cooperating:
+
+            🗣️ MAGRUDER'S TESTIMONY:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "I was present at meetings in Mitchell's office when Liddy presented his intelligence plans.
+
+            Mitchell approved it. We all knew it was illegal, but we convinced ourselves it was necessary to re-elect the President.
+
+            After the arrests, Mitchell told me to destroy documents. I did. We all committed crimes to cover up crimes."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 MAGRUDER CONFIRMS:
+            • Mitchell approved Operation Gemstone
+            • Payments to burglars continued
+            • Evidence was destroyed
+            • Perjury was planned
+
+            The conspiracy of silence is breaking.`,
+            image: "magruder_testimony",
+            imagePrompt: "Young political operative testifying, looking guilty, Senate hearing room, breaking under pressure",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Get more witnesses",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 40,
+                    evidence: true
+                },
+                {
+                    text: "Focus on Mitchell",
+                    nextScene: "mitchell_obstruction",
+                    progressIncrease: 30
+                },
+                {
+                    text: "Document the cover-up chain",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 25
+                }
+            ],
+            educationalNote: "Jeb Magruder's cooperation was a turning point, as insiders began telling the truth."
+        },
+
+        dirty_tricks: {
+            text: `THE DIRTY TRICKS CAMPAIGN
+
+            Beyond Watergate, a pattern of illegal activities emerges:
+
+            🎭 DIRTY TRICKS OPERATIONS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            DONALD SEGRETTI - "RATF**KING":
+            • Forged letters on Democratic letterhead
+            • Planted spies in Democratic campaigns
+            • Disrupted opponents' events
+            • Spread false rumors
+
+            WHITE HOUSE PLUMBERS:
+            • Break-in at Ellsberg's psychiatrist
+            • Forged diplomatic cables
+            • Plan to firebomb Brookings
+
+            ENEMIES LIST:
+            • IRS audits of Nixon critics
+            • FBI surveillance of journalists
+            • Harassment of administration opponents
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Watergate wasn't an aberration - it was part of a systematic abuse of power.`,
+            image: "dirty_tricks_evidence",
+            imagePrompt: "Forged documents, fake letters, evidence of political sabotage, enemies list, systemic corruption",
+            choices: [
+                {
+                    text: "Connect to White House",
+                    nextScene: "ehrlichman_connection",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the Plumbers",
+                    nextScene: "plumbers_unit",
+                    progressIncrease: 25
+                },
+                {
+                    text: "Focus on the cover-up",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "The Nixon administration engaged in a wide pattern of illegal activities beyond the Watergate break-in."
+        },
+
+        plumbers_watergate_link: {
+            text: `PLUMBERS TO WATERGATE CONNECTION
+
+            You establish the direct link:
+
+            🔗 THE CHAIN:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            WHITE HOUSE PLUMBERS (1971)
+            ↓
+            Hunt & Liddy - Leaders
+            ↓
+            Move to CRP (1972)
+            ↓
+            Plan Operation Gemstone
+            ↓
+            Execute Watergate Break-in
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 KEY EVIDENCE:
+            • Same personnel (Hunt, Liddy)
+            • Same Cuban operatives
+            • Same methods
+            • White House funding → CRP funding
+            • Presidential authority → Campaign operations
+
+            The Watergate burglars were the President's own secret intelligence team.`,
+            image: "plumbers_watergate_connection",
+            imagePrompt: "Evidence board showing connection between White House Plumbers and Watergate, organizational chart, clear link",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Prove presidential knowledge",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 45,
+                    evidence: true
+                },
+                {
+                    text: "Document the chain of command",
+                    nextScene: "ehrlichman_connection",
+                    progressIncrease: 35
+                },
+                {
+                    text: "Focus on the cover-up",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 30
+                }
+            ],
+            educationalNote: "The same team Nixon used to plug leaks became the Watergate burglars."
+        },
+
+        ellsberg_psychiatrist: {
+            text: `THE ELLSBERG BREAK-IN
+
+            Before Watergate, the Plumbers committed another burglary:
+
+            🔓 SEPTEMBER 3, 1971
+            DR. LEWIS FIELDING'S OFFICE
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            Target: Daniel Ellsberg's psychiatrist
+            Purpose: Find dirt on Pentagon Papers leaker
+            Team: Hunt, Liddy, Barker, Martinez
+            Result: Files found, nothing useful
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 AUTHORIZATION:
+            • Ehrlichman memo: "If done under your assurance it cannot be traced"
+            • Presidential knowledge: Evidence points to yes
+            • Government resources used for break-in
+
+            This proves a pattern - the Watergate team had broken in before, with White House approval.`,
+            image: "fielding_office_breakin",
+            imagePrompt: "Psychiatrist office after break-in, ransacked files, night scene, previous burglary, pattern of illegal activity",
+            choices: [
+                {
+                    text: "Investigate Ehrlichman's role",
+                    nextScene: "ehrlichman_connection",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Connect to Watergate",
+                    nextScene: "plumbers_watergate_link",
+                    progressIncrease: 35
+                },
+                {
+                    text: "Find what Nixon knew",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 40
+                }
+            ],
+            educationalNote: "The Ellsberg psychiatrist break-in showed the Plumbers' methods before Watergate and proved a pattern of criminal behavior."
+        },
+
+        ehrlichman_connection: {
+            text: `JOHN EHRLICHMAN - DOMESTIC AFFAIRS
+
+            Investigating Nixon's domestic policy chief:
+
+            👤 JOHN EHRLICHMAN:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            Title: Assistant for Domestic Affairs
+            Power: Second only to Haldeman
+            Role: Supervised the Plumbers
+            Authorized: Ellsberg psychiatrist break-in
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 EHRLICHMAN'S MEMO:
+            "I approve the covert operation provided it cannot be traced to the White House."
+
+            🎯 HIS INVOLVEMENT:
+            • Created the Plumbers unit
+            • Approved illegal break-ins
+            • Participated in cover-up meetings
+            • Destroyed evidence
+
+            The domestic policy advisor was running a criminal enterprise.`,
+            image: "ehrlichman_investigation",
+            imagePrompt: "White House domestic policy office, Nixon advisor, evidence of illegal authorization, power and corruption",
+            choices: [
+                {
+                    text: "Look at Haldeman too",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Find the tapes",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 45
+                },
+                {
+                    text: "Document the conspiracy",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 25
+                }
+            ],
+            educationalNote: "John Ehrlichman was convicted of conspiracy and perjury for his role in Watergate."
+        },
+
+        tape_battle_begins: {
+            text: `THE BATTLE FOR THE TAPES
+
+            Nixon refuses to release the White House recordings:
+
+            🏛️ EXECUTIVE PRIVILEGE CLAIM:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            NIXON: "The tapes are protected by executive privilege. No President can function if his private conversations are public."
+
+            SPECIAL PROSECUTOR COX: "No man is above the law. The tapes are evidence of potential crimes."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            ⚖️ LEGAL BATTLE:
+            • Subpoenas issued for tapes
+            • Nixon refuses to comply
+            • Courts order release
+            • Nixon still refuses
+
+            📅 OCTOBER 20, 1973 - SATURDAY NIGHT MASSACRE:
+            Nixon orders firing of Special Prosecutor Cox. Attorney General Richardson and Deputy Ruckelshaus resign rather than comply.
+
+            The constitutional crisis deepens.`,
+            image: "tape_battle_legal",
+            imagePrompt: "Courtroom battle over tapes, Nixon vs prosecutors, constitutional crisis, dramatic legal confrontation",
+            choices: [
+                {
+                    text: "Follow to Supreme Court",
+                    nextScene: "executive_privilege_fight",
+                    progressIncrease: 40,
+                    evidence: true
+                },
+                {
+                    text: "Cover the Saturday Night Massacre",
+                    nextScene: "washington_post_triumph",
+                    progressIncrease: 35
+                },
+                {
+                    text: "What's on the tapes?",
+                    nextScene: "tape_contents_revealed",
+                    progressIncrease: 45
+                }
+            ],
+            educationalNote: "Nixon's fight to suppress the tapes led to the Saturday Night Massacre and ultimately the Supreme Court."
+        },
+
+        tape_contents_revealed: {
+            text: `WHAT THE TAPES REVEALED
+
+            As portions of tapes are released, the truth emerges:
+
+            📼 DAMAGING CONVERSATIONS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            MARCH 21, 1973 - "Cancer on the Presidency"
+            Dean warns Nixon about the cover-up
+            Nixon discusses paying hush money
+            "We could get a million dollars... I know where it could be gotten"
+
+            SEPTEMBER 15, 1972
+            Nixon praises cover-up efforts
+            "The way you've handled it... has been very skillful"
+
+            MULTIPLE TAPES
+            Evidence of obstruction, perjury planning, abuse of power
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            The President's own words prove his guilt.`,
+            image: "tape_transcripts",
+            imagePrompt: "Tape transcripts with highlighted incriminating passages, reel-to-reel machines, damning evidence",
+            badges: ["tapesRevealed"],
+            choices: [
+                {
+                    text: "Find the Smoking Gun",
+                    nextScene: "smoking_gun_tape",
+                    progressIncrease: 50,
+                    evidence: true
+                },
+                {
+                    text: "Document all evidence",
+                    nextScene: "final_revelation",
+                    progressIncrease: 45
+                },
+                {
+                    text: "Push for more releases",
+                    nextScene: "executive_privilege_fight",
+                    progressIncrease: 40
+                }
+            ],
+            educationalNote: "The tapes revealed Nixon discussing hush money, cover-up strategies, and obstruction of justice."
+        },
+
+        executive_privilege_fight: {
+            text: `SUPREME COURT SHOWDOWN
+
+            The battle reaches the highest court:
+
+            🏛️ UNITED STATES v. NIXON
+            JULY 24, 1974
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            ISSUE: Can the President withhold evidence in a criminal case?
+
+            NIXON'S ARGUMENT:
+            "Executive privilege protects presidential communications absolutely."
+
+            PROSECUTOR'S ARGUMENT:
+            "No person, not even the President, is above the law."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            ⚖️ DECISION: 8-0 AGAINST NIXON
+            Chief Justice Burger: "Neither separation of powers nor generalized executive privilege can sustain an absolute, unqualified privilege."
+
+            Nixon must release the tapes. The end is near.`,
+            image: "supreme_court_nixon",
+            imagePrompt: "Supreme Court building, historic ruling, constitutional crisis resolved, law prevails over power",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "See the Smoking Gun tape",
+                    nextScene: "smoking_gun_tape",
+                    progressIncrease: 50,
+                    evidence: true
+                },
+                {
+                    text: "Document Nixon's response",
+                    nextScene: "final_revelation",
+                    progressIncrease: 45
+                },
+                {
+                    text: "Write the victory story",
+                    nextScene: "washington_post_triumph",
+                    progressIncrease: 40
+                }
+            ],
+            educationalNote: "The unanimous Supreme Court ruling in United States v. Nixon established that no one is above the law."
+        },
+
+        more_tape_evidence: {
+            text: `ADDITIONAL TAPE EVIDENCE
+
+            More tapes reveal the depth of Nixon's involvement:
+
+            📼 ADDITIONAL INCRIMINATING TAPES:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            APRIL 14, 1973:
+            Nixon coaches aides on testimony
+            "Just be damn sure you say 'I don't remember'"
+
+            APRIL 16, 1973:
+            Discusses having Dean take the blame
+            "Let him twist slowly in the wind"
+
+            MARCH 22, 1973:
+            Plans to pay burglars
+            "That's not a problem... do you need the cash?"
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Every tape adds more evidence of obstruction, conspiracy, and abuse of power.`,
+            image: "more_tape_evidence",
+            imagePrompt: "Stack of tape recordings, transcripts piling up, overwhelming evidence of crimes, Nixon's own words",
+            choices: [
+                {
+                    text: "The Smoking Gun tape",
+                    nextScene: "smoking_gun_tape",
+                    progressIncrease: 50,
+                    evidence: true
+                },
+                {
+                    text: "Complete the documentation",
+                    nextScene: "final_revelation",
+                    progressIncrease: 45
+                },
+                {
+                    text: "Write the final story",
+                    nextScene: "washington_post_triumph",
+                    progressIncrease: 40
+                }
+            ],
+            educationalNote: "The tapes contained numerous examples of Nixon planning obstruction and coaching witnesses to lie."
+        },
+
+        washington_post_triumph: {
+            text: `THE WASHINGTON POST'S TRIUMPH
+
+            Your newspaper has been vindicated:
+
+            📰 THE POST'S JOURNEY:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            June 1972: Dismissed as "third-rate burglary"
+            Fall 1972: Attacked by White House
+            1973: Vindicated by Senate hearings
+            1974: Pulitzer Prize for Public Service
+            August 1974: Nixon resigns
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🏆 BEN BRADLEE:
+            "This is what journalism is supposed to do - tell the truth, hold power accountable, and let democracy work."
+
+            📺 KATHARINE GRAHAM (Publisher):
+            "There were moments I wondered if we were right. Now we know - the press did its job."
+
+            The system worked because journalists refused to stop asking questions.`,
+            image: "post_pulitzer_celebration",
+            imagePrompt: "Washington Post newsroom celebrating, Pulitzer Prize, vindication after long investigation, triumph of journalism",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Document the full legacy",
+                    nextScene: "watergate_legacy",
+                    progressIncrease: 35
+                },
+                {
+                    text: "Complete the investigation",
+                    nextScene: "victory",
+                    progressIncrease: 50,
+                    evidence: true
+                },
+                {
+                    text: "Review the timeline",
+                    nextScene: "watergate_timeline"
+                }
+            ],
+            educationalNote: "The Washington Post won the 1973 Pulitzer Prize for Public Service for its Watergate coverage."
+        },
+
+        watergate_legacy: {
+            text: `THE WATERGATE LEGACY
+
+            What Watergate changed forever:
+
+            🏛️ LASTING IMPACTS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            LEGAL REFORMS:
+            • Ethics in Government Act
+            • Independent Counsel law
+            • Campaign finance reform
+            • FOIA strengthened
+
+            CULTURAL IMPACT:
+            • "-gate" suffix for scandals
+            • "Follow the money" becomes famous
+            • Investigative journalism revitalized
+            • Public skepticism of government
+
+            CONSTITUTIONAL LESSONS:
+            • No one is above the law
+            • Separation of powers works
+            • Free press is essential
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Watergate proved democracy can survive even when its leaders betray it.`,
+            image: "watergate_legacy_memorial",
+            imagePrompt: "Constitutional documents, journalism awards, reform legislation, lasting democratic institutions, legacy visualization",
+            choices: [
+                {
+                    text: "Complete the investigation",
+                    nextScene: "victory",
+                    progressIncrease: 50,
+                    evidence: true
+                },
+                {
+                    text: "Review the timeline",
+                    nextScene: "watergate_timeline"
+                },
+                {
+                    text: "Return to main menu",
+                    nextScene: "mainMenu"
+                }
+            ],
+            educationalNote: "Watergate led to major reforms in government ethics, campaign finance, and transparency."
+        },
+
+        sloan_testimony: {
+            text: `HUGH SLOAN TELLS THE TRUTH
+
+            CRP Treasurer Hugh Sloan refused to lie:
+
+            🗣️ SLOAN'S TESTIMONY:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "They wanted me to commit perjury. They said it was for the good of the President.
+
+            I couldn't do it. I resigned instead.
+
+            I personally gave Gordon Liddy $199,000 in cash from the secret fund. Magruder and Stans knew. Mitchell approved it.
+
+            When I asked what it was for, they said 'Don't ask.'"
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 SLOAN CONFIRMS:
+            • Secret fund existed
+            • Hundreds of thousands in cash
+            • Liddy was primary recipient
+            • Senior officials authorized it
+
+            An honest man in a den of thieves.`,
+            image: "sloan_testimony_hearing",
+            imagePrompt: "Young treasurer testifying, doing the right thing, Senate hearing, courage against corruption",
+            badges: ["followMoney"],
+            choices: [
+                {
+                    text: "Trace the payments",
+                    nextScene: "payment_trail",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Get more on Liddy",
+                    nextScene: "operation_gemstone",
+                    progressIncrease: 25
+                },
+                {
+                    text: "Focus on Mitchell and Stans",
+                    nextScene: "mitchell_stans_involvement",
+                    progressIncrease: 25
+                }
+            ],
+            educationalNote: "Hugh Sloan's refusal to commit perjury was crucial in confirming the financial aspects of the conspiracy."
+        },
+
+        payment_trail: {
+            text: `TRACING THE PAYMENTS
+
+            The money trail tells the whole story:
+
+            💰 PAYMENT FLOW:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            CAMPAIGN DONATIONS
+            ↓
+            CRP SECRET FUND ($350,000+)
+            ↓
+            G. GORDON LIDDY ($199,000)
+            ↓
+            GEMSTONE OPERATIONS
+            ↓
+            WATERGATE BURGLARS
+            ↓
+            POST-ARREST HUSH MONEY
+            ↓
+            WHITE HOUSE APPROVAL
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 ONGOING PAYMENTS:
+            Even after arrests, money kept flowing to keep the burglars quiet. Hundreds of thousands more.
+
+            This proves ongoing criminal conspiracy - not just a break-in, but systematic obstruction.`,
+            image: "payment_trail_diagram",
+            imagePrompt: "Money flow diagram, financial conspiracy chart, payments traced, corruption visualized",
+            badges: ["followMoney"],
+            choices: [
+                {
+                    text: "Prove White House involvement",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 35,
+                    evidence: true
+                },
+                {
+                    text: "Document the cover-up",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 30
+                },
+                {
+                    text: "Get the tapes",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 45
+                }
+            ],
+            educationalNote: "Following the money proved the connection between campaign funds and illegal operations."
+        },
+
+        haldeman_connection: {
+            text: `H.R. HALDEMAN - THE GATEKEEPER
+
+            Nixon's Chief of Staff controlled everything:
+
+            👤 H.R. "BOB" HALDEMAN:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            Title: White House Chief of Staff
+            Power: Complete access control to Nixon
+            Role: Managed the cover-up
+            Nickname: "The Berlin Wall"
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🎯 HALDEMAN'S INVOLVEMENT:
+            • Approved hush money payments
+            • Coordinated cover-up with Dean
+            • Present at key Oval Office meetings
+            • Controlled the secret fund
+
+            📼 ON THE TAPES:
+            Nixon and Haldeman discuss using the CIA to block the FBI investigation just six days after the break-in.
+
+            He was Nixon's right hand - in everything.`,
+            image: "haldeman_investigation",
+            imagePrompt: "Chief of Staff office, Nixon's right-hand man, power behind the throne, cover-up coordinator",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Find the smoking gun",
+                    nextScene: "smoking_gun_tape",
+                    progressIncrease: 50,
+                    evidence: true
+                },
+                {
+                    text: "Document the cover-up",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 35
+                },
+                {
+                    text: "Connect to Nixon",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 45
+                }
+            ],
+            educationalNote: "H.R. Haldeman was convicted of conspiracy, obstruction, and perjury for his role in Watergate."
+        },
+
+        deep_throat_names: {
+            text: `DEEP THROAT HINTS AT NAMES
+
+            Pressing for specifics in the parking garage:
+
+            🗣️ DEEP THROAT:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "I can't give you names. But I'll tell you this:
+
+            The men closest to Nixon - his palace guard - they're all involved. H and E especially.
+
+            And the former law enforcement chief turned campaign director? He approved things no Attorney General should ever approve.
+
+            The counsel is the key. He's been in every meeting. He knows everything. And he's scared."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Haldeman... Ehrlichman... Mitchell... Dean.
+
+            The initials point to Nixon's inner circle.`,
+            image: "deep_throat_names_hint",
+            imagePrompt: "Mysterious figure speaking in shadows, names floating in darkness, cryptic guidance, investigative noir",
+            choices: [
+                {
+                    text: "Investigate Haldeman and Ehrlichman",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Focus on Mitchell",
+                    nextScene: "mitchell_connection",
+                    progressIncrease: 25
+                },
+                {
+                    text: "Find John Dean",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Deep Throat guided reporters with hints rather than direct names, protecting his identity while advancing the investigation."
+        },
+
+        deep_throat_refuses: {
+            text: `DEEP THROAT WON'T PROVIDE DOCUMENTS
+
+            You press for documentary evidence:
+
+            🗣️ DEEP THROAT:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "I won't give you documents. That's not how this works.
+
+            You have to find the evidence yourself. All I can do is confirm when you're on the right track - or warn you when you're wrong.
+
+            Why? Because if I give you documents, they'll know who I am. And that would be the end of me - and the investigation.
+
+            My role is to help you see what's really happening. The rest is up to you."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            He fades back into the shadows. You understand now - you have to earn this story.`,
+            image: "deep_throat_refuses_documents",
+            imagePrompt: "Figure retreating into shadows, journalist alone with notebook, guidance given limits set, investigative challenge",
+            choices: [
+                {
+                    text: "Follow the money trail",
+                    nextScene: "mexico_laundering",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Find official sources",
+                    nextScene: "sloan_testimony",
+                    progressIncrease: 20
+                },
+                {
+                    text: "Dig into CRP records",
+                    nextScene: "creep_investigation",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "Deep Throat guided rather than leaked, forcing reporters to independently verify their findings."
+        },
+
+        dahlberg_confession: {
+            text: `KENNETH DAHLBERG CONFRONTED
+
+            You track down the Minnesota businessman:
+
+            📞 PHONE INTERVIEW:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            YOU: "Mr. Dahlberg, your $25,000 check ended up in a Watergate burglar's bank account."
+
+            DAHLBERG: "What? That's impossible. I gave that check to Maurice Stans for the President's campaign!"
+
+            YOU: "It was deposited in Bernard Barker's Miami account."
+
+            DAHLBERG: [Long pause] "I... I don't know how that happened. I trusted those men. They said the money was for legitimate campaign expenses."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            He's confirmed the connection: Campaign money went directly to the burglars through CRP.`,
+            image: "dahlberg_confrontation",
+            imagePrompt: "Shocked businessman on phone, realizing his money funded crimes, check as evidence, betrayal and confusion",
+            badges: ["followMoney"],
+            choices: [
+                {
+                    text: "Confront Maurice Stans",
+                    nextScene: "stans_confrontation",
+                    progressIncrease: 25
+                },
+                {
+                    text: "Publish the connection",
+                    nextScene: "gemstone_revelation",
+                    progressIncrease: 40,
+                    evidence: true
+                },
+                {
+                    text: "Find more financial evidence",
+                    nextScene: "slush_fund_discovery",
+                    progressIncrease: 30
+                }
+            ],
+            educationalNote: "The Dahlberg check provided concrete evidence linking campaign funds to the Watergate operation."
+        },
+
+        mexican_records: {
+            text: `MEXICAN BANK RECORDS
+
+            Working with FBI contacts, you obtain the Mexican documentation:
+
+            📋 BANCO INTERNACIONAL RECORDS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            APRIL 1972:
+            • Four cashier's checks: $89,000 total
+            • Issued to: Manuel Ogarrio (Mexican lawyer)
+            • Deposited by: Bernard Barker
+            • Account: Republic National Bank, Miami
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🔍 THE SCHEME:
+            1. CRP needed to hide illegal donations
+            2. Money sent to Mexico
+            3. Converted to Mexican checks
+            4. Deposited in Barker's account
+            5. Withdrawn as cash for "operations"
+
+            This was professional money laundering - campaign funds converted to untraceable cash for illegal activities.`,
+            image: "mexican_bank_records",
+            imagePrompt: "Foreign bank documents, international money trail, laundering scheme documented, financial crime evidence",
+            badges: ["followMoney"],
+            choices: [
+                {
+                    text: "Connect to CRP leadership",
+                    nextScene: "mitchell_stans_involvement",
+                    progressIncrease: 35,
+                    evidence: true
+                },
+                {
+                    text: "Find U.S. records",
+                    nextScene: "slush_fund_discovery",
+                    progressIncrease: 30
+                },
+                {
+                    text: "Publish the money trail",
+                    nextScene: "gemstone_revelation",
+                    progressIncrease: 40
+                }
+            ],
+            educationalNote: "The Mexican money-laundering scheme was designed to hide the source of funds used for illegal campaign activities."
+        },
+
+        mitchell_stans_involvement: {
+            text: `MITCHELL AND STANS - THE MONEY MEN
+
+            Both the campaign director and finance chairman are implicated:
+
+            👤 JOHN MITCHELL - Campaign Director
+            👤 MAURICE STANS - Finance Chairman
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            JOINT INVOLVEMENT:
+            • Authorized secret fund
+            • Approved payments to Liddy
+            • Knew about Gemstone operations
+            • Coordinated cover-up
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 EVIDENCE:
+            • Meeting on March 30, 1972: Approved $250,000 for Liddy
+            • Post-break-in: Ordered destruction of records
+            • Testimony: Multiple witnesses confirm their knowledge
+
+            The former Attorney General and the campaign's money man - both guilty.`,
+            image: "mitchell_stans_investigation",
+            imagePrompt: "Two powerful men implicated, campaign headquarters, financial and operational corruption, dual investigation",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Focus on Mitchell's cover-up role",
+                    nextScene: "mitchell_obstruction",
+                    progressIncrease: 30
+                },
+                {
+                    text: "Connect to the White House",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 35,
+                    evidence: true
+                },
+                {
+                    text: "Document the full conspiracy",
+                    nextScene: "final_revelation",
+                    progressIncrease: 45
+                }
+            ],
+            educationalNote: "Both Mitchell and Stans were later convicted of crimes related to campaign finance violations."
+        },
+
+        martha_mitchell_talks: {
+            text: `MARTHA MITCHELL - THE WHISTLING WIFE
+
+            John Mitchell's wife has been talking to reporters:
+
+            📞 MARTHA'S CALLS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "They're making my husband the fall guy! Nixon is using John to protect himself.
+
+            There was a dirty money man. They kidnapped me to keep me quiet! Beat me up in California!
+
+            My husband knows everything. He was at those meetings. But it goes all the way to the top. The President knows!"
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            🎭 THE TRAGEDY:
+            Martha was dismissed as mentally unstable. She wasn't - she was telling the truth.
+
+            Years later, she was proven right about everything.
+
+            "Martha was right" became a saying about Watergate.`,
+            image: "martha_mitchell_calls",
+            imagePrompt: "Troubled woman on phone, trying to be heard, society wife as whistleblower, dismissed truth-teller",
+            choices: [
+                {
+                    text: "Investigate her claims about John",
+                    nextScene: "mitchell_obstruction",
+                    progressIncrease: 25,
+                    evidence: true
+                },
+                {
+                    text: "Look at White House involvement",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 30
+                },
+                {
+                    text: "Document the conspiracy",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 20
+                }
+            ],
+            educationalNote: "Martha Mitchell tried to expose Watergate but was dismissed. History has proven her truthful."
+        },
+
+        mitchell_obstruction: {
+            text: `MITCHELL'S OBSTRUCTION OF JUSTICE
+
+            Documenting the former AG's role in the cover-up:
+
+            ⚖️ MITCHELL'S CRIMES:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            BEFORE BREAK-IN:
+            • Approved Operation Gemstone
+            • Authorized $250,000 for Liddy
+            • Knew about planned break-in
+
+            AFTER BREAK-IN:
+            • Ordered destruction of evidence
+            • Coordinated false testimony
+            • Approved hush money payments
+            • Lied to investigators
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 THE IRONY:
+            The man who was America's chief law enforcement officer became America's most prominent criminal.
+
+            Mitchell would eventually serve 19 months in federal prison.`,
+            image: "mitchell_obstruction_evidence",
+            imagePrompt: "Former Attorney General exposed, legal documents as evidence of his crimes, law turned against lawmaker",
+            badges: ["truthRevealed"],
+            choices: [
+                {
+                    text: "Connect to Nixon",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 45,
+                    evidence: true
+                },
+                {
+                    text: "Document full cover-up",
+                    nextScene: "coverup_analysis",
+                    progressIncrease: 35
+                },
+                {
+                    text: "Find more conspirators",
+                    nextScene: "haldeman_connection",
+                    progressIncrease: 30
+                }
+            ],
+            educationalNote: "John Mitchell was the highest-ranking government official to serve prison time for Watergate."
+        },
+
+        coverup_analysis: {
+            text: `ANATOMY OF THE COVER-UP
+
+            Documenting how they tried to hide the crime:
+
+            🔒 COVER-UP TIMELINE:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            JUNE 17: Break-in and arrests
+            JUNE 18: Hunt's White House safe emptied
+            JUNE 19: Mitchell destroys Gemstone files
+            JUNE 23: Nixon orders CIA to block FBI
+            JULY: Hush money begins flowing
+            AUGUST: Nixon declares no one in White House involved
+            FALL: Perjury before grand jury
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            📋 METHODS USED:
+            • Destroy documents
+            • Pay witnesses to stay quiet
+            • Coordinate false testimony
+            • Use FBI/CIA to obstruct
+            • Lie to public and Congress
+
+            The cover-up was worse than the crime.`,
+            image: "coverup_diagram",
+            imagePrompt: "Complex conspiracy diagram, cover-up methods visualized, obstruction of justice documented",
+            choices: [
+                {
+                    text: "Find the smoking gun",
+                    nextScene: "smoking_gun_tape",
+                    progressIncrease: 50,
+                    evidence: true
+                },
+                {
+                    text: "Document final evidence",
+                    nextScene: "final_revelation",
+                    progressIncrease: 45
+                },
+                {
+                    text: "Complete the investigation",
+                    nextScene: "victory",
+                    progressIncrease: 50
+                }
+            ],
+            educationalNote: "The Watergate cover-up involved obstruction of justice at every level of government."
+        },
+
+        mainMenu: {
+            text: `Thank you for investigating the Watergate Files.
+
+            This case demonstrated how investigative journalism and democratic institutions can hold even the most powerful accountable.
+
+            The lessons of Watergate - about the rule of law, press freedom, and government accountability - remain essential to American democracy.`,
+            image: "watergate_conclusion",
+            imagePrompt: "Watergate complex at sunset, journalism and democracy prevailing, historic scandal site",
+            choices: []
+        },
+
         victory: {
             text: `INVESTIGATION COMPLETE
             DEMOCRACY PRESERVED

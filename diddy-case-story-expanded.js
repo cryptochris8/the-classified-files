@@ -6314,6 +6314,395 @@ Your hands shake as you realize this case will either make your career... or end
                 }
             ],
             educationalNote: "Surveillance deception operations can effectively mislead criminal organizations while enhancing actual intelligence gathering and creating operational advantages."
+        },
+
+        defiant_investigation_continues: {
+            text: `INVESTIGATION CONTINUES DESPITE OBSTRUCTION
+
+Despite facing unprecedented intimidation tactics, obstruction attempts, and criminal organization resistance, the federal investigation pushes forward with renewed determination.
+
+OBSTACLES OVERCOME:
+• Witness intimidation attempts thwarted through protection programs
+• Document destruction prevented through rapid evidence preservation
+• Corruption within investigation identified and neutralized
+• Criminal organization counter-intelligence operations disrupted
+
+INVESTIGATION MOMENTUM:
+• 89 cooperating witnesses maintaining testimony
+• Financial evidence trail fully documented
+• International cooperation agreements strengthened
+• RICO enterprise elements comprehensively established
+
+CRIMINAL ORGANIZATION DESPERATION:
+The criminal organization's increasingly aggressive tactics demonstrate awareness of investigation success and impending prosecution.
+
+This defiant continuation of investigation despite obstruction demonstrates federal law enforcement commitment to justice.`,
+            image: "defiant_investigation",
+            imagePrompt: "Determined federal investigators continuing work despite obstacles, evidence review, prosecution preparation, justice pursuit",
+            sources: ["Federal Investigation Persistence Protocol", "Obstruction Resistance Documentation"],
+            choices: [
+                {
+                    text: "Press forward with final prosecution preparations",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Strengthen witness protection for remaining testimony",
+                    nextScene: "witness_protection_program"
+                },
+                {
+                    text: "Document obstruction for additional charges",
+                    nextScene: "evidence_legal_analysis"
+                }
+            ],
+            educationalNote: "Federal investigations often face significant obstruction, but persistent pursuit of evidence and witness protection enables successful prosecution."
+        },
+
+        chief_of_staff_investigation: {
+            text: `CHIEF OF STAFF CRIMINAL INVESTIGATION
+
+Your investigation reveals the critical role of the criminal enterprise's chief of staff in coordinating illegal activities and protecting the organization from law enforcement detection.
+
+CHIEF OF STAFF PROFILE:
+• 15-year tenure managing criminal enterprise operations
+• Coordination of illegal activities across multiple jurisdictions
+• Financial management and money laundering oversight
+• Witness intimidation and evidence destruction coordination
+
+CRIMINAL ACTIVITIES DOCUMENTED:
+• Direct participation in RICO predicate acts
+• Coordination of obstruction of justice operations
+• Management of bribery and corruption payments
+• Oversight of criminal organization security operations
+
+EVIDENCE GATHERED:
+• Financial records showing illegal payment coordination
+• Communication records documenting criminal planning
+• Witness testimony describing chief of staff's criminal role
+• Documentary evidence of obstruction activities
+
+PROSECUTION SIGNIFICANCE:
+Chief of staff prosecution demonstrates criminal enterprise's organizational structure and coordinated criminal activity pattern.`,
+            image: "chief_of_staff_investigation",
+            imagePrompt: "Federal investigation of criminal organization leadership, evidence documentation, organizational chart, prosecution preparation",
+            sources: ["Criminal Enterprise Management Analysis", "RICO Leadership Investigation"],
+            choices: [
+                {
+                    text: "Build comprehensive case against chief of staff",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use chief of staff evidence to strengthen main prosecution",
+                    nextScene: "corroborating_evidence"
+                },
+                {
+                    text: "Negotiate cooperation agreement for additional intelligence",
+                    nextScene: "turning_the_mole"
+                }
+            ],
+            educationalNote: "Criminal enterprise leadership investigations reveal organizational structure essential for RICO prosecution and comprehensive dismantling of criminal organizations."
+        },
+
+        security_network_investigation: {
+            text: `CRIMINAL ORGANIZATION SECURITY NETWORK EXPOSED
+
+Your investigation uncovers the sophisticated security network the criminal enterprise employed to protect illegal activities and obstruct law enforcement investigation.
+
+SECURITY NETWORK STRUCTURE:
+• Former law enforcement personnel providing counter-surveillance
+• Private security companies used for witness intimidation
+• Intelligence operatives monitoring federal investigation activities
+• Technology specialists providing encrypted communications
+
+CRIMINAL SECURITY ACTIVITIES:
+• Counter-surveillance operations against federal investigators
+• Witness location identification for intimidation operations
+• Electronic surveillance of prosecutors and investigators
+• Evidence destruction and obstruction coordination
+
+NETWORK PERSONNEL IDENTIFIED:
+• 12 former law enforcement officers
+• 8 private security company executives
+• 5 technology and encryption specialists
+• 15 field operatives conducting surveillance and intimidation
+
+LEGAL IMPLICATIONS:
+Security network activities constitute additional RICO predicate acts including witness tampering, obstruction of justice, and conspiracy.`,
+            image: "security_network_investigation",
+            imagePrompt: "Criminal organization security network investigation, former law enforcement corruption, counter-surveillance operations, federal exposure",
+            sources: ["Criminal Security Network Analysis", "Obstruction Investigation Documentation"],
+            choices: [
+                {
+                    text: "Prosecute security network personnel",
+                    nextScene: "co_conspirator_payments",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use network exposure to strengthen main case",
+                    nextScene: "trial_preparation_investigation"
+                },
+                {
+                    text: "Investigate former law enforcement corruption further",
+                    nextScene: "federal_leak_investigation"
+                }
+            ],
+            educationalNote: "Criminal organization security networks often include former law enforcement personnel, creating additional prosecution opportunities and corruption exposure."
+        },
+
+        crypto_investigation: {
+            text: `CRYPTOCURRENCY MONEY LAUNDERING INVESTIGATION
+
+Your investigation reveals extensive use of cryptocurrency and blockchain technology to launder criminal enterprise proceeds and hide financial transactions from law enforcement.
+
+CRYPTOCURRENCY OPERATION SCOPE:
+• $47 million laundered through cryptocurrency transactions
+• 15 different cryptocurrency wallets identified
+• Multiple cryptocurrency exchanges used for conversion
+• Complex transaction patterns designed to obscure origin
+
+BLOCKCHAIN ANALYSIS:
+• Professional forensic analysis of blockchain transactions
+• Wallet ownership identification through exchange cooperation
+• Transaction timeline reconstruction showing money flow
+• International cryptocurrency exchange coordination
+
+MONEY LAUNDERING METHODOLOGY:
+• Conversion of cash to cryptocurrency through local exchanges
+• Tumbling and mixing services to obscure transaction origins
+• International wallet transfers to hide jurisdiction
+• Conversion back to fiat currency in offshore locations
+
+EVIDENCE GATHERING:
+• Blockchain forensics providing complete transaction records
+• Exchange cooperation revealing account ownership
+• International cooperation for overseas cryptocurrency accounts
+• Expert witness preparation for trial testimony
+
+This cryptocurrency investigation demonstrates criminal enterprise's sophisticated financial operations and money laundering capabilities.`,
+            image: "crypto_investigation",
+            imagePrompt: "Cryptocurrency money laundering investigation, blockchain analysis, federal forensics, digital financial crimes",
+            sources: ["Cryptocurrency Forensics Analysis", "Blockchain Investigation Protocol", "Digital Money Laundering Documentation"],
+            choices: [
+                {
+                    text: "Use cryptocurrency evidence for money laundering charges",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Trace cryptocurrency to identify additional criminal activities",
+                    nextScene: "offshore_banking_investigation"
+                },
+                {
+                    text: "Coordinate with international exchanges for additional evidence",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Cryptocurrency money laundering investigations require specialized blockchain forensics but can provide comprehensive transaction records for federal prosecution."
+        },
+
+        accounting_firm_investigation: {
+            text: `ACCOUNTING FIRM CRIMINAL FACILITATION INVESTIGATION
+
+Your investigation reveals that a major accounting firm knowingly facilitated criminal enterprise money laundering and financial fraud through professional services.
+
+ACCOUNTING FIRM INVOLVEMENT:
+• Preparation of false financial statements concealing criminal income
+• Tax fraud facilitation through fraudulent deduction schemes
+• Money laundering assistance through complex business structures
+• False audit opinions covering criminal financial activities
+
+FIRM PERSONNEL IMPLICATED:
+• 3 senior partners directing criminal facilitation
+• 7 managers implementing fraudulent schemes
+• 12 staff members participating in illegal activities
+• External consultants providing specialized criminal services
+
+CRIMINAL ACTIVITIES DOCUMENTED:
+• False financial statement preparation: $150 million misrepresented
+• Tax fraud facilitation: $23 million in fraudulent deductions
+• Money laundering structuring: $67 million obscured
+• Audit fraud: 5 years of false audit opinions
+
+PROSECUTION IMPLICATIONS:
+• Professional firm prosecution under RICO statute
+• Individual criminal liability for firm personnel
+• Professional license revocation proceedings
+• Civil liability for fraud damages
+
+This accounting firm investigation demonstrates how professional enablers facilitate sophisticated criminal enterprise operations.`,
+            image: "accounting_firm_investigation",
+            imagePrompt: "Accounting firm criminal investigation, financial fraud documentation, professional enabler prosecution, federal audit",
+            sources: ["Professional Enabler Investigation", "Accounting Fraud Analysis", "RICO Professional Prosecution"],
+            choices: [
+                {
+                    text: "Prosecute accounting firm under RICO statute",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use firm records to strengthen main prosecution",
+                    nextScene: "corroborating_evidence"
+                },
+                {
+                    text: "Negotiate firm cooperation for additional evidence",
+                    nextScene: "executive_prosecution_analysis"
+                }
+            ],
+            educationalNote: "Professional enablers like accounting firms face criminal liability for facilitating money laundering and financial fraud, with RICO prosecution providing comprehensive charges."
+        },
+
+        banking_compliance_investigation: {
+            text: `BANKING COMPLIANCE FAILURE INVESTIGATION
+
+Your investigation reveals systematic banking compliance failures that enabled criminal enterprise money laundering through major financial institutions.
+
+BANKING COMPLIANCE FAILURES:
+• Anti-money laundering (AML) system failures allowing suspicious transactions
+• Know Your Customer (KYC) violations in account opening
+• Suspicious Activity Report (SAR) filing failures
+• Currency Transaction Report (CTR) circumvention
+
+BANKS IMPLICATED:
+• 3 major national banks with systematic compliance failures
+• 5 regional banks used for money laundering structuring
+• 2 international banks facilitating offshore transfers
+• Multiple cryptocurrency exchanges with inadequate AML
+
+REGULATORY VIOLATIONS DOCUMENTED:
+• Bank Secrecy Act violations: $340 million in unreported transactions
+• AML program failures: 5 years of inadequate monitoring
+• SAR filing failures: 127 suspicious transactions unreported
+• CTR structuring allowance: $67 million structured to avoid reporting
+
+ENFORCEMENT IMPLICATIONS:
+• Federal banking regulatory enforcement actions
+• Civil money penalties for compliance failures
+• Criminal prosecution of knowing bank personnel
+• International regulatory cooperation for overseas banks
+
+Banking compliance investigation reveals financial system vulnerabilities exploited by criminal enterprises.`,
+            image: "banking_compliance_investigation",
+            imagePrompt: "Banking compliance investigation, AML failures, federal regulatory enforcement, financial institution accountability",
+            sources: ["Banking Compliance Analysis", "AML Investigation Protocol", "Federal Banking Enforcement"],
+            choices: [
+                {
+                    text: "Coordinate with banking regulators for enforcement",
+                    nextScene: "federal_agency_coordination",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use banking records to strengthen money laundering case",
+                    nextScene: "trial_preparation_investigation"
+                },
+                {
+                    text: "Investigate individual bank personnel for criminal liability",
+                    nextScene: "payment_processor_investigation"
+                }
+            ],
+            educationalNote: "Banking compliance failures enable criminal money laundering, with regulatory enforcement and criminal prosecution holding financial institutions accountable."
+        },
+
+        payment_processor_investigation: {
+            text: `PAYMENT PROCESSOR CRIMINAL FACILITATION INVESTIGATION
+
+Your investigation reveals that payment processors knowingly facilitated criminal enterprise financial transactions despite awareness of illegal activity.
+
+PAYMENT PROCESSOR INVOLVEMENT:
+• 4 payment processing companies facilitating criminal transactions
+• $89 million in criminal transactions processed
+• Deliberate circumvention of fraud detection systems
+• False merchant account documentation acceptance
+
+CRIMINAL FACILITATION DOCUMENTED:
+• Processing of payments for illegal services and products
+• Deliberate fraud detection system circumvention
+• False chargeback and dispute handling
+• Money laundering through merchant account structuring
+
+PROCESSOR PERSONNEL IMPLICATED:
+• 6 executives with knowledge of criminal facilitation
+• 12 compliance officers ignoring red flags
+• 8 account managers facilitating fraudulent accounts
+• 3 technology specialists modifying fraud detection systems
+
+PROSECUTION STRATEGY:
+• Money laundering charges for knowing facilitation
+• Fraud charges for false documentation acceptance
+• RICO charges for enterprise participation
+• Asset forfeiture for criminal proceeds
+
+Payment processor investigation demonstrates importance of financial intermediary accountability in criminal enterprise prosecution.`,
+            image: "payment_processor_investigation",
+            imagePrompt: "Payment processor investigation, financial technology crimes, merchant fraud, federal prosecution of financial intermediaries",
+            sources: ["Payment Processor Investigation Protocol", "Financial Technology Crime Analysis", "Merchant Fraud Documentation"],
+            choices: [
+                {
+                    text: "Prosecute payment processors for money laundering",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Use processor records to trace criminal financial flows",
+                    nextScene: "offshore_banking_investigation"
+                },
+                {
+                    text: "Coordinate with regulatory agencies for comprehensive enforcement",
+                    nextScene: "federal_agency_coordination"
+                }
+            ],
+            educationalNote: "Payment processors face criminal liability for knowingly facilitating criminal transactions, with federal prosecution addressing financial intermediary accountability."
+        },
+
+        executive_prosecution_analysis: {
+            text: `COMPREHENSIVE EXECUTIVE PROSECUTION ANALYSIS
+
+Your investigation analyzes prosecution strategy for all criminal enterprise executives identified throughout the federal investigation.
+
+EXECUTIVE DEFENDANTS IDENTIFIED:
+• Primary defendant: Criminal enterprise leader facing 47 charges
+• 8 senior executives facing RICO conspiracy charges
+• 12 mid-level managers facing specific criminal counts
+• 23 associates facing various federal charges
+
+PROSECUTION PRIORITY ANALYSIS:
+• Primary defendant: Maximum charges and sentencing
+• Senior executives: RICO conspiracy and specific crimes
+• Professional enablers: Accounting, legal, and financial professionals
+• Criminal associates: Cooperation opportunities and targeted prosecution
+
+SENTENCING EXPOSURE:
+• Primary defendant: 25-30 years federal sentencing guidelines
+• Senior executives: 10-20 years per defendant
+• Mid-level managers: 5-15 years per defendant
+• Associates: 2-10 years depending on role and cooperation
+
+COOPERATION STRATEGY:
+• Lower-level prosecution leverage for higher-level cooperation
+• Sentence reduction incentives for testimony against leadership
+• Asset forfeiture leverage for cooperation agreements
+• Protection program offers for cooperating witnesses
+
+This comprehensive executive prosecution analysis ensures systematic dismantling of entire criminal enterprise.`,
+            image: "executive_prosecution_analysis",
+            imagePrompt: "Federal prosecution strategy analysis, criminal enterprise dismantling, executive defendant profiles, comprehensive prosecution planning",
+            sources: ["Executive Prosecution Strategy", "RICO Defendant Analysis", "Federal Sentencing Guidelines Application"],
+            choices: [
+                {
+                    text: "Proceed with comprehensive prosecution of all executives",
+                    nextScene: "trial_preparation_investigation",
+                    collectEvidence: true
+                },
+                {
+                    text: "Focus on primary defendant while negotiating executive cooperation",
+                    nextScene: "turning_the_mole"
+                },
+                {
+                    text: "Analyze sentencing exposure for final prosecution decisions",
+                    nextScene: "sentencing_analysis"
+                }
+            ],
+            educationalNote: "Comprehensive executive prosecution strategy ensures complete criminal enterprise dismantling through systematic prosecution of all leadership levels."
         }
     }
 };
