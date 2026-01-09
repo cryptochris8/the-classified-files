@@ -520,6 +520,177 @@ EVIDENCE CATALOGUED: Weapon shows clear anti-fascist messaging.`,
             educationalNote: "The bullet casing inscriptions were confirmed by Governor Cox and included in official charging documents."
         },
 
+        bella_ciao_research: {
+            text: `"BELLA CIAO" - THE ANTI-FASCIST ANTHEM
+
+            SEPTEMBER 12, 2025 - 4:15 PM
+
+Your research into the inscription on Robinson's bullet casing reveals a significant cultural reference:
+
+"BELLA CIAO" HISTORICAL CONTEXT
+=====================================
+ORIGINS:
+- Italian folk song from the late 19th century
+- Originally sung by rice paddy workers (mondine)
+- Adopted by Italian Resistance fighters in WWII
+- Became anthem of anti-fascist partisans fighting Mussolini
+
+MODERN USAGE:
+- Featured prominently in Netflix series "Money Heist"
+- Became viral protest anthem globally (2018-present)
+- Used in protests against authoritarian governments
+- Popular in left-wing activist circles
+
+SIGNIFICANCE TO CASE:
+- Robinson inscribed lyrics on bullet casing
+- Suggests identification with anti-fascist ideology
+- FBI notes: "Indicates political motivation"
+- Not evidence of organizational membership
+=====================================
+
+Investigator's note: The use of "Bella Ciao" reflects online political culture where historical symbols are repurposed for modern ideological expression.
+
+EVIDENCE CATALOGUED: Cultural reference indicates ideological motivation, not organizational ties.`,
+            image: "kirk_digital_investigation",
+            imagePrompt: "Digital research showing historical photos of Italian resistance fighters alongside modern protest imagery",
+            sources: ["Historical Archives", "FBI Cultural Analysis Report", "Charging Documents"],
+            choices: [
+                {
+                    text: "Return to weapon analysis",
+                    nextScene: "weapon_analysis",
+                    progressIncrease: 5
+                },
+                {
+                    text: "Investigate Robinson's online radicalization",
+                    nextScene: "internet_radicalization",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Examine if Robinson had ties to anti-fascist groups",
+                    nextScene: "antifa_investigation",
+                    progressIncrease: 16,
+                    factual: true,
+                    evidence: true
+                }
+            ],
+            educationalNote: "'Bella Ciao' became a global symbol after its prominent use in the Spanish TV series 'Money Heist' (La Casa de Papel)."
+        },
+
+        marksmanship_investigation: {
+            text: `INVESTIGATING THE SHOOTER'S SKILLS
+
+            SEPTEMBER 12, 2025 - 4:45 PM
+
+The 142-yard shot that killed Charlie Kirk required significant skill. Your investigation into Tyler Robinson's background reveals:
+
+MARKSMANSHIP BACKGROUND
+=====================================
+CONFIRMED FACTS:
+- No military service record
+- No formal firearms training documented
+- No membership in gun clubs or shooting ranges
+- Rifle was grandfather's hunting weapon
+
+FBI ASSESSMENT:
+- Shot difficulty: "Moderate to difficult"
+- 142 yards with scoped bolt-action rifle
+- Target was stationary at podium
+- Conditions: Clear day, minimal wind
+- "Achievable with practice, not expert-level"
+
+WASHINGTON COUNTY RECORDS:
+- Rural Utah upbringing (Washington, UT)
+- Common for residents to hunt/shoot recreationally
+- No formal training required in Utah
+- Grandfather was avid hunter
+
+BALLISTICS EXPERT NOTE:
+"A 142-yard shot with a scoped Mauser 98 is well within capability of someone with recreational shooting experience. This was not a 'professional' shot - it was a determined amateur who practiced."
+=====================================
+
+EVIDENCE CATALOGUED: Marksmanship consistent with rural Utah background, no professional training indicated.`,
+            image: "kirk_investigation_board",
+            imagePrompt: "Investigation board showing ballistics analysis, trajectory diagrams, and shooter background information",
+            sources: ["FBI Ballistics Report", "Utah County Records", "Expert Witness Statement"],
+            choices: [
+                {
+                    text: "Return to weapon analysis",
+                    nextScene: "weapon_analysis",
+                    progressIncrease: 5
+                },
+                {
+                    text: "Review the crime scene positioning",
+                    nextScene: "crime_scene_analysis",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Examine Robinson's preparation timeline",
+                    nextScene: "radicalization_timeline",
+                    progressIncrease: 14,
+                    factual: true
+                }
+            ],
+            educationalNote: "FBI analysis confirmed the shot was 'achievable but required preparation' - consistent with the premeditation evidence."
+        },
+
+        internet_culture_analysis: {
+            text: `THE PERFORMATIVE NATURE OF POLITICAL VIOLENCE
+
+            SEPTEMBER 12, 2025 - 5:30 PM
+
+Analyzing the inscriptions on Robinson's ammunition reveals a disturbing trend in modern political violence:
+
+INTERNET CULTURE AND VIOLENCE
+=====================================
+THE INSCRIPTIONS:
+- "Hey Facist! Catch!"
+- "Oh bella ciao, bella ciao, bella ciao, ciao ciao"
+
+ANALYSIS - FBI BEHAVIORAL UNIT:
+
+"These inscriptions reflect what we call 'performative violence' - acts designed not just to harm but to communicate a message and gain attention.
+
+Key characteristics observed:
+1. MEME CULTURE: Casual tone ("Hey... Catch!") mirrors internet humor
+2. SYMBOLIC REFERENCES: "Bella Ciao" connects to broader ideology
+3. DOCUMENTATION: Inscribing casings suggests intent to be found/analyzed
+4. AUDIENCE AWARENESS: Shooter knew these would be examined"
+
+EXPERT OPINION:
+"Robinson's actions show hallmarks of online radicalization where political violence is gamified and seen as a form of expression. The casual tone of the inscriptions is deeply concerning - it reflects desensitization."
+=====================================
+
+This pattern has appeared in other recent political violence cases across the ideological spectrum.
+
+EVIDENCE CATALOGUED: Inscriptions indicate performative violence influenced by internet culture.`,
+            image: "kirk_digital_evidence",
+            imagePrompt: "FBI behavioral analysis display showing internet radicalization patterns and symbolic messaging analysis",
+            sources: ["FBI Behavioral Analysis Unit", "DHS Domestic Terrorism Report", "Academic Studies on Online Radicalization"],
+            choices: [
+                {
+                    text: "Return to weapon analysis",
+                    nextScene: "weapon_analysis",
+                    progressIncrease: 5
+                },
+                {
+                    text: "Investigate Robinson's online activity",
+                    nextScene: "internet_radicalization",
+                    progressIncrease: 16,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Review other recent political violence cases",
+                    nextScene: "aftermath",
+                    progressIncrease: 12,
+                    factual: true
+                }
+            ],
+            educationalNote: "The FBI has identified 'performative violence' as a growing concern in domestic terrorism cases across all political ideologies."
+        },
+
         antifa_investigation: {
             text: `INVESTIGATING ORGANIZATIONAL TIES
 
@@ -1938,6 +2109,2220 @@ All evidence points to a lone actor with political motivation and no organizatio
                 }
             ],
             educationalNote: "This evidence list compiles items mentioned in official reports and court documents."
+        },
+
+        // ========== INVESTIGATION SCENES ==========
+
+        rifle_origins: {
+            text: `THE MAUSER MODEL 98 - TRACING THE WEAPON
+
+            SEPTEMBER 12, 2025 - 2:00 PM
+
+Your investigation into the rifle's history reveals its origins:
+
+WEAPON PROVENANCE
+=====================================
+FIREARM DETAILS:
+- Make: Mauser Model 98
+- Caliber: .30-06 Springfield (converted)
+- Original manufacture: Post-WWII German production
+- Current owner: Tyler Robinson
+
+CHAIN OF CUSTODY:
+1. Originally purchased by Robinson's grandfather
+2. Used for deer hunting in southern Utah
+3. Passed down through family
+4. Robinson had access for several years
+
+LEGAL STATUS:
+- Legally owned firearm
+- No registration required in Utah
+- Properly maintained
+- Scope added by Robinson (legally purchased)
+
+INVESTIGATOR NOTES:
+"The weapon choice suggests familiarity and comfort rather than tactical sophistication. This was a family heirloom, not a weapon purchased for this specific act."
+=====================================
+
+The rifle tells a story of rural Utah life, not criminal planning.`,
+            image: "kirk_forensic_evidence",
+            imagePrompt: "Detailed examination of vintage Mauser rifle with documentation of its history",
+            sources: ["ATF Trace Report", "Family Testimony", "Utah Gun Laws"],
+            choices: [
+                {
+                    text: "Return to weapon analysis",
+                    nextScene: "weapon_analysis",
+                    progressIncrease: 5
+                },
+                {
+                    text: "Examine the shooter's preparation",
+                    nextScene: "marksmanship_investigation",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Review the crime scene analysis",
+                    nextScene: "crime_scene_analysis",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Utah has minimal gun registration requirements, making weapon tracing rely on federal databases and family testimony."
+        },
+
+        drone_investigation: {
+            text: `AERIAL SURVEILLANCE ANALYSIS
+
+            SEPTEMBER 12, 2025 - 4:00 PM
+
+FBI analysts examine all available aerial footage from the event:
+
+DRONE AND AERIAL ANALYSIS
+=====================================
+COVERAGE REVIEWED:
+- University security cameras (12 angles)
+- News helicopter footage (arrived post-shooting)
+- Attendee drone footage (2 civilian drones)
+- Satellite imagery (requested from NGA)
+
+KEY FINDINGS:
+1. Shooter position identified on parking structure
+2. No accomplices visible in area
+3. Escape route clearly documented
+4. Timeline confirms single-actor scenario
+
+TECHNICAL ANALYSIS:
+- Shot originated from Level 3, Row J
+- Distance to stage: 142 yards confirmed
+- Clear line of sight to podium
+- No obstructions between positions
+
+SECURITY GAP IDENTIFIED:
+- Parking structure not secured
+- No counter-sniper positions
+- Event security focused on crowd
+- Perimeter was inadequate for threat level
+=====================================
+
+The aerial analysis confirms this was a preventable security failure.`,
+            image: "kirk_surveillance_footage",
+            imagePrompt: "Multiple surveillance feeds showing aerial views of university campus during investigation",
+            sources: ["FBI Technical Analysis", "University Security Records", "FAA Drone Logs"],
+            choices: [
+                {
+                    text: "Examine the security failures",
+                    nextScene: "security_investigation",
+                    progressIncrease: 14,
+                    evidence: true
+                },
+                {
+                    text: "Review the shooter's movements",
+                    nextScene: "suspect_movements",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Return to crime scene analysis",
+                    nextScene: "crime_scene_analysis",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Modern investigations increasingly rely on civilian drone footage and security cameras to reconstruct events."
+        },
+
+        security_investigation: {
+            text: `SECURITY FAILURES AT UVU EVENT
+
+            SEPTEMBER 13, 2025 - 10:00 AM
+
+Your investigation reveals significant security lapses:
+
+SECURITY ASSESSMENT
+=====================================
+EVENT DETAILS:
+- Venue: Utah Valley University
+- Attendance: ~3,000 people
+- Security provider: University Police + Private
+- Threat assessment: "Elevated" (not acted upon)
+
+FAILURES IDENTIFIED:
+
+1. PERIMETER SECURITY
+   - Parking structures not secured
+   - No credential checks for elevated positions
+   - Inadequate fencing
+
+2. COUNTER-SURVEILLANCE
+   - No counter-sniper teams deployed
+   - Rooftop positions unchecked
+   - No drone detection systems
+
+3. THREAT INTELLIGENCE
+   - Online threats not monitored
+   - No coordination with FBI
+   - Previous threats to Kirk not assessed
+
+4. RESPONSE TIME
+   - 4+ minutes to locate shooter
+   - Confusion about shot origin
+   - Medical response delayed
+=====================================
+
+Security expert: "For a figure as controversial as Kirk, this level of security was grossly inadequate."`,
+            image: "kirk_crime_scene_investigation",
+            imagePrompt: "Security assessment diagram showing venue layout and identified vulnerabilities",
+            sources: ["Security Consultant Report", "University Statement", "DHS Event Security Guidelines"],
+            choices: [
+                {
+                    text: "Interview security personnel",
+                    nextScene: "first_responders",
+                    progressIncrease: 14,
+                    evidence: true
+                },
+                {
+                    text: "Review previous threats against Kirk",
+                    nextScene: "tpusa_controversies",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Examine the aftermath response",
+                    nextScene: "aftermath",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Event security for controversial political figures requires coordination between venue, private security, and law enforcement."
+        },
+
+        suspect_movements: {
+            text: `TRACKING THE SHOOTER'S MOVEMENTS
+
+            SEPTEMBER 12, 2025 - 6:00 PM
+
+Investigators reconstruct Robinson's movements on the day of the assassination:
+
+TIMELINE OF MOVEMENTS
+=====================================
+SEPTEMBER 11, 2025:
+
+6:30 AM - Left residence in Washington, UT
+         (Confirmed by neighbor security camera)
+
+9:45 AM - Stopped at gas station in Nephi, UT
+         (Receipt recovered, surveillance footage)
+
+11:30 AM - Arrived Salt Lake City area
+          (Cell tower data)
+
+1:15 PM - Arrived Utah Valley University
+         (Parking structure camera)
+
+2:30 PM - Positioned on Level 3
+         (Last movement before shooting)
+
+3:47 PM - Shot fired
+         (Multiple audio timestamps)
+
+3:48-4:15 PM - Remained in position
+              (Witnesses report no movement)
+
+4:22 PM - Surrendered to police
+         (Body camera footage)
+=====================================
+
+Total drive: ~300 miles from Washington, UT
+Planning evidence: Route suggests prior reconnaissance`,
+            image: "kirk_timeline_investigation",
+            imagePrompt: "Map showing suspect's route from Washington UT to Utah Valley University with timestamps",
+            sources: ["FBI Timeline Report", "Cell Tower Records", "Surveillance Footage"],
+            choices: [
+                {
+                    text: "Investigate the planning period",
+                    nextScene: "planning_week",
+                    progressIncrease: 14,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Review the confession messages",
+                    nextScene: "confession_analysis",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Examine the surrender",
+                    nextScene: "manhunt_timeline",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Cell tower data and surveillance footage allow investigators to reconstruct precise timelines of suspect movements."
+        },
+
+        // ========== INTERVIEW SCENES ==========
+
+        first_responders: {
+            text: `FIRST RESPONDER INTERVIEWS
+
+            SEPTEMBER 12, 2025 - 8:00 PM
+
+You interview the first officers and medics on scene:
+
+FIRST RESPONDER ACCOUNTS
+=====================================
+OFFICER MARTINEZ (UVU Police):
+"We heard the shot and immediately there was chaos. People running everywhere. It took us almost four minutes to pinpoint where the shot came from. The parking structure wasn't on our radar."
+
+PARAMEDIC CHEN:
+"When we reached Mr. Kirk, he was unresponsive. The wound was... catastrophic. We initiated treatment but he was pronounced at the hospital. There was nothing that could have saved him given the injury."
+
+OFFICER BRIGGS (First to shooter):
+"He was just sitting there. Rifle on the ground beside him. Hands up. He said, 'I'm the one you're looking for.' No resistance at all. It was surreal how calm he was."
+
+SGT. WILLIAMS (Incident Commander):
+"In 20 years, I've never seen anything like this at a campus event. We were prepared for protests, maybe a fight. Not a sniper."
+=====================================
+
+The first responders paint a picture of chaos followed by an eerily calm surrender.`,
+            image: "kirk_witness_interview",
+            imagePrompt: "Interview room with first responders giving statements to investigators",
+            sources: ["First Responder Statements", "Incident Reports", "Body Camera Footage"],
+            choices: [
+                {
+                    text: "Interview event witnesses",
+                    nextScene: "witness_interviews",
+                    progressIncrease: 14,
+                    evidence: true
+                },
+                {
+                    text: "Review the medical response",
+                    nextScene: "aftermath",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Examine the security failures",
+                    nextScene: "security_investigation",
+                    progressIncrease: 12,
+                    factual: true
+                }
+            ],
+            educationalNote: "First responder testimony is crucial for establishing timeline and conditions at a crime scene."
+        },
+
+        witness_interviews: {
+            text: `EVENT WITNESS STATEMENTS
+
+            SEPTEMBER 13, 2025 - 2:00 PM
+
+FBI agents compile statements from attendees:
+
+WITNESS ACCOUNTS
+=====================================
+ATTENDEE #1 (Front row):
+"Kirk was mid-sentence about free speech on campus. Then this... crack. He just dropped. I didn't understand what happened for several seconds."
+
+ATTENDEE #2 (Student):
+"I was recording on my phone. I got the moment it happened. I can't stop seeing it. He was so animated one second, then just... gone."
+
+ATTENDEE #3 (TPUSA Staff):
+"Charlie always said he knew the risks. He'd gotten death threats for years. We begged him to have better security but he wanted to be accessible."
+
+ATTENDEE #4 (Protester outside):
+"We were there to protest peacefully. When we heard the shot, everyone just froze. This isn't what any of us wanted. Violence isn't the answer."
+
+ATTENDEE #5 (Professor):
+"I disagreed with everything Kirk stood for, but this... this is terrorism. This is not how we handle political disagreement."
+=====================================
+
+The witnesses span the political spectrum but share one emotion: horror.`,
+            image: "kirk_witness_testimony",
+            imagePrompt: "Multiple witnesses being interviewed by FBI agents in separate rooms",
+            sources: ["FBI Witness Statements", "Video Recordings", "University Counseling Reports"],
+            choices: [
+                {
+                    text: "Interview Kirk's family",
+                    nextScene: "family_interviews",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review the shooter's background",
+                    nextScene: "suspect_background",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Examine the political response",
+                    nextScene: "political_response",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Witness statements often vary significantly due to stress and different vantage points, requiring careful corroboration."
+        },
+
+        family_interviews: {
+            text: `THE ROBINSON FAMILY SPEAKS
+
+            SEPTEMBER 14, 2025 - 11:00 AM
+
+Tyler Robinson's family provides a statement through their attorney:
+
+FAMILY STATEMENT
+=====================================
+"We are devastated by what Tyler has done. The person who committed this act is not the son and brother we knew. We cannot explain it. We cannot excuse it.
+
+Tyler was a quiet kid. Good grades. Never in trouble. He worked hard as an electrician. We had no warning signs. No manifesto left behind. No goodbye.
+
+The last time we spoke, he seemed normal. He talked about work. About maybe going back to school. Nothing that suggested... this.
+
+We extend our deepest condolences to the Kirk family. No words can express our sorrow. We are cooperating fully with investigators.
+
+We ask for privacy as we try to understand how our Tyler became capable of this."
+=====================================
+
+INVESTIGATOR NOTES:
+- Family appears genuinely shocked
+- No evidence they knew of plans
+- Confirm Robinson was "quiet, kept to himself"
+- Religious family, regular church attendance`,
+            image: "kirk_witness_interview",
+            imagePrompt: "Family attorney reading statement to press outside courthouse",
+            sources: ["Family Statement", "Investigator Notes", "Background Interviews"],
+            choices: [
+                {
+                    text: "Interview Robinson's classmates",
+                    nextScene: "classmate_interviews",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Interview Robinson's roommate",
+                    nextScene: "roommate_interview",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Examine online radicalization",
+                    nextScene: "internet_radicalization",
+                    progressIncrease: 16,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Family members of mass shooters often report seeing no warning signs, highlighting the difficulty of prevention."
+        },
+
+        classmate_interviews: {
+            text: `FORMER CLASSMATES REMEMBER ROBINSON
+
+            SEPTEMBER 15, 2025 - 3:00 PM
+
+Investigators interview Robinson's former classmates at Utah State:
+
+CLASSMATE ACCOUNTS
+=====================================
+ENGINEERING CLASSMATE:
+"Tyler was smart. Really smart. But quiet. He'd ace tests and never study with us. Kept to himself mostly. I remember he got into a heated debate once about politics in the student union, but that's the only time I saw him passionate."
+
+LAB PARTNER:
+"We worked together for a semester. He was reliable, did his share. But we never talked about anything personal. I didn't even know where he was from until I saw the news."
+
+ROOMMATE (Freshman year):
+"He was fine to live with. Clean, quiet. Played video games a lot. I remember he was really into history - had books about World War II everywhere. We lost touch after that year."
+
+PROFESSOR HANSEN:
+"Tyler was a B+ student. Showed up, did the work, never caused problems. In a class of 200, he didn't stand out in any way."
+=====================================
+
+The picture emerges of an unremarkable student who left no impression.`,
+            image: "kirk_university_investigation",
+            imagePrompt: "University campus with investigators interviewing students",
+            sources: ["Student Interviews", "University Records", "Faculty Statements"],
+            choices: [
+                {
+                    text: "Examine his online presence",
+                    nextScene: "online_investigation",
+                    progressIncrease: 14,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Review his employment history",
+                    nextScene: "suspect_background",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Interview his current roommate",
+                    nextScene: "roommate_interview",
+                    progressIncrease: 12
+                }
+            ],
+            educationalNote: "The 'quiet loner' profile appears frequently in mass shooter cases, though it describes millions of non-violent individuals."
+        },
+
+        prosecutor_interview: {
+            text: `FEDERAL PROSECUTOR BRIEFING
+
+            SEPTEMBER 18, 2025 - 10:00 AM
+
+U.S. Attorney Sarah Mitchell briefs the press on charges:
+
+PROSECUTION STATEMENT
+=====================================
+"Today we are announcing federal charges against Tyler James Robinson for the assassination of Charles Kirk.
+
+CHARGES FILED:
+1. Murder in furtherance of a crime of violence
+2. Use of a firearm in a federal crime of violence
+3. Interstate travel to commit murder
+4. Domestic terrorism
+
+We are seeking the death penalty.
+
+The evidence is overwhelming. We have:
+- Eyewitness testimony
+- Forensic evidence
+- Confession messages
+- Detailed timeline
+
+This was a premeditated act of political assassination. The defendant traveled 300 miles with the specific intent to murder Mr. Kirk because of his political beliefs.
+
+This is domestic terrorism, plain and simple. We will prosecute it as such."
+=====================================
+
+REPORTER QUESTIONS:
+Q: Any co-conspirators?
+A: "Evidence indicates a lone actor."
+
+Q: What about the 'manifesto'?
+A: "We're investigating referenced materials."`,
+            image: "kirk_legal_proceedings",
+            imagePrompt: "Federal prosecutor at podium announcing charges with American flag backdrop",
+            sources: ["DOJ Press Release", "Federal Indictment", "Press Conference Transcript"],
+            choices: [
+                {
+                    text: "Analyze the legal strategy",
+                    nextScene: "legal_proceedings",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Examine death penalty implications",
+                    nextScene: "death_penalty_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review the evidence summary",
+                    nextScene: "evidence_review",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Federal assassination charges can carry the death penalty under 18 U.S.C. § 1111."
+        },
+
+        erika_kirk_interview: {
+            text: `ERIKA KIRK'S STATEMENT
+
+            SEPTEMBER 16, 2025 - 2:00 PM
+
+Charlie Kirk's wife, Erika, releases a statement:
+
+STATEMENT FROM ERIKA KIRK
+=====================================
+"My husband was murdered for his beliefs. For speaking his mind. For doing what he loved - engaging with young Americans about ideas.
+
+Charlie knew the risks. Every day, we received threats. Every event, there were protesters. But he never backed down. He believed that dialogue, even heated dialogue, was better than silence.
+
+He was a father. Our children will grow up without their dad because someone decided that words deserved death.
+
+I don't want Charlie's death to cause more division. He wouldn't want that. He debated people he disagreed with because he believed in persuasion, not violence.
+
+To those celebrating his death online: you prove everything he warned about. When we celebrate violence against those we disagree with, we've lost our humanity.
+
+Charlie's legacy will be the millions of young people he inspired to think, to question, to engage. That can't be killed."
+=====================================
+
+The statement has been viewed over 50 million times.`,
+            image: "kirk_press_conference",
+            imagePrompt: "Emotional press conference with widow reading statement surrounded by supporters",
+            sources: ["Kirk Family Statement", "TPUSA Memorial Release"],
+            choices: [
+                {
+                    text: "Review TPUSA's organizational response",
+                    nextScene: "tpusa_response",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Examine the political aftermath",
+                    nextScene: "political_response",
+                    progressIncrease: 14
+                },
+                {
+                    text: "Continue investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Victims' families often become public figures following high-profile crimes, adding trauma to their grief."
+        },
+
+        legal_expert_interview: {
+            text: `LEGAL EXPERT ANALYSIS
+
+            SEPTEMBER 20, 2025 - 4:00 PM
+
+Constitutional law professor explains the legal landscape:
+
+LEGAL ANALYSIS
+=====================================
+PROFESSOR DAVID CHEN (Georgetown Law):
+
+"This case raises several critical legal issues:
+
+1. DOMESTIC TERRORISM DESIGNATION
+   - Prosecution is using federal terrorism statutes
+   - Requires proving ideological motivation
+   - Carries enhanced penalties
+
+2. DEATH PENALTY CONSIDERATIONS
+   - DOJ must authorize capital prosecution
+   - Aggravating factors: premeditation, political motive
+   - Mitigating factors: no prior record, mental health
+
+3. FIRST AMENDMENT IMPLICATIONS
+   - Speech that inspired action vs. direct incitement
+   - Online radicalization and platform liability
+   - Chilling effect concerns
+
+4. PRECEDENT
+   - Similar to Gabby Giffords shooting prosecution
+   - May influence future political violence cases
+
+The trial will likely become a referendum on political violence in America."
+=====================================
+
+Legal community expects conviction but debate over appropriate sentence.`,
+            image: "kirk_legal_proceedings",
+            imagePrompt: "Law school professor giving analysis in office surrounded by legal books",
+            sources: ["Legal Expert Interviews", "Constitutional Law Analysis", "DOJ Guidelines"],
+            choices: [
+                {
+                    text: "Review the prosecution's case",
+                    nextScene: "prosecutor_interview",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Examine death penalty factors",
+                    nextScene: "death_penalty_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 12
+                }
+            ],
+            educationalNote: "Political assassination cases often set legal precedents that influence how future cases are prosecuted."
+        },
+
+        // ========== ANALYSIS SCENES ==========
+
+        motive_analysis: {
+            text: `ANALYZING THE MOTIVE
+
+            SEPTEMBER 17, 2025 - 11:00 AM
+
+FBI behavioral analysts present their assessment:
+
+MOTIVE ANALYSIS
+=====================================
+PRIMARY FACTORS:
+
+1. IDEOLOGICAL
+   - Anti-fascist self-identification
+   - Opposition to MAGA movement
+   - Belief that Kirk represented "fascism"
+
+2. PERSONAL GRIEVANCE
+   - No direct connection to Kirk found
+   - No personal vendetta identified
+   - Appears purely ideological
+
+3. PSYCHOLOGICAL
+   - No diagnosed mental illness (pending evaluation)
+   - Showed capacity for long-term planning
+   - Understood consequences (surrendered immediately)
+
+4. RADICALIZATION PATHWAY
+   - Online echo chambers
+   - Gradual escalation of rhetoric
+   - "Bella Ciao" adoption suggests anti-fascist identity
+
+BEHAVIORAL ASSESSMENT:
+"Robinson appears to have viewed himself as acting in defense against perceived fascism. This is a case of ideologically motivated violence where the perpetrator believed his actions were justified, even heroic."
+=====================================`,
+            image: "kirk_investigation_board",
+            imagePrompt: "FBI behavioral analysis board with motive factors mapped out",
+            sources: ["FBI Behavioral Analysis Unit", "Psychological Assessment", "Digital Forensics"],
+            choices: [
+                {
+                    text: "Examine the ideology connection",
+                    nextScene: "ideology_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review online radicalization",
+                    nextScene: "internet_radicalization",
+                    progressIncrease: 16,
+                    evidence: true
+                },
+                {
+                    text: "Continue investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Understanding motive is crucial for both prosecution and prevention of future attacks."
+        },
+
+        ideology_analysis: {
+            text: `THE IDEOLOGY BEHIND THE ACT
+
+            SEPTEMBER 18, 2025 - 3:00 PM
+
+Experts analyze the ideological framework:
+
+IDEOLOGICAL ANALYSIS
+=====================================
+ANTI-FASCIST IDENTIFICATION:
+
+Robinson's digital footprint shows:
+- Engagement with anti-fascist content online
+- "Bella Ciao" as profile music on Discord
+- Posts critical of "rising fascism in America"
+- No membership in formal organizations
+
+EXPERT ANALYSIS (Dr. Sarah Thompson, Extremism Researcher):
+
+"Robinson represents a concerning phenomenon: self-radicalized individuals who adopt ideological labels without organizational membership.
+
+He wasn't 'Antifa' in any operational sense - there's no evidence of group coordination. Instead, he absorbed an ideology online and decided unilaterally to act on it.
+
+This makes prevention extremely difficult. There was no group to infiltrate, no communications to intercept. Just one person, consuming content, and deciding to kill."
+
+KEY DISTINCTION:
+- Organizational terrorism: Directed by group
+- Lone actor terrorism: Self-directed, ideologically inspired
+- Robinson clearly fits the latter category
+=====================================`,
+            image: "kirk_digital_investigation",
+            imagePrompt: "Analysis of online extremism patterns with ideology mapping",
+            sources: ["DHS Extremism Report", "Academic Research", "FBI Threat Assessment"],
+            choices: [
+                {
+                    text: "Investigate hate crime elements",
+                    nextScene: "hate_crime_analysis",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Compare to other political violence",
+                    nextScene: "political_violence_context",
+                    progressIncrease: 14
+                },
+                {
+                    text: "Return to motive analysis",
+                    nextScene: "motive_analysis",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Lone actor terrorism has become the dominant form of domestic terrorism in the United States."
+        },
+
+        hate_crime_analysis: {
+            text: `HATE CRIME DETERMINATION
+
+            SEPTEMBER 19, 2025 - 10:00 AM
+
+Legal analysts examine whether this qualifies as a hate crime:
+
+HATE CRIME ANALYSIS
+=====================================
+FEDERAL HATE CRIME DEFINITION:
+Crime motivated by bias against race, religion, national origin, gender, sexual orientation, or disability.
+
+DOES THIS CASE QUALIFY?
+
+ARGUMENT FOR:
+- Kirk targeted for political beliefs
+- Could be considered bias against conservatives
+- Some jurisdictions include political affiliation
+
+ARGUMENT AGAINST:
+- Political affiliation not protected federally
+- Utah law doesn't include political belief
+- "Hate crime" term may not apply legally
+
+DOJ DECISION:
+Prosecuting as domestic terrorism rather than hate crime because:
+1. Political motivation clear but not "bias" under law
+2. Terrorism statutes carry stronger penalties
+3. Sets precedent for political violence
+
+LEGAL EXPERT:
+"Whether we call it a hate crime or terrorism, the result is the same - a man was murdered for his beliefs. The label matters less than the justice."
+=====================================`,
+            image: "kirk_legal_proceedings",
+            imagePrompt: "Legal analysis documents with hate crime statutes highlighted",
+            sources: ["DOJ Guidelines", "Federal Hate Crime Statutes", "Legal Analysis"],
+            choices: [
+                {
+                    text: "Compare political rhetoric",
+                    nextScene: "rhetoric_comparison",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review prosecution strategy",
+                    nextScene: "prosecutor_interview",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Continue investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Political belief is not a protected category under federal hate crime laws, unlike race or religion."
+        },
+
+        rhetoric_comparison: {
+            text: `THE RHETORIC OF POLITICAL VIOLENCE
+
+            SEPTEMBER 20, 2025 - 2:00 PM
+
+Media analysts examine the broader context of political rhetoric:
+
+RHETORIC ANALYSIS
+=====================================
+THE NATIONAL CONVERSATION:
+
+Following the assassination, debate erupts over:
+- Responsibility for heated political rhetoric
+- Whether violent language incites violence
+- Both sides pointing fingers
+
+LEFT-WING RESPONSE:
+- Mainstream condemnation of violence
+- Some fringe accounts celebrating (condemned)
+- Calls for de-escalation
+
+RIGHT-WING RESPONSE:
+- Blame placed on "leftist rhetoric"
+- Calls for accountability
+- Some escalatory language in response
+
+MEDIA ANALYSIS:
+"The assassination has not calmed political tensions - it has inflamed them. Both sides are using the tragedy to attack the other, exactly the opposite of what Kirk's widow requested."
+
+HISTORICAL CONTEXT:
+- Political violence has occurred across the spectrum
+- Recent years: Congressional baseball shooting, January 6th, various plots
+- Pattern of escalation concerning experts
+=====================================`,
+            image: "kirk_political_statements",
+            imagePrompt: "Split screen showing various political responses and media coverage",
+            sources: ["Media Monitoring", "Social Media Analysis", "Political Statements"],
+            choices: [
+                {
+                    text: "Analyze discourse patterns",
+                    nextScene: "discourse_analysis",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Review Kirk's past statements",
+                    nextScene: "kirk_statements_analysis",
+                    progressIncrease: 14
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Research shows that dehumanizing rhetoric correlates with increased political violence, though direct causation is difficult to prove."
+        },
+
+        discourse_analysis: {
+            text: `ANALYZING POLITICAL DISCOURSE
+
+            SEPTEMBER 21, 2025 - 11:00 AM
+
+Communications experts analyze the state of political discourse:
+
+DISCOURSE ANALYSIS
+=====================================
+PATTERN IDENTIFICATION:
+
+DR. JAMES MORRISON (Communications Professor):
+
+"What we're seeing is a complete breakdown of shared reality. Two sides operating with different facts, different values, different definitions of words like 'fascism' and 'freedom.'
+
+When one side calls the other 'fascists' and the other calls them 'communists,' we've left the realm of productive debate. These terms have become tribal markers rather than descriptive labels.
+
+Robinson didn't kill Charlie Kirk the person - he killed 'fascism' in his mind. That abstraction allowed him to dehumanize his target.
+
+THE CYCLE:
+1. Dehumanizing rhetoric increases
+2. 'Other side' seen as existential threat
+3. Violence becomes 'self-defense'
+4. Act of violence confirms fears
+5. Rhetoric escalates further
+
+We're in stage 4 right now. The question is whether we can break the cycle."
+=====================================`,
+            image: "kirk_digital_investigation",
+            imagePrompt: "Academic analysis of political discourse patterns with charts and examples",
+            sources: ["Communications Research", "Polling Data", "Academic Studies"],
+            choices: [
+                {
+                    text: "Examine prevention strategies",
+                    nextScene: "prevention_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review political violence context",
+                    nextScene: "political_violence_context",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Political scientists warn that dehumanizing rhetoric across the political spectrum increases risk of violence."
+        },
+
+        lone_actor_analysis: {
+            text: `THE LONE ACTOR PHENOMENON
+
+            SEPTEMBER 22, 2025 - 9:00 AM
+
+Terrorism experts analyze the lone actor threat:
+
+LONE ACTOR TERRORISM ANALYSIS
+=====================================
+FBI ASSESSMENT:
+
+"Tyler Robinson fits the classic lone actor profile:
+
+CHARACTERISTICS:
+- No formal group membership
+- Self-radicalized online
+- Planned attack independently
+- Did not share plans with others
+- Single point of failure for prevention
+
+WHY LONE ACTORS ARE DANGEROUS:
+1. No communications to intercept
+2. No group dynamics to disrupt
+3. No informants to recruit
+4. Attack timeline unpredictable
+
+ROBINSON SPECIFICALLY:
+- 18-month radicalization period (estimated)
+- No red flags to family/employer
+- Legal weapon acquisition
+- Target selection logical given ideology
+
+THE CHALLENGE:
+'We cannot monitor everyone who holds extreme views. The jump from belief to action is unpredictable and often invisible until it's too late.'
+
+- FBI Director, Congressional Testimony"
+=====================================`,
+            image: "kirk_investigation_report",
+            imagePrompt: "FBI threat assessment presentation on lone actor terrorism",
+            sources: ["FBI Lone Actor Study", "DHS Threat Assessment", "Congressional Testimony"],
+            choices: [
+                {
+                    text: "Review prevention challenges",
+                    nextScene: "prevention_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Examine the radicalization timeline",
+                    nextScene: "radicalization_timeline",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Since 2010, lone actors have been responsible for more domestic terrorism deaths than organized groups."
+        },
+
+        performative_violence: {
+            text: `VIOLENCE AS PERFORMANCE
+
+            SEPTEMBER 23, 2025 - 2:00 PM
+
+Behavioral experts examine the performative aspects:
+
+PERFORMATIVE VIOLENCE ANALYSIS
+=====================================
+THE CONCEPT:
+
+Dr. Lisa Park (Terrorism Studies):
+
+"Modern political violence is increasingly 'performative' - designed for an audience as much as for effect.
+
+ROBINSON'S PERFORMATIVE ELEMENTS:
+1. Inscribed ammunition (message for investigators)
+2. Immediate surrender (ensured survival to see impact)
+3. Confession texts (documented his 'why')
+4. Target selection (maximum symbolic value)
+
+THE AUDIENCE:
+- Media (guaranteed coverage)
+- Political allies (hoped for approval)
+- Political enemies (intended intimidation)
+- History (saw himself as historic actor)
+
+SOCIAL MEDIA AGE:
+'Robinson grew up in an era where every act can be broadcast globally. Violence becomes content. The shooter becomes a character in their own narrative.
+
+This is deeply concerning because it gamifies political violence. The act becomes about views, reactions, impact metrics.'
+
+This pattern appears across ideological spectrum in recent attacks."
+=====================================`,
+            image: "kirk_digital_evidence",
+            imagePrompt: "Analysis of social media impact and performative aspects of modern violence",
+            sources: ["Terrorism Studies Journal", "FBI Behavioral Unit", "Media Analysis"],
+            choices: [
+                {
+                    text: "Examine internet culture influence",
+                    nextScene: "internet_culture_analysis",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Review the confession messages",
+                    nextScene: "confession_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Researchers note that many modern attackers show awareness of media impact, suggesting violence is planned partly for audience effect."
+        },
+
+        prevention_analysis: {
+            text: `COULD THIS HAVE BEEN PREVENTED?
+
+            SEPTEMBER 24, 2025 - 10:00 AM
+
+Security experts assess prevention possibilities:
+
+PREVENTION ANALYSIS
+=====================================
+WHAT COULD HAVE STOPPED THIS?
+
+1. BETTER EVENT SECURITY
+   - Secured parking structures
+   - Counter-sniper positions
+   - Threat assessment protocols
+   VERDICT: Likely would have prevented THIS attack
+
+2. THREAT MONITORING
+   - No specific threats from Robinson found
+   - General threats to Kirk not acted upon
+   VERDICT: Unlikely to have identified Robinson specifically
+
+3. RED FLAG LAWS
+   - Robinson had no disqualifying history
+   - Legal gun owner
+   - No reported threats
+   VERDICT: Would not have applied
+
+4. ONLINE MONITORING
+   - First Amendment concerns
+   - Volume makes individual tracking impossible
+   - Robinson's posts not explicitly threatening
+   VERDICT: Impractical and legally problematic
+
+EXPERT CONSENSUS:
+"This attack was preventable through better physical security. It was likely NOT preventable through surveillance or intervention - Robinson simply didn't show the warning signs we look for."
+=====================================`,
+            image: "kirk_investigation_board",
+            imagePrompt: "Security experts analyzing prevention failures with timeline and intervention points",
+            sources: ["DHS After-Action Report", "Security Consultants", "Civil Liberties Analysis"],
+            choices: [
+                {
+                    text: "Review security failures",
+                    nextScene: "security_investigation",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Examine lone actor challenges",
+                    nextScene: "lone_actor_analysis",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 14
+                }
+            ],
+            educationalNote: "Prevention of lone actor attacks remains one of the most challenging problems in counterterrorism."
+        },
+
+        // ========== BACKGROUND SCENES ==========
+
+        online_investigation: {
+            text: `ROBINSON'S DIGITAL FOOTPRINT
+
+            SEPTEMBER 14, 2025 - 8:00 PM
+
+FBI cyber investigators analyze Robinson's online presence:
+
+DIGITAL FORENSICS REPORT
+=====================================
+PLATFORMS ANALYZED:
+- Discord (primary)
+- Reddit (occasional)
+- Twitter/X (lurker, no posts)
+- Instagram (deleted 6 months prior)
+
+DISCORD FINDINGS:
+- Member of 3 political discussion servers
+- Increasingly radical posts over 18 months
+- "Bella Ciao" as profile anthem
+- Referenced "doing something" about fascism
+- No specific threats found
+
+REDDIT ACTIVITY:
+- Commented on political subreddits
+- Generally anti-right-wing sentiment
+- Nothing explicitly violent
+
+SEARCH HISTORY:
+- Charlie Kirk events
+- Utah Valley University campus map
+- .30-06 ballistics
+- "Political assassination history"
+- "Italian resistance fighters"
+
+INVESTIGATOR NOTE:
+"His digital trail shows radicalization but nothing that would have triggered a report. Millions share similar views without acting on them."
+=====================================`,
+            image: "kirk_digital_investigation",
+            imagePrompt: "FBI cyber lab with multiple screens showing social media analysis",
+            sources: ["FBI Digital Forensics", "Platform Data Requests", "ISP Records"],
+            choices: [
+                {
+                    text: "Examine specific online communities",
+                    nextScene: "online_communities",
+                    progressIncrease: 14,
+                    evidence: true
+                },
+                {
+                    text: "Review the radicalization timeline",
+                    nextScene: "radicalization_timeline",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Look for manifesto",
+                    nextScene: "manifesto_investigation",
+                    progressIncrease: 16,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Digital forensics has become essential in understanding the radicalization pathways of lone actor terrorists."
+        },
+
+        online_communities: {
+            text: `THE ONLINE ECHO CHAMBERS
+
+            SEPTEMBER 15, 2025 - 11:00 AM
+
+Investigators map Robinson's online community involvement:
+
+ONLINE COMMUNITY ANALYSIS
+=====================================
+PRIMARY DISCORD SERVER: "Political Underground"
+- ~5,000 members
+- Mix of leftist ideologies
+- Anti-fascist content common
+- Not explicitly violent
+- Robinson: Active member since 2024
+
+HIS ROLE:
+- Not a moderator or leader
+- Regular commenter
+- Shared news articles
+- Engaged in debates
+- Gradually more extreme takes
+
+CONCERNING POSTS (Selected):
+
+March 2025: "Sometimes I wonder if debate even works against fascists"
+
+June 2025: "The Italian partisans had the right idea"
+
+August 2025: "Kirk is speaking in Utah next month. Fascism coming to my backyard."
+
+September 10, 2025: "Some things are worth sacrificing for" (2 days before attack)
+
+EXPERT ANALYSIS:
+"These posts show escalation but nothing that would clearly indicate imminent violence. Thousands post similar content without acting."
+=====================================`,
+            image: "kirk_digital_evidence",
+            imagePrompt: "Analysis of online community structure and radicalization pathway",
+            sources: ["FBI Community Analysis", "Platform Data", "Extremism Research"],
+            choices: [
+                {
+                    text: "Search for a manifesto",
+                    nextScene: "manifesto_investigation",
+                    progressIncrease: 16,
+                    evidence: true
+                },
+                {
+                    text: "Analyze the radicalization pattern",
+                    nextScene: "internet_radicalization",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Return to background investigation",
+                    nextScene: "suspect_background",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Online radicalization often occurs gradually in communities that aren't explicitly violent but normalize extreme views."
+        },
+
+        manifesto_investigation: {
+            text: `SEARCHING FOR A MANIFESTO
+
+            SEPTEMBER 16, 2025 - 4:00 PM
+
+Investigators search for any written explanation:
+
+MANIFESTO SEARCH
+=====================================
+INVESTIGATION STATUS:
+
+Traditional manifesto: NOT FOUND
+- No document left behind
+- No email to media
+- No pre-scheduled posts
+
+WHAT WAS FOUND:
+
+1. DISCORD MESSAGE (referenced):
+   Robinson mentioned "writing something" to explain his views in August 2025. No document recovered.
+
+2. TEXT TO PARTNER:
+   Confession messages serve as de facto explanation of motive. "I killed the fascist. I'm not sorry."
+
+3. BULLET INSCRIPTIONS:
+   "Hey Facist! Catch!" and "Bella Ciao" serve as ideological statement.
+
+4. SEARCH HISTORY:
+   Researched other manifestos (Christchurch, El Paso) but apparently didn't write his own.
+
+FBI ASSESSMENT:
+"Robinson may have decided a manifesto wasn't necessary - his target and method would speak for themselves. The inscribed ammunition was his statement."
+
+This differs from many recent attackers who left extensive writings.
+=====================================`,
+            image: "kirk_digital_investigation",
+            imagePrompt: "Digital forensics search for hidden documents and deleted files",
+            sources: ["FBI Digital Analysis", "Device Forensics", "Platform Subpoenas"],
+            choices: [
+                {
+                    text: "Analyze what the inscriptions reveal",
+                    nextScene: "internet_culture_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review the confession messages",
+                    nextScene: "confession_analysis",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Continue investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Not all attackers leave manifestos. Some communicate through their target selection and method instead."
+        },
+
+        january6_connection: {
+            text: `INVESTIGATING JANUARY 6TH CONNECTIONS
+
+            SEPTEMBER 17, 2025 - 9:00 AM
+
+Investigators check for any connection to January 6th events:
+
+JANUARY 6TH ANALYSIS
+=====================================
+INVESTIGATION QUESTION:
+Did Robinson's radicalization connect to January 6, 2021?
+
+FINDINGS:
+
+DIRECT INVOLVEMENT: None
+- Robinson not present at Capitol
+- No charges related to J6
+- No known associates involved
+
+IDEOLOGICAL CONNECTION: Significant
+- Discord posts reference J6 as "proof of fascism"
+- Cited J6 as reason to "fight back"
+- Viewed J6 participants as "terrorists"
+- Saw Kirk as J6 supporter/enabler
+
+TIMELINE CORRELATION:
+- Robinson's online radicalization began ~2023
+- Accelerated after J6 prosecutions and coverage
+- Frequently posted about "accountability"
+
+EXPERT ASSESSMENT:
+"January 6th served as a radicalizing event for Robinson - but from the opposite perspective. He saw it as confirmation that fascism was real and imminent, requiring resistance."
+=====================================
+
+J6 appears to be an ideological catalyst, not an operational connection.`,
+            image: "kirk_investigation_board",
+            imagePrompt: "Investigation board showing timeline correlation between January 6th and radicalization",
+            sources: ["FBI Investigation", "Capitol Police Records", "Social Media Analysis"],
+            choices: [
+                {
+                    text: "Examine broader political violence context",
+                    nextScene: "political_violence_context",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review Robinson's ideology",
+                    nextScene: "ideology_analysis",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Continue investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Major political events can serve as radicalizing catalysts for individuals across the ideological spectrum."
+        },
+
+        campus_conflicts: {
+            text: `CAMPUS POLITICAL TENSIONS
+
+            SEPTEMBER 18, 2025 - 1:00 PM
+
+Investigators examine the climate at Utah Valley University:
+
+CAMPUS CONTEXT
+=====================================
+UVU POLITICAL ENVIRONMENT:
+
+CONSERVATIVE PRESENCE:
+- Active TPUSA chapter (200+ members)
+- Regular conservative speakers
+- Kirk had visited previously (2023)
+
+OPPOSITION:
+- Progressive student groups
+- Faculty critics
+- Protest at every major event
+
+THE KIRK EVENT:
+- Announced 3 weeks prior
+- Immediate controversy
+- Counter-protest planned
+- Heightened security discussed but not implemented
+
+PRIOR INCIDENTS:
+- 2023 Kirk visit: Protests, no violence
+- 2024 Other speaker: Minor scuffle
+- General tension but no serious threats
+
+STUDENT INTERVIEWS:
+"Campus was polarized about Kirk coming. Some saw it as free speech, others as platforming hate. But protests were planned - no one expected THIS."
+
+Robinson was NOT a UVU student - he traveled from 300 miles away.
+=====================================`,
+            image: "kirk_university_investigation",
+            imagePrompt: "University campus with political tension visible through posters and divided student groups",
+            sources: ["University Administration", "Student Government", "Campus Police"],
+            choices: [
+                {
+                    text: "Review TPUSA's campus presence",
+                    nextScene: "tpusa_history",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Examine security decisions",
+                    nextScene: "security_investigation",
+                    progressIncrease: 14,
+                    evidence: true
+                },
+                {
+                    text: "Return to crime scene",
+                    nextScene: "crime_scene_analysis",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Campus political events have become increasingly contentious, requiring enhanced security planning."
+        },
+
+        planning_week: {
+            text: `THE WEEK BEFORE THE ATTACK
+
+            SEPTEMBER 19, 2025 - 3:00 PM
+
+Investigators reconstruct Robinson's final week:
+
+PLANNING TIMELINE
+=====================================
+SEPTEMBER 4-10, 2025:
+
+SEPTEMBER 4 (Thursday):
+- Normal work day at electrical company
+- Searched "UVU Kirk event details"
+- Called in sick for September 11-12
+
+SEPTEMBER 5 (Friday):
+- Visited shooting range (confirmed by records)
+- Purchased ammunition
+- Told roommate he was "visiting family"
+
+SEPTEMBER 6-7 (Weekend):
+- Whereabouts unclear
+- Phone data shows home location
+- Possibly writing/planning
+
+SEPTEMBER 8 (Monday):
+- Drove to Salt Lake City area (recon?)
+- Returned same day
+- "Bella Ciao" posts on Discord
+
+SEPTEMBER 9 (Tuesday):
+- Work (via phone check-in only)
+- Packed vehicle (neighbor observed)
+
+SEPTEMBER 10 (Wednesday):
+- Final Discord post
+- Final text to partner (normal)
+- Vehicle loaded with rifle
+
+SEPTEMBER 11 (Thursday):
+- Left at 6:30 AM
+- Arrived UVU 1:15 PM
+- Executed attack 3:47 PM
+=====================================`,
+            image: "kirk_timeline_investigation",
+            imagePrompt: "Detailed timeline board showing Robinson's activities in final week",
+            sources: ["FBI Timeline Analysis", "Phone Records", "Witness Statements"],
+            choices: [
+                {
+                    text: "Examine the trigger event",
+                    nextScene: "trigger_investigation",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review the day of attack",
+                    nextScene: "suspect_movements",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "The planning phase of targeted violence often shows specific preparation behaviors that may be observable in retrospect."
+        },
+
+        trigger_investigation: {
+            text: `WHAT TRIGGERED THE ATTACK?
+
+            SEPTEMBER 20, 2025 - 10:00 AM
+
+Behavioral analysts examine potential triggers:
+
+TRIGGER ANALYSIS
+=====================================
+QUESTION: What pushed Robinson from ideation to action?
+
+POTENTIAL TRIGGERS EXAMINED:
+
+1. KIRK'S ANNOUNCEMENT (August 2025)
+   - Event announced 3 weeks before
+   - Robinson's posts increased after
+   - "Fascism coming to my backyard"
+   ASSESSMENT: Likely primary trigger
+
+2. PERSONAL STRESSORS
+   - No job loss
+   - No relationship breakdown
+   - No family crisis
+   ASSESSMENT: Not a factor
+
+3. ONLINE ESCALATION
+   - Increasingly extreme posts
+   - Possible encouragement (investigating)
+   - Echo chamber effect
+   ASSESSMENT: Contributing factor
+
+4. SPECIFIC CONTENT
+   - Watched Kirk debate clips
+   - Read criticism of TPUSA
+   - Consumed anti-fascist content
+   ASSESSMENT: Reinforcing factor
+
+FBI CONCLUSION:
+"The Kirk event announcement appears to be the crystallizing event. Robinson had the ideology; Kirk's visit provided the opportunity and urgency."
+=====================================`,
+            image: "kirk_investigation_board",
+            imagePrompt: "Behavioral analysis chart showing trigger factors and escalation pathway",
+            sources: ["FBI Behavioral Unit", "Digital Timeline", "Psychological Assessment"],
+            choices: [
+                {
+                    text: "Review the radicalization process",
+                    nextScene: "radicalization_timeline",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Examine the planning week",
+                    nextScene: "planning_week",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 14
+                }
+            ],
+            educationalNote: "Targeted violence often requires both long-term radicalization and a specific triggering event or opportunity."
+        },
+
+        // ========== POLITICAL SCENES ==========
+
+        political_response: {
+            text: `THE POLITICAL AFTERMATH
+
+            SEPTEMBER 13, 2025 - 8:00 AM
+
+Political leaders respond to the assassination:
+
+POLITICAL RESPONSES
+=====================================
+PRESIDENT TRUMP:
+"Charlie Kirk was a patriot, a friend, and a warrior for our movement. He was murdered by a leftist terrorist. The radical left has blood on their hands. We will not forget, and we will not forgive."
+
+PRESIDENT BIDEN (former):
+"Political violence has no place in America. I condemn this act unequivocally. My prayers are with the Kirk family."
+
+GOVERNOR COX (Utah):
+"This is a dark day for Utah and America. We will pursue justice to the fullest extent of the law. Violence is never the answer to political disagreement."
+
+SENATOR BERNIE SANDERS:
+"I strongly condemn this horrific act of violence. In a democracy, we defeat bad ideas with better ideas, not with bullets."
+
+SENATOR TED CRUZ:
+"The left has created a climate of hate that led directly to this. They called Kirk a fascist for years. Words have consequences."
+=====================================
+
+The responses largely fell along partisan lines, each side blaming the other.`,
+            image: "kirk_political_statements",
+            imagePrompt: "Multiple screens showing political leaders giving statements about assassination",
+            sources: ["Official Statements", "Press Conferences", "Social Media"],
+            choices: [
+                {
+                    text: "Analyze the rhetoric comparison",
+                    nextScene: "rhetoric_comparison",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review TPUSA's response",
+                    nextScene: "tpusa_response",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Continue investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Political assassinations historically inflame partisan tensions rather than unite the country."
+        },
+
+        political_violence_context: {
+            text: `POLITICAL VIOLENCE IN CONTEXT
+
+            SEPTEMBER 21, 2025 - 2:00 PM
+
+Historians contextualize the assassination:
+
+HISTORICAL CONTEXT
+=====================================
+RECENT POLITICAL VIOLENCE (2016-2025):
+
+2017: Congressional Baseball Shooting
+      - Target: Republican congressmen
+      - Shooter: Left-wing activist
+      - Outcome: Rep. Scalise wounded
+
+2017-2020: Various plots foiled
+      - Targets across spectrum
+      - Most intercepted before execution
+
+2021: January 6th Capitol Attack
+      - Target: Congress, VP Pence
+      - Participants: Pro-Trump
+      - Outcome: Deaths, injuries, prosecutions
+
+2022: Pelosi Attack
+      - Target: Nancy Pelosi
+      - Outcome: Husband injured
+
+2024: Trump Assassination Attempts
+      - Multiple incidents
+      - Various motivations
+
+2025: Kirk Assassination
+      - First successful political assassination of major figure since RFK (1968)
+=====================================
+
+EXPERT: "We're in an era of escalating political violence from all directions. Kirk's death is not an aberration - it's a culmination."`,
+            image: "kirk_investigation_board",
+            imagePrompt: "Historical timeline of political violence in America with photographs and dates",
+            sources: ["FBI Domestic Terrorism Reports", "Historical Archives", "Academic Studies"],
+            choices: [
+                {
+                    text: "Examine prevention strategies",
+                    nextScene: "prevention_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Review the lone actor phenomenon",
+                    nextScene: "lone_actor_analysis",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Political violence in America has increased significantly since 2016, affecting figures across the political spectrum."
+        },
+
+        kirk_statements_analysis: {
+            text: `KIRK'S CONTROVERSIAL STATEMENTS
+
+            SEPTEMBER 22, 2025 - 11:00 AM
+
+Media analysts examine Kirk's rhetoric and its critics:
+
+KIRK'S PUBLIC STATEMENTS
+=====================================
+SUPPORTERS HIGHLIGHT:
+- Free speech advocacy
+- Pro-American messaging
+- Youth engagement
+- Anti-establishment appeal
+
+CRITICS POINTED TO:
+- Inflammatory rhetoric about opponents
+- "Fascism" accusations against left
+- Dismissal of systemic racism
+- LGBTQ+ policy positions
+- Election fraud claims
+
+SPECIFIC STATEMENTS (Documented):
+- Called universities "indoctrination camps"
+- Referred to diversity programs as "racist"
+- Questioned election integrity repeatedly
+- Criticized transgender rights
+
+THE DEBATE:
+- Does controversial speech justify targeting?
+- CLEAR ANSWER: No. Never.
+- But understanding why someone was targeted is not justification
+
+LEGAL EXPERT:
+"Kirk's speech was fully protected by the First Amendment. Disagreement with speech - no matter how strongly felt - never justifies violence. This is fundamental to democracy."
+=====================================`,
+            image: "kirk_controversy_documents",
+            imagePrompt: "Collection of media clips and headlines showing Kirk's controversial statements",
+            sources: ["TPUSA Archives", "Media Coverage", "Fact-Check Organizations"],
+            choices: [
+                {
+                    text: "Review TPUSA controversies",
+                    nextScene: "tpusa_controversies",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Examine the ideology analysis",
+                    nextScene: "ideology_analysis",
+                    progressIncrease: 14
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Examining a victim's public statements provides context but never justification for violence against them."
+        },
+
+        tpusa_response: {
+            text: `TURNING POINT USA RESPONDS
+
+            SEPTEMBER 14, 2025 - 10:00 AM
+
+TPUSA releases official response:
+
+ORGANIZATIONAL RESPONSE
+=====================================
+OFFICIAL STATEMENT:
+
+"Turning Point USA mourns the loss of our founder, our leader, and our friend Charlie Kirk.
+
+Charlie built TPUSA from nothing into a movement of millions. He believed that ideas should be debated, not silenced. He gave his life for that belief.
+
+We will honor his legacy by:
+1. Continuing our mission
+2. Expanding campus presence
+3. Never backing down from debate
+4. Working for a less violent America
+
+To those who celebrated his death: you reveal only your own moral bankruptcy.
+
+To our supporters: do not respond with hate. That's not what Charlie would want.
+
+TPUSA will endure. Charlie's ideas will endure. The assassin failed."
+
+NEW LEADERSHIP:
+- Interim CEO appointed
+- Operations continuing
+- Membership surge reported post-assassination
+=====================================`,
+            image: "kirk_tpusa_organization_profile",
+            imagePrompt: "TPUSA headquarters with memorial and organizational response being coordinated",
+            sources: ["TPUSA Official Statement", "Press Release", "Organizational Filings"],
+            choices: [
+                {
+                    text: "Review political aftermath",
+                    nextScene: "political_response",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Examine legacy impact",
+                    nextScene: "martyrdom_analysis",
+                    progressIncrease: 14,
+                    factual: true
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 12
+                }
+            ],
+            educationalNote: "Organizations often experience membership surges following attacks on their leaders, a phenomenon called the 'martyr effect.'"
+        },
+
+        martyrdom_analysis: {
+            text: `THE MARTYRDOM EFFECT
+
+            SEPTEMBER 25, 2025 - 3:00 PM
+
+Analysts examine how the assassination affected Kirk's legacy:
+
+MARTYRDOM ANALYSIS
+=====================================
+IMMEDIATE IMPACT:
+
+TPUSA MEMBERSHIP:
+- Pre-assassination: ~500,000
+- Two weeks after: ~750,000 (+50%)
+- Donations surged 300%
+
+PUBLIC PERCEPTION:
+- Kirk favorability increased post-death
+- Previous critics expressed condolences
+- Controversial positions less discussed
+
+MEDIA COVERAGE:
+- Focused on Kirk as victim
+- Criticism largely paused
+- Legacy pieces predominantly positive
+
+POLITICAL EFFECT:
+- Right-wing rhetoric intensified
+- "Don't let his death be in vain"
+- Used to attack left broadly
+
+HISTORICAL PARALLEL:
+"This follows the pattern of political martyrdom. The person's controversial aspects fade while their status as victim of political violence elevates them. Robinson may have created exactly what he sought to destroy."
+
+- Political Scientist, Stanford
+=====================================`,
+            image: "kirk_aftermath_memorial",
+            imagePrompt: "Memorial services and tribute coverage showing martyrdom effect in action",
+            sources: ["Polling Data", "Membership Records", "Media Analysis"],
+            choices: [
+                {
+                    text: "Review the outstanding questions",
+                    nextScene: "outstanding_questions",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Examine the investigation conclusion",
+                    nextScene: "final_report",
+                    progressIncrease: 14
+                },
+                {
+                    text: "Review the full evidence",
+                    nextScene: "evidence_review",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Political assassinations often backfire by elevating victims to martyr status, amplifying rather than silencing their message."
+        },
+
+        // ========== QUIZ SCENES ==========
+
+        quiz_correct_1: {
+            text: `CORRECT!
+
+That's right. Tyler Robinson was confirmed as the lone shooter through extensive evidence including DNA, forensics, confession, and eyewitness testimony.
+
+The investigation found no evidence of accomplices or organizational involvement.
+
+Your investigative instincts are sharp.`,
+            image: "kirk_quiz_screen",
+            imagePrompt: "Green checkmark indicating correct answer on investigation quiz",
+            sources: [],
+            choices: [
+                {
+                    text: "Continue to next question",
+                    nextScene: "knowledge_assessment",
+                    progressIncrease: 5
+                }
+            ]
+        },
+
+        quiz_correct_2: {
+            text: `CORRECT!
+
+Yes, the bullet casings were inscribed with "Hey Facist! Catch!" and lyrics from "Bella Ciao," the Italian anti-fascist anthem.
+
+This evidence was crucial in establishing ideological motivation.
+
+Excellent attention to detail.`,
+            image: "kirk_quiz_screen",
+            imagePrompt: "Green checkmark indicating correct answer on investigation quiz",
+            sources: [],
+            choices: [
+                {
+                    text: "Continue to final assessment",
+                    nextScene: "quiz_complete",
+                    progressIncrease: 5
+                }
+            ]
+        },
+
+        quiz_wrong_1: {
+            text: `NOT QUITE.
+
+That's not accurate based on the evidence we reviewed.
+
+Remember: All evidence pointed to Tyler Robinson acting alone. No accomplices or organizational backing was found despite extensive investigation.
+
+Let's continue your assessment.`,
+            image: "kirk_quiz_screen",
+            imagePrompt: "Review screen showing correct information",
+            sources: [],
+            choices: [
+                {
+                    text: "Continue assessment",
+                    nextScene: "knowledge_assessment",
+                    progressIncrease: 0
+                }
+            ]
+        },
+
+        quiz_wrong_2: {
+            text: `INCORRECT.
+
+The evidence showed Robinson had no formal ties to any organization. He was self-radicalized online and acted independently.
+
+This is a crucial distinction in understanding lone actor terrorism.`,
+            image: "kirk_quiz_screen",
+            imagePrompt: "Review screen with correct information highlighted",
+            sources: [],
+            choices: [
+                {
+                    text: "Continue assessment",
+                    nextScene: "knowledge_assessment",
+                    progressIncrease: 0
+                }
+            ]
+        },
+
+        quiz_wrong_3: {
+            text: `NOT CORRECT.
+
+Review the evidence more carefully. The investigation established clear facts about the perpetrator, weapon, and motive.
+
+Accurate understanding of cases like this is crucial for preventing future violence.`,
+            image: "kirk_quiz_screen",
+            imagePrompt: "Review screen encouraging careful evidence analysis",
+            sources: [],
+            choices: [
+                {
+                    text: "Return to assessment",
+                    nextScene: "knowledge_assessment",
+                    progressIncrease: 0
+                }
+            ]
+        },
+
+        // ========== REMAINING SCENES ==========
+
+        fbi_sources: {
+            text: `FBI SOURCE DOCUMENTS
+
+            CLASSIFIED BRIEFING
+
+Your FBI sources provide additional context:
+
+INTERNAL ASSESSMENT
+=====================================
+THREAT LEVEL: Elevated nationwide
+- Copycat attacks possible
+- Both left and right extremists activated
+- Enhanced protection for political figures
+
+INVESTIGATION STATUS:
+- Primary case: Closed (suspect in custody)
+- Conspiracy investigation: Ongoing
+- No evidence of broader plot found
+
+DOMESTIC TERRORISM LANDSCAPE:
+- Lone actors remain primary threat
+- Online radicalization accelerating
+- Prevention extremely challenging
+
+RECOMMENDATIONS:
+1. Enhanced security for high-profile events
+2. Improved threat assessment protocols
+3. Social media monitoring (within legal limits)
+4. Community intervention programs
+
+CLASSIFIED NOTE:
+"Robinson's case is textbook lone actor terrorism. No group to disrupt, no communications to intercept. Our prevention capabilities are limited against this threat type."
+=====================================`,
+            image: "kirk_investigation_report",
+            imagePrompt: "FBI classified briefing document with threat assessments",
+            sources: ["FBI Internal Documents", "Classified Briefing"],
+            choices: [
+                {
+                    text: "Review final report",
+                    nextScene: "final_report",
+                    progressIncrease: 14
+                },
+                {
+                    text: "Examine prevention challenges",
+                    nextScene: "prevention_analysis",
+                    progressIncrease: 12,
+                    factual: true
+                }
+            ],
+            educationalNote: "FBI threat assessments help prioritize resources but cannot predict all lone actor attacks."
+        },
+
+        former_members: {
+            text: `FORMER TPUSA MEMBERS SPEAK
+
+            SEPTEMBER 23, 2025 - 4:00 PM
+
+Former TPUSA members provide perspective:
+
+FORMER MEMBER INTERVIEWS
+=====================================
+FORMER CAMPUS LEADER (Anonymous):
+"I left TPUSA because it got too extreme for me. But Kirk didn't deserve this. Nobody does. I disagreed with him, but I'm horrified."
+
+FORMER STAFF MEMBER:
+"Charlie was intense but he genuinely believed in what he was doing. He wasn't the monster people made him out to be. He was a true believer."
+
+FORMER MEMBER NOW PROGRESSIVE:
+"I went through a political transformation. I used to be TPUSA, now I'm on the opposite side. But this? This makes me sick. This isn't justice. This is murder."
+
+CONSERVATIVE WHO LEFT OVER RHETORIC:
+"TPUSA's rhetoric got too heated for me. But that's true on both sides now. We're all guilty of dehumanizing each other. This is where it leads."
+=====================================
+
+Even those who left show universal condemnation of violence.`,
+            image: "kirk_witness_interview",
+            imagePrompt: "Anonymous interviews with faces obscured discussing TPUSA experience",
+            sources: ["Anonymous Interviews", "Former Member Statements"],
+            choices: [
+                {
+                    text: "Review TPUSA history",
+                    nextScene: "tpusa_history",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 12
+                }
+            ],
+            educationalNote: "Former members of political organizations often provide valuable perspective on organizational culture and evolution."
+        },
+
+        family_decision: {
+            text: `THE KIRK FAMILY'S DECISION
+
+            SEPTEMBER 26, 2025 - 2:00 PM
+
+The Kirk family announces their decision on involvement in prosecution:
+
+FAMILY STATEMENT
+=====================================
+ERIKA KIRK:
+
+"Our family has decided to participate in the prosecution process. We will be present at trial. We will face the man who killed Charlie.
+
+We considered staying away. The pain is unbearable. But Charlie would have faced this. He never backed down from anything.
+
+We support the death penalty in this case. Not out of vengeance, but because we believe in consequences. Charlie believed in accountability.
+
+To those who ask about forgiveness: we're not there yet. Maybe we never will be. But we won't let hate consume us. That's not who we are.
+
+Charlie's children will know their father was a hero to millions. They'll know he died standing up for his beliefs. That's his legacy.
+
+We ask for continued privacy but wanted to share our position. God bless America, and God bless Charlie Kirk."
+=====================================`,
+            image: "kirk_press_conference",
+            imagePrompt: "Kirk family at press conference announcing their position on prosecution",
+            sources: ["Family Statement", "Legal Filings"],
+            choices: [
+                {
+                    text: "Review the legal proceedings",
+                    nextScene: "legal_proceedings",
+                    progressIncrease: 12,
+                    factual: true
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Victim family participation in prosecution is a constitutional right and often provides closure."
+        },
+
+        verified_facts_focus: {
+            text: `VERIFIED FACTS SUMMARY
+
+            CASE STATUS: Active Prosecution
+
+This investigation focused exclusively on verified, documented facts:
+
+CONFIRMED FACTS
+=====================================
+THE VICTIM:
+- Charlie Kirk, 31
+- Founder, Turning Point USA
+- Conservative activist and commentator
+
+THE PERPETRATOR:
+- Tyler James Robinson, 22
+- Electrician from Washington, Utah
+- No prior criminal record
+
+THE ACT:
+- September 11, 2025, 3:47 PM
+- Utah Valley University
+- Single shot, 142 yards
+- Mauser Model 98 rifle
+
+THE EVIDENCE:
+- DNA match confirmed
+- Confession messages recovered
+- Forensic evidence conclusive
+- Eyewitness testimony consistent
+
+THE MOTIVE:
+- Political/ideological
+- Anti-fascist self-identification
+- No organizational ties found
+
+THE STATUS:
+- Defendant in federal custody
+- Capital charges filed
+- Trial pending
+=====================================`,
+            image: "kirk_final_report",
+            imagePrompt: "Official case summary document with verified facts highlighted",
+            sources: ["Court Documents", "FBI Reports", "Official Statements"],
+            choices: [
+                {
+                    text: "Complete investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Review all evidence",
+                    nextScene: "evidence_review",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Investigative journalism requires strict adherence to verified facts, especially in politically charged cases."
+        },
+
+        outstanding_questions: {
+            text: `QUESTIONS THAT REMAIN
+
+            INVESTIGATION NOTES
+
+Despite extensive investigation, some questions remain:
+
+OUTSTANDING QUESTIONS
+=====================================
+1. THE MANIFESTO
+   - Robinson referenced "writing something"
+   - No document found
+   - Was it destroyed? Never completed?
+
+2. RADICALIZATION SPECIFICS
+   - General pathway understood
+   - Specific triggering content unclear
+   - Full online history still being analyzed
+
+3. RECONNAISSANCE
+   - Evidence suggests prior visit to campus
+   - Details unclear
+   - How long was this planned?
+
+4. ONLINE ENCOURAGEMENT
+   - Did anyone encourage him?
+   - Discord analysis ongoing
+   - Potential charges for others?
+
+5. SECURITY DECISIONS
+   - Who decided against enhanced security?
+   - Were threats properly communicated?
+   - Civil liability questions remain
+
+6. COPYCAT CONCERNS
+   - Has this inspired others?
+   - Ongoing threat monitoring
+   - Prevention measures unclear
+=====================================
+
+Some questions may never be fully answered.`,
+            image: "kirk_investigation_board",
+            imagePrompt: "Investigation board with remaining questions highlighted",
+            sources: ["Ongoing Investigation", "FBI Briefings"],
+            choices: [
+                {
+                    text: "Complete investigation",
+                    nextScene: "final_report",
+                    progressIncrease: 12
+                },
+                {
+                    text: "Review verified facts",
+                    nextScene: "verified_facts_focus",
+                    progressIncrease: 10,
+                    factual: true
+                }
+            ],
+            educationalNote: "Complex investigations often leave questions unanswered, requiring ongoing analysis."
+        },
+
+        death_penalty_analysis: {
+            text: `THE DEATH PENALTY QUESTION
+
+            LEGAL ANALYSIS
+
+Federal prosecutors are seeking capital punishment:
+
+DEATH PENALTY ANALYSIS
+=====================================
+LEGAL BASIS:
+- 18 U.S.C. § 1111 (Murder)
+- Federal death penalty authorized
+- DOJ authorization received
+
+AGGRAVATING FACTORS:
+1. Premeditation (extensive planning)
+2. Political motivation (domestic terrorism)
+3. Public figure victim
+4. Intent to influence political process
+5. Lack of remorse (per confession)
+
+MITIGATING FACTORS:
+1. No prior criminal history
+2. Young age (22)
+3. Potential mental health issues (pending evaluation)
+4. Cooperated after arrest
+
+PUBLIC OPINION:
+- Conservatives strongly favor execution
+- Some progressives oppose on principle
+- Legal experts divided
+
+HISTORICAL CONTEXT:
+- Last federal political assassination execution: None in modern era
+- Would be precedent-setting case
+- Appeals likely to take years
+=====================================
+
+The death penalty decision will be made by jury if case goes to trial.`,
+            image: "kirk_legal_proceedings",
+            imagePrompt: "Legal documents showing death penalty analysis and precedents",
+            sources: ["DOJ Guidelines", "Legal Precedents", "Constitutional Analysis"],
+            choices: [
+                {
+                    text: "Review prosecution case",
+                    nextScene: "prosecutor_interview",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Continue to final report",
+                    nextScene: "final_report",
+                    progressIncrease: 12
+                }
+            ],
+            educationalNote: "Federal death penalty cases require DOJ authorization and present unique constitutional considerations."
         }
     }
 };
