@@ -4,9 +4,24 @@ class PaymentSystem {
             console.error('Stripe publishable key is required');
             return;
         }
-        this.stripe = Stripe(stripePublishableKey);
+        this.stripePublishableKey = stripePublishableKey;
+        this.stripe = null;
         this.isUnlocked = this.checkUnlockStatus();
         this.setupEventListeners();
+
+        // Initialize Stripe when it's available
+        this.initStripe();
+    }
+
+    initStripe() {
+        if (typeof Stripe !== 'undefined') {
+            this.stripe = Stripe(this.stripePublishableKey);
+            console.log('✅ Stripe initialized in PaymentSystem');
+        } else {
+            // Wait for Stripe to load
+            console.log('⏳ Waiting for Stripe to load...');
+            setTimeout(() => this.initStripe(), 100);
+        }
     }
 
     checkUnlockStatus() {
@@ -57,6 +72,13 @@ class PaymentSystem {
 
     async initiatePurchase(priceId) {
         try {
+            // Ensure Stripe is loaded
+            if (!this.stripe) {
+                console.error('Stripe not initialized yet. Please wait and try again.');
+                alert('Payment system is still loading. Please try again in a moment.');
+                return;
+            }
+
             // Show loading state
             this.showPurchaseLoading();
 
