@@ -254,13 +254,19 @@ const PaymentConfig = {
 
     // Frontend URLs for redirects
     getSuccessUrl: () => {
-        const baseUrl = window.location.origin;
-        return baseUrl + '/payment-success.html';
+        // Use the current page's directory as base (handles GitHub Pages subdirectory)
+        const pathParts = window.location.pathname.split('/');
+        pathParts.pop(); // Remove the current file/page
+        const basePath = pathParts.join('/') || '';
+        return window.location.origin + basePath + '/payment-success.html';
     },
 
     getCancelUrl: () => {
-        const baseUrl = window.location.origin;
-        return baseUrl + '/payment-cancel.html';
+        // Use the current page's directory as base (handles GitHub Pages subdirectory)
+        const pathParts = window.location.pathname.split('/');
+        pathParts.pop(); // Remove the current file/page
+        const basePath = pathParts.join('/') || '';
+        return window.location.origin + basePath + '/payment-cancel.html';
     }
 };
 
