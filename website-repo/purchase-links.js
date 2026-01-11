@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const gameKeyMapping = {
         'ufo': 'uap',
         'diddy-case': 'diddy-case',
+        'charlie-kirk': 'charlie-kirk',
         'epstein': 'epstein',
         'watergate': 'watergate',
         'mlk': 'mlk',  // Note: MLK doesn't exist in game config, map to closest
