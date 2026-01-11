@@ -60,6 +60,10 @@ class PaymentSystem {
             // Show loading state
             this.showPurchaseLoading();
 
+            // Remove modal before redirecting to Stripe
+            // This prevents the modal from blocking the page if user navigates back
+            this.cleanupModals();
+
             // Create checkout session
             const serverUrl = window.PaymentConfig ? PaymentConfig.SERVER_URL : '';
             const response = await fetch(serverUrl + '/create-checkout-session', {
@@ -149,6 +153,12 @@ class PaymentSystem {
             </div>
         `;
         document.body.appendChild(message);
+    }
+
+    // Clean up any modals that might be blocking the page
+    cleanupModals() {
+        document.querySelectorAll('.purchase-modal').forEach(modal => modal.remove());
+        document.querySelectorAll('.purchase-prompt').forEach(prompt => prompt.remove());
     }
 
     shouldShowPurchasePrompt(caseId) {
@@ -360,11 +370,42 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
             `,
-            showPurchaseModalIfRequested: () => {}
+            showPurchaseModalIfRequested: () => {},
+            cleanupModals: () => {}
         };
     } else {
         window.paymentSystem = new PaymentSystem(window.STRIPE_PUBLISHABLE_KEY);
         // Check if we should show purchase modal
         window.paymentSystem.showPurchaseModalIfRequested();
+    }
+});
+
+// Handle page restore from bfcache (back/forward cache)
+// This fires when user navigates back after going to Stripe checkout
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        // Page was restored from bfcache
+        console.log('Page restored from bfcache - cleaning up stale modals');
+
+        // Remove any purchase modals that may be blocking the page
+        document.querySelectorAll('.purchase-modal').forEach(modal => modal.remove());
+        document.querySelectorAll('.purchase-prompt').forEach(prompt => prompt.remove());
+
+        // Re-enable any disabled purchase buttons
+        document.querySelectorAll('.purchase-button').forEach(button => {
+            button.disabled = false;
+            // Restore button text if it was changed to "Processing..."
+            if (button.textContent === 'Processing...') {
+                const priceId = button.dataset.priceId;
+                button.innerHTML = `<span class="purchase-icon">💳</span><span class="purchase-text">Purchase - $4.99</span>`;
+            }
+        });
+
+        document.querySelectorAll('.purchase-button-primary').forEach(button => {
+            button.disabled = false;
+            if (button.textContent === 'Processing...') {
+                button.textContent = 'Purchase Now';
+            }
+        });
     }
 });
