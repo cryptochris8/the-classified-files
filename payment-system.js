@@ -47,7 +47,7 @@ class PaymentSystem {
         // Listen for purchase button clicks
         document.addEventListener('click', (e) => {
             if (e.target.classList.contains('purchase-button')) {
-                this.initiatePurchase(e.target.dataset.priceId);
+                this.initiatePurchase(e.target.dataset.priceId, e.target.dataset.caseKey);
             }
         });
     }
@@ -70,7 +70,7 @@ class PaymentSystem {
         return button;
     }
 
-    async initiatePurchase(priceId) {
+    async initiatePurchase(priceId, caseKey) {
         try {
             // Ensure Stripe is loaded
             if (!this.stripe) {
@@ -86,6 +86,12 @@ class PaymentSystem {
             // This prevents the modal from blocking the page if user navigates back
             this.cleanupModals();
 
+            // Build success URL with case key
+            let successUrl = window.PaymentConfig ? PaymentConfig.getSuccessUrl() : window.location.origin + '/payment-success.html';
+            if (caseKey) {
+                successUrl += (successUrl.includes('?') ? '&' : '?') + 'case=' + encodeURIComponent(caseKey);
+            }
+
             // Create checkout session
             const serverUrl = window.PaymentConfig ? PaymentConfig.SERVER_URL : '';
             const response = await fetch(serverUrl + '/create-checkout-session', {
@@ -95,7 +101,7 @@ class PaymentSystem {
                 },
                 body: JSON.stringify({
                     priceId: priceId,
-                    successUrl: window.PaymentConfig ? PaymentConfig.getSuccessUrl() : window.location.origin + '/payment-success.html',
+                    successUrl: successUrl,
                     cancelUrl: window.PaymentConfig ? PaymentConfig.getCancelUrl() : window.location.origin + '/payment-cancel.html'
                 })
             });
@@ -204,7 +210,7 @@ class PaymentSystem {
                     <p>Unlock all 13 premium case files with branching storylines, evidence collection, and multiple endings.</p>
                     <div class="price-options">
                         ${hasValidPriceId ?
-                            `<button class="purchase-button" data-price-id="${priceId}">
+                            `<button class="purchase-button" data-price-id="${priceId}" data-case-key="${caseKey}">
                                 Purchase ${caseTitle} - $4.99
                             </button>` :
                             `<p style="color: #ff6b6b;">⚠️ Payment not configured for this case yet.</p>
@@ -310,7 +316,7 @@ class PaymentSystem {
         const purchaseBtn = modal.querySelector('.purchase-button-primary');
         if (purchaseBtn && priceId) {
             purchaseBtn.addEventListener('click', () => {
-                this.initiatePurchase(priceId);
+                this.initiatePurchase(priceId, caseKey);
             });
         } else {
             console.error('No price ID found for case:', caseKey);
@@ -364,7 +370,7 @@ class PaymentSystem {
         const purchaseBtn = modal.querySelector('.purchase-button-primary');
         if (purchaseBtn && purchaseBtn.dataset.priceId) {
             purchaseBtn.addEventListener('click', () => {
-                this.initiatePurchase(purchaseBtn.dataset.priceId);
+                this.initiatePurchase(purchaseBtn.dataset.priceId, 'all-cases');
             });
         }
     }

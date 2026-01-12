@@ -12,40 +12,82 @@
         <div class="unlock-message">
             <div class="unlock-notification">
                 <h3>🎉 Payment Successful!</h3>
-                <p>Thank you for purchasing the full game.</p>
-                <p>You now have access to all 13 premium case files!</p>
+                <p>Thank you for your purchase!</p>
+                <p id="unlock-message">Your case file has been unlocked.</p>
                 <button onclick="handleSuccess()" class="choice-button">Start Playing</button>
             </div>
         </div>
     </div>
-    <script src="payment-config.js"></script>
     <script>
-        async function handleSuccess() {
-            // Get session ID from URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const sessionId = urlParams.get('session_id');
-            
+        // Get case key and session ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        const caseKey = urlParams.get('case');
+
+        // Update message if we know which case
+        if (caseKey) {
+            const caseNames = {
+                'diddy-case': 'Diddy Federal Case',
+                'charlie-kirk': 'Charlie Kirk Assassination',
+                'epstein': 'The Epstein Files',
+                'jfk': 'JFK Assassination Files',
+                'watergate': 'Watergate Files',
+                'september11': '9/11 Commission Files',
+                'hunterlaptop': 'Hunter Biden Laptop',
+                'pentagon-papers': 'Pentagon Papers',
+                'mkultra': 'MKUltra Files',
+                'panama-papers': 'Panama Papers',
+                'iran-contra': 'Iran-Contra Affair',
+                'cointelpro': 'COINTELPRO Files',
+                'snowden': 'Snowden Revelations',
+                'tuskegee': 'Tuskegee Experiment',
+                'paperclip': 'Operation Paperclip'
+            };
+            const caseName = caseNames[caseKey] || caseKey;
+            document.getElementById('unlock-message').textContent = `"${caseName}" has been unlocked!`;
+        }
+
+        // Unlock the purchase immediately on page load
+        function unlockPurchase() {
+            // Add to purchasedCases array (this is what hasPurchased() checks)
+            const purchases = JSON.parse(localStorage.getItem('purchasedCases') || '[]');
+            if (caseKey && !purchases.includes(caseKey)) {
+                purchases.push(caseKey);
+                localStorage.setItem('purchasedCases', JSON.stringify(purchases));
+                console.log('✅ Unlocked case:', caseKey);
+            }
+
+            // Also store session info for verification
             if (sessionId) {
-                // Store unlock status
-                localStorage.setItem('gameUnlocked', 'true');
-                localStorage.setItem('purchaseData', JSON.stringify({
+                localStorage.setItem('lastPurchaseSession', JSON.stringify({
                     sessionId: sessionId,
+                    caseKey: caseKey,
                     timestamp: new Date().toISOString()
                 }));
-                
-                // Verify payment with server
+            }
+        }
+
+        // Unlock immediately when page loads
+        unlockPurchase();
+
+        async function handleSuccess() {
+            // Verify payment with server (optional, non-blocking)
+            if (sessionId) {
                 try {
-                    const serverUrl = window.PaymentConfig ? PaymentConfig.SERVER_URL : '';
+                    const serverUrl = 'https://the-classified-files-production-1c78.up.railway.app';
                     const response = await fetch(serverUrl + '/verify-payment/' + sessionId);
                     const data = await response.json();
                     console.log('Payment verified:', data);
                 } catch (error) {
-                    console.log('Could not verify payment, but proceeding anyway');
+                    console.log('Could not verify payment with server, but purchase is saved locally');
                 }
             }
-            
-            // Redirect to main game
-            window.location.href = '/';
+
+            // Redirect to main game (handle GitHub Pages subdirectory)
+            const pathParts = window.location.pathname.split('/');
+            pathParts.pop(); // Remove payment-success.html
+            const basePath = pathParts.join('/') || '';
+            window.location.href = window.location.origin + basePath + '/';
         }
     </script>
 </body>
