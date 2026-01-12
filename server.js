@@ -73,6 +73,10 @@ app.post('/create-checkout-session', async (req, res) => {
     try {
         const { priceId, successUrl, cancelUrl } = req.body;
 
+        // Build success URL with session_id - check if URL already has query params
+        const separator = successUrl.includes('?') ? '&' : '?';
+        const fullSuccessUrl = successUrl + separator + 'session_id={CHECKOUT_SESSION_ID}';
+
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             line_items: [
@@ -82,7 +86,7 @@ app.post('/create-checkout-session', async (req, res) => {
                 },
             ],
             mode: 'payment',
-            success_url: successUrl + '?session_id={CHECKOUT_SESSION_ID}',
+            success_url: fullSuccessUrl,
             cancel_url: cancelUrl,
             metadata: {
                 product: 'classified-files-game'
