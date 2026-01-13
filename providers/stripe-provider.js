@@ -76,8 +76,8 @@ class StripeProvider {
                 body: JSON.stringify({
                     priceId: priceId,
                     caseKey: caseKey,
-                    successUrl: window.location.origin + '/payment-success.html?case=' + caseKey,
-                    cancelUrl: window.location.origin + '/payment-cancel.html?case=' + caseKey
+                    successUrl: this.getBaseUrl() + '/payment-success.html?case=' + caseKey,
+                    cancelUrl: this.getBaseUrl() + '/payment-cancel.html?case=' + caseKey
                 })
             });
 
@@ -159,6 +159,25 @@ class StripeProvider {
         }
 
         return purchases;
+    }
+
+    /**
+     * Get the base URL for redirects (handles GitHub Pages subdirectory)
+     * @returns {string}
+     */
+    getBaseUrl() {
+        // Use PaymentConfig if available (already handles path correctly)
+        if (window.PaymentConfig?.getSuccessUrl) {
+            const successUrl = window.PaymentConfig.getSuccessUrl();
+            // Extract base path (remove /payment-success.html)
+            return successUrl.replace('/payment-success.html', '');
+        }
+
+        // Fallback: determine base path from current location
+        const pathParts = window.location.pathname.split('/');
+        pathParts.pop(); // Remove current page/file
+        const basePath = pathParts.join('/') || '';
+        return window.location.origin + basePath;
     }
 
     /**
