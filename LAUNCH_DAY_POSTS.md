@@ -361,7 +361,7 @@ A fictional case exploring political violence in America.
 ---
 
 ## LINK TO USE
-Replace `[LINK]` with: https://cryptochris8.github.io/The-Classified-Files/
+Replace `[LINK]` with: https://cryptochris8.github.io/the-classified-files/
 
 ---
 

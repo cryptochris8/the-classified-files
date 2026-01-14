@@ -17,7 +17,7 @@ You uncover the truth.
 Your choices shape the story.
 
 One case is FREE
-Play now: https://cryptochris8.github.io/The-Classified-Files/
+Play now: https://cryptochris8.github.io/the-classified-files/
 
 The files are open. The investigation begins TODAY.
 
@@ -40,7 +40,7 @@ UFOs are real. The Pentagon admitted it. But what are they still hiding?
 
 This one's FREE. Start your investigation now.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #UFO #UAP
 ```
@@ -59,7 +59,7 @@ Interview survivors. Analyze flight logs. Expose the network that protected him.
 
 8 different endings based on YOUR investigation.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #Epstein
 ```
@@ -80,7 +80,7 @@ The magic bullet. Oswald's timeline. The CIA files.
 
 What really happened?
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #JFK
 ```
@@ -99,7 +99,7 @@ Follow the money. Find the tapes. Take down a president.
 
 The scandal that changed America forever.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #Watergate
 ```
@@ -118,7 +118,7 @@ Examine the emails. Track the timeline. Investigate the suppression.
 
 No spin. Just evidence. YOU decide.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #HunterBiden
 ```
@@ -137,7 +137,7 @@ They destroyed the evidence. But not all of it.
 
 Uncover what survived.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #MKUltra #CIA
 ```
@@ -156,7 +156,7 @@ Intelligence failures. Missed warnings. Redacted pages.
 
 Investigate what they left out.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #911
 ```
@@ -177,7 +177,7 @@ NSA mass surveillance. PRISM. The cost of exposing the truth.
 
 Hero or traitor? Investigate.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #Snowden
 ```
@@ -196,7 +196,7 @@ One leak changed everything.
 
 Race to publish before the FBI shuts you down.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #PentagonPapers
 ```
@@ -215,7 +215,7 @@ MLK. Black Panthers. Anti-war activists. All targets.
 
 Expose the program they tried to hide.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #COINTELPRO
 ```
@@ -234,7 +234,7 @@ The scandal that should have ended careers.
 
 Follow the conspiracy to the top.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #IranContra
 ```
@@ -253,7 +253,7 @@ Shell companies. Tax havens. Hidden billions.
 
 Follow the money.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #PanamaPapers
 ```
@@ -272,7 +272,7 @@ America's most shameful medical experiment.
 
 Never forget.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #Tuskegee
 ```
@@ -291,7 +291,7 @@ War criminals became national heroes.
 
 Investigate what we forgave—and why.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #OperationPaperclip
 ```
@@ -310,7 +310,7 @@ Allegations. Raids. A network exposed.
 
 The biggest story in entertainment right now.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED #Diddy
 ```
@@ -329,7 +329,7 @@ Examine the evidence. Interview witnesses. Find the truth.
 
 A fictional case exploring political violence in America.
 
-https://cryptochris8.github.io/The-Classified-Files/
+https://cryptochris8.github.io/the-classified-files/
 
 #DECLASSIFIED
 ```
