@@ -22,7 +22,14 @@
         // Get case key and session ID from URL
         const urlParams = new URLSearchParams(window.location.search);
         const sessionId = urlParams.get('session_id');
-        const caseKey = urlParams.get('case');
+
+        // Clean the case key - handle malformed URLs where session_id got appended with ? instead of &
+        // e.g., "september11?session_id=xxx" should become "september11"
+        let caseKey = urlParams.get('case');
+        if (caseKey && caseKey.includes('?')) {
+            caseKey = caseKey.split('?')[0];
+            console.log('🔧 Cleaned malformed case key to:', caseKey);
+        }
 
         // Update message if we know which case
         if (caseKey) {
