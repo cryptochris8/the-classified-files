@@ -39,7 +39,7 @@ const GameConfig = {
         jfk: "Premium Content - $4.99",
         uap: "FREE - Always Available",
         september11: "Premium Content - $4.99",
-        hunterlaptop: "FREE - August 11, 2025",
+        hunterlaptop: "Premium Content - $4.99",
         diddy: "Coming Soon",
         'diddy-case': "Premium Content - $4.99",
         watergate: "Coming Soon",
@@ -56,7 +56,7 @@ const GameConfig = {
 
     // Scheduled release dates (for date-based unlocking)
     scheduledReleases: {
-        hunterlaptop: new Date('2025-08-11T00:00:00.000Z')
+        // No scheduled releases currently
     },
     
     // Check if a game should be sealed

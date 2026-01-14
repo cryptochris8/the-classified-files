@@ -492,7 +492,7 @@ This could be the evidence that changes everything.`,
 
         agent_kim_meeting: {
             text: `THE FBI WHISTLEBLOWER
-            
+
             DAY 2 - 4:30 PM
 
 FBI Special Agent Teresa Kim meets you in a secure room at the federal building. Her eyes are tired but determined.
@@ -518,7 +518,9 @@ She shows you one final document - an email from 2008: "Agent Kim is to cease al
 
 BREAKING NEWS ALERT: Your phone explodes with notifications. Someone leaked that you have the story. Media outlets are calling. The FBI is mobilizing.
 
-27 hours remain.`,
+27 hours remain.
+
+Agent Kim looks alarmed: "Sarah, if they trace this to me, I'll lose everything. My pension, my freedom, maybe worse."`,
             image: "witness_testimony",
             imagePrompt: "FBI agent in secure room sharing classified documents with journalist, whistleblower atmosphere",
             sources: ["FBI Agent Testimony", "Suppressed Federal Reports", "Whistleblower Evidence"],
@@ -547,6 +549,11 @@ BREAKING NEWS ALERT: Your phone explodes with notifications. Someone leaked that
                     nextScene: "whistleblower_protection_quiz",
                     progressIncrease: 25,
                     quizMode: true
+                },
+                {
+                    text: "Prioritize protecting your sources over publishing",
+                    nextScene: "sources_protected_ending",
+                    progressIncrease: 15
                 }
             ],
             educationalNote: "Internal FBI reports that were suppressed reveal how the system failed to protect victims."
@@ -554,7 +561,7 @@ BREAKING NEWS ALERT: Your phone explodes with notifications. Someone leaked that
 
         story_centerpiece_decision: {
             text: `ASSEMBLING THE EXPOSÉ
-            
+
             DAY 3 - 2:00 AM
 
 Your newsroom is a war zone of evidence. You've been awake for 40 hours. The story is coming together:
@@ -566,7 +573,7 @@ PART 1: The Victims - 1,000+ Silenced Voices
 - Recruitment network exposed
 - Financial evidence of systematic exploitation
 
-PART 2: The Cover-Up - 14 Years of Failure  
+PART 2: The Cover-Up - 14 Years of Failure
 - 2005 Palm Beach investigation buried
 - 37 FBI reports suppressed
 - 2008 plea deal protected conspirators
@@ -578,7 +585,7 @@ PART 3: The Evidence - What They Don't Want You to See
 
 PART 4: The Reckoning - Demands for Justice
 - Agent Kim's whistleblower testimony
-- Detective Rodriguez's documentation  
+- Detective Rodriguez's documentation
 - Victims' demand for accountability
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -613,10 +620,14 @@ FINAL PIECES FALLING INTO PLACE: Everyone involved is ready to speak truth to po
                     factual: true
                 },
                 {
-                    text: "Quiz: Test your complete case knowledge",
-                    nextScene: "comprehensive_case_quiz",
-                    progressIncrease: 35,
-                    quizMode: true
+                    text: "Rush to publish immediately - no time for verification",
+                    nextScene: "rushed_publication_ending",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Negotiate with legal team - publish a safer version",
+                    nextScene: "partial_victory_ending",
+                    progressIncrease: 20
                 }
             ],
             educationalNote: "This fictional climax demonstrates how real investigative journalism pieces together evidence from multiple sources."
@@ -918,7 +929,7 @@ TIME UPDATE: 30 hours until court order.`,
 
         legal_battle_prep: {
             text: `PREPARING FOR THE STORM
-            
+
             DAY 2 - 10:00 AM
 
 Your newspaper's legal team arrives in force. Lead counsel Patricia Hayes takes charge:
@@ -930,7 +941,7 @@ The legal strategy session reveals your options:
 ⚖️ LEGAL DEFENSE STRATEGY
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 1. First Amendment - Public's right to know
-2. Whistleblower Protection - Agent Kim's testimony  
+2. Whistleblower Protection - Agent Kim's testimony
 3. Statute of Limitations - 2005 crimes now prosecutable
 4. Victim Rights Act - Violations in 2008 plea deal
 5. Public Interest - Preventing future crimes
@@ -942,7 +953,9 @@ Suddenly, six more lawyers arrive. "We represent 73 Epstein survivors," the lead
 
 The legal firepower in your corner is unprecedented.
 
-Your editor whispers: "Sarah, with this support, we might not just publish a story. We might change the law."`,
+Your editor whispers: "Sarah, with this support, we might not just publish a story. We might change the law."
+
+But then Patricia pulls you aside: "I have to be honest. The publisher is nervous. If we lose this legal fight, it could bankrupt the paper."`,
             image: "federal_courthouse_2019",
             imagePrompt: "Newsroom filled with lawyers preparing defense strategy, intense legal preparation scene",
             sources: ["Legal Strategy", "First Amendment Law", "Victim Rights Legislation"],
@@ -970,6 +983,11 @@ Your editor whispers: "Sarah, with this support, we might not just publish a sto
                     progressIncrease: 32,
                     evidence: true,
                     factual: true
+                },
+                {
+                    text: "Recommend the publisher kill the story to avoid risk",
+                    nextScene: "story_killed_ending",
+                    progressIncrease: 0
                 }
             ],
             educationalNote: "Legal battles over classified information often determine whether the public learns the truth."
@@ -1395,33 +1413,407 @@ Now you know for certain - these documents are authentic, which means the story 
             educationalNote: "Authenticating documents is crucial before relying on them for investigative reporting."
         },
 
-        // Placeholder scenes to prevent crashes
+        // EXPANDED INVESTIGATION PATHS
+
         insurance_files_investigation: {
-            text: `The insurance files investigation leads you deeper into the mystery. This path continues in future updates.`,
+            text: `THE INSURANCE FILES - A DANGEROUS PATH
+
+            DAY 2 - 1:00 AM
+
+            You focus on the mysterious "insurance files" mentioned in the handwritten note. Your source texts urgently:
+
+            ⚠️ WARNING FROM SOURCE:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "The insurance files are a trap. Everyone who
+            chased them ended up discredited or worse.
+            Focus on what you CAN prove - the victims,
+            the failures, the plea deal. That's the real story."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Marcus looks concerned. "Sarah, we've heard rumors about blackmail material, client lists, tapes... but none of it has ever been verified. The FBI says they found no evidence of blackmail operations."
+
+            You check the official record:
+
+            📋 FBI STATEMENT ON "INSURANCE FILES":
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "Despite extensive searches of all Epstein
+            properties, no evidence was found of organized
+            blackmail operations, hidden client lists,
+            or so-called 'insurance files.'"
+            - DOJ Press Statement, 2019
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            CRITICAL DECISION: Chasing unverified conspiracy theories could derail your investigation and discredit the real victims' stories.`,
             image: "conspiracy_uncovered",
-            imagePrompt: "Secret insurance files spread on desk, investigative journalist examining documents in dramatic lighting, conspiracy thriller atmosphere",
+            imagePrompt: "Journalist at crossroads, choosing between conspiracy theories and verified facts, dramatic decision moment",
+            sources: ["FBI Official Statements", "DOJ Press Releases", "Verified Investigation Records"],
             choices: [
                 {
-                    text: "Return to main investigation",
+                    text: "Focus on verified facts - the victims deserve better than conspiracy theories",
                     nextScene: "victim_statistics_study",
-                    progressIncrease: 10
+                    progressIncrease: 20,
+                    factual: true,
+                    evidence: true
+                },
+                {
+                    text: "Keep digging for the insurance files anyway",
+                    nextScene: "insurance_files_trap",
+                    progressIncrease: 5
+                },
+                {
+                    text: "Ask Maria if she knows anything about blackmail operations",
+                    nextScene: "maria_blackmail_question",
+                    progressIncrease: 15,
+                    factual: true
                 }
             ],
-            educationalNote: "Investigation continues..."
+            educationalNote: "While speculation about 'insurance files' persists online, no verified evidence has ever emerged. The real story - institutional failure to protect 1,000+ victims - is damning enough without unproven theories."
+        },
+
+        insurance_files_trap: {
+            text: `THE CONSPIRACY TRAP
+
+            DAY 2 - 4:00 AM
+
+            You spend three hours chasing the insurance files angle. The results:
+
+            ❌ DEAD ENDS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • Anonymous tips that lead nowhere
+            • Unverifiable claims from unreliable sources
+            • Obvious fabrications mixed with real documents
+            • Time wasted that could have verified real evidence
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Marcus finds you at 4 AM surrounded by printouts of conspiracy theories.
+
+            "Sarah, what are you doing? We have verified evidence of 1,000+ victims, a corrupt plea deal, and 14 years of institutional failure. That's the story. Not... this."
+
+            He's right. Every hour spent chasing shadows is an hour not spent on provable facts.
+
+            Your source sends a final message: "I warned you. The insurance files narrative was created to distract from the real scandal. Get back to what matters."
+
+            LESSON LEARNED: Conspiracy theories can derail legitimate investigations.`,
+            image: "conspiracy_trap",
+            imagePrompt: "Frustrated journalist surrounded by unverified conspiracy materials, realizing mistake, time wasted",
+            sources: ["Journalism ethics on unverified claims"],
+            choices: [
+                {
+                    text: "Refocus on verified victim evidence",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 10,
+                    factual: true
+                },
+                {
+                    text: "You've lost too much time - rush to publish what you have",
+                    nextScene: "rushed_publication_ending",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "Many legitimate investigations have been derailed by journalists chasing unverifiable claims instead of provable facts."
+        },
+
+        maria_blackmail_question: {
+            text: `MARIA'S ANSWER ON BLACKMAIL
+
+            DAY 2 - 2:30 AM
+
+            You ask Maria directly: "Did you ever see evidence of blackmail? Hidden cameras? Client lists?"
+
+            She pauses, then shakes her head slowly.
+
+            💬 MARIA'S TESTIMONY:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "I was there for two years. I never saw hidden
+            cameras. I never saw anyone being blackmailed.
+            What I saw was simpler and worse: a man who
+            hurt girls because he could. Because the system
+            let him.
+
+            The conspiracy theories... they make people feel
+            like there must be some bigger reason, some
+            grand scheme. But sometimes evil is just evil.
+            Sometimes powerful people just get away with it.
+
+            Don't chase ghosts, Sarah. Tell our real story.
+            That's bad enough."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Her words cut through the noise. The verified facts are damning enough.`,
+            image: "witness_testimony",
+            imagePrompt: "Survivor speaking truth, cutting through conspiracy theories, grounded and real",
+            sources: ["Survivor testimony", "Verified victim accounts"],
+            choices: [
+                {
+                    text: "Honor Maria's request - focus on the real story",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 25,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Continue building victim testimonies",
+                    nextScene: "multiple_victims_come_forward",
+                    progressIncrease: 20,
+                    evidence: true
+                }
+            ],
+            educationalNote: "Survivors often express frustration that conspiracy theories overshadow their real experiences and the documented institutional failures."
         },
 
         financial_records_analysis: {
-            text: `The financial records reveal systematic payments to minors. This path continues in future updates.`,
+            text: `FOLLOWING THE MONEY
+
+            DAY 2 - 3:00 AM
+
+            You dive deep into the financial records. What you find is meticulously documented:
+
+            💰 FINANCIAL EVIDENCE - VERIFIED:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            PAYMENT PATTERNS (2001-2019):
+            • $200-500 per "massage session" to victims
+            • $200-1000 referral fees to recruiters
+            • Cash withdrawals averaging $10,000/month
+            • Wire transfers to dozens of young women
+            • Gift cards and prepaid debit cards
+
+            PROPERTY EMPIRE:
+            • Manhattan mansion ($77 million)
+            • Palm Beach estate ($12 million)
+            • New Mexico ranch ($18 million)
+            • Private island ($7.95 million)
+            • Paris apartment ($8.6 million)
+
+            MYSTERY SOURCE OF WEALTH:
+            Despite claims of being a "financial manager,"
+            no clear legitimate source for his billions
+            has ever been documented.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            The financial records tell a clear story: this was a well-funded criminal enterprise, not random abuse.`,
             image: "digital_forensics_lab",
-            imagePrompt: "Digital financial records on multiple monitors, data analysis visualization, forensic accounting workspace, cybercrime investigation mood",
+            imagePrompt: "Financial forensics analysis, spreadsheets showing payment patterns, following the money trail",
+            sources: ["Court-released financial documents", "Property records", "Bank records from civil suits"],
             choices: [
                 {
-                    text: "Continue with victim analysis",
-                    nextScene: "victim_statistics_study",
-                    progressIncrease: 15
+                    text: "Use financial evidence to prove systematic operation",
+                    nextScene: "financial_evidence_compilation",
+                    progressIncrease: 25,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Investigate the mystery of his wealth source",
+                    nextScene: "wealth_source_investigation",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Cross-reference payments with victim testimonies",
+                    nextScene: "payment_victim_correlation",
+                    progressIncrease: 22,
+                    evidence: true,
+                    factual: true
                 }
             ],
-            educationalNote: "Financial analysis continues..."
+            educationalNote: "Financial records provided some of the strongest evidence in the Epstein case, documenting systematic payments to victims and recruiters."
+        },
+
+        financial_evidence_compilation: {
+            text: `COMPILING THE FINANCIAL CASE
+
+            DAY 2 - 5:00 AM
+
+            You compile the financial evidence into a devastating timeline:
+
+            📊 MONEY TRAIL TIMELINE:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            1994-2002: Building the Network
+            • Establishes properties in multiple states
+            • First documented payments to young women
+            • Recruitment system begins
+
+            2002-2005: Peak Operation
+            • Highest volume of payments documented
+            • Multiple victims receiving regular payments
+            • Recruiters earning thousands monthly
+
+            2005-2008: Under Scrutiny
+            • Palm Beach investigation begins
+            • Financial records subpoenaed
+            • Payments continue despite investigation
+
+            2008-2019: After Plea Deal
+            • Payments continue at reduced rate
+            • New victims continue to emerge
+            • Financial empire remains intact
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Marcus reviews your work: "Sarah, this proves it was a business. A criminal business that operated for 25 years."`,
+            image: "evidence_compilation",
+            imagePrompt: "Financial timeline on evidence board, journalist compiling damning money trail",
+            sources: ["Compiled financial evidence", "Court records", "Victim testimony correlations"],
+            choices: [
+                {
+                    text: "Add this to your main investigation",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 30,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Use financial evidence as story centerpiece",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 35,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The financial evidence proved this was a systematic criminal enterprise, not isolated incidents."
+        },
+
+        wealth_source_investigation: {
+            text: `THE MYSTERY OF EPSTEIN'S WEALTH
+
+            DAY 2 - 4:30 AM
+
+            You investigate the biggest mystery: where did his money come from?
+
+            🔍 WEALTH SOURCE ANALYSIS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            CLAIMED PROFESSION:
+            "Financial manager for billionaires"
+            But only one client (Les Wexner) ever confirmed.
+
+            VERIFIED INCOME:
+            • Les Wexner connection: Unclear arrangement
+            • Power of attorney over Wexner funds
+            • $46 million mansion "gifted" by Wexner
+
+            UNVERIFIED CLAIMS:
+            • Managing billions in assets
+            • Sophisticated investment strategies
+            • International finance connections
+
+            THE MYSTERY:
+            Despite decades of scrutiny, no one has ever
+            fully explained how Epstein accumulated his
+            estimated $500+ million fortune.
+
+            Some speculate intelligence connections.
+            Some speculate blackmail income.
+            None of it is verified.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Marcus cautions: "The wealth mystery is interesting, but it's a rabbit hole. We can prove what he did with the money. We can't prove where it came from."`,
+            image: "wealth_mystery",
+            imagePrompt: "Financial mystery investigation, question marks over wealth sources, investigative dead end",
+            sources: ["Financial investigations", "Court depositions", "Public records"],
+            choices: [
+                {
+                    text: "Focus on provable facts about how money was used",
+                    nextScene: "financial_evidence_compilation",
+                    progressIncrease: 20,
+                    factual: true
+                },
+                {
+                    text: "Keep investigating wealth sources",
+                    nextScene: "wealth_rabbit_hole",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "The source of Epstein's wealth remains one of the great mysteries of the case. Without verification, responsible journalism focuses on what can be proven."
+        },
+
+        wealth_rabbit_hole: {
+            text: `THE WEALTH RABBIT HOLE
+
+            DAY 2 - 7:00 AM
+
+            You've spent hours investigating Epstein's wealth source. The result:
+
+            ⚠️ INVESTIGATION STATUS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            Hours spent: 4
+            Verified facts discovered: 0
+            Theories considered: 12
+            Provable conclusions: None
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Every lead dead-ends in speculation. Intelligence connections? Unverifiable. Blackmail income? No evidence. Fraud? Never proven.
+
+            Meanwhile, your deadline approaches and you've neglected the verified evidence.
+
+            Marcus finds you exhausted: "Sarah, the victims don't care where his money came from. They care that we tell their story. Can we get back to that?"
+
+            LESSON: Some mysteries remain unsolved. Good journalism knows when to move on.`,
+            image: "rabbit_hole",
+            imagePrompt: "Exhausted journalist surrounded by unverified theories, time wasted, deadline approaching",
+            sources: ["Unverified financial theories"],
+            choices: [
+                {
+                    text: "Refocus on victim evidence immediately",
+                    nextScene: "evidence_documentation",
+                    progressIncrease: 10,
+                    evidence: true
+                },
+                {
+                    text: "You're too tired - take what you have and write",
+                    nextScene: "partial_victory_ending",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Investigative journalists must balance curiosity with practicality. Some questions don't have answers, and chasing them can undermine the larger story."
+        },
+
+        payment_victim_correlation: {
+            text: `CORRELATING PAYMENTS WITH TESTIMONY
+
+            DAY 2 - 5:30 AM
+
+            You cross-reference financial records with victim testimony. The correlation is devastating:
+
+            📋 PAYMENT-TESTIMONY MATCH:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            MARIA'S ACCOUNT:
+            "I received $300 on March 15, 2005"
+            ✅ Bank record confirms: $300 withdrawal, March 15, 2005
+
+            JENNIFER'S ACCOUNT:
+            "I got paid $500 every two weeks"
+            ✅ Bank records show: Bi-weekly $500 withdrawals matching her timeline
+
+            RECRUITER TESTIMONY:
+            "I earned $200 for each girl I brought"
+            ✅ Records show: Pattern of $200 payments to known recruiters
+
+            CORROBORATION RATE: 94%
+            Almost every verifiable victim claim matches financial records.
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            This is the smoking gun. The victims aren't just telling stories - they have receipts.`,
+            image: "evidence_correlation",
+            imagePrompt: "Documents matching victim testimony with financial records, bulletproof evidence compilation",
+            sources: ["Court financial records", "Victim depositions", "Bank records"],
+            choices: [
+                {
+                    text: "This correlation is your story's foundation",
+                    nextScene: "story_centerpiece_decision",
+                    progressIncrease: 40,
+                    evidence: true,
+                    factual: true
+                },
+                {
+                    text: "Get more victim testimonies to strengthen correlation",
+                    nextScene: "multiple_victims_come_forward",
+                    progressIncrease: 30,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The correlation between financial records and victim testimony provided undeniable proof of systematic exploitation."
         },
 
         knowledge_partial_baseline: {
@@ -3125,6 +3517,394 @@ Your investigation continues to uncover evidence of systematic failure and insti
                 }
             ],
             educationalNote: "The Epstein case revealed systemic failures across multiple institutions, raising questions about justice for the wealthy and powerful."
+        },
+
+        // ============================================
+        // ALTERNATIVE ENDINGS - ADDED FOR DEPTH
+        // ============================================
+
+        story_killed_ending: {
+            text: `THE STORY THAT NEVER WAS
+
+            DAY 3 - 6:00 AM
+
+            You stare at your screen in disbelief. The message from the publisher is final:
+
+            📧 FROM: Publisher's Office
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            "After careful consideration of legal exposure and
+            advertiser concerns, we have decided not to proceed
+            with the Epstein investigation piece. All materials
+            are to be returned to legal custody immediately.
+
+            This decision is final."
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Marcus slams his desk. "Eighteen years those victims waited. And we're just... giving up?"
+
+            Maria, who stayed through the night, stands slowly. Her face shows no surprise - only the weary recognition of someone who has seen this before.
+
+            "This is what always happens," she says quietly. "Money wins. It always wins."
+
+            Agent Kim calls you an hour later. "I heard. I'm sorry, Sarah. I really thought this time would be different."
+
+            You look at the stack of evidence on your desk - documents that prove systematic exploitation, institutional failure, and deliberate cover-up. All of it will be sealed away again.
+
+            But as you pack up, you make a decision. You copy the key files to a secure location. Someday, somehow, this story will be told.
+
+            SIX MONTHS LATER:
+            Another journalist at another paper receives a mysterious package...
+
+            ENDING: THE CYCLE CONTINUES
+            The truth was suppressed, but not destroyed. The fight for justice continues.`,
+            image: "story_killed",
+            imagePrompt: "Dejected journalist in empty newsroom at dawn, rejected story, documents being packed away, bittersweet ending",
+            sources: ["Many real investigations have been killed by institutional pressure"],
+            choices: [
+                {
+                    text: "Try again - Start a new investigation",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                },
+                {
+                    text: "Reflect on what went wrong",
+                    nextScene: "story_killed_reflection",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "Many important investigations have been killed by institutional pressure. Julie K. Brown's Epstein investigation was initially rejected by other outlets before the Miami Herald published it."
+        },
+
+        story_killed_reflection: {
+            text: `REFLECTION: WHAT WENT WRONG?
+
+            Looking back, you analyze where the investigation faltered:
+
+            📋 CRITICAL ASSESSMENT:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            POSSIBLE FACTORS:
+            • Not enough verified sources before pushing forward
+            • Legal team wasn't brought in early enough
+            • Publisher wasn't kept informed of progress
+            • Rushed timeline created vulnerability to pressure
+            • Didn't build enough public support first
+
+            LESSONS FOR FUTURE:
+            • Build coalitions before confronting power
+            • Document everything meticulously
+            • Have legal protection in place early
+            • Consider alternative publication routes
+            • Never rely on a single outlet
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            Maria's parting words echo: "The truth doesn't die. It just waits for braver people."
+
+            Maybe next time, you'll be ready.`,
+            image: "reflection_ending",
+            imagePrompt: "Journalist reviewing case files alone, learning from failure, determination to try again",
+            sources: ["Lessons from suppressed investigations"],
+            choices: [
+                {
+                    text: "Start fresh with lessons learned",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "Understanding why investigations fail helps journalists succeed in future attempts."
+        },
+
+        partial_victory_ending: {
+            text: `A PARTIAL TRUTH
+
+            DAY 3 - 11:00 PM
+
+            You publish, but not the story you wanted. Legal concerns forced massive cuts:
+
+            📰 WHAT GOT PUBLISHED:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            ✅ Victim statistics (1,000+ affected)
+            ✅ General timeline of failures
+            ✅ 2008 plea deal criticism
+            ❌ Specific names of enablers (cut)
+            ❌ Agent Kim's testimony (cut - too risky)
+            ❌ Prosecutor confession (cut - unverified)
+            ❌ Internal FBI memos (cut - classified)
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            The response is muted. Without the explosive revelations, it reads like a summary of existing reporting.
+
+            Maria calls you, disappointed but understanding: "It's something. It's more than we had yesterday. But Sarah... it's not enough."
+
+            Agent Kim is more blunt: "You named the problem but not the people who caused it. They'll wait this out."
+
+            THREE MONTHS LATER:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • Minor congressional inquiry launched
+            • Two low-level officials resign
+            • Victim compensation fund discussed, not created
+            • Key players remain untouched
+            • Public attention moves on
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            You kept your job. You didn't break any laws. But lying in bed at night, you wonder: was playing it safe the right choice?
+
+            ENDING: THE COMPROMISE
+            Sometimes partial truth is all the system allows.`,
+            image: "partial_victory",
+            imagePrompt: "Newspaper with redacted headlines, mixed emotions, partial justice achieved, bittersweet outcome",
+            sources: ["Many investigations result in partial revelations"],
+            choices: [
+                {
+                    text: "Accept the outcome and move on",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                },
+                {
+                    text: "Plan to leak the rest anonymously",
+                    nextScene: "anonymous_leak_ending",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "Many investigations result in compromised publications due to legal, institutional, or political pressure."
+        },
+
+        anonymous_leak_ending: {
+            text: `THE ANONYMOUS LEAK
+
+            ONE YEAR LATER
+
+            You couldn't let it go. The full story deserved to be told.
+
+            Using secure channels and encrypted communication, you anonymously provided the complete evidence to three international news organizations simultaneously.
+
+            📡 THE DISTRIBUTED TRUTH:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • The Guardian (UK) - FBI memo analysis
+            • Der Spiegel (Germany) - Financial records
+            • Le Monde (France) - Victim testimonies
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            By distributing across jurisdictions, no single government could suppress it all.
+
+            The story explodes globally. Congressional hearings follow. Real accountability begins.
+
+            No one knows it was you. Your career continues. But every time you see a headline about Epstein reforms, you allow yourself a small, private smile.
+
+            Maria texts you from an unknown number: "I don't know who did this. But whoever they are... thank you. We finally got heard."
+
+            You delete the message and go back to work.
+
+            ENDING: THE SHADOW JOURNALIST
+            Sometimes the truth needs to travel in darkness to reach the light.
+
+            Evidence Collected: Maximum | Impact: Historic | Recognition: None
+
+            And that's exactly how you wanted it.`,
+            image: "anonymous_leak",
+            imagePrompt: "Journalist in shadows watching international news coverage, anonymous hero, justice achieved quietly",
+            sources: ["Anonymous leaks have driven major investigations throughout history"],
+            choices: [
+                {
+                    text: "Start a new investigation",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "Anonymous sources and leakers have been crucial to major investigations, from Pentagon Papers to Panama Papers."
+        },
+
+        sources_protected_ending: {
+            text: `PROTECTING THE SOURCES
+
+            DAY 3 - 2:00 AM
+
+            The FBI raid comes faster than expected. They have a warrant for everything.
+
+            But you were ready.
+
+            📋 WHAT YOU PROTECTED:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            ✅ All source identities encrypted and destroyed
+            ✅ Agent Kim's involvement completely hidden
+            ✅ Maria relocated with victim services
+            ✅ Detective Rodriguez's files secured
+            ✅ Anonymous caller never identified
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            The FBI seizes your documents, your computers, everything. They find nothing that identifies your sources.
+
+            You spend 48 hours in custody for contempt, refusing to reveal your sources. Your lawyer gets you released.
+
+            The story never publishes. But no one who trusted you gets hurt.
+
+            SIX MONTHS LATER:
+
+            Agent Kim still has her job. Maria is in witness protection, building a new life. The anonymous caller remains free.
+
+            And one day, a young journalist approaches you at a conference:
+
+            "Ms. Chen? I heard what you did. You protected your sources when it cost you everything. I want to learn from you."
+
+            You smile. The story wasn't told this time. But you've inspired the next generation of journalists who might tell it.
+
+            ENDING: THE PROTECTOR
+            Some victories are measured in the people you save, not the stories you publish.`,
+            image: "source_protection_ending",
+            imagePrompt: "Journalist being led away by FBI but looking peaceful, sources safe, ethical victory",
+            sources: ["Journalists have gone to jail to protect sources throughout history"],
+            choices: [
+                {
+                    text: "Train the next generation",
+                    nextScene: "mentor_ending",
+                    progressIncrease: 0
+                },
+                {
+                    text: "Start a new investigation",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "Source protection is a cornerstone of investigative journalism. Judith Miller spent 85 days in jail protecting a source."
+        },
+
+        mentor_ending: {
+            text: `THE MENTOR'S LEGACY
+
+            FIVE YEARS LATER
+
+            You never published the Epstein story. But you did something more important.
+
+            📚 YOUR LEGACY:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+            • Founded investigative journalism fellowship
+            • Trained 47 young reporters in source protection
+            • Wrote textbook on institutional investigation
+            • Three of your students won Pulitzer Prizes
+            • One of them finally published the full Epstein story
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            The student who published it dedicated her piece to you:
+
+            "To Sarah Chen, who taught me that protecting the truth sometimes means protecting the people who carry it."
+
+            Maria, now an advocate for trafficking survivors, speaks at your fellowship graduation every year. Agent Kim, retired, consults on your courses.
+
+            The system that tried to silence you? You built an army of journalists to fight it.
+
+            ENDING: THE TEACHER
+            The greatest stories are sometimes the ones we enable others to tell.
+
+            "I didn't tell the truth. I taught the truth." - Sarah Chen`,
+            image: "mentor_ending",
+            imagePrompt: "Older journalist teaching young reporters, legacy of journalism, classroom with investigation boards",
+            sources: ["Many legendary journalists are remembered for who they mentored"],
+            choices: [
+                {
+                    text: "Start a new investigation",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "Many legendary journalists are remembered not just for their stories, but for the reporters they trained."
+        },
+
+        rushed_publication_ending: {
+            text: `THE RUSHED PUBLICATION
+
+            DAY 2 - 11:59 PM
+
+            Against advice, you publish before verification is complete. The pressure was too intense. The deadline too close.
+
+            ⚠️ THE CONSEQUENCES:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            WEEK 1:
+            • Story goes viral - 5 million views
+            • Victims celebrate - finally being heard
+            • Praise floods in from advocates
+
+            WEEK 2:
+            • Lawyers find three factual errors
+            • One witness recants under pressure
+            • Subjects threaten defamation suits
+
+            WEEK 3:
+            • Paper issues corrections
+            • Credibility questioned
+            • "Fake news" narrative takes hold
+
+            MONTH 2:
+            • Two lawsuits filed against paper
+            • Your editor is fired
+            • Story becomes cautionary tale
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            The core facts were right. 1,000+ victims. Institutional failure. All true.
+
+            But the small errors gave enemies ammunition. The story that should have changed everything became "that disputed article."
+
+            Maria calls you, crying: "They're using your mistakes to call us liars. Again."
+
+            You learned the hardest lesson in journalism: being mostly right isn't enough.
+
+            ENDING: THE CAUTIONARY TALE
+            Speed killed the story that accuracy could have saved.`,
+            image: "rushed_publication",
+            imagePrompt: "Newspaper corrections, journalist head in hands, credibility destroyed, lessons learned hard way",
+            sources: ["Rushed publications have damaged important investigations"],
+            choices: [
+                {
+                    text: "Learn from mistakes - try again",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                },
+                {
+                    text: "Reflect on what went wrong",
+                    nextScene: "rushed_reflection",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "The Rolling Stone UVA story and other rushed publications show how errors can undermine true narratives."
+        },
+
+        rushed_reflection: {
+            text: `REFLECTION: THE COST OF SPEED
+
+            📋 POST-MORTEM ANALYSIS:
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            THE ERRORS:
+            1. One date was wrong by two weeks
+            2. A financial figure was miscalculated
+            3. One quote was paraphrased inaccurately
+
+            None of these errors affected the core truth. But they gave critics ammunition to dismiss everything.
+
+            THE LESSON:
+            "Your enemies don't need you to be wrong about everything. They just need you to be wrong about something."
+
+            WHAT SHOULD HAVE HAPPENED:
+            • Take the extra 24 hours
+            • Triple-check every fact
+            • Have legal review everything
+            • Let critics find nothing
+            ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+            The victims deserved better. They deserved a story that couldn't be attacked.
+
+            Next time, you'll be ready.`,
+            image: "rushed_reflection",
+            imagePrompt: "Journalist studying mistakes, fact-checking guides, determination to improve",
+            sources: ["Journalism post-mortems and ethics reviews"],
+            choices: [
+                {
+                    text: "Start again with lessons learned",
+                    nextScene: "intro",
+                    progressIncrease: 0
+                }
+            ],
+            educationalNote: "The best investigative journalists are meticulous because they know their enemies will exploit any error."
         }
     }
 };

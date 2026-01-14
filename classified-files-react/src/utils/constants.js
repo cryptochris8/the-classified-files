@@ -78,8 +78,8 @@ export const CASES_CONFIG = {
     id: 'hunterlaptop',
     title: 'Hunter Biden Laptop',
     description: 'Political Controversy Examined',
-    sealStatus: SEAL_STATUS.COMING_SOON,
-    releaseDate: 'FREE - August 11, 2025',
+    sealStatus: SEAL_STATUS.SEALED,
+    price: '$4.99',
     difficulty: 3,
   },
   watergate: {

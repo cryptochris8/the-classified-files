@@ -50,6 +50,170 @@ body {
     letter-spacing: 1px;
 }
 
+/* Header Controls Container */
+#header-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* Main Menu Button */
+#main-menu-btn {
+    background: linear-gradient(135deg, #4a3a2a 0%, #3a2a1a 100%);
+    border: 2px solid #8b4513;
+    color: #e0e0e0;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#main-menu-btn:hover {
+    background: linear-gradient(135deg, #5a4a3a 0%, #4a3a2a 100%);
+    border-color: #a05a23;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.4);
+}
+
+#main-menu-btn .btn-icon {
+    font-size: 16px;
+}
+
+#main-menu-btn.hidden {
+    display: none;
+}
+
+/* Confirmation Modal */
+.confirmation-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation-modal.hidden {
+    display: none;
+}
+
+.confirmation-modal .modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+}
+
+.confirmation-modal .modal-content {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    border: 3px solid #8b4513;
+    border-radius: 12px;
+    padding: 30px 40px;
+    max-width: 450px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.confirmation-modal h3 {
+    color: #ff6b6b;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.3);
+}
+
+.confirmation-modal p {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.modal-btn {
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.modal-btn.confirm-btn {
+    background: linear-gradient(135deg, #8b0000 0%, #5a0000 100%);
+    border: 2px solid #ff6b6b;
+    color: #fff;
+}
+
+.modal-btn.confirm-btn:hover {
+    background: linear-gradient(135deg, #a00000 0%, #700000 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(139, 0, 0, 0.5);
+}
+
+.modal-btn.cancel-btn {
+    background: linear-gradient(135deg, #2d4a2d 0%, #1e3a1e 100%);
+    border: 2px solid #4a6741;
+    color: #e0e0e0;
+}
+
+.modal-btn.cancel-btn:hover {
+    background: linear-gradient(135deg, #3d5a3d 0%, #2e4a2e 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(46, 74, 46, 0.5);
+}
+
+@media (max-width: 480px) {
+    .modal-buttons {
+        flex-direction: column;
+    }
+
+    .modal-btn {
+        width: 100%;
+    }
+
+    #header-controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
 #game-main {
     flex: 1;
     display: grid;

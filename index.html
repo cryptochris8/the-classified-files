@@ -48,11 +48,30 @@
         <header id="game-header">
             <h1 id="game-title">DECLASSIFIED</h1>
             <div id="case-title">Select Case File</div>
-            <button id="speech-toggle" class="speech-button" title="Toggle Read Aloud">
-                <span class="speech-icon">🔊</span>
-                <span class="speech-text">Read Aloud</span>
-            </button>
+            <div id="header-controls">
+                <button id="main-menu-btn" class="header-button hidden" title="Return to Main Menu">
+                    <span class="btn-icon">🏠</span>
+                    <span class="btn-text">Main Menu</span>
+                </button>
+                <button id="speech-toggle" class="speech-button" title="Toggle Read Aloud">
+                    <span class="speech-icon">🔊</span>
+                    <span class="speech-text">Read Aloud</span>
+                </button>
+            </div>
         </header>
+
+        <!-- Main Menu Confirmation Modal -->
+        <div id="main-menu-modal" class="confirmation-modal hidden">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <h3>Return to Main Menu?</h3>
+                <p>Are you sure you want to leave this case? Your progress in the current session will be lost.</p>
+                <div class="modal-buttons">
+                    <button id="confirm-main-menu" class="modal-btn confirm-btn">Yes, Exit Case</button>
+                    <button id="cancel-main-menu" class="modal-btn cancel-btn">No, Back to Game</button>
+                </div>
+            </div>
+        </div>
         
         <main id="game-main">
             <div id="document-viewer">

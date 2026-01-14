@@ -38,6 +38,7 @@ class GameEngine {
         this.initializeGame();
         this.setupClickToSkip();
         this.initializeMiniGameEngine();
+        this.setupMainMenuButton();
     }
     
     initializeGame() {
@@ -264,6 +265,12 @@ class GameEngine {
     }
     
     showCaseSelection(stories) {
+        // Hide the main menu button on case selection screen
+        this.hideMainMenuButton();
+
+        // Clear any existing choices from previous game
+        this.clearChoices();
+
         // Display the classified document image
         this.elements.documentImage.style.background = `url('images/classifiedtopsecret.png') center/contain no-repeat`;
         this.elements.documentImage.style.backgroundColor = '#2a2a2a';
@@ -556,23 +563,110 @@ class GameEngine {
     loadStory(storyData) {
         this.currentStory = storyData.story;
         this.currentStoryKey = storyData.key;
-        
+
         // Update case title in header
         const caseTitle = document.getElementById('case-title');
         if (caseTitle) {
             caseTitle.textContent = `Case File: ${storyData.name.toUpperCase()}`;
         }
-        
+
+        // Show the main menu button when playing a case
+        this.showMainMenuButton();
+
         console.log(`✅ LOADED: ${storyData.name} with`, Object.keys(this.currentStory.scenes).length, 'scenes');
         console.log('✅ AVAILABLE SCENES:', Object.keys(this.currentStory.scenes));
-        
+
         this.clearChoices();
         this.loadScene('intro');
     }
     
+    setupMainMenuButton() {
+        const mainMenuBtn = document.getElementById('main-menu-btn');
+        const mainMenuModal = document.getElementById('main-menu-modal');
+        const confirmBtn = document.getElementById('confirm-main-menu');
+        const cancelBtn = document.getElementById('cancel-main-menu');
+        const modalOverlay = mainMenuModal ? mainMenuModal.querySelector('.modal-overlay') : null;
+
+        if (!mainMenuBtn || !mainMenuModal) {
+            console.warn('Main menu button or modal not found');
+            return;
+        }
+
+        // Show confirmation modal when main menu button is clicked
+        mainMenuBtn.addEventListener('click', () => {
+            this.playButtonClickSound();
+            mainMenuModal.classList.remove('hidden');
+        });
+
+        // Confirm - return to main menu
+        if (confirmBtn) {
+            confirmBtn.addEventListener('click', () => {
+                this.playButtonClickSound();
+                mainMenuModal.classList.add('hidden');
+                this.returnToMainMenu();
+            });
+        }
+
+        // Cancel - close modal and continue game
+        if (cancelBtn) {
+            cancelBtn.addEventListener('click', () => {
+                this.playButtonClickSound();
+                mainMenuModal.classList.add('hidden');
+            });
+        }
+
+        // Click outside modal to close
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', () => {
+                mainMenuModal.classList.add('hidden');
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mainMenuModal.classList.contains('hidden')) {
+                mainMenuModal.classList.add('hidden');
+            }
+        });
+    }
+
+    showMainMenuButton() {
+        const mainMenuBtn = document.getElementById('main-menu-btn');
+        if (mainMenuBtn) {
+            mainMenuBtn.classList.remove('hidden');
+        }
+    }
+
+    hideMainMenuButton() {
+        const mainMenuBtn = document.getElementById('main-menu-btn');
+        if (mainMenuBtn) {
+            mainMenuBtn.classList.add('hidden');
+        }
+    }
+
+    returnToMainMenu() {
+        // Stop any ongoing speech
+        this.stopSpeech();
+
+        // Clear current game state
+        this.clearGameState();
+
+        // Hide main menu button (will show again when a case is selected)
+        this.hideMainMenuButton();
+
+        // Reset case title
+        const caseTitle = document.getElementById('case-title');
+        if (caseTitle) {
+            caseTitle.textContent = 'Select Case File';
+        }
+
+        // Return to case selection
+        this.startGame();
+    }
+
     setupClickToSkip() {
         // Add multiple click listeners to ensure skip typing works
-        
+
         // Primary click listener on story text
         this.elements.storyText.addEventListener('click', (e) => {
             if (this.isTyping) {
