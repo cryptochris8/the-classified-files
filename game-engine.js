@@ -271,6 +271,20 @@ class GameEngine {
         // Clear any existing choices from previous game
         this.clearChoices();
 
+        // Clear sources and educational note sections from previous game
+        const existingSources = document.querySelector('.sources-section');
+        if (existingSources) existingSources.remove();
+        const existingNote = document.querySelector('.educational-note');
+        if (existingNote) existingNote.remove();
+
+        // Reset progress bar and evidence count UI
+        if (this.elements.progressFill) {
+            this.elements.progressFill.style.width = '0%';
+        }
+        if (this.elements.evidenceCount) {
+            this.elements.evidenceCount.textContent = '0';
+        }
+
         // Display the classified document image
         this.elements.documentImage.style.background = `url('images/classifiedtopsecret.png') center/contain no-repeat`;
         this.elements.documentImage.style.backgroundColor = '#2a2a2a';
