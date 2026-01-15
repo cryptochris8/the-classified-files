@@ -1141,12 +1141,18 @@ Prepare to reconstruct classified evidence...`;
     
     addEvidence() {
         this.gameState.evidenceCount++;
-        this.elements.evidenceNumber.textContent = this.gameState.evidenceCount;
-        this.elements.evidenceNumber.parentElement.classList.add('evidence-found');
-        
-        setTimeout(() => {
-            this.elements.evidenceNumber.parentElement.classList.remove('evidence-found');
-        }, 2000);
+        if (this.elements.evidenceNumber) {
+            this.elements.evidenceNumber.textContent = this.gameState.evidenceCount;
+            if (this.elements.evidenceNumber.parentElement) {
+                this.elements.evidenceNumber.parentElement.classList.add('evidence-found');
+
+                setTimeout(() => {
+                    if (this.elements.evidenceNumber && this.elements.evidenceNumber.parentElement) {
+                        this.elements.evidenceNumber.parentElement.classList.remove('evidence-found');
+                    }
+                }, 2000);
+            }
+        }
     }
     
     increaseProgress(amount) {
