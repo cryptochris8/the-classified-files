@@ -15,11 +15,35 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // JWT Secret for purchase verification
-const JWT_SECRET = process.env.JWT_SECRET || 'CHANGE_THIS_IN_PRODUCTION_' + Math.random().toString(36);
+function getJWTSecret() {
+    const secret = process.env.JWT_SECRET;
 
-if (!process.env.JWT_SECRET) {
-    console.warn('⚠️  WARNING: JWT_SECRET not set in .env file. Using random secret (not recommended for production)');
+    // In production, JWT_SECRET is required
+    if (!secret && process.env.NODE_ENV === 'production') {
+        console.error('❌ FATAL: JWT_SECRET must be set in production');
+        console.error('   Generate one with: npm run generate-jwt-secret');
+        process.exit(1);
+    }
+
+    // Development fallback (consistent, not random)
+    if (!secret) {
+        console.warn('⚠️  WARNING: JWT_SECRET not set in .env file.');
+        console.warn('   Using development fallback (NOT for production)');
+        return 'dev-secret-not-for-production-use-only';
+    }
+
+    // Validate minimum length
+    if (secret.length < 32) {
+        console.error('❌ FATAL: JWT_SECRET must be at least 32 characters');
+        console.error('   Current length:', secret.length);
+        console.error('   Generate one with: npm run generate-jwt-secret');
+        process.exit(1);
+    }
+
+    return secret;
 }
+
+const JWT_SECRET = getJWTSecret();
 
 // Validate required environment variables
 if (!process.env.STRIPE_SECRET_KEY) {

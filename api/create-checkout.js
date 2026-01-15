@@ -65,10 +65,14 @@ export default async function handler(req, res) {
         });
         
     } catch (error) {
+        // Log full error details server-side only
         console.error('Stripe session creation error:', error);
-        return res.status(500).json({ 
+
+        // Never expose internal error details to client
+        return res.status(500).json({
             error: 'Failed to create checkout session',
-            details: error.message 
+            code: 'CHECKOUT_ERROR'
+            // details intentionally omitted for security
         });
     }
 }
