@@ -1461,23 +1461,26 @@ D) September 15, 2025`,
                 {
                     text: "A) September 8, 2025",
                     nextScene: "quiz_wrong_1",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "B) September 10, 2025",
                     nextScene: "quiz_correct_1",
                     progressIncrease: 10,
-                    correct: true
+                    quizAnswer: true
                 },
                 {
                     text: "C) September 12, 2025",
                     nextScene: "quiz_wrong_1",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "D) September 15, 2025",
                     nextScene: "quiz_wrong_1",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 }
             ],
             educationalNote: "Testing your knowledge helps reinforce the verified facts of this case."
@@ -1501,23 +1504,26 @@ D) 200 yards`,
                 {
                     text: "A) 50 yards",
                     nextScene: "quiz_wrong_2",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "B) 100 yards",
                     nextScene: "quiz_wrong_2",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "C) 142 yards",
                     nextScene: "quiz_correct_2",
                     progressIncrease: 10,
-                    correct: true
+                    quizAnswer: true
                 },
                 {
                     text: "D) 200 yards",
                     nextScene: "quiz_wrong_2",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 }
             ]
         },
@@ -1540,23 +1546,26 @@ D) 48 hours`,
                 {
                     text: "A) 12 hours",
                     nextScene: "quiz_wrong_3",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "B) 24 hours",
                     nextScene: "quiz_wrong_3",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "C) 33 hours",
                     nextScene: "quiz_complete",
                     progressIncrease: 10,
-                    correct: true
+                    quizAnswer: true
                 },
                 {
                     text: "D) 48 hours",
                     nextScene: "quiz_wrong_3",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 }
             ]
         },
@@ -1696,23 +1705,26 @@ D) Military service, then trade school`,
                 {
                     text: "A) Straight to electrical trade school",
                     nextScene: "suspect_quiz_wrong",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "B) One semester at Utah State, then trade school",
                     nextScene: "suspect_quiz_correct",
                     progressIncrease: 10,
-                    correct: true
+                    quizAnswer: true
                 },
                 {
                     text: "C) Four years at Utah State, then dropped out",
                     nextScene: "suspect_quiz_wrong",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 },
                 {
                     text: "D) Military service, then trade school",
                     nextScene: "suspect_quiz_wrong",
-                    progressIncrease: 0
+                    progressIncrease: 0,
+                    quizAnswer: false
                 }
             ]
         },
