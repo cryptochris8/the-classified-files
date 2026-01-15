@@ -160,37 +160,43 @@ class DocumentReconstructionGame {
     
     createGameInterface() {
         const container = this.engine.elements.miniGameContainer;
-        
+
         container.innerHTML = `
             <div class="mini-game-header">
                 <h2 class="mini-game-title">DOCUMENT RECONSTRUCTION</h2>
                 <div class="mini-game-subtitle">Piece together the classified document fragments</div>
-                <button class="mini-game-close" onclick="window.miniGameEngine.closeGame()">×</button>
+                <button class="mini-game-close">×</button>
             </div>
-            
+
             <div class="document-reconstruction-container">
                 <div class="fragments-container">
                     <h3>Document Fragments</h3>
                     <div class="fragments-area" id="fragments-area"></div>
                 </div>
-                
+
                 <div class="reconstruction-area">
                     <h3>Reconstruction Zone</h3>
                     <div class="document-template" id="document-template"></div>
                 </div>
             </div>
-            
+
             <div class="mini-game-progress">
                 <div class="progress-text">Progress: <span id="fragments-placed">0</span>/<span id="total-fragments">0</span></div>
                 <div class="progress-bar-mini">
                     <div class="progress-fill-mini" id="mini-game-progress-fill"></div>
                 </div>
             </div>
-            
+
             <div class="mini-game-hint">
                 <p>💡 Drag document fragments to their correct positions to reveal the classified information</p>
             </div>
         `;
+
+        // Add click handler for close button
+        const closeBtn = container.querySelector('.mini-game-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => this.engine.closeGame());
+        }
     }
     
     generateFragments() {
@@ -421,13 +427,19 @@ class DocumentReconstructionGame {
                         <span class="reward-text">Investigation Progress: +${this.gameData.progressReward || 15}%</span>
                     </div>
                 </div>
-                <button class="continue-btn" onclick="window.miniGameInstance.finishGame()">Continue Investigation</button>
+                <button class="continue-btn">Continue Investigation</button>
             </div>
         `;
-        
+
         this.engine.elements.miniGameContainer.appendChild(completionOverlay);
-        
-        // Store reference for the continue button
+
+        // Add click handler directly to button
+        const continueBtn = completionOverlay.querySelector('.continue-btn');
+        if (continueBtn) {
+            continueBtn.addEventListener('click', () => this.finishGame());
+        }
+
+        // Store reference for backwards compatibility
         window.miniGameInstance = this;
     }
     
