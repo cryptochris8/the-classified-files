@@ -74,11 +74,80 @@ const MKUltraStoryExpanded = {
                     text: "Examine the destroyed documents",
                     nextScene: "document_destruction",
                     progressIncrease: 15
+                },
+                {
+                    text: "Decode the CIA project codename 🔐",
+                    nextScene: "project_code_decoded",
+                    progressIncrease: 20,
+                    evidence: true,
+                    miniGame: {
+                        type: 'cipher_decoder',
+                        title: 'Decode CIA Project Name',
+                        description: 'The CIA used coded project names. Decrypt MKULTRA\'s true meaning.'
+                    }
                 }
             ],
             educationalNote: "MKUltra was the CIA's illegal mind control program that conducted experiments on unwitting subjects from 1953-1973."
         },
-        
+
+        project_code_decoded: {
+            text: `CIA PROJECT CODE DECODED
+
+            1977 - CODE ANALYSIS
+
+You've decoded the hidden meaning behind the CIA's project codename:
+
+🔐 DECODED PROJECT NAME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENCRYPTED: "PLQG FRQWURO XOWUD"
+DECODED: "MIND CONTROL ULTRA"
+
+The "MK" prefix designated CIA Technical Services Division projects:
+- MK = Mind Kontrol (using German spelling)
+- ULTRA = Highest classification level
+
+OTHER DECODED PROJECTS:
+• MKNAOMI - Biological weapons
+• MKDELTA - Overseas operations
+• MKSEARCH - Continuation research
+
+The names reveal the CIA's true intent: developing methods to control human minds for intelligence purposes.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "decoded_cia_files",
+            imagePrompt: "CIA documents with decoded project names, cipher key revealed, classified stamps, intelligence analysis",
+            sources: ["Declassified CIA Documents", "Church Committee Findings", "FOIA Records"],
+            miniGameData: {
+                type: 'cipher_decoder',
+                cipherText: 'PLQG FRQWURO XOWUD',
+                solution: 'MIND CONTROL ULTRA',
+                context: 'CIA Project Codename System',
+                maxHints: 3,
+                evidenceReward: 'Decoded CIA Project Name',
+                progressReward: 20
+            },
+            choices: [
+                {
+                    text: "Investigate the LSD experiments",
+                    nextScene: "lsd_experiments",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Examine the destroyed documents",
+                    nextScene: "document_destruction",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the Canadian connection",
+                    nextScene: "canadian_experiments",
+                    progressIncrease: 18,
+                    evidence: true
+                }
+            ],
+            educationalNote: "The CIA used coded project names to obscure the true nature of their illegal programs."
+        },
+
         lsd_experiments: {
             text: `LSD EXPERIMENTS ON UNWITTING SUBJECTS
             

@@ -234,9 +234,96 @@ The conspiracy deepens with each document.`,
                     nextScene: "conspirator_files",
                     progressIncrease: 22,
                     evidence: true
+                },
+                {
+                    text: "Map the connections between witnesses, locations, and suspects 🔗",
+                    nextScene: "jfk_evidence_mapped",
+                    progressIncrease: 25,
+                    evidence: true,
+                    miniGame: {
+                        type: 'evidence_connection',
+                        title: 'JFK Evidence Board',
+                        description: 'Connect the witnesses, locations, and suspects to reveal the conspiracy.'
+                    }
                 }
             ],
             educationalNote: "The statistical anomaly of witness deaths following the JFK assassination has been studied by researchers, though causation versus correlation remains debated."
+        },
+
+        jfk_evidence_mapped: {
+            text: `EVIDENCE CONNECTION BOARD - CONSPIRACY MAPPED
+
+            DAY 2 - 3:00 AM
+
+Your evidence board reveals the interconnected web of the JFK assassination:
+
+🔗 CONSPIRACY NETWORK ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+OSWALD ←→ CIA TRAINING
+- Military intelligence background
+- Defection to USSR facilitated
+- Return to US expedited
+
+OSWALD ←→ RUBY
+- Both in Dallas before assassination
+- Ruby seen at police station
+- Phone records show connections
+
+GRASSY KNOLL ←→ WITNESSES
+- 51 witnesses heard shots from knoll
+- Witness testimony suppressed
+- Many witnesses died mysteriously
+
+CIA TRAINING ←→ CUBA OPS
+- Bay of Pigs connection
+- Anti-Castro operations
+- Shared personnel and resources
+
+INSIGHT:
+The evidence points to a coordinated operation involving intelligence assets, not a lone gunman acting independently.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "jfk_conspiracy_board",
+            imagePrompt: "Investigation board with photos of Oswald, Ruby, Dealey Plaza connected by red string, noir detective atmosphere",
+            sources: ["Warren Commission Documents", "HSCA Investigation", "Declassified CIA Files"],
+            miniGameData: {
+                type: 'evidence_connection',
+                evidence: [
+                    { id: 'oswald', label: 'Lee Harvey Oswald', icon: '👤', x: 50, y: 20 },
+                    { id: 'cia', label: 'CIA Training', icon: '🕵️', x: 20, y: 40 },
+                    { id: 'ruby', label: 'Jack Ruby', icon: '👤', x: 80, y: 40 },
+                    { id: 'knoll', label: 'Grassy Knoll', icon: '📍', x: 35, y: 70 },
+                    { id: 'witnesses', label: 'Witnesses', icon: '👥', x: 65, y: 70 }
+                ],
+                connections: [
+                    { from: 'oswald', to: 'cia' },
+                    { from: 'oswald', to: 'ruby' },
+                    { from: 'knoll', to: 'witnesses' },
+                    { from: 'cia', to: 'knoll' }
+                ],
+                maxHints: 3,
+                evidenceReward: 'JFK Conspiracy Map',
+                progressReward: 25
+            },
+            choices: [
+                {
+                    text: "Investigate the suspicious deaths of key witnesses",
+                    nextScene: "witness_death_investigation",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Examine Operation MOCKINGBIRD's role",
+                    nextScene: "mockingbird_operation",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Return to witness testimony analysis",
+                    nextScene: "witness_testimony_analysis",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Evidence boards help investigators visualize complex relationships between suspects, witnesses, and locations."
         },
 
         witness_death_investigation: {

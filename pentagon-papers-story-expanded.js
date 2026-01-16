@@ -156,11 +156,85 @@ const PentagonPapersStoryExpanded = {
                 {
                     text: "Contact multiple papers simultaneously",
                     nextScene: "media_strategy"
+                },
+                {
+                    text: "Reconstruct a damaged classified document 🧩",
+                    nextScene: "document_reconstructed",
+                    progressIncrease: 20,
+                    evidence: true,
+                    miniGame: {
+                        type: 'document_reconstruction',
+                        title: 'Reconstruct Classified Document',
+                        description: 'A key document was damaged during copying. Piece it back together.'
+                    }
                 }
             ],
             educationalNote: "Ellsberg spent months secretly copying the Pentagon Papers, knowing he faced possible life imprisonment for espionage."
         },
-        
+
+        document_reconstructed: {
+            text: `CLASSIFIED DOCUMENT RECONSTRUCTED
+
+            October 1969 - DOCUMENT RECOVERY
+
+You've reconstructed a critical document from the Pentagon Papers:
+
+📄 RECONSTRUCTED DOCUMENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TOP SECRET - SENSITIVE
+
+SUBJECT: Vietnam War Assessment
+DATE: November 1967
+
+"Despite public statements of progress, internal analysis shows the war cannot be won under current strategy. Casualty projections indicate continued escalation will result in 10,000+ additional U.S. deaths with no change in outcome."
+
+RECOMMENDATION SUPPRESSED:
+Officials recommended de-escalation but were overruled for political reasons.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+This document proves the government knew the war was unwinnable while publicly claiming progress. The deception cost thousands of lives.`,
+            image: "reconstructed_document",
+            imagePrompt: "Reconstructed TOP SECRET document about Vietnam War, pieces fitted together, dramatic revelation",
+            sources: ["Pentagon Papers", "McNamara Study", "Classified DOD Analysis"],
+            miniGameData: {
+                type: 'document_reconstruction',
+                gridColumns: 3,
+                gridRows: 3,
+                evidenceReward: 'Reconstructed Pentagon Document',
+                progressReward: 20,
+                fragments: [
+                    { position: 0, text: "TOP SECRET", type: "header" },
+                    { position: 1, text: "VIETNAM WAR", type: "title" },
+                    { position: 2, text: "NOV 1967", type: "date" },
+                    { position: 3, text: "War cannot be", type: "body" },
+                    { position: 4, text: "won under current", type: "body" },
+                    { position: 5, text: "strategy - suppress", type: "body" },
+                    { position: 6, text: "10,000+ deaths", type: "body" },
+                    { position: 7, text: "projected if", type: "body" },
+                    { position: 8, text: "war continues", type: "footer" }
+                ]
+            },
+            choices: [
+                {
+                    text: "Approach The New York Times with this evidence",
+                    nextScene: "times_approach",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Continue copying more documents",
+                    nextScene: "decision_to_leak",
+                    progressIncrease: 10
+                },
+                {
+                    text: "Contact multiple papers",
+                    nextScene: "media_strategy",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "The Pentagon Papers revealed that four administrations had deceived the public about the Vietnam War."
+        },
+
         times_approach: {
             text: `THE NEW YORK TIMES
             

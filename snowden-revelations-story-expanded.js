@@ -72,9 +72,76 @@ Do you stay silent and keep your $200,000 salary, or risk everything to warn the
                 {
                     text: "Try to work within the system first",
                     nextScene: "internal_reporting"
+                },
+                {
+                    text: "Decode the classified NSA program name 🔐",
+                    nextScene: "nsa_code_decoded",
+                    progressIncrease: 20,
+                    evidence: true,
+                    miniGame: {
+                        type: 'cipher_decoder',
+                        title: 'Decode NSA Program Name',
+                        description: 'The NSA uses codenames to hide their surveillance programs. Decrypt what PRISM really means.'
+                    }
                 }
             ],
             educationalNote: "Edward Snowden's 2013 revelations exposed the NSA's massive surveillance programs that collected data on millions of Americans without warrants."
+        },
+
+        nsa_code_decoded: {
+            text: `NSA PROGRAM CODE DECODED
+
+            MAY 2013 - CODE ANALYSIS
+
+You've decoded the hidden meaning behind the NSA's surveillance program:
+
+🔐 DECODED PROGRAM NAME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENCRYPTED: "SULVP FROOHFWV DOO GDWD"
+DECODED: "PRISM COLLECTS ALL DATA"
+
+The NSA's internal documentation reveals the true scope:
+
+PROGRAM CAPABILITIES:
+• Direct access to Google, Facebook, Apple servers
+• Real-time email and chat interception
+• Cloud storage monitoring
+• Video and voice call recording
+
+The codename "PRISM" refers to how data is split and analyzed - like light through a prism, your digital life is separated into analyzable components.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "decoded_nsa_program",
+            imagePrompt: "NSA surveillance program diagram decoded, PRISM data flow revealed, tech company logos, classified stamps",
+            sources: ["Snowden Documents", "NSA Internal Briefings", "FISA Court Orders"],
+            miniGameData: {
+                type: 'cipher_decoder',
+                cipherText: 'SULVP FROOHFWV DOO GDWD',
+                solution: 'PRISM COLLECTS ALL DATA',
+                context: 'NSA Surveillance Program Codename',
+                maxHints: 3,
+                evidenceReward: 'Decoded NSA Program',
+                progressReward: 20
+            },
+            choices: [
+                {
+                    text: "Document more surveillance programs",
+                    nextScene: "moral_crisis",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Consider the constitutional implications",
+                    nextScene: "decision_to_leak",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Try internal reporting first",
+                    nextScene: "internal_reporting",
+                    progressIncrease: 10
+                }
+            ],
+            educationalNote: "PRISM was one of several NSA programs that collected data from major tech companies, revealed by Snowden in 2013."
         },
 
         moral_crisis: {

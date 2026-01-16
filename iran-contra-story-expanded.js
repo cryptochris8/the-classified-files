@@ -70,9 +70,94 @@ Did President Reagan know? How deep does this go?`,
                 {
                     text: "Find who authorized this operation",
                     nextScene: "reagan_knowledge_question"
+                },
+                {
+                    text: "Map the Iran-Contra conspiracy network 🔗",
+                    nextScene: "conspiracy_network_mapped",
+                    progressIncrease: 25,
+                    evidence: true,
+                    miniGame: {
+                        type: 'evidence_connection',
+                        title: 'Iran-Contra Network',
+                        description: 'Connect the players in this illegal operation to reveal the conspiracy.'
+                    }
                 }
             ],
             educationalNote: "Iran-Contra was a secret operation that violated Congressional bans on both arms sales to Iran and funding for Nicaraguan rebels."
+        },
+
+        conspiracy_network_mapped: {
+            text: `IRAN-CONTRA CONSPIRACY MAPPED
+
+            NOVEMBER 1986 - NETWORK ANALYSIS
+
+Your investigation reveals the web of the Iran-Contra conspiracy:
+
+🔗 CONSPIRACY NETWORK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+WHITE HOUSE ←→ OLIVER NORTH
+- NSC operative ran day-to-day operations
+- Direct communication with higher-ups
+- Coordinated all illegal activities
+
+OLIVER NORTH ←→ IRAN
+- Negotiated secret arms deals
+- Arranged missile shipments
+- Used intermediaries to hide trail
+
+OLIVER NORTH ←→ CONTRAS
+- Funneled profits to rebels
+- Bypassed Congressional ban
+- Set up secret supply network
+
+IRAN ←→ CONTRAS (via Swiss Banks)
+- Money laundered through foreign accounts
+- Arms sale profits diverted illegally
+- Created untraceable funding mechanism
+
+The evidence proves a coordinated conspiracy to violate U.S. law.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "iran_contra_network",
+            imagePrompt: "Conspiracy board connecting White House, Oliver North, Iran, and Contras with money flows, 1980s political scandal",
+            sources: ["Tower Commission", "Congressional Investigation", "Declassified NSC Documents"],
+            miniGameData: {
+                type: 'evidence_connection',
+                evidence: [
+                    { id: 'whitehouse', label: 'White House', icon: '🏛️', x: 50, y: 15 },
+                    { id: 'north', label: 'Oliver North', icon: '🎖️', x: 50, y: 45 },
+                    { id: 'iran', label: 'Iran', icon: '🇮🇷', x: 20, y: 75 },
+                    { id: 'contras', label: 'Contras', icon: '⚔️', x: 80, y: 75 }
+                ],
+                connections: [
+                    { from: 'whitehouse', to: 'north' },
+                    { from: 'north', to: 'iran' },
+                    { from: 'north', to: 'contras' },
+                    { from: 'iran', to: 'contras' }
+                ],
+                maxHints: 3,
+                evidenceReward: 'Iran-Contra Network Map',
+                progressReward: 25
+            },
+            choices: [
+                {
+                    text: "Focus on the arms sales to Iran",
+                    nextScene: "arms_for_hostages",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Follow the money to the Contras",
+                    nextScene: "contra_funding_exposed",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Investigate Reagan's knowledge",
+                    nextScene: "reagan_knowledge_question",
+                    progressIncrease: 18
+                }
+            ],
+            educationalNote: "The Iran-Contra affair involved multiple violations of U.S. law, including the Boland Amendment banning Contra funding."
         },
 
         arms_for_hostages: {

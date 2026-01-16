@@ -116,9 +116,94 @@ const PanamaPapersStoryExpanded = {
                     text: "Investigate the law firm",
                     nextScene: "mossack_fonseca_operations",
                     progressIncrease: 20
+                },
+                {
+                    text: "Map the offshore financial network 🔗",
+                    nextScene: "financial_network_mapped",
+                    progressIncrease: 25,
+                    evidence: true,
+                    miniGame: {
+                        type: 'evidence_connection',
+                        title: 'Offshore Network Map',
+                        description: 'Connect the shell companies, banks, and politicians to reveal the corruption network.'
+                    }
                 }
             ],
             educationalNote: "The ICIJ coordinated 370 journalists from 80 countries to analyze the Panama Papers - the largest journalism collaboration in history."
+        },
+
+        financial_network_mapped: {
+            text: `OFFSHORE FINANCIAL NETWORK MAPPED
+
+            APRIL 2016 - NETWORK ANALYSIS
+
+Your evidence board reveals the interconnected web of offshore corruption:
+
+🔗 CORRUPTION NETWORK ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MOSSACK FONSECA ←→ SHELL COMPANIES
+- Created 214,000+ offshore entities
+- Anonymous ownership structures
+- Multiple jurisdictions to hide trails
+
+SHELL COMPANIES ←→ WORLD LEADERS
+- Hidden assets for presidents, kings
+- Billion-dollar fortunes concealed
+- Tax-free wealth accumulation
+
+SHELL COMPANIES ←→ BANKS
+- Major banks facilitated transfers
+- Compliance failures documented
+- Money laundering enabled
+
+WORLD LEADERS ←→ BANKS
+- Direct account relationships
+- Preferential treatment for elites
+- Regulatory blind spots exploited
+
+The network reveals how the global elite hide wealth from their citizens.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "offshore_network_map",
+            imagePrompt: "Global financial network visualization, shell companies connected to politicians and banks, corruption web exposed",
+            sources: ["ICIJ Analysis", "Panama Papers Database", "Financial Network Mapping"],
+            miniGameData: {
+                type: 'evidence_connection',
+                evidence: [
+                    { id: 'mossack', label: 'Mossack Fonseca', icon: '🏢', x: 50, y: 15 },
+                    { id: 'shells', label: 'Shell Companies', icon: '📦', x: 50, y: 45 },
+                    { id: 'leaders', label: 'World Leaders', icon: '👑', x: 20, y: 75 },
+                    { id: 'banks', label: 'Banks', icon: '🏦', x: 80, y: 75 }
+                ],
+                connections: [
+                    { from: 'mossack', to: 'shells' },
+                    { from: 'shells', to: 'leaders' },
+                    { from: 'shells', to: 'banks' },
+                    { from: 'leaders', to: 'banks' }
+                ],
+                maxHints: 3,
+                evidenceReward: 'Offshore Network Map',
+                progressReward: 25
+            },
+            choices: [
+                {
+                    text: "Focus on world leaders",
+                    nextScene: "world_leaders_exposed",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the banks involved",
+                    nextScene: "money_laundering_network",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Examine Mossack Fonseca operations",
+                    nextScene: "mossack_fonseca_operations",
+                    progressIncrease: 15
+                }
+            ],
+            educationalNote: "The Panama Papers revealed how a single law firm helped create over 200,000 offshore entities for global elites."
         },
 
         world_leaders_exposed: {

@@ -567,11 +567,79 @@ const WatergateStoryExpanded = {
                 {
                     text: "Prepare for White House resistance",
                     nextScene: "executive_privilege_fight"
+                },
+                {
+                    text: "Decode Nixon's coded language from the tapes 🔐",
+                    nextScene: "nixon_code_decoded",
+                    progressIncrease: 25,
+                    evidence: true,
+                    miniGame: {
+                        type: 'cipher_decoder',
+                        title: 'Decode Nixon\'s Coded Message',
+                        description: 'Nixon used coded language on the tapes. Decrypt what he really meant.'
+                    }
                 }
             ],
             educationalNote: "The revelation of Nixon's secret taping system was the turning point that led to his resignation."
         },
-        
+
+        nixon_code_decoded: {
+            text: `DECODED TAPE TRANSCRIPT
+
+            July 1973 - TAPE ANALYSIS
+
+You've decoded Nixon's coded language from the tapes:
+
+📼 DECODED TRANSCRIPT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ORIGINAL (Coded): "PDNH VXUH WKH SOXPEHUV DUH SDLG"
+DECODED: "MAKE SURE THE PLUMBERS ARE PAID"
+
+CONTEXT:
+"The Plumbers" was Nixon's secret unit that carried out illegal operations, including the Watergate break-in. This tape proves Nixon knew about and authorized payments to keep them quiet.
+
+IMPLICATIONS:
+• Direct evidence of hush money authorization
+• Nixon personally involved in cover-up
+• Obstruction of justice confirmed
+• Impeachment grounds established
+
+Your decryption has revealed the "smoking gun" evidence.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "decoded_tape_transcript",
+            imagePrompt: "Decoded transcript with cipher key, reel-to-reel tape player, investigative documents",
+            sources: ["White House Tapes", "Senate Watergate Committee", "Special Prosecutor Records"],
+            miniGameData: {
+                type: 'cipher_decoder',
+                cipherText: 'PDNH VXUH WKH SOXPEHUV DUH SDLG',
+                solution: 'MAKE SURE THE PLUMBERS ARE PAID',
+                context: 'Nixon White House Coded Communication',
+                maxHints: 3,
+                evidenceReward: 'Decoded Nixon Tape',
+                progressReward: 25
+            },
+            choices: [
+                {
+                    text: "Examine the Smoking Gun tape",
+                    nextScene: "smoking_gun_tape",
+                    progressIncrease: 30,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the Plumbers unit",
+                    nextScene: "plumbers_investigation",
+                    progressIncrease: 20,
+                    evidence: true
+                },
+                {
+                    text: "Return to tape discovery",
+                    nextScene: "white_house_tapes_discovery",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Nixon's coded language on the tapes was key evidence in proving his involvement in the cover-up."
+        },
+
         smoking_gun_tape: {
             text: `THE SMOKING GUN
             JUNE 23, 1972 TAPE
