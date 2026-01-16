@@ -937,5 +937,453 @@ class CipherDecoderGame {
     }
 }
 
+class EvidenceConnectionGame {
+    constructor(miniGameEngine, gameData, onComplete) {
+        this.engine = miniGameEngine;
+        this.gameData = gameData;
+        this.onComplete = onComplete;
+
+        this.evidenceItems = gameData.evidence || [];
+        this.correctConnections = gameData.connections || [];
+        this.playerConnections = [];  // [{from, to}, ...]
+        this.selectedItem = null;
+        this.hintsUsed = 0;
+        this.maxHints = gameData.maxHints || 3;
+        this.isComplete = false;
+        this.startTime = null;
+
+        // Create a set of correct connection keys for easy lookup
+        this.correctConnectionKeys = new Set();
+        this.correctConnections.forEach(conn => {
+            // Store both directions since connections are bidirectional
+            this.correctConnectionKeys.add(`${conn.from}-${conn.to}`);
+            this.correctConnectionKeys.add(`${conn.to}-${conn.from}`);
+        });
+
+        this.totalConnections = this.correctConnections.length;
+    }
+
+    initialize() {
+        this.createGameInterface();
+        this.renderEvidenceBoard();
+        this.startGame();
+    }
+
+    createGameInterface() {
+        const container = this.engine.elements.miniGameContainer;
+
+        container.innerHTML = `
+            <div class="mini-game-header">
+                <h2 class="mini-game-title">EVIDENCE CONNECTION BOARD</h2>
+                <div class="mini-game-subtitle">${this.gameData.context || 'Connect the related pieces of evidence'}</div>
+                <button class="mini-game-close">×</button>
+            </div>
+
+            <div class="evidence-board-container">
+                <div class="evidence-board" id="evidence-board">
+                    <svg class="connection-svg" id="connection-svg"></svg>
+                    <div class="evidence-items" id="evidence-items"></div>
+                </div>
+            </div>
+
+            <div class="evidence-controls">
+                <button class="evidence-hint-btn" id="hint-btn">
+                    Use Hint (<span id="hints-remaining">${this.maxHints}</span> left)
+                </button>
+                <button class="evidence-clear-btn" id="clear-btn">Clear All</button>
+            </div>
+
+            <div class="mini-game-progress">
+                <div class="progress-text">Connections: <span id="connections-made">0</span>/<span id="total-connections">${this.totalConnections}</span></div>
+                <div class="progress-bar-mini">
+                    <div class="progress-fill-mini" id="mini-game-progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="mini-game-hint">
+                <p id="evidence-tip">Click an evidence item to select it, then click another to connect them</p>
+            </div>
+        `;
+
+        // Close button handler
+        const closeBtn = container.querySelector('.mini-game-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => this.engine.closeGame());
+        }
+
+        // Hint button handler
+        const hintBtn = document.getElementById('hint-btn');
+        if (hintBtn) {
+            hintBtn.addEventListener('click', () => this.useHint());
+        }
+
+        // Clear button handler
+        const clearBtn = document.getElementById('clear-btn');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => this.clearAllConnections());
+        }
+    }
+
+    renderEvidenceBoard() {
+        const itemsContainer = document.getElementById('evidence-items');
+        const svg = document.getElementById('connection-svg');
+
+        if (!itemsContainer || !svg) return;
+
+        // Clear existing content
+        itemsContainer.innerHTML = '';
+
+        // Render evidence items
+        this.evidenceItems.forEach(item => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'evidence-item';
+            itemEl.id = `evidence-${item.id}`;
+            itemEl.dataset.id = item.id;
+            itemEl.style.left = `${item.x}%`;
+            itemEl.style.top = `${item.y}%`;
+
+            itemEl.innerHTML = `
+                <div class="evidence-icon">${item.icon || '📄'}</div>
+                <div class="evidence-label">${item.label}</div>
+            `;
+
+            itemEl.addEventListener('click', () => this.handleEvidenceClick(item.id));
+
+            itemsContainer.appendChild(itemEl);
+        });
+
+        // Redraw any existing connections
+        this.redrawConnections();
+    }
+
+    handleEvidenceClick(itemId) {
+        const itemEl = document.getElementById(`evidence-${itemId}`);
+
+        if (this.selectedItem === null) {
+            // First selection
+            this.selectedItem = itemId;
+            itemEl.classList.add('selected');
+            this.engine.playSound('puzzlePieceSound');
+            this.updateTip(`Selected: ${this.getItemLabel(itemId)}. Click another piece of evidence to connect.`);
+        } else if (this.selectedItem === itemId) {
+            // Deselect
+            this.selectedItem = null;
+            itemEl.classList.remove('selected');
+            this.updateTip('Click an evidence item to select it, then click another to connect them');
+        } else {
+            // Second selection - try to make connection
+            const fromId = this.selectedItem;
+            const toId = itemId;
+
+            // Clear selection
+            document.getElementById(`evidence-${fromId}`).classList.remove('selected');
+            this.selectedItem = null;
+
+            // Check if connection already exists
+            if (this.connectionExists(fromId, toId)) {
+                this.removeConnection(fromId, toId);
+                this.showFeedback('Connection removed', 'info');
+            } else {
+                // Try to make the connection
+                this.makeConnection(fromId, toId);
+            }
+        }
+    }
+
+    makeConnection(fromId, toId) {
+        const connectionKey = `${fromId}-${toId}`;
+        const isCorrect = this.correctConnectionKeys.has(connectionKey);
+
+        if (isCorrect) {
+            // Correct connection
+            this.playerConnections.push({ from: fromId, to: toId });
+            this.drawConnection(fromId, toId, true);
+            this.engine.playSound('successSound');
+            this.showFeedback('Correct connection!', 'success');
+            this.updateProgress();
+            this.checkCompletion();
+        } else {
+            // Wrong connection - show briefly then remove
+            this.drawConnection(fromId, toId, false);
+            this.engine.playSound('failureSound');
+            this.showFeedback('These pieces of evidence are not directly connected', 'error');
+
+            // Remove the wrong connection after a delay
+            setTimeout(() => {
+                this.removeConnectionLine(fromId, toId);
+            }, 1000);
+        }
+
+        this.updateTip('Click an evidence item to select it, then click another to connect them');
+    }
+
+    connectionExists(fromId, toId) {
+        return this.playerConnections.some(conn =>
+            (conn.from === fromId && conn.to === toId) ||
+            (conn.from === toId && conn.to === fromId)
+        );
+    }
+
+    drawConnection(fromId, toId, isCorrect) {
+        const svg = document.getElementById('connection-svg');
+        const board = document.getElementById('evidence-board');
+        const fromEl = document.getElementById(`evidence-${fromId}`);
+        const toEl = document.getElementById(`evidence-${toId}`);
+
+        if (!svg || !board || !fromEl || !toEl) return;
+
+        const boardRect = board.getBoundingClientRect();
+        const fromRect = fromEl.getBoundingClientRect();
+        const toRect = toEl.getBoundingClientRect();
+
+        // Calculate center points relative to the board
+        const fromX = (fromRect.left + fromRect.width / 2) - boardRect.left;
+        const fromY = (fromRect.top + fromRect.height / 2) - boardRect.top;
+        const toX = (toRect.left + toRect.width / 2) - boardRect.left;
+        const toY = (toRect.top + toRect.height / 2) - boardRect.top;
+
+        // Create line element
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', fromX);
+        line.setAttribute('y1', fromY);
+        line.setAttribute('x2', toX);
+        line.setAttribute('y2', toY);
+        line.setAttribute('class', `connection-line ${isCorrect ? 'correct' : 'wrong'}`);
+        line.setAttribute('data-from', fromId);
+        line.setAttribute('data-to', toId);
+
+        svg.appendChild(line);
+
+        // Mark evidence items as connected if correct
+        if (isCorrect) {
+            fromEl.classList.add('connected');
+            toEl.classList.add('connected');
+        }
+    }
+
+    removeConnection(fromId, toId) {
+        // Remove from player connections
+        this.playerConnections = this.playerConnections.filter(conn =>
+            !((conn.from === fromId && conn.to === toId) ||
+              (conn.from === toId && conn.to === fromId))
+        );
+
+        this.removeConnectionLine(fromId, toId);
+        this.updateProgress();
+
+        // Update connected state on evidence items
+        this.updateConnectedStates();
+    }
+
+    removeConnectionLine(fromId, toId) {
+        const svg = document.getElementById('connection-svg');
+        if (!svg) return;
+
+        const lines = svg.querySelectorAll('.connection-line');
+        lines.forEach(line => {
+            const lineFrom = line.getAttribute('data-from');
+            const lineTo = line.getAttribute('data-to');
+            if ((lineFrom === fromId && lineTo === toId) ||
+                (lineFrom === toId && lineTo === fromId)) {
+                line.remove();
+            }
+        });
+    }
+
+    redrawConnections() {
+        const svg = document.getElementById('connection-svg');
+        if (svg) {
+            svg.innerHTML = '';
+        }
+
+        this.playerConnections.forEach(conn => {
+            this.drawConnection(conn.from, conn.to, true);
+        });
+    }
+
+    updateConnectedStates() {
+        // Reset all to unconnected
+        this.evidenceItems.forEach(item => {
+            const el = document.getElementById(`evidence-${item.id}`);
+            if (el) el.classList.remove('connected');
+        });
+
+        // Mark connected items
+        this.playerConnections.forEach(conn => {
+            const fromEl = document.getElementById(`evidence-${conn.from}`);
+            const toEl = document.getElementById(`evidence-${conn.to}`);
+            if (fromEl) fromEl.classList.add('connected');
+            if (toEl) toEl.classList.add('connected');
+        });
+    }
+
+    clearAllConnections() {
+        this.playerConnections = [];
+        this.selectedItem = null;
+
+        const svg = document.getElementById('connection-svg');
+        if (svg) svg.innerHTML = '';
+
+        this.evidenceItems.forEach(item => {
+            const el = document.getElementById(`evidence-${item.id}`);
+            if (el) {
+                el.classList.remove('connected', 'selected');
+            }
+        });
+
+        this.updateProgress();
+        this.showFeedback('All connections cleared', 'info');
+    }
+
+    useHint() {
+        if (this.hintsUsed >= this.maxHints) {
+            this.showFeedback('No hints remaining!', 'error');
+            return;
+        }
+
+        // Find a correct connection that hasn't been made yet
+        for (const conn of this.correctConnections) {
+            if (!this.connectionExists(conn.from, conn.to)) {
+                // Make this connection
+                this.playerConnections.push({ from: conn.from, to: conn.to });
+                this.drawConnection(conn.from, conn.to, true);
+
+                this.hintsUsed++;
+                document.getElementById('hints-remaining').textContent = this.maxHints - this.hintsUsed;
+
+                const fromLabel = this.getItemLabel(conn.from);
+                const toLabel = this.getItemLabel(conn.to);
+                this.showFeedback(`Hint: ${fromLabel} connects to ${toLabel}`, 'info');
+                this.engine.playSound('successSound');
+
+                this.updateProgress();
+                this.checkCompletion();
+                return;
+            }
+        }
+
+        this.showFeedback('All connections already found!', 'info');
+    }
+
+    getItemLabel(itemId) {
+        const item = this.evidenceItems.find(i => i.id === itemId);
+        return item ? item.label : itemId;
+    }
+
+    updateTip(message) {
+        const tip = document.getElementById('evidence-tip');
+        if (tip) tip.textContent = message;
+    }
+
+    updateProgress() {
+        const made = this.playerConnections.length;
+        document.getElementById('connections-made').textContent = made;
+
+        const progressFill = document.getElementById('mini-game-progress-fill');
+        if (progressFill) {
+            const percent = (made / this.totalConnections) * 100;
+            progressFill.style.width = percent + '%';
+        }
+    }
+
+    checkCompletion() {
+        if (this.playerConnections.length >= this.totalConnections) {
+            // Verify all correct connections are made
+            const allCorrect = this.correctConnections.every(conn =>
+                this.connectionExists(conn.from, conn.to)
+            );
+
+            if (allCorrect) {
+                this.completeGame();
+            }
+        }
+    }
+
+    showFeedback(message, type) {
+        const existingFeedback = document.querySelector('.feedback-message');
+        if (existingFeedback) existingFeedback.remove();
+
+        const feedback = document.createElement('div');
+        feedback.className = `feedback-message ${type}`;
+        feedback.textContent = message;
+
+        this.engine.elements.miniGameContainer.appendChild(feedback);
+
+        setTimeout(() => feedback.remove(), 2000);
+    }
+
+    completeGame() {
+        if (this.isComplete) return;
+
+        this.isComplete = true;
+        this.engine.playSound('completionSound');
+
+        setTimeout(() => {
+            this.showCompletionScreen();
+        }, 500);
+    }
+
+    showCompletionScreen() {
+        const completionOverlay = document.createElement('div');
+        completionOverlay.className = 'completion-overlay';
+        completionOverlay.innerHTML = `
+            <div class="completion-content">
+                <h2>EVIDENCE CONNECTED!</h2>
+                <p>You have successfully mapped the connections between all pieces of evidence.</p>
+                <div class="rewards">
+                    <div class="reward-item">
+                        <span class="reward-icon">🔗</span>
+                        <span class="reward-text">Evidence Found: ${this.gameData.evidenceReward || 'Evidence Map'}</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="reward-icon">📊</span>
+                        <span class="reward-text">Investigation Progress: +${this.gameData.progressReward || 20}%</span>
+                    </div>
+                    ${this.hintsUsed === 0 ? `
+                    <div class="reward-item bonus">
+                        <span class="reward-icon">⭐</span>
+                        <span class="reward-text">No Hints Used - Master Detective!</span>
+                    </div>
+                    ` : ''}
+                </div>
+                <button class="continue-btn">Continue Investigation</button>
+            </div>
+        `;
+
+        this.engine.elements.miniGameContainer.appendChild(completionOverlay);
+
+        const continueBtn = completionOverlay.querySelector('.continue-btn');
+        if (continueBtn) {
+            continueBtn.addEventListener('click', () => this.finishGame());
+        }
+    }
+
+    finishGame() {
+        const result = {
+            success: true,
+            evidenceGained: this.gameData.evidenceReward || 'Evidence Map',
+            progressIncrease: this.gameData.progressReward || 20,
+            completionTime: Date.now() - this.startTime,
+            hintsUsed: this.hintsUsed
+        };
+
+        if (this.onComplete) {
+            this.onComplete(result);
+        }
+
+        this.engine.closeGame(result);
+    }
+
+    startGame() {
+        this.startTime = Date.now();
+        this.showFeedback('Connect the related pieces of evidence!', 'info');
+    }
+
+    cleanup() {
+        // Clear selection state
+        this.selectedItem = null;
+    }
+}
+
 // Make MiniGameEngine globally available
 window.MiniGameEngine = MiniGameEngine;

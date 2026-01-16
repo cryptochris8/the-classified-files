@@ -3138,9 +3138,100 @@ Your investigation continues to uncover evidence of systematic failure and insti
                     nextScene: "island_investigation",
                     progressIncrease: 12,
                     evidence: true
+                },
+                {
+                    text: "Map the connections between all evidence pieces 🔗",
+                    nextScene: "evidence_board_complete",
+                    progressIncrease: 20,
+                    evidence: true,
+                    miniGame: {
+                        type: 'evidence_connection',
+                        title: 'Evidence Connection Board',
+                        description: 'Connect the related pieces of evidence to reveal the network.'
+                    }
                 }
             ],
             educationalNote: "The flight logs became crucial evidence but also sparked controversy, as some argued that flying on Epstein's planes didn't necessarily imply knowledge of his crimes."
+        },
+
+        evidence_board_complete: {
+            text: `EVIDENCE CONNECTION BOARD - NETWORK MAPPED
+
+            DAY 2 - 2:30 AM
+
+You step back from the evidence board you've constructed. The connections between all the pieces of evidence are now clear:
+
+🔗 EVIDENCE NETWORK ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+FLIGHT LOGS ←→ CLIENT LIST
+- Passenger names match financial records
+- Travel patterns show regular visitors
+
+FLIGHT LOGS ←→ ISLAND RECORDS
+- Flights to St. Thomas coincide with island visitor logs
+- Staff testimony corroborates arrival times
+
+CLIENT LIST ←→ ISLAND RECORDS
+- Client payments match island operational dates
+- VIP guest list overlaps with high-value clients
+
+ISLAND RECORDS ←→ BANK RECORDS
+- Island expenses paid through shell companies
+- Construction payments trace back to main accounts
+
+CONNECTED INSIGHT:
+The evidence forms a clear pattern - flight logs document transportation, client lists show who was involved, island records prove presence, and bank records follow the money.
+
+Marcus whistles. "Sarah, this is a complete evidentiary map. Anyone who looks at this can see how all the pieces fit together."
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+            image: "evidence_board_complete",
+            imagePrompt: "Investigation board with photos, documents, and red string connecting evidence pieces, detective noir atmosphere",
+            sources: ["Court Documents", "FBI Evidence Analysis", "Financial Records"],
+            miniGameData: {
+                type: 'evidence_connection',
+                evidence: [
+                    { id: 'flight', label: 'Flight Logs', icon: '✈️', x: 20, y: 25 },
+                    { id: 'clients', label: 'Client List', icon: '📋', x: 80, y: 25 },
+                    { id: 'island', label: 'Island Records', icon: '🏝️', x: 50, y: 50 },
+                    { id: 'bank', label: 'Bank Records', icon: '💰', x: 20, y: 75 },
+                    { id: 'witness', label: 'Witness Testimony', icon: '👤', x: 80, y: 75 }
+                ],
+                connections: [
+                    { from: 'flight', to: 'clients' },
+                    { from: 'flight', to: 'island' },
+                    { from: 'clients', to: 'island' },
+                    { from: 'island', to: 'bank' }
+                ],
+                maxHints: 3,
+                evidenceReward: 'Complete Evidence Map',
+                progressReward: 20
+            },
+            choices: [
+                {
+                    text: "Follow the money through the bank records",
+                    nextScene: "financial_investigation",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Investigate the witness testimony in detail",
+                    nextScene: "victim_statistics_study",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Examine the timeline of events",
+                    nextScene: "timeline_investigation",
+                    progressIncrease: 10,
+                    factual: true
+                },
+                {
+                    text: "Return to flight logs analysis",
+                    nextScene: "flight_logs_analysis",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Investigators use evidence boards to visualize connections between different pieces of evidence and identify patterns in complex cases."
         },
 
         timeline_investigation: {
