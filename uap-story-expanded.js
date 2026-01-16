@@ -184,9 +184,134 @@ The national security implications are undeniable.`,
                     nextScene: "behavioral_pattern_analysis",
                     progressIncrease: 12,
                     evidence: true
+                },
+                {
+                    text: "Decode an intercepted encrypted transmission from the incident",
+                    nextScene: "cipher_transmission_decoded",
+                    progressIncrease: 20,
+                    evidence: true,
+                    miniGame: {
+                        type: 'cipher_decoder',
+                        title: 'Decrypt Intercepted Transmission',
+                        description: 'A coded radio transmission was intercepted during the nuclear facility UAP incident. Crack the cipher to reveal its contents.'
+                    }
                 }
             ],
             educationalNote: "AARO has confirmed 18 UAP incidents near nuclear weapons facilities, with ongoing investigation into their nature and intent."
+        },
+
+        cipher_transmission_decoded: {
+            text: `INTERCEPTED TRANSMISSION - DECODED
+
+            DAY 1 - 10:45 PM
+
+You successfully decoded the encrypted transmission intercepted during the nuclear facility UAP incident.
+
+📡 DECODED TRANSMISSION CONTENT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+"OBJECT OVER SILO NINE"
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dr. Kim looks at the decoded message with concern. "This confirms what we suspected - the UAP was directly positioned over a nuclear missile silo."
+
+The transmission was sent using a Cold War-era military cipher, suggesting it originated from security personnel on-site during the incident.
+
+Further analysis reveals: The transmission was followed by reports of temporary anomalies in the silo's electronic systems.
+
+This evidence corroborates witness testimony and radar data from that night.`,
+            image: "decoded_transmission",
+            imagePrompt: "Military communications center with decoded message on screen, cipher analysis equipment, tense atmosphere with analysts reviewing results",
+            sources: ["Intercepted Military Communications", "AARO Signal Analysis", "Nuclear Facility Security Logs"],
+            miniGameData: {
+                type: 'cipher_decoder',
+                cipherText: 'REMHFW RYHU VLOR QLQH',
+                solution: 'OBJECT OVER SILO NINE',
+                context: 'Cold War Military Cipher - Caesar Shift',
+                maxHints: 3,
+                evidenceReward: 'Decoded Military Transmission',
+                progressReward: 20
+            },
+            choices: [
+                {
+                    text: "Investigate the electronic anomalies at Silo Nine",
+                    nextScene: "silo_nine_anomalies",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Cross-reference with other intercepted communications",
+                    nextScene: "radar_tracking_analysis",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Review witness testimony from that night",
+                    nextScene: "military_witness_testimony",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Return to nuclear facility analysis",
+                    nextScene: "nuclear_facility_incidents",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Military facilities have used various encryption methods to secure communications, including simple substitution ciphers for field communications."
+        },
+
+        silo_nine_anomalies: {
+            text: `SILO NINE ELECTRONIC ANOMALIES - INVESTIGATION
+
+            DAY 1 - 11:15 PM
+
+You dig deeper into the reported electronic anomalies at Silo Nine following the UAP incident.
+
+⚠️ SILO NINE INCIDENT REPORT - CLASSIFIED
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Incident Duration: Approximately 8 minutes
+Systems Affected: Launch control indicators
+Nature of Anomaly: Temporary status light fluctuations
+Weapon Status: Remained secure throughout
+Personnel Response: Standard security protocols activated
+Investigation Finding: No equipment malfunction detected
+Similar Incidents: 3 other silos reported minor anomalies
+Official Assessment: Unexplained but non-critical event
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dr. Kim examines the technical data. "The interesting part is that all affected systems returned to normal immediately after the UAP departed."
+
+A retired missile officer's statement in the file: "I've worked with these systems for 20 years. I've never seen anything like what happened that night."
+
+The correlation between UAP presence and electronic effects remains one of the most puzzling aspects of these incidents.`,
+            image: "missile_silo_control",
+            imagePrompt: "Underground missile control center with warning indicators, military personnel reviewing status boards, tense Cold War bunker atmosphere",
+            sources: ["Missile Command Incident Reports", "Technical Systems Analysis", "Military Personnel Testimony"],
+            choices: [
+                {
+                    text: "Study similar incidents at other nuclear facilities",
+                    nextScene: "malmstrom_incident_study",
+                    progressIncrease: 18,
+                    evidence: true
+                },
+                {
+                    text: "Analyze the physics of potential electromagnetic effects",
+                    nextScene: "propulsion_analysis",
+                    progressIncrease: 15,
+                    evidence: true
+                },
+                {
+                    text: "Review the official investigation findings",
+                    nextScene: "behavioral_pattern_analysis",
+                    progressIncrease: 12,
+                    evidence: true
+                },
+                {
+                    text: "Return to main investigation",
+                    nextScene: "intro",
+                    progressIncrease: 5
+                }
+            ],
+            educationalNote: "Multiple credible witnesses have reported electronic anomalies coinciding with UAP sightings near sensitive military installations."
         },
 
         flight_characteristics_study: {

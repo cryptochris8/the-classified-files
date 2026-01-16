@@ -479,5 +479,463 @@ class DocumentReconstructionGame {
     }
 }
 
+class CipherDecoderGame {
+    constructor(miniGameEngine, gameData, onComplete) {
+        this.engine = miniGameEngine;
+        this.gameData = gameData;
+        this.onComplete = onComplete;
+
+        this.cipherText = (gameData.cipherText || '').toUpperCase();
+        this.solution = (gameData.solution || '').toUpperCase();
+        this.playerMapping = {};  // encrypted letter -> decoded letter
+        this.reverseMapping = {}; // decoded letter -> encrypted letter (to prevent duplicates)
+        this.selectedLetter = null;
+        this.hintsUsed = 0;
+        this.maxHints = gameData.maxHints || 3;
+        this.isComplete = false;
+        this.startTime = null;
+
+        // Build the cipher mapping from solution
+        this.cipherKey = {};
+        for (let i = 0; i < this.cipherText.length; i++) {
+            const encrypted = this.cipherText[i];
+            const decoded = this.solution[i];
+            if (/[A-Z]/.test(encrypted) && /[A-Z]/.test(decoded)) {
+                this.cipherKey[encrypted] = decoded;
+            }
+        }
+
+        // Track unique letters for progress
+        this.uniqueLetters = new Set(this.cipherText.match(/[A-Z]/g) || []);
+        this.totalLetters = this.uniqueLetters.size;
+
+        // Bound event handlers for cleanup
+        this.boundKeyHandler = this.handleKeyPress.bind(this);
+    }
+
+    initialize() {
+        this.createGameInterface();
+        this.generateCipherDisplay();
+        this.setupEventListeners();
+        this.startGame();
+    }
+
+    createGameInterface() {
+        const container = this.engine.elements.miniGameContainer;
+
+        container.innerHTML = `
+            <div class="mini-game-header">
+                <h2 class="mini-game-title">CIPHER DECODER</h2>
+                <div class="mini-game-subtitle">${this.gameData.context || 'Decrypt the classified message'}</div>
+                <button class="mini-game-close">×</button>
+            </div>
+
+            <div class="cipher-container">
+                <div class="cipher-message-box" id="cipher-display">
+                    <!-- Generated cipher display -->
+                </div>
+
+                <div class="cipher-input-section" id="cipher-input-section">
+                    <div class="selected-letter-display" id="selected-display">
+                        Click a letter above to decode it
+                    </div>
+                </div>
+
+                <div class="cipher-controls">
+                    <button class="cipher-hint-btn" id="hint-btn">
+                        Use Hint (<span id="hints-remaining">${this.maxHints}</span> left)
+                    </button>
+                    <button class="cipher-clear-btn" id="clear-btn">Clear All</button>
+                </div>
+            </div>
+
+            <div class="mini-game-progress">
+                <div class="progress-text">Letters Decoded: <span id="letters-decoded">0</span>/<span id="total-letters">${this.totalLetters}</span></div>
+                <div class="progress-bar-mini">
+                    <div class="progress-fill-mini" id="mini-game-progress-fill"></div>
+                </div>
+            </div>
+
+            <div class="mini-game-hint">
+                <p id="cipher-tip">Click an encrypted letter, then type what you think it decodes to</p>
+            </div>
+        `;
+
+        // Add click handler for close button
+        const closeBtn = container.querySelector('.mini-game-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => this.engine.closeGame());
+        }
+
+        // Hint button handler
+        const hintBtn = document.getElementById('hint-btn');
+        if (hintBtn) {
+            hintBtn.addEventListener('click', () => this.useHint());
+        }
+
+        // Clear button handler
+        const clearBtn = document.getElementById('clear-btn');
+        if (clearBtn) {
+            clearBtn.addEventListener('click', () => this.clearAllMappings());
+        }
+    }
+
+    generateCipherDisplay() {
+        const display = document.getElementById('cipher-display');
+        if (!display) return;
+
+        let html = '<div class="cipher-words">';
+        const words = this.cipherText.split(' ');
+
+        words.forEach((word, wordIndex) => {
+            html += '<div class="cipher-word">';
+
+            for (let i = 0; i < word.length; i++) {
+                const char = word[i];
+                const isLetter = /[A-Z]/.test(char);
+
+                if (isLetter) {
+                    const decoded = this.playerMapping[char] || '_';
+                    const isCorrect = this.playerMapping[char] === this.cipherKey[char];
+                    const isSelected = this.selectedLetter === char;
+
+                    html += `
+                        <div class="cipher-letter-pair ${isSelected ? 'selected' : ''} ${isCorrect ? 'correct' : ''}"
+                             data-letter="${char}">
+                            <div class="cipher-encrypted">${char}</div>
+                            <div class="cipher-arrow">↓</div>
+                            <div class="cipher-decoded ${decoded !== '_' ? 'filled' : ''}">${decoded}</div>
+                        </div>
+                    `;
+                } else {
+                    html += `<div class="cipher-letter-pair punctuation"><div class="cipher-char">${char}</div></div>`;
+                }
+            }
+
+            html += '</div>';
+
+            // Add line break after every few words for readability
+            if ((wordIndex + 1) % 5 === 0) {
+                html += '<div class="cipher-line-break"></div>';
+            }
+        });
+
+        html += '</div>';
+        display.innerHTML = html;
+
+        // Add click handlers to letter pairs
+        const letterPairs = display.querySelectorAll('.cipher-letter-pair[data-letter]');
+        letterPairs.forEach(pair => {
+            pair.addEventListener('click', () => {
+                const letter = pair.dataset.letter;
+                this.handleLetterClick(letter);
+            });
+        });
+    }
+
+    setupEventListeners() {
+        document.addEventListener('keydown', this.boundKeyHandler);
+    }
+
+    handleLetterClick(letter) {
+        // Deselect if clicking same letter
+        if (this.selectedLetter === letter) {
+            this.selectedLetter = null;
+        } else {
+            this.selectedLetter = letter;
+        }
+
+        this.updateDisplay();
+        this.updateInputSection();
+        this.engine.playSound('puzzlePieceSound');
+    }
+
+    handleKeyPress(event) {
+        if (!this.selectedLetter) return;
+        if (this.isComplete) return;
+
+        const key = event.key.toUpperCase();
+
+        // Handle backspace/delete to clear mapping
+        if (event.key === 'Backspace' || event.key === 'Delete') {
+            this.clearMapping(this.selectedLetter);
+            return;
+        }
+
+        // Only accept A-Z
+        if (!/^[A-Z]$/.test(key)) return;
+
+        // Check if this decoded letter is already used
+        if (this.reverseMapping[key] && this.reverseMapping[key] !== this.selectedLetter) {
+            this.showFeedback(`'${key}' is already assigned to '${this.reverseMapping[key]}'`, 'error');
+            return;
+        }
+
+        // Set the mapping
+        this.setMapping(this.selectedLetter, key);
+    }
+
+    setMapping(encrypted, decoded) {
+        // Clear old reverse mapping if this encrypted letter was already mapped
+        if (this.playerMapping[encrypted]) {
+            delete this.reverseMapping[this.playerMapping[encrypted]];
+        }
+
+        // Set new mapping
+        this.playerMapping[encrypted] = decoded;
+        this.reverseMapping[decoded] = encrypted;
+
+        // Check if correct
+        const isCorrect = decoded === this.cipherKey[encrypted];
+        if (isCorrect) {
+            this.engine.playSound('successSound');
+            this.showFeedback('Correct!', 'success');
+        } else {
+            this.engine.playSound('puzzlePieceSound');
+        }
+
+        this.updateDisplay();
+        this.updateProgress();
+        this.checkSolution();
+
+        // Move to next unmapped letter
+        this.selectNextUnmappedLetter();
+    }
+
+    clearMapping(encrypted) {
+        if (this.playerMapping[encrypted]) {
+            const decoded = this.playerMapping[encrypted];
+            delete this.reverseMapping[decoded];
+            delete this.playerMapping[encrypted];
+
+            this.updateDisplay();
+            this.updateProgress();
+            this.showFeedback('Letter cleared', 'info');
+        }
+    }
+
+    clearAllMappings() {
+        this.playerMapping = {};
+        this.reverseMapping = {};
+        this.selectedLetter = null;
+
+        this.updateDisplay();
+        this.updateProgress();
+        this.updateInputSection();
+        this.showFeedback('All mappings cleared', 'info');
+    }
+
+    selectNextUnmappedLetter() {
+        // Find next unmapped letter in the cipher text
+        for (const char of this.cipherText) {
+            if (/[A-Z]/.test(char) && !this.playerMapping[char]) {
+                this.selectedLetter = char;
+                this.updateDisplay();
+                this.updateInputSection();
+                return;
+            }
+        }
+        // All mapped
+        this.selectedLetter = null;
+        this.updateInputSection();
+    }
+
+    updateDisplay() {
+        this.generateCipherDisplay();
+    }
+
+    updateInputSection() {
+        const display = document.getElementById('selected-display');
+        if (!display) return;
+
+        if (this.selectedLetter) {
+            const currentMapping = this.playerMapping[this.selectedLetter] || '?';
+            display.innerHTML = `
+                <span class="input-prompt">Selected: </span>
+                <span class="input-encrypted">${this.selectedLetter}</span>
+                <span class="input-arrow"> → </span>
+                <span class="input-decoded">${currentMapping}</span>
+                <span class="input-hint"> (Type a letter or Backspace to clear)</span>
+            `;
+        } else {
+            display.innerHTML = 'Click a letter above to decode it';
+        }
+    }
+
+    updateProgress() {
+        // Count correctly decoded letters
+        let correctCount = 0;
+        for (const letter of this.uniqueLetters) {
+            if (this.playerMapping[letter] === this.cipherKey[letter]) {
+                correctCount++;
+            }
+        }
+
+        const decoded = document.getElementById('letters-decoded');
+        if (decoded) decoded.textContent = correctCount;
+
+        const progressFill = document.getElementById('mini-game-progress-fill');
+        if (progressFill) {
+            const percent = (correctCount / this.totalLetters) * 100;
+            progressFill.style.width = percent + '%';
+        }
+    }
+
+    useHint() {
+        if (this.hintsUsed >= this.maxHints) {
+            this.showFeedback('No hints remaining!', 'error');
+            return;
+        }
+
+        // Find an unmapped or incorrectly mapped letter
+        for (const encrypted of this.uniqueLetters) {
+            if (this.playerMapping[encrypted] !== this.cipherKey[encrypted]) {
+                // Clear any existing wrong mapping
+                if (this.playerMapping[encrypted]) {
+                    delete this.reverseMapping[this.playerMapping[encrypted]];
+                }
+
+                // Set correct mapping
+                const decoded = this.cipherKey[encrypted];
+                this.playerMapping[encrypted] = decoded;
+                this.reverseMapping[decoded] = encrypted;
+
+                this.hintsUsed++;
+                document.getElementById('hints-remaining').textContent = this.maxHints - this.hintsUsed;
+
+                this.showFeedback(`Hint: ${encrypted} = ${decoded}`, 'info');
+                this.engine.playSound('successSound');
+
+                this.updateDisplay();
+                this.updateProgress();
+                this.checkSolution();
+                break;
+            }
+        }
+    }
+
+    checkSolution() {
+        // Check if all letters are correctly mapped
+        for (const letter of this.uniqueLetters) {
+            if (this.playerMapping[letter] !== this.cipherKey[letter]) {
+                return false;
+            }
+        }
+
+        // All correct!
+        this.completeGame();
+        return true;
+    }
+
+    showFeedback(message, type) {
+        const existingFeedback = document.querySelector('.feedback-message');
+        if (existingFeedback) existingFeedback.remove();
+
+        const feedback = document.createElement('div');
+        feedback.className = `feedback-message ${type}`;
+        feedback.textContent = message;
+
+        this.engine.elements.miniGameContainer.appendChild(feedback);
+
+        setTimeout(() => feedback.remove(), 2000);
+    }
+
+    completeGame() {
+        if (this.isComplete) return;
+
+        this.isComplete = true;
+        this.engine.playSound('completionSound');
+
+        setTimeout(() => {
+            this.showCompletionScreen();
+        }, 500);
+    }
+
+    showCompletionScreen() {
+        // Build the decoded message
+        let decodedMessage = '';
+        for (const char of this.cipherText) {
+            if (/[A-Z]/.test(char)) {
+                decodedMessage += this.playerMapping[char] || char;
+            } else {
+                decodedMessage += char;
+            }
+        }
+
+        const completionOverlay = document.createElement('div');
+        completionOverlay.className = 'completion-overlay';
+        completionOverlay.innerHTML = `
+            <div class="completion-content">
+                <h2>CIPHER CRACKED!</h2>
+                <div class="decoded-message-box">
+                    <p class="decoded-label">Decoded Message:</p>
+                    <p class="decoded-text">"${decodedMessage}"</p>
+                </div>
+                <div class="rewards">
+                    <div class="reward-item">
+                        <span class="reward-icon">📄</span>
+                        <span class="reward-text">Evidence Found: ${this.gameData.evidenceReward || 'Decoded Message'}</span>
+                    </div>
+                    <div class="reward-item">
+                        <span class="reward-icon">📊</span>
+                        <span class="reward-text">Investigation Progress: +${this.gameData.progressReward || 15}%</span>
+                    </div>
+                    ${this.hintsUsed === 0 ? `
+                    <div class="reward-item bonus">
+                        <span class="reward-icon">⭐</span>
+                        <span class="reward-text">No Hints Used - Perfect Decode!</span>
+                    </div>
+                    ` : ''}
+                </div>
+                <button class="continue-btn">Continue Investigation</button>
+            </div>
+        `;
+
+        this.engine.elements.miniGameContainer.appendChild(completionOverlay);
+
+        const continueBtn = completionOverlay.querySelector('.continue-btn');
+        if (continueBtn) {
+            continueBtn.addEventListener('click', () => this.finishGame());
+        }
+    }
+
+    finishGame() {
+        const result = {
+            success: true,
+            evidenceGained: this.gameData.evidenceReward || 'Decoded Message',
+            progressIncrease: this.gameData.progressReward || 15,
+            completionTime: Date.now() - this.startTime,
+            hintsUsed: this.hintsUsed
+        };
+
+        if (this.onComplete) {
+            this.onComplete(result);
+        }
+
+        this.engine.closeGame(result);
+    }
+
+    startGame() {
+        this.startTime = Date.now();
+        this.showFeedback('Click letters to decode the secret message!', 'info');
+
+        // Auto-select first letter
+        if (this.cipherText.length > 0) {
+            for (const char of this.cipherText) {
+                if (/[A-Z]/.test(char)) {
+                    this.selectedLetter = char;
+                    this.updateDisplay();
+                    this.updateInputSection();
+                    break;
+                }
+            }
+        }
+    }
+
+    cleanup() {
+        document.removeEventListener('keydown', this.boundKeyHandler);
+    }
+}
+
 // Make MiniGameEngine globally available
 window.MiniGameEngine = MiniGameEngine;

@@ -1624,6 +1624,209 @@ body {
     transform: rotate(5deg);
 }
 
+/* ================================
+   CIPHER DECODER MINI-GAME
+   ================================ */
+
+.cipher-container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cipher-message-box {
+    background: linear-gradient(135deg, #1a1a1a, #252525);
+    border: 2px solid #444;
+    border-radius: 8px;
+    padding: 25px;
+    min-height: 150px;
+}
+
+.cipher-words {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.cipher-word {
+    display: flex;
+    gap: 4px;
+}
+
+.cipher-line-break {
+    width: 100%;
+    height: 10px;
+}
+
+.cipher-letter-pair {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 32px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cipher-letter-pair:hover {
+    background: rgba(139, 69, 19, 0.3);
+}
+
+.cipher-letter-pair.selected {
+    background: rgba(139, 69, 19, 0.5);
+    border: 2px solid #8b4513;
+    box-shadow: 0 0 10px rgba(139, 69, 19, 0.5);
+}
+
+.cipher-letter-pair.correct .cipher-decoded {
+    color: #4ade80;
+    text-shadow: 0 0 5px rgba(74, 222, 128, 0.5);
+}
+
+.cipher-letter-pair.punctuation {
+    cursor: default;
+    background: transparent;
+}
+
+.cipher-letter-pair.punctuation:hover {
+    background: transparent;
+}
+
+.cipher-encrypted {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff6b6b;
+    text-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
+}
+
+.cipher-arrow {
+    color: #666;
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+.cipher-decoded {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #666;
+    min-height: 1.4rem;
+}
+
+.cipher-decoded.filled {
+    color: #e0e0e0;
+}
+
+.cipher-char {
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.4rem;
+    color: #888;
+    padding: 8px 2px;
+}
+
+.cipher-input-section {
+    background: rgba(139, 69, 19, 0.1);
+    border: 1px solid rgba(139, 69, 19, 0.3);
+    border-radius: 8px;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.selected-letter-display {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.input-encrypted {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.input-arrow {
+    color: #666;
+}
+
+.input-decoded {
+    color: #4ade80;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.input-hint {
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.cipher-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.cipher-hint-btn,
+.cipher-clear-btn {
+    background: linear-gradient(135deg, #2a2a3a 0%, #3a3a4a 100%);
+    border: 2px solid #4a4a5a;
+    color: #ccc;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.cipher-hint-btn:hover,
+.cipher-clear-btn:hover {
+    background: linear-gradient(135deg, #3a3a4a 0%, #4a4a5a 100%);
+    border-color: #5a5a6a;
+}
+
+.cipher-hint-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Decoded message in completion screen */
+.decoded-message-box {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(139, 69, 19, 0.5);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.decoded-label {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 10px !important;
+}
+
+.decoded-text {
+    color: #4ade80;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.reward-item.bonus {
+    background: rgba(74, 222, 128, 0.1);
+    border-color: rgba(74, 222, 128, 0.3);
+}
+
+.reward-item.bonus .reward-text {
+    color: #4ade80;
+}
+
 /* Mini-game responsive design */
 @media (max-width: 768px) {
     .mini-game-container {
