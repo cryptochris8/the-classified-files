@@ -49,15 +49,12 @@ class MiniGameEngine {
         if (sound) {
             sound.currentTime = 0;
             sound.volume = 0.4;
-            sound.play().catch(e => {
-                console.log(`${soundType} failed to play:`, e);
-            });
+            sound.play().catch(() => {});
         }
     }
     
     launchGame(gameType, gameData, onComplete) {
         if (this.isGameActive) {
-            console.log('Mini-game already active');
             return;
         }
         
@@ -122,16 +119,14 @@ class MiniGameEngine {
         // Proxy method to add evidence to main game
         this.parentEngine.gameState.evidenceCount++;
         this.parentEngine.elements.evidenceNumber.textContent = this.parentEngine.gameState.evidenceCount;
-        console.log('Mini-game evidence added:', evidenceItem);
     }
     
     updateProgress(progressAmount) {
         // Proxy method to update investigation progress
         this.parentEngine.gameState.investigationProgress = Math.min(100, 
             this.parentEngine.gameState.investigationProgress + progressAmount);
-        this.parentEngine.elements.progressFill.style.width = 
+        this.parentEngine.elements.progressFill.style.width =
             this.parentEngine.gameState.investigationProgress + '%';
-        console.log('Mini-game progress updated:', progressAmount);
     }
 }
 

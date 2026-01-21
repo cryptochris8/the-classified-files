@@ -64,7 +64,7 @@ class GameEngine {
         // this.elements.backgroundMusic.play().catch(e => {
         //     console.log('Auto-play prevented. User interaction required for audio.');
         // });
-        console.log('Background music disabled for testing');
+        // Background music disabled
     }
     
     initializeMiniGameEngine() {
@@ -72,7 +72,6 @@ class GameEngine {
         if (typeof MiniGameEngine !== 'undefined') {
             this.miniGameEngine = new MiniGameEngine(this);
             window.miniGameEngine = this.miniGameEngine;
-            console.log('Mini-game engine initialized');
         } else {
             console.warn('MiniGameEngine not loaded');
         }
@@ -90,23 +89,11 @@ class GameEngine {
         if (this.elements.buttonClickSound) {
             this.elements.buttonClickSound.currentTime = 0;
             this.elements.buttonClickSound.volume = 0.5;
-            this.elements.buttonClickSound.play().catch(e => {
-                console.log('Button click sound failed to play:', e);
-            });
+            this.elements.buttonClickSound.play().catch(() => {});
         }
     }
     
     startGame() {
-        // Check which stories are available
-        console.log('=== STORY LOADING DEBUG ===');
-        console.log('EpsteinStoryExpanded available:', typeof EpsteinStoryExpanded !== 'undefined');
-        console.log('JFKStoryExpanded available:', typeof JFKStoryExpanded !== 'undefined');
-        console.log('UAPStoryExpanded available:', typeof UAPStoryExpanded !== 'undefined');
-        console.log('September11CommissionExpanded available:', typeof September11CommissionExpanded !== 'undefined');
-        console.log('HunterBidenLaptopStoryExpanded available:', typeof HunterBidenLaptopStoryExpanded !== 'undefined');
-        console.log('DiddyCaseStoryExpanded available:', typeof DiddyCaseStoryExpanded !== 'undefined');
-        console.log('CharlieKirkStoryExpanded available:', typeof CharlieKirkStoryExpanded !== 'undefined');
-        
         // Show case selection for all available stories (including sealed ones)
         const availableStories = [];
         if (typeof EpsteinStoryExpanded !== 'undefined' && EpsteinStoryExpanded.scenes) {
@@ -591,9 +578,6 @@ class GameEngine {
         // Show the main menu button when playing a case
         this.showMainMenuButton();
 
-        console.log(`✅ LOADED: ${storyData.name} with`, Object.keys(this.currentStory.scenes).length, 'scenes');
-        console.log('✅ AVAILABLE SCENES:', Object.keys(this.currentStory.scenes));
-
         this.clearChoices();
         this.loadScene('intro');
     }
@@ -691,7 +675,6 @@ class GameEngine {
                 e.preventDefault();
                 e.stopPropagation();
                 this.skipTyping = true;
-                console.log('✅ User clicked story text to skip typing animation');
             }
         });
         
@@ -703,7 +686,6 @@ class GameEngine {
                     e.preventDefault();
                     e.stopPropagation();
                     this.skipTyping = true;
-                    console.log('✅ User clicked narrative section to skip typing animation');
                 }
             });
         }
@@ -713,15 +695,11 @@ class GameEngine {
             if (e.code === 'Space' && this.isTyping) {
                 e.preventDefault();
                 this.skipTyping = true;
-                console.log('✅ User pressed spacebar to skip typing animation');
             }
         });
     }
     
     loadScene(sceneId) {
-        console.log('🔍 ATTEMPTING TO LOAD SCENE:', sceneId);
-        console.log('🔍 CURRENT STORY:', this.currentStory ? 'LOADED' : 'NOT LOADED');
-        
         this.currentSceneName = sceneId; // Track current scene name for visited choices
         
         if (!this.currentStory || !this.currentStory.scenes[sceneId]) {
@@ -730,18 +708,14 @@ class GameEngine {
             
             // Fallback to a safe scene if available
             if (this.currentStory && this.currentStory.scenes['victim_statistics_study']) {
-                console.log('⚡ FALLBACK: Using victim_statistics_study');
                 sceneId = 'victim_statistics_study';
             } else if (this.currentStory && this.currentStory.scenes['intro']) {
-                console.log('⚡ FALLBACK: Using intro scene');
                 sceneId = 'intro';
             } else {
                 console.error('❌ No fallback scenes available');
                 alert('Critical Error: Scene not found and no fallbacks available. Please refresh the page.');
                 return;
             }
-        } else {
-            console.log('✅ Scene found successfully:', sceneId);
         }
         
         this.currentScene = this.currentStory.scenes[sceneId];
@@ -768,10 +742,7 @@ class GameEngine {
         
         // Add visual indicator that user can click to skip
         this.elements.storyText.classList.add('typing');
-        
-        // Debug logging
-        console.log('🖱️ TYPING STARTED - Click anywhere on text or press SPACEBAR to skip');
-        
+
         const paragraphs = text.split('\n\n');
         let currentParagraph = 0;
         
@@ -823,7 +794,6 @@ class GameEngine {
     
     completeTypingInstantly(text, callback) {
         // Instantly display all text when user clicks to skip
-        console.log('⚡ TYPING SKIPPED - Displaying all text instantly');
         this.isTyping = false;
         this.skipTyping = false;
         this.elements.storyText.innerHTML = '';
@@ -1282,11 +1252,7 @@ Your choices throughout this investigation have shaped the narrative and uncover
     }
     
     playChoiceSound() {
-        // Disabled sound to test if it's causing button issues
-        // const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoG');
-        // audio.volume = 0.1;
-        // audio.play().catch(e => console.log('Sound play failed'));
-        console.log('Choice sound disabled for testing');
+        // Choice sound disabled
     }
     
     handleQuizAnswer(choice) {

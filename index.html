@@ -114,13 +114,6 @@
     </audio>
     
     <!-- LOAD GAME ENGINE AND STORY FILES -->
-    <script>
-        console.log('🚨 Loading game engine and story files');
-        window.addEventListener('error', function(e) {
-            console.error('JavaScript Error:', e.error);
-            console.error('File:', e.filename, 'Line:', e.lineno);
-        });
-    </script>
     <!-- DOM Utilities for Safe HTML Rendering -->
     <script src="dom-utils.js?v=202512241800"></script>
     <script src="payment-config.js?v=202601150100&force=fresh"></script>
@@ -154,30 +147,5 @@
     <script src="payment-abstraction.js?v=202601060100"></script>
     <script src="payment-system.js?v=202601051500"></script>
     <script src="main.js?v=202601150100&force=fresh&fix=diddy&t=NOW"></script>
-    <script>
-        console.log('🚨 DIDDY CASE DEBUG - START');
-        console.log('Script loaded from:', window.location.href);
-        console.log('Diddy script element exists:', !!document.querySelector('script[src*="diddy-case"]'));
-        console.log('🎉 All story files loaded - case selection enabled!');
-        console.log('Available stories:', {
-            Epstein: typeof EpsteinStoryExpanded !== 'undefined',
-            JFK: typeof JFKStoryExpanded !== 'undefined',
-            Diddy: typeof DiddyCaseStoryExpanded !== 'undefined',
-            UAP: typeof UAPStoryExpanded !== 'undefined',
-            September11: typeof September11CommissionExpanded !== 'undefined',
-            HunterLaptop: typeof HunterBidenLaptopStoryExpanded !== 'undefined',
-            Watergate: typeof WatergateStoryExpanded !== 'undefined',
-            PentagonPapers: typeof PentagonPapersStoryExpanded !== 'undefined',
-            MKUltra: typeof MKUltraStoryExpanded !== 'undefined',
-            PanamaPapers: typeof PanamaPapersStoryExpanded !== 'undefined',
-            IranContra: typeof IranContraStoryExpanded !== 'undefined',
-            COINTELPRO: typeof COINTELPROStoryExpanded !== 'undefined',
-            Snowden: typeof SnowdenRevelationsStoryExpanded !== 'undefined',
-            Tuskegee: typeof TuskegeeExperimentStoryExpanded !== 'undefined',
-            Paperclip: typeof OperationPaperclipStoryExpanded !== 'undefined',
-            Diddy: typeof DiddyCaseStoryExpanded !== 'undefined',
-            GameEngine: typeof GameEngine !== 'undefined'
-        });
-    </script>
 </body>
 </html>

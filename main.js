@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     document.getElementById('background-music').addEventListener('error', function() {
-        console.log('Background music file not found. Game will run without audio.');
+        // Audio file not found - game continues without background music
     });
     
     window.addEventListener('beforeunload', function() {
@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('click', function() {
     const music = document.getElementById('background-music');
     if (music.paused) {
-        music.play().catch(e => console.log('Audio autoplay prevented'));
+        music.play().catch(() => {});
     }
 }, { once: true });
