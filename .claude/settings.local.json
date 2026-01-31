@@ -24,7 +24,8 @@
       "Bash(npm start)",
       "Bash(curl:*)",
       "Bash(cat:*)",
-      "Bash(npm run optimize-images:*)"
+      "Bash(npm run optimize-images:*)",
+      "Bash(git pull:*)"
     ],
     "deny": []
   }
